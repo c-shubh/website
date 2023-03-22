@@ -5,8 +5,11 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "export": "next export && touch out/.nojekyll && cp CNAME out/",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "analyze": "ANALYZE=true next build",
+    "deploy": "NODE_DEBUG=gh-pages node deploy-gh-pages.js"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.5.2",
@@ -18,9 +21,10 @@
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
     "framer-motion": "^10.8.5",
+    "gh-pages": "^5.0.0",
     "next": "13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "typescript": "5.0.2"
+    "typescript": "4.9.5"
   }
 }
