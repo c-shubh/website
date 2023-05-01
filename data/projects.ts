@@ -1,17 +1,27 @@
-import { Project, Tech as t } from "@/types";
+import { Project } from "@/types";
+import { Tech as t } from "./tech";
 
 export const projects: Project[] = [
   {
     title: "Raft Consensus Algorithm",
-    description: "",
+    description:
+      "This project implements Raft algorithm in Typescript using EventEmitter for timing and Express for inter-node communication.",
     builtWith: [t.expressjs, t.nodejs, t.typescript],
     startDate: "2023-04-15",
     srcUrl: "https://github.com/0xVikasRushi/raft-blockchain/",
   },
   {
     title: "Phonebook",
-    description: "",
-    builtWith: [t.reactjs, t.fusejs, t.typescript],
+    description:
+      "A phonebook application with ability to fuzzy search, create, update and delete contacts. User input is validated on both client and server side and contacts are stored in MongoDB.",
+    builtWith: [
+      t.reactjs,
+      t.fusejs,
+      t.typescript,
+      t.nodejs,
+      t.expressjs,
+      t.mongodb,
+    ],
     startDate: "2023-03-04",
     liveUrl: "https://c-shubh.github.io/fullstackopen/phonebook/",
     srcUrl:
@@ -21,20 +31,23 @@ export const projects: Project[] = [
     title: "IPFS Encrypt",
     srcUrl: "https://github.com/c-shubh/ipfs-encrypt-web",
     liveUrl: "https://ipfs-encrypt-web.vercel.app/",
-    builtWith: [t.chakarui, t.nextjs, t.typescript],
-    description: "",
+    builtWith: [t.chakarui, t.nextjs, t.typescript, t.expressjs, t.nodejs],
+    description:
+      "A website demoing the IPFS encrypt library used to encrypt and upload or decrypt and download files from IPFS.",
     startDate: "2023-02-17",
   },
   {
     title: "CVR Results",
-    description: "",
+    description:
+      "A small script to scrape results of students, given a range of roll numbers.",
     builtWith: [t.nodejs, t.typescript],
     startDate: "2023-02-15",
     srcUrl: "https://github.com/c-shubh/cvr-results",
   },
   {
     title: "Angular Demo",
-    description: "",
+    description:
+      "An Angular SPA made for a Google Developer Student Clubs workshop showcasing a static page, a form and a dynamic todo-list app which stores todos in LocalStorage.",
     builtWith: [t.angular, t.typescript],
     startDate: "2023-02-02",
     srcUrl: "https://github.com/c-shubh/angular-demo",
@@ -43,20 +56,15 @@ export const projects: Project[] = [
   {
     title: "Smart Attendance",
     startDate: "2023-01-22",
-    description: "",
-    builtWith: [
-      t.chakarui,
-      t.antd,
-      t.mongodb,
-      t.nextjs,
-      t.reactnative,
-      t.expressjs,
-    ],
+    description:
+      "A react native app to take attendance of students. To prevent proxy/fake attendance it employs heuristics such as biometric authorization and distance estimation using Bluetooth Low Energy (BLE). The submitted attendance can be viewed and analyzed in the Admin dashboard.",
+    builtWith: [t.reactnative, t.mongodb, t.nextjs, t.expressjs],
     srcUrl: "https://github.com/c-shubh/GRIET-2k23",
   },
   {
     title: "section",
-    description: "",
+    description:
+      "A small CLI program to create comments that divide source code into sections. Supports generation of section comments in various programming languages and indentation levels.",
     builtWith: [t.python],
     startDate: "2023-01-13",
     srcUrl: "https://github.com/c-shubh/section",
@@ -93,9 +101,7 @@ export const projects: Project[] = [
   {
     title: "Rock Paper Scissors",
     description: "",
-    builtWith: [
-      t.typescript
-    ],
+    builtWith: [t.html, t.css, t.typescript],
     startDate: "Aug 9, 2022",
     srcUrl: "https://github.com/c-shubh/odin-rock-paper-scissors",
     liveUrl: "https://c-shubh.github.io/odin-rock-paper-scissors/",
@@ -103,7 +109,7 @@ export const projects: Project[] = [
   {
     title: "Landing page",
     description: "",
-    builtWith: [],
+    builtWith: [t.html, t.css, t.javascript],
     startDate: "Aug 7, 2022",
     srcUrl: "https://github.com/c-shubh/odin-landing-page",
     liveUrl: "https://c-shubh.github.io/odin-landing-page/",
@@ -111,7 +117,7 @@ export const projects: Project[] = [
   {
     title: "Recipes",
     description: "",
-    builtWith: [],
+    builtWith: [t.html, t.css],
     startDate: "Jul 19, 2022",
     srcUrl: "https://github.com/c-shubh/odin-recipes",
     liveUrl: "https://c-shubh.github.io/odin-recipes/",
@@ -119,7 +125,7 @@ export const projects: Project[] = [
   {
     title: "CVR Alumni Website",
     description: "",
-    builtWith: [],
+    builtWith: [t.html, t.css, t.bootstrap, t.javascript],
     startDate: "2022-04-11",
     srcUrl: "https://github.com/c-shubh/cvr-alumni-website",
     liveUrl: "https://c-shubh.github.io/cvr-alumni-website/",
@@ -127,7 +133,7 @@ export const projects: Project[] = [
   {
     title: "HackerNews client",
     description: "",
-    builtWith: [],
+    builtWith: [t.html, t.css, t.javascript],
     startDate: "Aug 23, 2021",
     srcUrl: "https://github.com/c-shubh/hackernews",
     liveUrl: "https://c-shubh.github.io/hackernews/",
@@ -135,7 +141,7 @@ export const projects: Project[] = [
   {
     title: "BMI Calculator",
     description: "",
-    builtWith: [],
+    builtWith: [t.html, t.css, t.javascript],
     startDate: "Jul 10, 2021",
     srcUrl: "https://github.com/c-shubh/bmi-calculator",
     liveUrl: "https://c-shubh.github.io/bmi-calculator/",
@@ -143,7 +149,7 @@ export const projects: Project[] = [
   {
     title: "Codeforces charts",
     description: "",
-    builtWith: [],
+    builtWith: [t.html, t.css, t.javascript],
     startDate: "May 24, 2021",
     srcUrl: "https://github.com/c-shubh/codeforces-charts",
     liveUrl: "https://c-shubh.github.io/codeforces-charts/",
@@ -151,7 +157,7 @@ export const projects: Project[] = [
   {
     title: "Advice",
     description: "",
-    builtWith: [],
+    builtWith: [t.html, t.css, t.javascript],
     startDate: "May 11, 2021",
     srcUrl: "https://github.com/c-shubh/advice",
     liveUrl: "https://c-shubh.github.io/advice/",
@@ -159,7 +165,7 @@ export const projects: Project[] = [
   {
     title: "Calculator",
     description: "",
-    builtWith: [],
+    builtWith: [t.html, t.css, t.javascript],
     startDate: "May 8, 2021",
     srcUrl: "https://github.com/c-shubh/calculator",
     liveUrl: "https://c-shubh.github.io/calculator/",
@@ -167,7 +173,7 @@ export const projects: Project[] = [
   {
     title: "Binary calculator",
     description: "",
-    builtWith: [],
+    builtWith: [t.html, t.css, t.javascript],
     startDate: "Apr 24, 2021",
     srcUrl: "https://github.com/c-shubh/binary-calculator",
     liveUrl: "https://c-shubh.github.io/binary-calculator/",
@@ -175,28 +181,28 @@ export const projects: Project[] = [
   {
     title: "PDF to MP3 GUI",
     description: "",
-    builtWith: [],
+    builtWith: [t.python],
     startDate: "Mar 12, 2021",
     srcUrl: "https://github.com/c-shubh/PDF-to-MP3-GUI",
   },
   {
     title: "To-do list GUI app",
     description: "",
-    builtWith: [],
+    builtWith: [t.python],
     startDate: "Jul 21, 2020",
     srcUrl: "https://github.com/c-shubh/TO-DO-list",
   },
   {
     title: "Text to ASCII",
     description: "",
-    builtWith: [],
+    builtWith: [t.python],
     startDate: "Jun 26, 2020",
     srcUrl: "https://github.com/c-shubh/text2ascii",
   },
   {
     title: "Python programs",
     description: "",
-    builtWith: [],
+    builtWith: [t.python],
     startDate: "Jun 2, 2020",
     srcUrl: "https://github.com/c-shubh/Python",
   },
