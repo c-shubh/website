@@ -5,7 +5,7 @@ export const projects: Project[] = [
   {
     title: "Raft Consensus Algorithm",
     description:
-      "This project implements Raft algorithm in Typescript using EventEmitter for timing and Express for inter-node communication.",
+      "This project implements [Raft algorithm](https://raft.github.io/) in Typescript using EventEmitter for timing and Express for inter-node communication.",
     builtWith: [t.expressjs, t.nodejs, t.typescript],
     startDate: "2023-04-15",
     srcUrl: "https://github.com/0xVikasRushi/raft-blockchain/",
@@ -33,13 +33,13 @@ export const projects: Project[] = [
     liveUrl: "https://ipfs-encrypt-web.vercel.app/",
     builtWith: [t.chakarui, t.nextjs, t.typescript, t.expressjs, t.nodejs],
     description:
-      "A website demoing the IPFS encrypt library used to encrypt and upload or decrypt and download files from IPFS.",
+      "A website demoing the [IPFS encrypt](https://github.com/0xVikasRushi/ipfs-encrypt) library used to encrypt and upload or decrypt and download files from IPFS.",
     startDate: "2023-02-17",
   },
   {
     title: "CVR Results",
     description:
-      "A small script to scrape results of students, given a range of roll numbers.",
+      "A small script to scrape results of students from [CVR results page](https://results.cvr.ac.in/cvrresults1/resulthome.php), given a range of roll numbers. The scraped result is exported as CSV.",
     builtWith: [t.nodejs, t.typescript],
     startDate: "2023-02-15",
     srcUrl: "https://github.com/c-shubh/cvr-results",
@@ -71,7 +71,8 @@ export const projects: Project[] = [
   },
   {
     title: "Daily Quote",
-    description: "Shows a quote for each day",
+    description:
+      "A react SPA which shows a quote from _Daily Inspiration From The Monk Who Sold His Ferrari by Robin Sharma_. Shows a unique quote each day of the year.",
     builtWith: [
       t.chakarui,
       t.nextjs,
@@ -86,21 +87,24 @@ export const projects: Project[] = [
   },
   {
     title: "ytm",
-    description: "",
+    description:
+      "A CLI music player that streams music from YouTube using [mpv](https://mpv.io/) and [yt-dlp](https://github.com/yt-dlp/yt-dlp). The music is stored in a simple file containing music name and the YouTube URL. [fzf](https://github.com/junegunn/fzf) is used for fuzzily searching the list of saved music.",
     builtWith: [t.python],
     startDate: "2022-12-05",
     srcUrl: "https://github.com/c-shubh/ytm",
   },
   {
-    title: "Chat grapher",
+    title: "Chat Grapher",
     srcUrl: "https://github.com/c-shubh/chat_grapher",
-    description: "",
-    builtWith: [t.tailwindcss, t.typescript],
+    description:
+      "A small site to visualize frequency of texts sent and received from an exported WhatsApp chat.",
+    builtWith: [t.html, t.tailwindcss, t.typescript],
     startDate: "Nov 12, 2022",
   },
   {
     title: "Rock Paper Scissors",
-    description: "",
+    description:
+      "A rock paper scissors game with a computer opponent. The game has multiple rounds and a score board to track score in each round. After 5 rounds, the player with majority of score is the winner.",
     builtWith: [t.html, t.css, t.typescript],
     startDate: "Aug 9, 2022",
     srcUrl: "https://github.com/c-shubh/odin-rock-paper-scissors",
@@ -108,7 +112,8 @@ export const projects: Project[] = [
   },
   {
     title: "Landing page",
-    description: "",
+    description:
+      "A landing page made according to the [specifications](https://www.theodinproject.com/lessons/foundations-landing-page#assignment) by The Odin Project.",
     builtWith: [t.html, t.css, t.javascript],
     startDate: "Aug 7, 2022",
     srcUrl: "https://github.com/c-shubh/odin-landing-page",
@@ -116,7 +121,7 @@ export const projects: Project[] = [
   },
   {
     title: "Recipes",
-    description: "",
+    description: "A static recipes website.",
     builtWith: [t.html, t.css],
     startDate: "Jul 19, 2022",
     srcUrl: "https://github.com/c-shubh/odin-recipes",
@@ -124,7 +129,8 @@ export const projects: Project[] = [
   },
   {
     title: "CVR Alumni Website",
-    description: "",
+    description:
+      "A static Alumni website made for CVR College of Engineering as a part of Webathon.",
     builtWith: [t.html, t.css, t.bootstrap, t.javascript],
     startDate: "2022-04-11",
     srcUrl: "https://github.com/c-shubh/cvr-alumni-website",
@@ -132,7 +138,8 @@ export const projects: Project[] = [
   },
   {
     title: "HackerNews client",
-    description: "",
+    description:
+      "Lists HackerNews posts using its [API](https://github.com/HackerNews/API).",
     builtWith: [t.html, t.css, t.javascript],
     startDate: "Aug 23, 2021",
     srcUrl: "https://github.com/c-shubh/hackernews",
@@ -140,7 +147,7 @@ export const projects: Project[] = [
   },
   {
     title: "BMI Calculator",
-    description: "",
+    description: "A simple BMI calculator.",
     builtWith: [t.html, t.css, t.javascript],
     startDate: "Jul 10, 2021",
     srcUrl: "https://github.com/c-shubh/bmi-calculator",
@@ -148,7 +155,8 @@ export const projects: Project[] = [
   },
   {
     title: "Codeforces charts",
-    description: "",
+    description:
+      "Uses the [Codeforces API](https://codeforces.com/apiHelp) to visualize the language usage frequency and contest rating trends of a user.",
     builtWith: [t.html, t.css, t.javascript],
     startDate: "May 24, 2021",
     srcUrl: "https://github.com/c-shubh/codeforces-charts",
@@ -156,7 +164,8 @@ export const projects: Project[] = [
   },
   {
     title: "Advice",
-    description: "",
+    description:
+      "Receive unlimited unsolicited advice in this beautifully designed web page.",
     builtWith: [t.html, t.css, t.javascript],
     startDate: "May 11, 2021",
     srcUrl: "https://github.com/c-shubh/advice",
@@ -164,7 +173,8 @@ export const projects: Project[] = [
   },
   {
     title: "Calculator",
-    description: "",
+    description:
+      "A calculator. Design inspired by the Windows 10 calculator program.",
     builtWith: [t.html, t.css, t.javascript],
     startDate: "May 8, 2021",
     srcUrl: "https://github.com/c-shubh/calculator",
@@ -172,7 +182,7 @@ export const projects: Project[] = [
   },
   {
     title: "Binary calculator",
-    description: "",
+    description: "A small and simple binary calculator.",
     builtWith: [t.html, t.css, t.javascript],
     startDate: "Apr 24, 2021",
     srcUrl: "https://github.com/c-shubh/binary-calculator",
@@ -180,28 +190,30 @@ export const projects: Project[] = [
   },
   {
     title: "PDF to MP3 GUI",
-    description: "",
+    description:
+      "A Tkinter GUI program to convert PDF and text to MP3 audio. It also has an inbuilt PDF viewer.",
     builtWith: [t.python],
     startDate: "Mar 12, 2021",
     srcUrl: "https://github.com/c-shubh/PDF-to-MP3-GUI",
   },
   {
     title: "To-do list GUI app",
-    description: "",
+    description: "A small to-do list application made with Tkinter.",
     builtWith: [t.python],
     startDate: "Jul 21, 2020",
     srcUrl: "https://github.com/c-shubh/TO-DO-list",
   },
   {
     title: "Text to ASCII",
-    description: "",
+    description:
+      "A CLI program to create ASCII text bannners. Supports multiple fonts.",
     builtWith: [t.python],
     startDate: "Jun 26, 2020",
     srcUrl: "https://github.com/c-shubh/text2ascii",
   },
   {
     title: "Python programs",
-    description: "",
+    description: "Random programs I made while learning Python.",
     builtWith: [t.python],
     startDate: "Jun 2, 2020",
     srcUrl: "https://github.com/c-shubh/Python",

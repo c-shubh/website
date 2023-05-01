@@ -3,6 +3,7 @@ import { Project } from "@/types";
 import { title } from "@/utils";
 import CodeIcon from "@mui/icons-material/Code";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
+import ReactMarkdown from "react-markdown";
 import { Tech, techIcons } from "../../data/tech";
 // @ts-ignore
 import Masonry from "@mui/lab/Masonry";
@@ -103,7 +104,13 @@ function Project({ project: p }: ProjectProps) {
     <Card>
       <CardHeader title={<ProjectTitle project={p} />} />
       <CardContent sx={{ paddingTop: 0 }}>
-        <Typography>{p.description}</Typography>
+        <ReactMarkdown
+          components={{
+            p: Typography,
+          }}
+        >
+          {p.description}
+        </ReactMarkdown>
         <Box
           display={"flex"}
           gap={1}
