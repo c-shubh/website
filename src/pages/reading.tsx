@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import { title } from "@/utils";
-import { Flex } from "@chakra-ui/react";
+import Stack from "@mui/material/Stack";
 import Head from "next/head";
 
 export default function Reading() {
@@ -9,9 +9,9 @@ export default function Reading() {
       <Head>
         <title>{title("Reading")}</title>
       </Head>
-      <Flex direction="column">
+      <Stack direction="column">
         <Navbar />
-      </Flex>
+      </Stack>
     </>
   );
 }

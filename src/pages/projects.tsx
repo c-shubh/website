@@ -1,10 +1,37 @@
 import Navbar from "@/components/Navbar";
 import { Project } from "@/types";
 import { title } from "@/utils";
-import { Card, CardBody, Container, Flex, Icon, Link, Stack, Text } from "@chakra-ui/react";
+import CodeIcon from "@mui/icons-material/Code";
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
+import Card from "@mui/material/Card";
+import Container from "@mui/material/Container";
+import Link from "@mui/material/Link";
+import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
 import dayjs from "dayjs";
 import Head from "next/head";
-import { FaCode, FaExternalLinkAlt } from "react-icons/fa";
+
+interface IconExternalLinkProps {
+  url: string;
+  icon: any;
+  title?: string;
+}
+
+function IconExternalLink({ url, icon: Icon, title }: IconExternalLinkProps) {
+  return (
+    <Link
+      href={url}
+      title={title}
+      sx={{
+        display: "flex",
+        alignItems: "center",
+      }}
+      target="_blank"
+    >
+      <Icon />
+    </Link>
+  );
+}
 
 interface ProjectsProps {
   projects: Project[];
@@ -16,33 +43,47 @@ export default function Projects({ projects }: ProjectsProps) {
       <Head>
         <title>{title("Projects")}</title>
       </Head>
-      <Flex direction="column">
+      <Stack direction="column">
         <Navbar />
-        <Stack spacing={2} as={Container} maxWidth={'container.lg'}>
+        <Stack spacing={2} component={Container} maxWidth={"container.lg"}>
           {projects.map((p) => (
             <Card key={p.title}>
-              <CardBody>
-                <Stack spacing={4} direction={"row"} alignItems={"center"}>
-                  <Text as={"h3"} fontSize={"md"} fontWeight={"bold"}>
-                    {p.title}
-                  </Text>
-                  {p.liveUrl ? (
-                    <Link href={p.liveUrl} title={"Preview"} display={'flex'} alignItems={'center'} isExternal>
-                      <Icon as={FaExternalLinkAlt} />
-                    </Link>
-                  ) : null}
-                  {p.srcUrl ? (
-                    <Link href={p.srcUrl} title={"Source code"} display={'flex'} alignItems={'center'} isExternal>
-                      <Icon as={FaCode} />
-                    </Link>
-                  ) : null}
-                </Stack>
-                <Text>{p.description}</Text>
-              </CardBody>
+              {/* <CardBody> */}
+              <Stack spacing={4} direction={"row"} alignItems={"center"}>
+                <Typography
+                  component={"h3"}
+                  fontSize={"md"}
+                  fontWeight={"bold"}
+                >
+                  {p.title}
+                </Typography>
+                {p.liveUrl ? (
+                  <IconExternalLink
+                    url={p.liveUrl}
+                    icon={OpenInNewIcon}
+                    title="Preview"
+                  />
+                ) : null}
+                {p.srcUrl ? (
+                  <Link
+                    href={p.srcUrl}
+                    title={"Source code"}
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                    }}
+                    target="_blank"
+                  >
+                    <CodeIcon />
+                  </Link>
+                ) : null}
+              </Stack>
+              <Typography>{p.description}</Typography>
+              {/* </CardBody> */}
             </Card>
           ))}
         </Stack>
-      </Flex>
+      </Stack>
     </>
   );
 }

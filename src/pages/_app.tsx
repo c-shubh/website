@@ -1,27 +1,16 @@
 import "@/styles/globals.css";
-import { ChakraProvider, extendTheme, ThemeConfig } from "@chakra-ui/react";
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
+import CssBaseline from "@mui/material/CssBaseline";
 import type { AppProps } from "next/app";
-
-const config: ThemeConfig = {
-  initialColorMode: "light",
-  useSystemColorMode: false,
-};
-
-const theme = extendTheme({
-  styles: {
-    global: {
-      "html, body, #__next": {
-        height: "100%",
-      },
-    },
-  },
-  config,
-});
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <ChakraProvider theme={theme}>
+    <>
+      <CssBaseline />
       <Component {...pageProps} />
-    </ChakraProvider>
+    </>
   );
 }

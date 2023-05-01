@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import { title } from "@/utils";
-import { Flex } from "@chakra-ui/react";
+import Stack from "@mui/material/Stack";
 import Head from "next/head";
 
 export default function Bookmarks() {
@@ -9,9 +9,9 @@ export default function Bookmarks() {
       <Head>
         <title>{title("Bookmarks")}</title>
       </Head>
-      <Flex direction="column">
+      <Stack direction="column">
         <Navbar />
-      </Flex>
+      </Stack>
     </>
   );
 }

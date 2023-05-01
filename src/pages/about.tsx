@@ -1,18 +1,17 @@
 import Navbar from "@/components/Navbar";
 import { title } from "@/utils";
-import { Flex } from "@chakra-ui/react";
+import Stack from "@mui/material/Stack";
 import Head from "next/head";
 
 export default function About() {
   return (
     <>
       <Head>
-        <title>{title('About')}</title>
+        <title>{title("About")}</title>
       </Head>
-      <Flex direction="column">
+      <Stack direction="column">
         <Navbar />
-      </Flex>
+      </Stack>
     </>
   );
 }
-

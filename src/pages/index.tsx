@@ -1,5 +1,5 @@
 import Navbar from "@/components/Navbar";
-import { Flex } from "@chakra-ui/react";
+import Box from "@mui/material/Box";
 import Head from "next/head";
 
 export const title = "Shubh's Website";
@@ -13,9 +13,15 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Flex direction={"column"} height={"full"}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          height: "full",
+        }}
+      >
         <Navbar />
-      </Flex>
+      </Box>
     </>
   );
 }
