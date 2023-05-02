@@ -138,19 +138,43 @@ interface ProjectsProps {
 }
 
 export default function Projects({ projects }: ProjectsProps) {
+  const theme = useTheme();
+
   return (
     <>
       <Head>
         <title>{title("Projects")}</title>
       </Head>
-      <Stack direction="column" mt={4}>
+      <Stack
+        direction="column"
+        mt={{
+          mobile: 1,
+        }}
+      >
         <Navbar />
-        <Container>
-          <Masonry columns={2} spacing={2}>
+        <Container
+          maxWidth={"laptop"}
+          sx={{
+            [theme.breakpoints.only("mobile")]: { paddingX: 0 },
+            pt: {
+              mobile: 1,
+              tablet: 2,
+            },
+          }}
+        >
+          <Masonry
+            columns={{
+              mobile: 1,
+              tablet: 2,
+              laptop: 3,
+            }}
+            spacing={2}
+            sx={{
+              marginX: 0,
+            }}
+          >
             {projects.map((p) => (
-              // <Grid item xs={6} key={p.title}>
               <Project key={p.title} project={p} />
-              // </Grid>
             ))}
           </Masonry>
         </Container>
@@ -159,6 +183,7 @@ export default function Projects({ projects }: ProjectsProps) {
   );
 }
 
+import { useTheme } from "@mui/material";
 import { projects } from "../../data/projects";
 export async function getStaticProps() {
   return {
