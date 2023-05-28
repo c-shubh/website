@@ -3,6 +3,22 @@ import { Tech as t } from "./tech";
 
 export const projects: Project[] = [
   {
+    title: "Guidr",
+    description:
+      "One stop for Guided path, learning resources, projects, research and development and latest trends",
+    startDate: "Oct 29, 2022",
+    builtWith: [
+      t.nextjs,
+      t.tailwindcss,
+      t.fastapi,
+      t.numpy,
+      t.pandas,
+      t.python,
+      t.mongodb,
+    ],
+    srcUrl: "https://github.com/xobe19/guidr",
+  },
+  {
     title: "Raft Consensus Algorithm",
     description:
       "This project implements [Raft algorithm](https://raft.github.io/) in Typescript using EventEmitter for timing and Express for inter-node communication.",
