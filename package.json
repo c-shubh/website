@@ -8,8 +8,8 @@
     "export": "next export && touch out/.nojekyll && cp CNAME out/",
     "start": "next start",
     "lint": "next lint",
-    "analyze": "ANALYZE=true next build",
-    "deploy": "NODE_DEBUG=gh-pages node deploy-gh-pages.js"
+    "analyze": "cross-env ANALYZE=true next build",
+    "deploy": "cross-env NODE_DEBUG=gh-pages node deploy-gh-pages.js"
   },
   "dependencies": {
     "@emotion/react": "^11.10.8",
@@ -32,5 +32,8 @@
     "react-icons": "^4.8.0",
     "react-markdown": "^8.0.7",
     "typescript": "5.0.4"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
   }
 }
