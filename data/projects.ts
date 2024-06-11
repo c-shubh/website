@@ -222,14 +222,14 @@ export const projects: Project[] = [
   {
     title: "Text to ASCII",
     description:
-      "A CLI program to create ASCII text bannners. Supports multiple fonts.",
+      "A CLI program to create ASCII text banners. Supports multiple fonts.",
     builtWith: [t.python],
     startDate: "Jun 26, 2020",
     srcUrl: "https://github.com/c-shubh/text2ascii",
   },
   {
     title: "Python programs",
-    description: "Random programs I made while learning Python.",
+    description: "Small programs I made while learning Python.",
     builtWith: [t.python],
     startDate: "Jun 2, 2020",
     srcUrl: "https://github.com/c-shubh/Python",

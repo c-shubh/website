@@ -1,26 +1,13 @@
 const subProcess = require("child_process");
 const ghpages = require("gh-pages");
 
-const lastCommitCommand = 'git log --pretty="%H" -- . | head -n1';
+const lastCommitCommand = "git log -1 --pretty=format:%H";
 subProcess.exec(lastCommitCommand, (error, stdout, stderr) => {
-  if (error) {
-    console.log(`error: ${error.message}`);
-    return;
-  }
-  if (stderr) {
-    console.log(`stderr: ${stderr}`);
-    return;
-  }
+  if (error) return console.log(`error: ${error.message}`);
+  if (stderr) return console.log(`stderr: ${stderr}`);
   ghpages.publish(
     "out",
-    {
-      message: `build from ${stdout}`,
-      dotfiles: true,
-    },
-    (err) => {
-      if (err) {
-        console.log(err);
-      }
-    }
+    { message: `build from ${stdout.trim()}`, dotfiles: true },
+    (err) => err && console.log(err)
   );
 });

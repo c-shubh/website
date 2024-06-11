@@ -1,10 +1,8 @@
 import AllInclusiveIcon from "@mui/icons-material/AllInclusive";
-import AutoStoriesIcon from "@mui/icons-material/AutoStories";
 import BookmarksIcon from "@mui/icons-material/Bookmarks";
 import BuildIcon from "@mui/icons-material/Build";
 import HomeIcon from "@mui/icons-material/Home";
 import MenuIcon from "@mui/icons-material/Menu";
-import PersonIcon from "@mui/icons-material/Person";
 import RssFeedIcon from "@mui/icons-material/RssFeed";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -26,8 +24,6 @@ const pages = [
   { icon: <BuildIcon />, title: "Projects", href: "/projects" },
   { icon: <RssFeedIcon />, title: "Blog", href: "/blog" },
   { icon: <BookmarksIcon />, title: "Bookmarks", href: "/bookmarks" },
-  { icon: <AutoStoriesIcon />, title: "Reading", href: "/reading" },
-  { icon: <PersonIcon />, title: "About", href: "/about" },
 ];
 
 function ElevationScroll(props: { children: ReactElement }) {
