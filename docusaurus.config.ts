@@ -10,16 +10,16 @@ const config: Config = {
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  // TODO: use https://cshubh.com/ below once /projects pages is done
-  url: "https://your-docusaurus-site.example.com",
+  url: "https://cshubh.com",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
+  trailingSlash: false,
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "facebook", // Usually your GitHub org/user name.
-  projectName: "docusaurus", // Usually your repo name.
+  organizationName: "c-shubh", // Usually your GitHub org/user name.
+  projectName: "website", // Usually your repo name.
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -64,7 +64,7 @@ const config: Config = {
       title: siteTitle,
       logo: {
         alt: "My Site Logo",
-        // Todo: design and set a logo
+        // TODO: design and set a logo
         src: "img/logo.svg",
       },
       items: [
