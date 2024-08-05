@@ -1,8 +1,8 @@
 import dayjs from "dayjs";
 import ReactMarkdown from "react-markdown";
-import type { Project } from "./projects";
-import { projects } from "./projects";
-import { type Tech, techIcons } from "./tech";
+import type { Project } from "./_projects";
+import { projects } from "./_projects";
+import { type Tech, techIcons } from "./_tech";
 // @ts-ignore
 import CodeIcon from "@mui/icons-material/Code";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";

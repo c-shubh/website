@@ -1,5 +1,5 @@
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import TechIUse from "./_tech-i-use.mdx";
+import TechIUse from "./tech-i-use.mdx";
 import Heading from "@theme/Heading";
 import Layout from "@theme/Layout";
 import clsx from "clsx";
@@ -29,7 +29,8 @@ function HomepageHeader() {
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <Layout description="Description will go into a meta tag in <head />">
+    // TODO: add description for social card
+    <Layout>
       <HomepageHeader />
       <main>
         {

@@ -53,7 +53,8 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: "img/docusaurus-social-card.jpg",
+    // TODO: add social card image
+    // image: "img/docusaurus-social-card.jpg",
     navbar: {
       title: siteTitle,
       logo: {

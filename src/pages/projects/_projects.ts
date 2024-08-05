@@ -1,4 +1,4 @@
-import { Tech as t, type Tech } from "./tech";
+import { Tech as t, type Tech } from "./_tech";
 
 export interface Project {
   title: string;
