@@ -195,5 +195,5 @@ export default function Projects({ projects }: ProjectsProps) {
 }
 
 export function getProjects(): Project[] {
-  return projects.sort((a, b) => dayjs(b.startDate).diff(dayjs(a.startDate)));
+  return projects;
 }

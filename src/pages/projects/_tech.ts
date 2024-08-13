@@ -8,6 +8,7 @@ import {
   SiExpo,
   SiExpress,
   SiFastapi,
+  SiGo,
   SiHtml5,
   SiJavascript,
   SiMongodb,
@@ -33,6 +34,7 @@ export enum Tech {
   expressjs = "Express.js",
   fastapi = "FastAPI",
   fusejs = "Fuse.js",
+  go = "Go",
   html = "HTML",
   javascript = "JavaScript",
   mongodb = "MongoDB",
@@ -52,6 +54,7 @@ export const techIcons: {
   [key in Tech]: { icon?: IconType; color?: string };
 } = {
   [t.angular]: { color: "#DD0031", icon: SiAngular },
+  [t.go]: { color: "#00ADD8", icon: SiGo },
   [t.numpy]: { color: "#013243", icon: SiNumpy },
   [t.pandas]: { color: "#150458", icon: SiPandas },
   [t.bootstrap]: { color: "#7952B3", icon: SiBootstrap },
