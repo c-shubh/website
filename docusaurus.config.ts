@@ -24,6 +24,25 @@ const config: Config = {
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
 
+  plugins: [
+    [
+      "@docusaurus/plugin-client-redirects",
+      {
+        // Client side redirects
+        redirects: [
+          {
+            from: "/github",
+            to: "https://github.com/c-shubh/",
+          },
+          {
+            from: "/linkedin",
+            to: "https://www.linkedin.com/in/c-shubh/",
+          },
+        ] as RedirectRule[],
+      },
+    ],
+  ],
+
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
@@ -77,6 +96,11 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
+};
+
+type RedirectRule = {
+  to: string;
+  from: string | string[];
 };
 
 export default config;
