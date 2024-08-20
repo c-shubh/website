@@ -1,4 +1,8 @@
 shubh:
   name: Shubh A Chudasama
-  url: https://github.com/c-shubh
+  url: /contact
   image_url: /img/profile-pic.png
+  title: Your neighborhood geek
+  socials:
+    linkedin: c-shubh
+    github: c-shubh
