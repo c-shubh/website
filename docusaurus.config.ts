@@ -84,9 +84,9 @@ const config: Config = {
         src: "img/logo.svg",
       },
       items: [
-        // TODO: projects page
         { to: "/projects", label: "Projects", position: "left" },
         { to: "/blog", label: "Blog", position: "left" },
+        { to: "/contact", label: "Contact", position: "left" },
       ],
     },
     footer: {
