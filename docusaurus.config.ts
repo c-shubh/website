@@ -83,7 +83,7 @@ const config: Config = {
       logo: {
         alt: "My Site Logo",
         // TODO: design and set a logo
-        src: "img/logo.svg",
+        src: "img/logo.svg?v=1",
       },
       items: [
         { to: "/projects", label: "🛠️ Projects", position: "left" },

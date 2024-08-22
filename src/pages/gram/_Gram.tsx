@@ -4,11 +4,14 @@ import Grid from "@mui/material/Grid";
 interface ItemData {
   img: string;
   title: string;
+  postDate?: string;
 }
 
 /* prettier-ignore */
 const itemData: ItemData[] = [
+  { img: "/img/gram/cropped_20240707_154209.webp", title: "Flower 🌻", postDate: '2024-08-22' },
   { img: "/img/gram/IMG_20240822_003512_758.jpg", title: "🏆", },
+  { img: "/img/gram/20240725_084302.webp", title: "College", },
   { img: "/img/gram/IMG_20240809_235629_135.jpg", title: "Sky", },
   { img: "/img/gram/InShot_20240729_085929792.jpg", title: "Hand painted fridge magnets by @artsy.dhruti", },
   { img: "/img/gram/20240627_163010.webp", title: "Rain", },
