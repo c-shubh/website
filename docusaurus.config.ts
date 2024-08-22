@@ -1,13 +1,13 @@
-import { themes as prismThemes } from "prism-react-renderer";
-import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
+import type { Config } from "@docusaurus/types";
+import { themes as prismThemes } from "prism-react-renderer";
 
-const siteTitle = "Shubh's Digital Garden 🌱";
+const siteTitle = "Shubh's Digital Garden";
 
 const config: Config = {
   title: siteTitle,
   tagline: "Dinosaurs are cool",
-  favicon: "img/favicon.ico",
+  favicon: "favicon.ico",
 
   // Set the production url of your site here
   url: "https://cshubh.com",
@@ -84,9 +84,9 @@ const config: Config = {
         src: "img/logo.svg",
       },
       items: [
-        { to: "/projects", label: "Projects", position: "left" },
-        { to: "/blog", label: "Blog", position: "left" },
-        { to: "/contact", label: "Contact", position: "left" },
+        { to: "/projects", label: "🛠️ Projects", position: "left" },
+        { to: "/blog", label: "✍️ Blog", position: "left" },
+        { to: "/contact", label: "📧 Contact", position: "left" },
       ],
     },
     footer: {
@@ -98,7 +98,63 @@ const config: Config = {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
+    metadata: [
+      /* generated using https://realfavicongenerator.net/ */
+      { name: "msapplication-TileColor", content: "#2d89ef" },
+    ],
   } satisfies Preset.ThemeConfig,
+
+  /* generated using https://realfavicongenerator.net/ */
+  headTags: [
+    {
+      tagName: "link",
+      attributes: {
+        rel: "apple-touch-icon",
+        sizes: "180x180",
+        href: "/apple-touch-icon.png?v=1",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "icon",
+        type: "image/png",
+        sizes: "32x32",
+        href: "/favicon-32x32.png?v=1",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "icon",
+        type: "image/png",
+        sizes: "16x16",
+        href: "/favicon-16x16.png?v=1",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "manifest",
+        href: "/site.webmanifest?v=1",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "mask-icon",
+        href: "/safari-pinned-tab.svg?v=1",
+        color: "#5bbad5",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "shortcut icon",
+        href: "/favicon.ico?v=1",
+      },
+    },
+  ],
 };
 
 type RedirectRule = {
