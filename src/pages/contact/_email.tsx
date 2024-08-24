@@ -1,3 +1,4 @@
+import Button from "@site/src/components/Button";
 import { useState } from "react";
 
 const cipherText = "ynahn.iysg@msgor.ius";
@@ -24,9 +25,12 @@ export function Email() {
   return (
     <span>
       {!visible || cipher(cipherText, magicNumber, true)}{" "}
-      <button onClick={() => setVisible(!visible)}>
-        {!visible ? "Show" : "Hide"} email
-      </button>
+      <Button
+        label={`${!visible ? "Show" : "Hide"} email`}
+        onClick={() => setVisible(!visible)}
+        variant="primary"
+        style={{ padding: "0.1rem 0.5rem", margin: "0 0.1rem" }}
+      />
     </span>
   );
 }
