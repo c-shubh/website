@@ -1,3 +1,4 @@
+import Box from "@mui/material/Box";
 import clsx from "clsx";
 import { CSSProperties, MouseEventHandler } from "react";
 
@@ -64,7 +65,8 @@ export default function Button({
   // If the button is disabled, set the clickHandler to null.
   const clickHandler = disabled ? null : onClick;
   return (
-    <button
+    <Box
+      component={"button"}
       onClick={clickHandler}
       className={clsx(
         "button",
@@ -75,11 +77,11 @@ export default function Button({
         disabledClass,
         className
       )}
-      style={style}
+      sx={style}
       role="button"
       aria-disabled={disabled}
     >
       {label}
-    </button>
+    </Box>
   );
 }

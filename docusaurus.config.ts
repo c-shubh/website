@@ -89,6 +89,7 @@ const config: Config = {
         { to: "/projects", label: "🛠️ Projects", position: "left" },
         { to: "/blog", label: "✍️ Blog", position: "left" },
         { to: "/gram", label: "📸 Gram", position: "left" },
+        { to: "/quotes", label: "🗨️ Quotes", position: "left" },
         { to: "/contact", label: "📧 Contact", position: "left" },
       ],
     },

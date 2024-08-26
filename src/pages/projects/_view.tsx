@@ -1,8 +1,7 @@
-import dayjs from "dayjs";
 import ReactMarkdown from "react-markdown";
 import type { Project } from "./_projects";
 import { projects } from "./_projects";
-import { type Tech, techIcons } from "./_tech";
+import { techIcons, type Tech } from "./_tech";
 // @ts-ignore
 import CodeIcon from "@mui/icons-material/Code";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
@@ -161,7 +160,7 @@ export const theme = createTheme({
 });
 
 export default function Projects({ projects }: ProjectsProps) {
-  // TODO: card dark theme
+  // TODO: card dark theme https://webreaper.dev/posts/material-ui-theme-with-docusaurus/
   return (
     <ThemeProvider theme={theme}>
       <Container

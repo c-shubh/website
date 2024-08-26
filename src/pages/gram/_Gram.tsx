@@ -29,10 +29,13 @@ function Image({ data }: { data: ItemData }) {
   // TODO: compress images, takes too long to load all images on a slow connection
   return (
     <Box sx={{ flex: 1, aspectRatio: "1 / 1" }} display={"flex"}>
-      <img
+      <Box
+        component={"img"}
         srcSet={`${data.img}?fit=crop&auto=format&dpr=2 2x`}
         src={`${data.img}?fit=crop&auto=format`}
-        style={{ width: "100%", height: "100%", objectFit: "cover" }}
+        width={"100%"}
+        height={"100%"}
+        sx={{ objectFit: "cover" }}
         alt={data.title}
         title={data.title}
         loading="lazy"

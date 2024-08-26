@@ -1,3 +1,4 @@
+import Box from "@mui/material/Box";
 import { FaGithub, FaHackerrank } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
 
@@ -9,14 +10,16 @@ interface Service {
 
 function Layout({ data }: { data: Service }) {
   return (
-    <div style={{ margin: "0.5em 0", display: "inline-block" }}>
+    <Box marginY={"0.5em"} display={"inline-block"}>
       {data.icon({
         color: data.color,
         fontSize: 25,
         style: { marginBottom: "-0.210em" },
       })}
-      <span style={{ marginInlineStart: "0.4em" }}>{data.name}</span>
-    </div>
+      <Box component={"span"} marginInlineStart={"0.4em"}>
+        {data.name}
+      </Box>
+    </Box>
   );
 }
 

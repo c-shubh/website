@@ -29,6 +29,8 @@ export function Email() {
         label={`${!visible ? "Show" : "Hide"} email`}
         onClick={() => setVisible(!visible)}
         variant="primary"
+        // These go to the sx prop of Button, so it's fine as it,
+        // no need to use Box or sx manually here
         style={{ padding: "0.1rem 0.5rem", margin: "0 0.1rem" }}
       />
     </span>
