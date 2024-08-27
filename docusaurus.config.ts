@@ -60,7 +60,7 @@ const config: Config = {
         docs: false,
         blog: {
           showReadingTime: true,
-          // TODO: Please change this to your repo.
+          // TODO: make repo public
           // Remove this to remove the "edit this page" links.
           editUrl: "https://github.com/c-shubh/website/tree/main/",
         },
