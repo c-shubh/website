@@ -1,8 +1,9 @@
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import TechIUse from "./tech-i-use.mdx";
+import Box from "@mui/material/Box";
 import Heading from "@theme/Heading";
 import Layout from "@theme/Layout";
 import clsx from "clsx";
+import TechIUse from "./tech-i-use.mdx";
 
 import styles from "./home.module.css";
 
@@ -13,6 +14,12 @@ function HomepageHeader() {
       <div className="container">
         <Heading as="h1" className="hero__title">
           Shubh A Chudasama
+          <Box
+            component={"img"}
+            src="/img/hello.gif"
+            alt="Hello bubble"
+            width={100}
+          />
         </Heading>
         <p className="hero__subtitle">
           {

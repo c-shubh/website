@@ -4,6 +4,23 @@ import { themes as prismThemes } from "prism-react-renderer";
 
 const siteTitle = "Shubh's Digital Garden";
 
+const copyrightText = (() => {
+  const yearName = `Copyright © ${new Date().getFullYear()} Shubh A Chudasama`;
+  const gif = `<img src="/img/fire.gif" style="width: 1.5em; margin: 0 0 -0.1em -0.1em;" alt="Fire">`;
+  const a = (href: string, text: string) =>
+    `<a href="${href}" target="_blank" rel="license noopener noreferrer">${text}</a>`;
+  const codeLicense = a(
+    "https://spdx.org/licenses/AGPL-3.0-only.html",
+    "AGPLv3"
+  );
+  const textLicense = a(
+    "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "CC BY-NC-SA 4.0"
+  );
+  const license = `Code licensed under ${codeLicense}, content under ${textLicense}.`;
+  return `${yearName}${gif}<br>${license}`;
+})();
+
 const config: Config = {
   title: siteTitle,
   tagline: "Dinosaurs are cool",
@@ -96,7 +113,7 @@ const config: Config = {
     footer: {
       style: "dark",
       links: [],
-      copyright: `Copyright © ${new Date().getFullYear()} Shubh A Chudasama.<br>Code licensed under <a href="https://spdx.org/licenses/AGPL-3.0-only.html" target="_blank" rel="license noopener noreferrer">AGPLv3</a>, content under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="license noopener noreferrer">CC BY-NC-SA 4.0</a>.`,
+      copyright: copyrightText,
     },
     prism: {
       theme: prismThemes.github,
