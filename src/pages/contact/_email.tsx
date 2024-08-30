@@ -22,6 +22,7 @@ const cipher = (str: string, shift: number, decipher = false) => {
 export function Email() {
   const [visible, setVisible] = useState(false);
 
+  // TODO: show/hide email button spacing issue in production
   return (
     <span>
       {!visible || cipher(cipherText, magicNumber, true)}{" "}
