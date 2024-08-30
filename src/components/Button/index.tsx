@@ -1,11 +1,11 @@
 import Box from "@mui/material/Box";
 import clsx from "clsx";
-import { CSSProperties, MouseEventHandler } from "react";
+import { ButtonHTMLAttributes, CSSProperties, MouseEventHandler } from "react";
 
 /* https://docusaurus.community/knowledge/component-library/new/Button/ */
 
 // Define the Button type to control the props that can be passed to the Button component.
-interface ButtonProps {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   // The size prop can be one of the following values: 'sm', 'lg', 'small', 'medium', 'large', or null.
   // We'll convert 'small' to 'sm' and 'large' to 'lg' in the component. 'medium' will be considered null.
   size?: "sm" | "lg" | "small" | "medium" | "large" | null;
@@ -47,6 +47,7 @@ export default function Button({
   style,
   label,
   onClick,
+  ...otherProps
 }: ButtonProps) {
   // Map the size prop values to corresponding CSS classes.
   const sizeMap = {
@@ -80,6 +81,7 @@ export default function Button({
       sx={style}
       role="button"
       aria-disabled={disabled}
+      {...otherProps}
     >
       {label}
     </Box>
