@@ -96,7 +96,7 @@ const config: Config = {
     footer: {
       style: "dark",
       links: [],
-      copyright: `Copyright © ${new Date().getFullYear()} Shubh A Chudasama. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Shubh A Chudasama.<br>Code licensed under <a href="https://spdx.org/licenses/AGPL-3.0-only.html" target="_blank" rel="license noopener noreferrer">AGPLv3</a>, content under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="license noopener noreferrer">CC BY-NC-SA 4.0</a>.`,
     },
     prism: {
       theme: prismThemes.github,

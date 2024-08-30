@@ -63,7 +63,7 @@ export default function Button({
   const blockClass = block ? "button--block" : "";
   const disabledClass = disabled ? "disabled" : "";
   // If the button is disabled, set the clickHandler to null.
-  const clickHandler = disabled ? null : onClick;
+  const clickHandler = disabled ? undefined : onClick;
   return (
     <Box
       component={"button"}
