@@ -1,26 +1,36 @@
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Box from "@mui/material/Box";
+import { useTheme } from "@mui/material/styles";
 import Heading from "@theme/Heading";
 import Layout from "@theme/Layout";
 import clsx from "clsx";
+import styles from "./home.module.css";
 import TechIUse from "./tech-i-use.mdx";
 
-import styles from "./home.module.css";
-
 function HomepageHeader() {
-  const { siteConfig } = useDocusaurusContext();
+  const theme = useTheme();
+
   return (
     <header className={clsx("hero hero--primary", styles.heroBanner)}>
       <div className="container">
-        <Heading as="h1" className="hero__title">
+        <Box
+          component={Heading}
+          as="h1"
+          className="hero__title"
+          sx={{
+            wordBreak: "keep-all",
+            [theme.breakpoints.down("sm")]: { fontSize: "2.5rem" },
+          }}
+        >
           Shubh A Chudasama
           <Box
             component={"img"}
             src="/img/hello.gif"
             alt="Hello bubble"
             width={100}
+            display={{ xs: "none", md: "initial" }}
           />
-        </Heading>
+        </Box>
         <p className="hero__subtitle">
           {
             // TODO: <Link href="http://catb.org/jargon/html/H/hacker.html">Hacker</Link>
