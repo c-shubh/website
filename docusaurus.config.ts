@@ -1,3 +1,4 @@
+import { Options as BlogPluginOptions } from "@docusaurus/plugin-content-blog";
 import type * as Preset from "@docusaurus/preset-classic";
 import type { Config } from "@docusaurus/types";
 import { themes as prismThemes } from "prism-react-renderer";
@@ -67,6 +68,28 @@ const config: Config = {
           },
         ] satisfies RedirectRule[],
       },
+    ],
+    [
+      "@docusaurus/plugin-content-blog",
+      {
+        /**
+         * Required for any multi-instance plugin
+         */
+        id: "gram",
+        /**
+         * URL route for the blog section of your site.
+         * *DO NOT* include a trailing slash.
+         */
+        routeBasePath: "gram",
+        /**
+         * Path to data on filesystem relative to site dir.
+         */
+        path: "./gram",
+        // disable sidebar
+        blogSidebarCount: 0,
+        blogListComponent: "@theme/BlogListPage",
+        showReadingTime: false,
+      } satisfies BlogPluginOptions,
     ],
   ],
 
