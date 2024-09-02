@@ -6,6 +6,11 @@ export interface Quote {
 
 export const quotes: Quote[] = [
   {
+    text: "A half truth is a whole lie.",
+    attribution: "[Yiddish proverb](https://youtu.be/OCLk1Dy7-Jo?t=276)",
+    dateAdded: "2024-09-03",
+  },
+  {
     text: `We should be careful of each other  
 We should be kind  
 While there is still time`,

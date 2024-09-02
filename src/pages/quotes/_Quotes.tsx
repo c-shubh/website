@@ -67,10 +67,11 @@ function MarkdownView({ children }: { children: string }) {
 function QuoteView({ quote }: { quote: Quote }) {
   return (
     <>
-      <blockquote>
+      <code>{quote.dateAdded}</code>
+      <Box component={"blockquote"} marginTop={"var(--ifm-spacing-vertical)"}>
         <MarkdownView>{quote.text}</MarkdownView>
         <MarkdownView>{`~ ${quote.attribution}`}</MarkdownView>
-      </blockquote>
+      </Box>
       <hr />
     </>
   );
