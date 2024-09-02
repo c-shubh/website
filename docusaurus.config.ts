@@ -18,7 +18,7 @@ const copyrightText = (() => {
     "CC BY-NC-SA 4.0"
   );
   const license = `Code licensed under ${codeLicense}, content under ${textLicense}.`;
-  return `${yearName}${gif}<br>${license}`;
+  return `${yearName} ${gif}<br>${license}`;
 })();
 
 const config: Config = {
@@ -105,6 +105,7 @@ const config: Config = {
       items: [
         { to: "/projects", label: "🛠️ Projects", position: "left" },
         { to: "/blog", label: "✍️ Blog", position: "left" },
+        { to: "/links", label: "🔗 Links", position: "left" },
         { to: "/gram", label: "📸 Gram", position: "left" },
         { to: "/quotes", label: "🗨️ Quotes", position: "left" },
         { to: "/contact", label: "📧 Contact", position: "left" },
