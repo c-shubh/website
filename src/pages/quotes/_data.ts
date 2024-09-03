@@ -6,6 +6,12 @@ export interface Quote {
 
 export const quotes: Quote[] = [
   {
+    text: "And when nobody wakes you up in the morning, and when nobody waits for you at night, and when you can do whatever you want. What do you call it, freedom or loneliness?",
+    attribution:
+      "[Charles Bukowski](https://x.com/amor_fatti/status/1830569781017141661)",
+    dateAdded: "2024-09-03",
+  },
+  {
     text: "A half truth is a whole lie.",
     attribution: "[Yiddish proverb](https://youtu.be/OCLk1Dy7-Jo?t=276)",
     dateAdded: "2024-09-03",
