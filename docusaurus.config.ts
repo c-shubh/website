@@ -65,6 +65,12 @@ const config: Config = {
             from: "/linkedin",
             to: "https://www.linkedin.com/in/c-shubh/",
           },
+          {
+            // This website used to have a /links page with list of links to interesting stuff.
+            // Now it's merged into /library.
+            from: "/links",
+            to: "/library",
+          },
         ] satisfies RedirectRule[],
       },
     ],
@@ -105,7 +111,7 @@ const config: Config = {
       items: [
         { to: "/projects", label: "🛠️ Projects", position: "left" },
         { to: "/blog", label: "✍️ Blog", position: "left" },
-        { to: "/links", label: "🔗 Links", position: "left" },
+        { to: "/library", label: "🗂️ Library", position: "left" },
         { to: "/gram", label: "📸 Gram", position: "left" },
         { to: "/quotes", label: "🗨️ Quotes", position: "left" },
         { to: "/contact", label: "📧 Contact", position: "left" },

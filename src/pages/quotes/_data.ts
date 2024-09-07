@@ -6,6 +6,18 @@ export interface Quote {
 
 export const quotes: Quote[] = [
   {
+    text: "Between stimulus and response, there is a space. In that space lies our freedom and our power to choose our response. In our response lies our growth and our happiness.",
+    attribution:
+      "[Victor Frankl](https://medium.com/@colemanabaker/between-stimulus-and-response-there-is-a-space-ad5261e3c74e)",
+    dateAdded: "2024-09-07",
+  },
+  {
+    text: "It is not in our control to have everything turn out exactly as we want, but it is in our control to control how we respond to what happens",
+    attribution:
+      "[Epictetus (Stoic philosopher)](https://youtu.be/rXDjiXK_Szg?t=791)",
+    dateAdded: "2024-09-07",
+  },
+  {
     text: "Clear thinking becomes clear writing; one can't exist without the other.",
     attribution:
       "[William Zinsser, On Writing Well: The Classic Guide to Writing Nonfiction](https://youtu.be/Xw3SkhB4dMk?t=875)",
