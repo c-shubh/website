@@ -6,6 +6,12 @@ export interface Quote {
 
 export const quotes: Quote[] = [
   {
+    text: "Clear thinking becomes clear writing; one can't exist without the other.",
+    attribution:
+      "[William Zinsser, On Writing Well: The Classic Guide to Writing Nonfiction](https://youtu.be/Xw3SkhB4dMk?t=875)",
+    dateAdded: "2024-09-07",
+  },
+  {
     text: "And when nobody wakes you up in the morning, and when nobody waits for you at night, and when you can do whatever you want. What do you call it, freedom or loneliness?",
     attribution:
       "[Charles Bukowski](https://x.com/amor_fatti/status/1830569781017141661)",
