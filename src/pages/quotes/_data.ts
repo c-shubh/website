@@ -5,6 +5,22 @@ export interface Quote {
 }
 
 export const quotes: Quote[] = [
+  // https://zenhabits.net/breathe/ this one's great too
+  {
+    text: `Breathe.
+
+If you feel overwhelmed, breathe. It will calm you and release the tensions.
+
+If you are worried about something coming up, or caught up in something that already happened, breathe. It will bring you back to the present.
+
+If you are moving too fast, breathe. It will remind you to slow down, and enjoy life more.
+
+Breathe, and enjoy each moment of this life. They’re too fleeting and few to waste.
+
+`,
+    attribution: "[Leo Babauta](https://zenhabits.net/more/)",
+    dateAdded: "2024-09-09",
+  },
   {
     text: "Between stimulus and response, there is a space. In that space lies our freedom and our power to choose our response. In our response lies our growth and our happiness.",
     attribution:
