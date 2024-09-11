@@ -21,3 +21,5 @@ yarn-error.log*
 .vscode/
 
 .obsidian/
+.compiled/
+__pycache__/

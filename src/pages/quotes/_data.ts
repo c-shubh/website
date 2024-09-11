@@ -5,6 +5,40 @@ export interface Quote {
 }
 
 export const quotes: Quote[] = [
+  {
+    text: "Inaction is a slow death.",
+    attribution:
+      "[Joey Schweitzer](https://www.betterideas.com/blogs/resources/inaction-is-a-slow-death)",
+    dateAdded: "2024-09-10",
+  },
+  {
+    text: "...the second best time is now.",
+    attribution:
+      "[Unknown](https://english.stackexchange.com/questions/603690/origins-of-the-phrase-the-best-time-to-plant-a-tree-was-30-years-ago-the-secon)",
+    dateAdded: "2024-09-10",
+  },
+  {
+    text: "Crypto is like catnip for programmers. It is hard to keep us away from it, because it's challenging and fun to play with. And programmers respond very badly to the insinuation that they're not clever enough to do something.",
+    attribution:
+      "[maciej](https://blog.pinboard.in/2013/04/the_matasano_crypto_challenges/)",
+    dateAdded: "2024-09-10",
+  },
+  {
+    text: "Empty your mind, be formless. Shapeless, like water. If you put water into a cup, it becomes the cup. You put water into a bottle and it becomes the bottle. You put it in a teapot it becomes the teapot. Now, water can flow or it can crash. Be water my friend.",
+    attribution: "[Bruce Lee](https://zenhabits.net/mind-like-water/)",
+    dateAdded: "2024-09-10",
+  },
+  {
+    text: "If you’re not sure why you’re doing something, you can never do enough of it.",
+    attribution: "_David Allen, Getting Things Done",
+    dateAdded: "2024-09-09",
+  },
+  {
+    text: "The distance between dreams and reality is called discipline.",
+    attribution:
+      "[Paulo Coelho](https://x.com/readswithravi/status/1832728085810364454)",
+    dateAdded: "2024-09-09",
+  },
   // https://zenhabits.net/breathe/ this one's great too
   {
     text: `Breathe.
