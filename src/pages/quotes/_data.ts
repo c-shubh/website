@@ -6,6 +6,60 @@ export interface Quote {
 
 export const quotes: Quote[] = [
   {
+    text: "If you don't have awareness, you can't change something.",
+    attribution: "[Leo Babauta](https://zenhabits.net/break-phone-dependence/)",
+    dateAdded: "2024-09-12",
+  },
+  {
+    text: "Rejoice and delight in yourself, no matter how it\u2019s going!",
+    attribution: "[Leo Babauta](https://zenhabits.net/strong-sense-of-self/)",
+    dateAdded: "2024-09-12",
+  },
+  {
+    text: "We don\u2019t usually realize we\u2019re craving quiet. But in my experience, this is where the deepest experience of life lies, in the quietude.",
+    attribution: "[Leo Babauta](https://zenhabits.net/quietude/)",
+    dateAdded: "2024-09-12",
+  },
+  {
+    text: "In stillness, the world is restored.",
+    attribution: "[Lao Tzu](https://zenhabits.net/quietude/)",
+    dateAdded: "2024-09-12",
+  },
+  {
+    text: "The quieter you become, the more you are able to hear.",
+    attribution: "[Rumi](https://zenhabits.net/quietude/)",
+    dateAdded: "2024-09-12",
+  },
+  {
+    text: "The first step in the acquisition of wisdom is silence, the second listening, the third memory, the fourth practice, the fifth teaching others.",
+    attribution:
+      "[Robert Greene](https://x.com/readswithravi/status/1833536171944907186)",
+    dateAdded: "2024-09-12",
+  },
+  {
+    text: "As long as you know your intentions are pure, never stress yourself about anything or anyone. you have to trust that you will always end up being where you\u2019re meant to be & that it\u2019s never your loss respectfully.",
+    attribution: "[y](https://x.com/ysuckme/status/1833669742244065573)",
+    dateAdded: "2024-09-12",
+  },
+  {
+    text: "Reading is essential for those who seek to rise above the ordinary.",
+    attribution:
+      "[Jim Rohn](https://x.com/readswithravi/status/1833828000732709179)",
+    dateAdded: "2024-09-12",
+  },
+  {
+    text: "After getting what you manifested, ask for discipline to keep it and wisdom to multiply it.",
+    attribution:
+      "[Unknown](https://x.com/ChiefLord999/status/1833580941257896355)",
+    dateAdded: "2024-09-12",
+  },
+  {
+    text: "Difficulty is what wakes up the genius.",
+    attribution:
+      "[Nassim N. Taleb](https://x.com/readswithravi/status/1833998449630454089)",
+    dateAdded: "2024-09-12",
+  },
+  {
     text: "Inaction is a slow death.",
     attribution:
       "[Joey Schweitzer](https://www.betterideas.com/blogs/resources/inaction-is-a-slow-death)",
