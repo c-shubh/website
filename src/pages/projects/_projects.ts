@@ -188,7 +188,8 @@ export const projects: Project[] = [
       t.mongodb,
     ],
     startDate: "2023-03-04",
-    liveUrl: "https://c-shubh.github.io/fullstackopen/phonebook/",
+    // hide liveUrl for now since render backend keeps crashing
+    // liveUrl: "https://c-shubh.github.io/fullstackopen/phonebook/",
     srcUrl:
       "https://github.com/c-shubh/fullstackopen/tree/main/part2/phonebook",
   },
@@ -200,7 +201,8 @@ export const projects: Project[] = [
     builtWith: [t.html, t.css, t.javascript],
     startDate: "Aug 7, 2022",
     srcUrl: "https://github.com/c-shubh/odin-landing-page",
-    liveUrl: "https://c-shubh.github.io/odin-landing-page/",
+    // hide liveUrl for now since the page is not responsive
+    // liveUrl: "https://c-shubh.github.io/odin-landing-page/",
   },
   {
     title: "Recipes",
@@ -208,7 +210,8 @@ export const projects: Project[] = [
     builtWith: [t.html, t.css],
     startDate: "Jul 19, 2022",
     srcUrl: "https://github.com/c-shubh/odin-recipes",
-    liveUrl: "https://c-shubh.github.io/odin-recipes/",
+    // hide liveUrl for now since the page is not yet styled
+    // liveUrl: "https://c-shubh.github.io/odin-recipes/",
   },
   {
     title: "Text to ASCII",
