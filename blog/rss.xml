@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Shubh's Digital Garden Blog</title>
+        <link>https://cshubh.com/blog</link>
+        <description>Shubh's Digital Garden Blog</description>
+        <lastBuildDate>Sun, 01 Sep 2024 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
+        <item>
+            <title><![CDATA[TIL Pizza box servers]]></title>
+            <link>https://cshubh.com/blog/til-pizza-box-servers</link>
+            <guid>https://cshubh.com/blog/til-pizza-box-servers</guid>
+            <pubDate>Sun, 01 Sep 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[TIL that those flat servers used in data centers are called pizza box servers. I came across this term while reading Computer Networking: A Top-Down Approach 8th Edition.]]></description>
+            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" src="https://cshubh.com/assets/images/pizza-box-servers-6bcbd183f49b56a52f7168d2bfc3f51f.jpg" width="450" height="327" class="img_ev3q"></p>
+<p>TIL that those flat servers used in data centers are called pizza box servers. I came across this term while reading <a href="https://gaia.cs.umass.edu/kurose_ross/index.php" target="_blank" rel="noopener noreferrer">Computer Networking: A Top-Down Approach 8th Edition</a>.</p>]]></content:encoded>
+            <category>TIL</category>
+        </item>
+        <item>
+            <title><![CDATA[Obfuscate email]]></title>
+            <link>https://cshubh.com/blog/obfuscate-email</link>
+            <guid>https://cshubh.com/blog/obfuscate-email</guid>
+            <pubDate>Tue, 20 Aug 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[I was building contact page for this site where I've put up my email. How do I deal with bots harvesting plaintext emails from websites and sending spam?]]></description>
+            <content:encoded><![CDATA[<p>I was building <a href="https://cshubh.com/contact">contact page</a> for this site where I've put up my email. How do I deal with bots harvesting plaintext emails from websites and sending spam?</p>
+<p>Initially I thought of using <a href="https://en.wikipedia.org/wiki/ROT13" target="_blank" rel="noopener noreferrer">rot13</a>, but rot13 of <em>gmail.com</em> is <em>tznvy.pbz</em>. A quick google search for <em>tznvy.pbz</em> showed a lot of hits which might mean that it's a widely known and used trick to obfuscate emails and, the bots are probably aware of it too. So I went with the classic <a href="https://en.wikipedia.org/wiki/Caesar_cipher" target="_blank" rel="noopener noreferrer">Caesar cipher</a>. The only downside is that it won't work with JS disabled.</p>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[TIL Brave bookmarks JSON file]]></title>
+            <link>https://cshubh.com/blog/til-brave-bookmarks-json-file</link>
+            <guid>https://cshubh.com/blog/til-brave-bookmarks-json-file</guid>
+            <pubDate>Sun, 18 Aug 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[TIL that browsers store all the bookmarks in a single JSON file.]]></description>
+            <content:encoded><![CDATA[<p>TIL that browsers store all the bookmarks in a single JSON file.<br>
+<!-- -->Brave stores it at this path: <code>%LOCALAPPDATA%\BraveSoftware\Brave-Browser\User Data\Default\Bookmarks</code></p>
+<p>This is particularly useful if you want to programmatically manipulate or work with your bookmarks.</p>
+<p>See Stack Overflow: <a href="https://stackoverflow.com/questions/15017163/parser-for-exported-bookmarks-html-file-of-google-chrome-and-mozilla-in-java/15106289#15106289" target="_blank" rel="noopener noreferrer">Parser for Exported Bookmarks HTML file of Google Chrome and Mozilla in Java</a></p>]]></content:encoded>
+            <category>TIL</category>
+        </item>
+        <item>
+            <title><![CDATA[TIL ArrayDeque hashCode and equals]]></title>
+            <link>https://cshubh.com/blog/til-arraydeque-hashcode-and-equals</link>
+            <guid>https://cshubh.com/blog/til-arraydeque-hashcode-and-equals</guid>
+            <pubDate>Fri, 16 Aug 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[TIL that LinkedList overrides equals and hashCode, but ArrayDeque doesn't!]]></description>
+            <content:encoded><![CDATA[<p>TIL that <code>LinkedList</code> overrides equals and hashCode, but ArrayDeque doesn't!</p>
+<p>This means that regardless of the contents of <code>ArrayDeque</code>, it gives the same <code>hashCode</code> value.<br>
+<!-- -->This bit me when using <code>Deque&lt;T&gt; dq = new ArrayDeque&lt;&gt;();</code></p>
+<p>See Stack Overflow: <a href="https://stackoverflow.com/questions/18203855/why-doesnt-arraydeque-override-equals-and-hashcode/18203894#18203894" target="_blank" rel="noopener noreferrer">Why doesn't ArrayDeque override equals() and hashCode()?</a></p>]]></content:encoded>
+            <category>TIL</category>
+        </item>
+        <item>
+            <title><![CDATA[Hello World!]]></title>
+            <link>https://cshubh.com/blog/hello-world</link>
+            <guid>https://cshubh.com/blog/hello-world</guid>
+            <pubDate>Mon, 05 Aug 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Hello World!]]></description>
+            <content:encoded><![CDATA[<p>Hello World!</p>
+<p>I built my previous site using <a href="https://nextjs.org/" target="_blank" rel="noopener noreferrer">Next.js</a> and <a href="https://mui.com/" target="_blank" rel="noopener noreferrer">MUI</a>. The other day I set up a <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">hugo</a> site for a friend. I have been planning to write and publish content on my website for a long time now, but never got around to do it. To reduce friction I decided to move to a platform where I don't have to worry about implementing all the basic blog functionality from scratch. After some research, I decided on <a href="https://docusaurus.io/" target="_blank" rel="noopener noreferrer">Docusaurus</a>. Spent an evening setting it up and achieving feature parity with my previous site, making sure to not break any URLs. Lo and behold, my new site.</p>]]></content:encoded>
+        </item>
+    </channel>
+</rss>
