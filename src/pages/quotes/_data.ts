@@ -6,6 +6,68 @@ export interface Quote {
 
 export const quotes: Quote[] = [
   {
+    text: "Embrace what you don\u2019t know, especially in the beginning, because what you don\u2019t know can become your greatest asset. It ensures that you will absolutely be doing things different from everybody else.",
+    attribution: "[Sara Blakely](https://mailchi.mp/hackernewsletter/567)",
+    dateAdded: "2024-09-17",
+  },
+  {
+    text: `little by little  
+day by day  
+what is meant for you  
+will find its way`,
+    attribution: "[s.p](https://x.com/Lovandfear/status/1834650077484531809)",
+    dateAdded: "2024-09-15",
+  },
+  {
+    text: "Perfect is the enemy of shipped.",
+    attribution:
+      "[Simon Willison](https://x.com/simonw/status/1304117739083059200)",
+    dateAdded: "2024-09-15",
+  },
+  {
+    text: "As you start to walk on the way, the way appears.",
+    attribution:
+      "[Rumi](https://x.com/BotPhilosophyQ/status/1834728836107227303)",
+    dateAdded: "2024-09-15",
+  },
+  {
+    text: "The price of loving someone very much is never loving anyone again.",
+    attribution:
+      "[Dostoevsky](https://x.com/Dostoevskyquot/status/1834714236339056796)",
+    dateAdded: "2024-09-14",
+  },
+  {
+    text: `When you get what you want in your struggle for self,  
+And the world makes you king for a day,  
+Then go to the mirror and look at yourself,  
+And see what that man has to say.  
+
+For it is not a man's father, mother or wife,  
+Whose judgment upon him must pass,  
+The fellow whose verdict counts most in life  
+is the one staring back from the glass.  
+
+He's the fellow to please, nevermind all the rest,  
+For he's with you clear to the end  
+And you've passed your most dangerous, difficult test,  
+If the man in the glass is your friend.  
+
+You can fool the whole world down the pathway of years,  
+And get pats on the back as you pass,  
+But the final reward will be heartache and tears,  
+If you've cheated the man in the glass.
+`,
+    attribution:
+      "[The Guy in the Glass by Dale Wimbrow](https://www.reddit.com/r/GetMotivated/comments/4mvvrl/image_the_guy_in_the_glass_poem_i_saw_a_post_on/)",
+    dateAdded: "2024-09-14",
+  },
+  {
+    text: "Intelligence without courage leads to anxiety because you will spend your time overthinking instead of acting, taking risks, improving your life.",
+    attribution:
+      "[Orange Book](https://x.com/orangebook_/status/1834228666575859945)",
+    dateAdded: "2024-09-13",
+  },
+  {
     text: "If you don't have awareness, you can't change something.",
     attribution: "[Leo Babauta](https://zenhabits.net/break-phone-dependence/)",
     dateAdded: "2024-09-12",
