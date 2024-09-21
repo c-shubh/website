@@ -146,7 +146,7 @@ If you've cheated the man in the glass.
   },
   {
     text: "If you’re not sure why you’re doing something, you can never do enough of it.",
-    attribution: "_David Allen, Getting Things Done",
+    attribution: "David Allen, Getting Things Done",
     dateAdded: "2024-09-09",
   },
   {
