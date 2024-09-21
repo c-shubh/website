@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { QuoteView } from "./_Quotes";
 import { quotes } from "./_data";
 
@@ -8,6 +9,17 @@ function randomIntFromInterval(min: number, max: number) {
 }
 
 export default function RandomQuote() {
-  const quoteIdx = randomIntFromInterval(0, quotes.length - 1);
+  const [quoteIdx, setQuoteIdx] = useState<number | null>(null); // Start as null
+
+  /* Only render on client side:
+  https://docusaurus.io/docs/advanced/ssg#useeffect */
+  useEffect(() => {
+    setQuoteIdx(randomIntFromInterval(0, quotes.length - 1));
+  }, []);
+
+  if (quoteIdx === null) {
+    return <div>Loading...</div>;
+  }
+
   return <QuoteView quote={quotes[quoteIdx]} hideDate />;
 }
