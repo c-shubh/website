@@ -110,6 +110,7 @@ const config: Config = {
       },
       items: [
         { to: "/projects", label: "🛠️ Projects", position: "left" },
+        { to: "/tools", label: "🔧 Tools", position: "left" },
         { to: "/blog", label: "✍️ Blog", position: "left" },
         { to: "/library", label: "🗂️ Library", position: "left" },
         { to: "/quotes", label: "🗨️ Quotes", position: "left" },
