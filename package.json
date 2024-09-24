@@ -28,6 +28,7 @@
     "@mui/icons-material": "^5.16.6",
     "@mui/lab": "^5.0.0-alpha.173",
     "@mui/material": "^5.16.6",
+    "antd": "^5.21.0",
     "clsx": "^2.0.0",
     "dayjs": "^1.11.12",
     "fuse.js": "^7.0.0",

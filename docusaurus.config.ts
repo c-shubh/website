@@ -98,6 +98,12 @@ const config: Config = {
   ],
 
   themeConfig: {
+    // TODO: no dark mode until I fix theme syncing between docusaurus, antd and mui
+    colorMode: {
+      defaultMode: "light",
+      disableSwitch: true,
+      respectPrefersColorScheme: false,
+    },
     // Replace with your project's social card
     // TODO: add social card image
     // image: "img/docusaurus-social-card.jpg",
