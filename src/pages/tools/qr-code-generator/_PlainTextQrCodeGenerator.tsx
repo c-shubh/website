@@ -14,74 +14,38 @@ import Paper from "@mui/material/Paper";
 import Popper from "@mui/material/Popper";
 import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField";
+import { successToast } from "@site/src/utils";
 import { QRCode } from "antd";
 import * as React from "react";
 import { useState } from "react";
+import {
+  copyCanvasQRCode,
+  downloadCanvasQRCode,
+  downloadSvgQRCode,
+} from "./_utils";
 
-function doDownload(url: string, fileName: string) {
-  const a = document.createElement("a");
-  a.download = fileName;
-  a.href = url;
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-}
-
-const downloadCanvasQRCode = () => {
-  const canvas = document
-    .getElementById("myqrcode")
-    ?.querySelector<HTMLCanvasElement>("canvas");
-  if (canvas) {
-    const url = canvas.toDataURL();
-    doDownload(url, `QRCode-${Date.now()}.png`);
-  }
-};
-
-const copyCanvasQRCode = () => {
-  const canvas = document
-    .getElementById("myqrcode")
-    ?.querySelector<HTMLCanvasElement>("canvas");
-  if (canvas) {
-    const url = canvas.toDataURL();
-    console.log(url);
-    canvas.toBlob(async (blob) => {
-      await navigator.clipboard.write([
-        // @ts-ignore
-        new ClipboardItem({ "image/png": blob }),
-      ]);
-    }, "image/png");
-  }
-};
-
-const downloadSvgQRCode = () => {
-  const svg = document
-    .getElementById("myqrcode")
-    ?.querySelector<SVGElement>("svg");
-  const svgData = new XMLSerializer().serializeToString(svg!);
-  const blob = new Blob([svgData], { type: "image/svg+xml;charset=utf-8" });
-  const url = URL.createObjectURL(blob);
-  doDownload(url, `QRCode-${Date.now()}.svg`);
-};
-
-function PlainTextQrCodeGenerator() {
+export default function PlainTextQrCodeGenerator() {
   const [text, setText] = useState("");
   const options = ["PNG", "SVG"];
   const PNG = 0,
     SVG = 1;
   const [selectedIndex, setSelectedIndex] = React.useState(PNG);
 
+  // TODO: wifi and upi qr code
   return (
     <BrowserOnly>
       {() => (
         <Stack spacing={2}>
           <TextField
             label="Text"
+            size="small"
             placeholder="Enter text"
             variant="outlined"
             maxRows={5}
             value={text}
             onChange={(e) => setText(e.target.value)}
             multiline
+            autoFocus
           />
           <Grid
             container
@@ -103,11 +67,13 @@ function PlainTextQrCodeGenerator() {
                 <Button
                   variant="outlined"
                   startIcon={<ContentCopyIcon />}
-                  onClick={() => {
+                  size="small"
+                  onClick={async () => {
                     if (selectedIndex === SVG) {
                       setSelectedIndex(PNG);
                     }
-                    copyCanvasQRCode();
+                    await copyCanvasQRCode();
+                    successToast("Copied to clipboard");
                   }}
                 >
                   Copy to Clipboard
@@ -131,17 +97,6 @@ function PlainTextQrCodeGenerator() {
       )}
     </BrowserOnly>
   );
-}
-
-const Types = {
-  PLAIN_TEXT: 0,
-  WIFI: 1,
-  UPI: 2,
-};
-
-export default function QrCodeGenerator() {
-  // TODO: wifi and upi qr code
-  return <PlainTextQrCodeGenerator />;
 }
 
 interface SplitButtonProps {
@@ -186,7 +141,7 @@ function SplitButton({
   return (
     <React.Fragment>
       <ButtonGroup variant="outlined" ref={anchorRef}>
-        <Button startIcon={<DownloadIcon />} onClick={onClick}>
+        <Button startIcon={<DownloadIcon />} size="small" onClick={onClick}>
           Download as {options[selectedIndex]}
         </Button>
         <Button size="small" onClick={handleToggle}>
