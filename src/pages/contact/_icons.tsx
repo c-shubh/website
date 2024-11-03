@@ -10,13 +10,23 @@ interface Service {
 
 function Layout({ data }: { data: Service }) {
   return (
-    <Box marginY={"0.5em"} display={"inline-block"}>
+    <Box
+      sx={{
+        marginY: "0.5em",
+        display: "inline-block",
+      }}
+    >
       {data.icon({
         color: data.color,
         fontSize: 25,
         style: { marginBottom: "-0.210em" },
       })}
-      <Box component={"span"} marginInlineStart={"0.4em"}>
+      <Box
+        component={"span"}
+        sx={{
+          marginInlineStart: "0.4em",
+        }}
+      >
         {data.name}
       </Box>
     </Box>

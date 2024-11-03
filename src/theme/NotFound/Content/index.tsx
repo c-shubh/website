@@ -114,21 +114,30 @@ function Expressive404() {
     <Box>
       <Box
         component={"textarea"}
-        width={"100%"}
         ref={textAreaRef}
         rows={10}
-        color={"#3f0"}
-        padding={1.2}
-        lineHeight={1.2}
-        fontWeight={"bold"}
-        fontSize={"medium"}
-        fontFamily={"'Nimbus Mono PS', 'Courier New', monospace"}
-        border={"none"}
-        borderRadius={1.5}
-        sx={{ backgroundColor: "#000", resize: "none", outline: "none" }}
+        sx={{
+          width: "100%",
+          color: "#3f0",
+          padding: 1.2,
+          lineHeight: 1.2,
+          fontWeight: "bold",
+          fontSize: "medium",
+          fontFamily: "'Nimbus Mono PS', 'Courier New', monospace",
+          border: "none",
+          borderRadius: 1.5,
+          backgroundColor: "#000",
+          resize: "none",
+          outline: "none",
+        }}
         readOnly
       />
-      <Box display={"flex"} justifyContent={"space-between"}>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+        }}
+      >
         <span>
           Inspired by{" "}
           <Link href="https://www.cmarshall.com/Error_404.html">

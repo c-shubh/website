@@ -27,8 +27,10 @@ function HomepageHeader() {
             component={"img"}
             src="/img/hello.gif"
             alt="Hello bubble"
-            width={100}
-            display={{ xs: "none", md: "initial" }}
+            sx={{
+              width: 100,
+              display: { xs: "none", md: "initial" },
+            }}
           />
         </Box>
         <p className="hero__subtitle">

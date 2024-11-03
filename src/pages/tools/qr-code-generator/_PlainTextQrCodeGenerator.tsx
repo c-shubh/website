@@ -49,8 +49,10 @@ export default function PlainTextQrCodeGenerator() {
           />
           <Grid
             container
-            gap={2}
-            justifyContent={{ xs: "center", sm: "start" }}
+            sx={{
+              gap: 2,
+              justifyContent: { xs: "center", sm: "start" },
+            }}
           >
             <Grid item>
               <Box

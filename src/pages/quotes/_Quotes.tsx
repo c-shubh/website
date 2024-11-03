@@ -75,7 +75,12 @@ export function QuoteView({ quote, hideDate }: QuoteViewProps) {
   return (
     <>
       {hideDate || <code>{quote.dateAdded}</code>}
-      <Box component={"blockquote"} marginTop={"var(--ifm-spacing-vertical)"}>
+      <Box
+        component={"blockquote"}
+        sx={{
+          marginTop: "var(--ifm-spacing-vertical)",
+        }}
+      >
         <MarkdownView>{quote.text}</MarkdownView>
         <MarkdownView>{`~ ${quote.attribution}`}</MarkdownView>
       </Box>
@@ -92,7 +97,11 @@ export default function Quotes() {
 
   return (
     <div>
-      <Box mb={3}>
+      <Box
+        sx={{
+          mb: 3,
+        }}
+      >
         <Stack direction={"row"} spacing={1}>
           <Box
             component={"input"}
@@ -100,9 +109,11 @@ export default function Quotes() {
             type="text"
             placeholder="Fuzzy search quotes..."
             value={query}
-            flex={1}
-            padding={1}
             onChange={(e) => setQuery(e.target.value)}
+            sx={{
+              flex: 1,
+              padding: 1,
+            }}
           />
           <Box component={"button"} onClick={() => setQuery("")}>
             Clear

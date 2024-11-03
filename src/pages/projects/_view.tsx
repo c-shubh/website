@@ -41,7 +41,13 @@ interface TechChipProps {
 
 function TechChip({ tech }: TechChipProps) {
   const label = (
-    <Stack direction={"row"} alignItems={"center"} gap={1}>
+    <Stack
+      direction={"row"}
+      sx={{
+        alignItems: "center",
+        gap: 1,
+      }}
+    >
       {techIcons[tech]?.icon !== undefined
         ? techIcons[tech]?.icon!({
             size: 18,
@@ -65,10 +71,18 @@ function ProjectTitle({ project: p }: ProjectTitleProps) {
   return (
     <Stack
       direction={"row"}
-      alignItems={"center"}
-      justifyContent={"space-between"}
+      sx={{
+        alignItems: "center",
+        justifyContent: "space-between",
+      }}
     >
-      <Typography variant={"h5"} component={"h3"} fontWeight={"bold"}>
+      <Typography
+        variant={"h5"}
+        component={"h3"}
+        sx={{
+          fontWeight: "bold",
+        }}
+      >
         {p.title}
       </Typography>
       <Stack direction={"row"}>
@@ -112,13 +126,20 @@ function Project({ project: p }: ProjectProps) {
           {p.description}
         </ReactMarkdown>
         <Box
-          display={"flex"}
-          gap={1}
-          mt={1}
-          alignItems={"center"}
-          flexWrap={"wrap"}
+          sx={{
+            display: "flex",
+            gap: 1,
+            mt: 1,
+            alignItems: "center",
+            flexWrap: "wrap",
+          }}
         >
-          <Typography fontSize={18} fontWeight={"medium"}>
+          <Typography
+            sx={{
+              fontSize: 18,
+              fontWeight: "medium",
+            }}
+          >
             Built with
           </Typography>
 
