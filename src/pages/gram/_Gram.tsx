@@ -9,6 +9,17 @@ interface ItemData {
 
 /* prettier-ignore */
 const itemData: ItemData[] = [
+  // convert heic images to webp before adding here
+  // $ magick.exe .\20240627_163010.heic -quality 100% 20240627_163010.webp
+  { img: '/img/gram/20240927_200113.webp', title: 'College corridor in the dark', postDate: '2024-11-03' },
+  { img: '/img/gram/20240911_233537.jpg', title: 'Raatrani tree (Cestrum nocturnum)', postDate: '2024-11-03' },
+  { img: '/img/gram/20240825_181429.webp', title: 'Tree', postDate: '2024-11-03' },
+  { img: '/img/gram/20240825_174754.webp', title: 'Lake view through fence', postDate: '2024-11-03' },
+  { img: '/img/gram/20240825_174702.webp', title: 'Lakeside path', postDate: '2024-11-03' },
+  { img: '/img/gram/20240825_174153.webp', title: 'Lake', postDate: '2024-11-03' },
+  { img: '/img/gram/20240825_173438.webp', title: 'Cable bridge', postDate: '2024-11-03' },
+  { img: '/img/gram/20240825_152546.webp', title: 'Sky', postDate: '2024-11-03' },
+  { img: '/img/gram/20240825_111831.webp', title: 'Fields', postDate: '2024-11-03' },
   { img: "/img/gram/cropped_20240707_154209.webp", title: "Flower 🌻", postDate: '2024-08-22' },
   { img: "/img/gram/IMG_20240822_003512_758.jpg", title: "🏆", },
   { img: "/img/gram/20240725_084302.webp", title: "College", },
@@ -46,15 +57,13 @@ function Image({ data }: { data: ItemData }) {
 
 function ImageGrid() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={{ xs: 0.4, sm: 1 }}>
-        {itemData.map((item) => (
-          <Grid item xs={4} key={item.img}>
-            <Image data={item} />
-          </Grid>
-        ))}
-      </Grid>
-    </Box>
+    <Grid container spacing={{ xs: 0.4, sm: 1 }} flexGrow={1}>
+      {itemData.map((item) => (
+        <Grid item xs={4} key={item.img}>
+          <Image data={item} />
+        </Grid>
+      ))}
+    </Grid>
   );
 }
 

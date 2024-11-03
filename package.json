@@ -15,8 +15,7 @@
     "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc",
     "test": "npm run build && npm run serve",
-    "quote": "python3 scripts/quote.py",
-    "lib": "python3 scripts/lib.py"
+    "quote": "python3 scripts/quote.py"
   },
   "dependencies": {
     "@docusaurus/core": "3.5.2",
