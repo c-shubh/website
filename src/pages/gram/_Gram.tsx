@@ -1,5 +1,5 @@
+import Masonry from "@mui/lab/Masonry";
 import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
 
 interface ItemData {
   img: string;
@@ -39,34 +39,23 @@ function Image({ data }: { data: ItemData }) {
   // TODO: do I need a CDN?
   // TODO: compress images, takes too long to load all images on a slow connection
   return (
-    <Box sx={{ flex: 1, aspectRatio: "1 / 1" }} display={"flex"}>
-      <Box
-        component={"img"}
-        srcSet={`${data.img}?fit=crop&auto=format&dpr=2 2x`}
-        src={`${data.img}?fit=crop&auto=format`}
-        width={"100%"}
-        height={"100%"}
-        sx={{ objectFit: "cover" }}
-        alt={data.title}
-        title={data.title}
-        loading="lazy"
-      />
-    </Box>
-  );
-}
-
-function ImageGrid() {
-  return (
-    <Grid container spacing={{ xs: 0.4, sm: 1 }} flexGrow={1}>
-      {itemData.map((item) => (
-        <Grid item xs={4} key={item.img}>
-          <Image data={item} />
-        </Grid>
-      ))}
-    </Grid>
+    <Box
+      component={"img"}
+      srcSet={`${data.img}?fit=crop&auto=format&dpr=2 2x`}
+      src={`${data.img}?fit=crop&auto=format`}
+      alt={data.title}
+      title={data.title}
+      loading="lazy"
+    />
   );
 }
 
 export function Gram() {
-  return <ImageGrid />;
+  return (
+    <Masonry columns={3} spacing={{ xs: 0.4, sm: 1 }}>
+      {itemData.map((item) => (
+        <Image data={item} key={item.img} />
+      ))}
+    </Masonry>
+  );
 }
