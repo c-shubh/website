@@ -32,6 +32,8 @@ function highlight(results: FuseResult<Quote>[]): Quote[] {
     for (const match of result.matches || []) {
       // ALERT: ensure match key is present and valid
       const key = match.key! as "text" | "attribution";
+      // TODO: highlighting attribution messes up urls which conflict with <mark> tags
+      if (key === "attribution") continue;
       const val = result.item[key];
       let finalStr = null;
       // iterate in reverse so that indices do not change after modifying string

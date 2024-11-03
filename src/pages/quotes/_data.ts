@@ -6,6 +6,12 @@ export interface Quote {
 
 export const quotes: Quote[] = [
   {
+    text: "Programming today is a race between software engineers striving to build bigger and better idiot-proof programs, and the Universe trying to produce bigger and better idiots. So far, the Universe is winning.",
+    attribution:
+      "[Rick Cook](https://news.ycombinator.com/item?id=42009200) [(context)](https://news.ycombinator.com/item?id=42007922)",
+    dateAdded: "2024-11-01",
+  },
+  {
     text: "Embrace what you don\u2019t know, especially in the beginning, because what you don\u2019t know can become your greatest asset. It ensures that you will absolutely be doing things different from everybody else.",
     attribution: "[Sara Blakely](https://mailchi.mp/hackernewsletter/567)",
     dateAdded: "2024-09-17",

@@ -1,5 +1,6 @@
 import type * as Preset from "@docusaurus/preset-classic";
 import type { Config } from "@docusaurus/types";
+import path from "node:path";
 import { themes as prismThemes } from "prism-react-renderer";
 
 const siteTitle = "Shubh's Digital Garden";
@@ -50,7 +51,22 @@ const config: Config = {
   },
 
   staticDirectories: ["static", "src/pages/gram/pics/"],
-
+  markdown: {
+    async parseFrontMatter(params) {
+      const [rootDir] = path
+        .relative(__dirname, params.filePath)
+        .split(path.sep);
+      const frontMatter = await params.defaultParseFrontMatter(params);
+      if (rootDir === "blog") {
+        const { authors } = frontMatter.frontMatter;
+        // if there are no authors mentioned, shubh's the default author.
+        if (authors === undefined) {
+          frontMatter.frontMatter.authors = "shubh";
+        }
+      }
+      return frontMatter;
+    },
+  },
   plugins: [
     [
       "@docusaurus/plugin-client-redirects",
@@ -83,9 +99,9 @@ const config: Config = {
         docs: false,
         blog: {
           showReadingTime: true,
-          // TODO: make repo public
           // Remove this to remove the "edit this page" links.
           editUrl: "https://github.com/c-shubh/website/tree/main/",
+          onInlineTags: "throw",
         },
         theme: {
           customCss: "./src/css/custom.css",
@@ -111,7 +127,6 @@ const config: Config = {
       title: siteTitle,
       logo: {
         alt: "My Site Logo",
-        // TODO: design and set a logo
         src: "img/logo.svg?v=1",
       },
       items: [
