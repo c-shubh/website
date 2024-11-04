@@ -6,6 +6,16 @@ export interface Quote {
 
 export const quotes: Quote[] = [
   {
+    text: "It is not how much you do – how you do it is what makes life beautiful.",
+    attribution: "Sadhguru",
+    dateAdded: "2024-11-04",
+  },
+  {
+    text: "Once you enjoy the inner pleasures of your being, external pleasures will seem rudimentary.",
+    attribution: "Sadhguru",
+    dateAdded: "2024-11-04",
+  },
+  {
     text: "Programming today is a race between software engineers striving to build bigger and better idiot-proof programs, and the Universe trying to produce bigger and better idiots. So far, the Universe is winning.",
     attribution:
       "[Rick Cook](https://news.ycombinator.com/item?id=42009200) [(context)](https://news.ycombinator.com/item?id=42007922)",
