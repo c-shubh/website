@@ -4,17 +4,32 @@
         <title>Shubh's Digital Garden Blog</title>
         <link>https://cshubh.com/blog</link>
         <description>Shubh's Digital Garden Blog</description>
-        <lastBuildDate>Sun, 01 Sep 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 09 Nov 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[TIL Typo Tolerance in Passwords]]></title>
+            <link>https://cshubh.com/blog/til-typo-tolerance-in-passwords</link>
+            <guid>https://cshubh.com/blog/til-typo-tolerance-in-passwords</guid>
+            <pubDate>Sat, 09 Nov 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[TIL that some companies allow typo tolerance in passwords. Instead of simply rejecting a login attempt with small mistakes, they accept some common typos like an accidental uppercase or an extra character.]]></description>
+            <content:encoded><![CDATA[<p>TIL that some companies allow typo tolerance in passwords. Instead of simply rejecting a login attempt with small mistakes, they accept some common typos like an accidental uppercase or an extra character.</p>
+<!-- -->
+<p>Years ago, while logging into my Gmail (or was it Instagram?) account, I accidentally typed the first character of my password in uppercase, which was incorrect. But, surprisingly, it let me in! I vaguely remember trying a few other variations, like changing the case of a character in the middle of the password, and they worked too. At the time, I thought it was some bug or glitch and forgot about it.</p>
+<p>Today, while binge-reading <a href="https://mtlynch.io/posts/" target="_blank" rel="noopener noreferrer">Michael Lynch's blog</a> and link-hopping, I came across <a href="https://news.ycombinator.com/item?id=13426544" target="_blank" rel="noopener noreferrer">this</a> HN post about mistyped passwords and how Facebook handles them:</p>
+<div style="text-align:center"><p><img decoding="async" loading="lazy" alt="Our reply: Hi Christopher, We accept four forms of the user&amp;#39;s password to help overcome the most common reasons that authentic logins are rejected. In addition to the original password. we also accept the password if a user inadvertently has caps lock enabled, if their mobile device automatically capitalizes the first character of the password, or if an extra character is added to the end of the password. We feel this does not significantly impact the security of the user&amp;#39;s password or their account. Thanks. ~ Kurt, Security" src="https://cshubh.com/assets/images/C2dGvgvWEAAienm-3a551795013334ed0904ad6c2a3206aa.jpg" width="508" height="300" class="img_iSPq"></p></div>
+<p>A <a href="https://news.ycombinator.com/item?id=13427958" target="_blank" rel="noopener noreferrer">comment</a> links to a research paper on typo-tolerant authentication schemes: <a href="http://www.arijuels.com/wp-content/uploads/2016/07/CAAJ16.pdf" target="_blank" rel="noopener noreferrer">pASSWORD tYPOS and How to Correct Them Securely</a>. How interesting!</p>
+<p>So, next time you notice a site letting you in with common typos in your password, this could be at play! (or maybe their auth is broken <!-- -->:p<!-- -->)</p>]]></content:encoded>
+            <category>TIL</category>
+        </item>
         <item>
             <title><![CDATA[TIL Pizza box servers]]></title>
             <link>https://cshubh.com/blog/til-pizza-box-servers</link>
             <guid>https://cshubh.com/blog/til-pizza-box-servers</guid>
             <pubDate>Sun, 01 Sep 2024 00:00:00 GMT</pubDate>
             <description><![CDATA[TIL that those flat servers used in data centers are called pizza box servers. I came across this term while reading Computer Networking: A Top-Down Approach 8th Edition.]]></description>
-            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" src="https://cshubh.com/assets/images/pizza-box-servers-6bcbd183f49b56a52f7168d2bfc3f51f.jpg" width="450" height="327" class="img_ev3q"></p>
+            <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" src="https://cshubh.com/assets/images/pizza-box-servers-6bcbd183f49b56a52f7168d2bfc3f51f.jpg" width="450" height="327" class="img_iSPq"></p>
 <p>TIL that those flat servers used in data centers are called pizza box servers. I came across this term while reading <a href="https://gaia.cs.umass.edu/kurose_ross/index.php" target="_blank" rel="noopener noreferrer">Computer Networking: A Top-Down Approach 8th Edition</a>.</p>]]></content:encoded>
             <category>TIL</category>
         </item>
