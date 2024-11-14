@@ -6,6 +6,86 @@ export interface Quote {
 
 export const quotes: Quote[] = [
   {
+    text: `### Madālasā's lullaby
+You are pure, conscious  
+and taintless  
+You are not subject to the  
+illusoriness of the world  
+Give up this sleep of  
+delusion, this dream  
+which confounds  
+the mind  
+
+Why are you crying?  
+You are pure  
+The name you have acquired  
+is not yours, merely a  
+mind-created fiction  
+applied to you  
+
+The body is not you,  
+nor are you of it  
+The Lord of the universe  
+doesn't cry either!  
+This sound is an illusion  
+attributed to you  
+
+The qualities imagined as  
+yours are inherent in  
+all the senses  
+The insignificant elements  
+within the man acquire  
+the condition of growth...  
+
+...through the addition of  
+food, water and drink  
+It is not a growth or  
+diminution of You  
+
+Within the body shell  
+You remain constant  
+Do not become confounded  
+by this body which has been  
+fastened upon you  
+
+"Father"  
+"Son"  
+"Mother"  
+"Wife"  
+"Mine"  
+"Not Mine"  
+
+Do not assign much  
+significance to what is only  
+an aggregation of elements  
+
+The deluded man thinks  
+pains alleviate pain  
+The deluded man thinks  
+enjoyment of pleasures  
+gives happiness  
+
+The intelligent man,  
+whose mind is free from  
+confusion knows pleasures  
+and sorrows to be alike  
+
+The carriage goes upon  
+the earth, the body is  
+seated in the carriage  
+The Self resides  
+within the body  
+
+The deluded Jīva thinks  
+"I am this body"  
+The Self has no attachment  
+to His carriage  
+Foolish is such ignorance!`,
+    attribution: `Madālasā, *Mārkaṇḍeya Purāṇa* (Chapter 23, Verse 11).  
+Sanskrit source available [here](https://archive.org/details/markandeya-purana-sanskrit-text-with-english-translatio/page/25/mode/1up). (English translation from [Gaiea's rendition](https://www.youtube.com/watch?v=uDd3iupKUyI)).`,
+    dateAdded: "2024-11-14",
+  },
+  {
     text: "It is not how much you do – how you do it is what makes life beautiful.",
     attribution: "Sadhguru",
     dateAdded: "2024-11-04",

@@ -1,3 +1,4 @@
+import BrowserOnly from "@docusaurus/BrowserOnly";
 import Link from "@docusaurus/Link";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
@@ -102,26 +103,27 @@ export default function Quotes() {
           mb: 3,
         }}
       >
-        <Stack direction={"row"} spacing={1}>
-          <Box
-            component={"input"}
-            autoComplete="off"
-            type="text"
-            placeholder="Fuzzy search quotes..."
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            sx={{
-              flex: 1,
-              padding: 1,
-            }}
-          />
-          <Box component={"button"} onClick={() => setQuery("")}>
-            Clear
-          </Box>
-        </Stack>
-        <Box component={"span"} sx={{ fontSize: "10px" }}>
-          this page is under construction, i'm yet to style the search bar
-        </Box>
+        <BrowserOnly>
+          {() => (
+            <Stack direction={"row"} spacing={1}>
+              <Box
+                component={"input"}
+                autoComplete="off"
+                type="text"
+                placeholder="Fuzzy search quotes..."
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                sx={{
+                  flex: 1,
+                  padding: 1,
+                }}
+              />
+              <Box component={"button"} onClick={() => setQuery("")}>
+                Clear
+              </Box>
+            </Stack>
+          )}
+        </BrowserOnly>
       </Box>
       {(results.length > 0 ? results : quotes).map((result) => (
         <QuoteView key={result.text} quote={result} />
