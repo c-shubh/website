@@ -26,6 +26,7 @@ export default function BulkUrlOpener() {
             // TODO: use uiwjs/react-codemirror for line numbes later
           }
           <TextField
+            label="Paste URLs"
             multiline
             maxRows={10}
             value={text}

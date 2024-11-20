@@ -41,6 +41,7 @@ export default function Slugify() {
             minRows={1}
             fullWidth
             onChange={handleChange}
+            autoFocus
           />
           <Box sx={{ mt: 2 }}>
             <Stack direction={"row"} spacing={1} alignItems={"center"}>
