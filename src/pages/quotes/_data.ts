@@ -6,6 +6,12 @@ export interface Quote {
 
 export const quotes: Quote[] = [
   {
+    text: "Once you name something, it stops you seeing the whole of it, or why it matters. You focus on the word, which is just the tiniest part, really, the tip of an iceberg.",
+    attribution:
+      "[Alex Michaelides, The Silent Patient](https://www.goodreads.com/quotes/9685584-once-you-name-something-it-stops-you-seeing-the-whole)",
+    dateAdded: "2024-11-20",
+  },
+  {
     text: `### Madālasā's lullaby
 You are pure, conscious  
 and taintless  
