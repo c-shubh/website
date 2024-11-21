@@ -5,17 +5,8 @@ import IconButton from "@mui/material/IconButton";
 import Stack from "@mui/material/Stack";
 import TextField, { TextFieldProps } from "@mui/material/TextField";
 import slugify from "@sindresorhus/slugify";
-import { successToast } from "@site/src/utils";
+import { copyToClipboard, successToast } from "@site/src/utils";
 import { useState } from "react";
-
-async function copyToClipboard(text: string): Promise<boolean> {
-  try {
-    await navigator.clipboard.writeText(text);
-    return true;
-  } catch (error) {
-    return false;
-  }
-}
 
 export default function Slugify() {
   const [output, setOutput] = useState<string[]>([]);
