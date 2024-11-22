@@ -96,7 +96,7 @@ export default function SectionCommentGenerator() {
             onChange={(e) => setText(e.target.value)}
             autoFocus
           />
-          <Stack direction={"row"} gap={2} alignItems={"end"}>
+          <Stack direction={"row"} gap={2} alignItems={"end"} flexWrap={"wrap"}>
             <FormControl>
               <FormLabel>Comment style</FormLabel>
               <RadioGroup
