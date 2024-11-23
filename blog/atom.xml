@@ -2,11 +2,33 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://cshubh.com/blog</id>
     <title>Shubh's Digital Garden Blog</title>
-    <updated>2024-11-09T00:00:00.000Z</updated>
+    <updated>2024-11-23T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://cshubh.com/blog"/>
     <subtitle>Shubh's Digital Garden Blog</subtitle>
     <icon>https://cshubh.com/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[TIL Accessing App Data using ADB]]></title>
+        <id>https://cshubh.com/blog/til-accessing-app-data-adb</id>
+        <link href="https://cshubh.com/blog/til-accessing-app-data-adb"/>
+        <updated>2024-11-23T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[While working on an Android app, I had some issues with the SQLite database and wanted to delete it. This db is stored in the app's internal data directory (/data/data/com.cshubh.myapp), which is inaccessible using file managers on the device.]]></summary>
+        <content type="html"><![CDATA[<p>While working on an Android app, I had some issues with the SQLite database and wanted to delete it. This db is stored in the app's internal data directory (<code>/data/data/com.cshubh.myapp</code>), which is inaccessible using file managers on the device.</p>
+<p>Android Studio has Device Explorer which allows us to access the internal data directory of a debuggable app, but I didn't want to open that resource hungry IDE for such a simple task. There had to be a way to do it using adb.</p>
+<p>Here it is:</p>
+<div class="language-bash codeBlockContainer_rWMf theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_cnJO"><pre tabindex="0" class="prism-code language-bash codeBlock_iWYS thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_mU1G"><span class="token-line" style="color:#393A34"><span class="token plain">adb shell</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">run-as com.cshubh.myapp</span><br></span></code></pre><div class="buttonGroup_JazB"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_qcO5" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_bri0"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_wN6c"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>It drops you into a shell in the app directory <code>/data/user/0/com.cshubh.myapp</code> where you can manipulate files and directories.</p>
+<p>Pulling a file from the data directory (here, sqlite db):</p>
+<div class="language-bash codeBlockContainer_rWMf theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_cnJO"><pre tabindex="0" class="prism-code language-bash codeBlock_iWYS thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_mU1G"><span class="token-line" style="color:#393A34"><span class="token plain">adb exec-out run-as com.cshubh.myapp cat files/SQLite/myapp.db &gt; pulled.db</span><br></span></code></pre><div class="buttonGroup_JazB"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_qcO5" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_bri0"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_wN6c"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>Use <code>tar</code> for directories, and <code>cat</code> the archive file instead.</p>
+<p>Pushing a file to data directory (here, scratch.txt):</p>
+<div class="language-bash codeBlockContainer_rWMf theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_cnJO"><pre tabindex="0" class="prism-code language-bash codeBlock_iWYS thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_mU1G"><span class="token-line" style="color:#393A34"><span class="token plain">adb push scratch.txt "/data/local/tmp/"</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">adb shell</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">run-as com.cshubh.myapp</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">cp /data/local/tmp/scratch.txt .</span><br></span></code></pre><div class="buttonGroup_JazB"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_qcO5" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_bri0"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_wN6c"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>]]></content>
+        <author>
+            <name>Shubh A Chudasama</name>
+            <uri>/</uri>
+        </author>
+        <category label="TIL" term="TIL"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[TIL Typo Tolerance in Passwords]]></title>
         <id>https://cshubh.com/blog/til-typo-tolerance-in-passwords</id>
