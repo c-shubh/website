@@ -8,11 +8,11 @@ tags: [TIL]
 
 TIL how to access an app's data directory using adb.
 
-While working on an android app, I had some issues with the SQLite database and wanted to delete it. This db is stored in app's internal data directory (`/data/data/com.cshubh.myapp`) which is inaccessible using file managers on device.
+While working on an Android app, I had some issues with the SQLite database and wanted to delete it. This db is stored in the app's internal data directory (`/data/data/com.cshubh.myapp`), which is inaccessible using file managers on the device.
 
 <!-- truncate -->
 
-Android Studio has Device Explorer which allows us to access the internal data directory of a debuggable app, but I didn't want to open that resource hungry IDE for such a simple task. There ought to be a way to do it using adb.
+Android Studio has Device Explorer which allows us to access the internal data directory of a debuggable app, but I didn't want to open that resource hungry IDE for such a simple task. There had to be a way to do it using adb.
 
 Here it is:
 
@@ -31,7 +31,7 @@ adb exec-out run-as com.cshubh.myapp cat files/SQLite/myapp.db > pulled.db
 
 Use `tar` for directories, and `cat` the archive file instead.
 
-Pulling a file to data directory (here, scratch.txt):
+Pushing a file to data directory (here, scratch.txt):
 
 ```bash
 adb push scratch.txt "/data/local/tmp/"
