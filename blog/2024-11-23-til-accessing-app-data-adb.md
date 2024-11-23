@@ -6,8 +6,6 @@ authors: shubh
 tags: [TIL]
 ---
 
-TIL how to access an app's data directory using adb.
-
 While working on an Android app, I had some issues with the SQLite database and wanted to delete it. This db is stored in the app's internal data directory (`/data/data/com.cshubh.myapp`), which is inaccessible using file managers on the device.
 
 <!-- truncate -->
