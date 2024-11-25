@@ -82,6 +82,10 @@ const config: Config = {
             to: "https://www.linkedin.com/in/c-shubh/",
           },
           {
+            from: "/leetcode",
+            to: "https://leetcode.com/u/c-shubh/",
+          },
+          {
             // This website used to have a /links page with list of links to interesting stuff.
             // Now it's merged into /library.
             from: "/links",
