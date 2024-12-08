@@ -158,8 +158,15 @@ const config: Config = {
     ],
   } satisfies Preset.ThemeConfig,
 
-  /* generated using https://realfavicongenerator.net/ */
   headTags: [
+    {
+      tagName: "link",
+      attributes: {
+        rel: "me",
+        href: "https://mastodon.social/@cshubh",
+      },
+    },
+    /* generated using https://realfavicongenerator.net/ */
     {
       tagName: "link",
       attributes: {
