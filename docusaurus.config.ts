@@ -140,6 +140,16 @@ const config: Config = {
         { to: "/blog", label: "✍️ Blog", position: "left" },
         { to: "/quotes", label: "🗨️ Quotes", position: "left" },
         { to: "/contact", label: "📧 Contact", position: "left" },
+        {
+          href: "https://github.com/c-shubh",
+          label: "GitHub",
+          position: "right",
+        },
+        {
+          href: "https://www.linkedin.com/in/c-shubh/",
+          label: "LinkedIn",
+          position: "right",
+        },
       ],
     },
     footer: {
