@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 
 // oneko.js: https://github.com/adryd325/oneko.js
 
@@ -65,19 +65,32 @@ const spriteSets = {
   ],
 };
 
-function oneko() {
-  const isReducedMotion =
-    window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
+interface OnekoArgs {
+  initialPosX: number;
+  initialPosY: number;
+}
 
+function oneko(args: OnekoArgs) {
+  const isReducedMotion = window.matchMedia(
+    `(prefers-reduced-motion: reduce)`
+  ).matches;
   if (isReducedMotion) return;
+
+  const isProbableDesktop = window.matchMedia(
+    "(min-width: 787px) and (pointer: fine)"
+  ).matches;
+  if (!isProbableDesktop) return;
+
+  // return if an instance already exists
+  if (document.getElementById("oneko")) return;
 
   const nekoEl = document.createElement("div");
 
-  let nekoPosX = 32;
-  let nekoPosY = 32;
+  let nekoPosX = args.initialPosX;
+  let nekoPosY = args.initialPosY;
 
-  let mousePosX = 0;
-  let mousePosY = 0;
+  let mousePosX = args.initialPosX;
+  let mousePosY = args.initialPosY;
 
   let frameCount = 0;
   let idleTime = 0;
@@ -242,7 +255,15 @@ function oneko() {
 
 export default function Oneko() {
   useEffect(() => {
-    oneko();
+    const header = document.querySelector("header");
+    if (header) {
+      const rect = header.getBoundingClientRect();
+
+      oneko({
+        initialPosX: 32,
+        initialPosY: rect.y + 32,
+      });
+    }
   }, []);
 
   return null;
