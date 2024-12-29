@@ -4,6 +4,7 @@ import { useTheme } from "@mui/material/styles";
 import Heading from "@theme/Heading";
 import Layout from "@theme/Layout";
 import clsx from "clsx";
+import Oneko from "../../components/Oneko";
 import styles from "./home.module.css";
 import TechIUse from "./tech-i-use.mdx";
 
@@ -65,6 +66,7 @@ export default function Home(): JSX.Element {
           }
           <TechIUse />
         </section>
+        <Oneko />
       </main>
     </Layout>
   );
