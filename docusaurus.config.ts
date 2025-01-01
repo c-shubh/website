@@ -125,9 +125,8 @@ const config: Config = {
       disableSwitch: true,
       respectPrefersColorScheme: false,
     },
-    // Replace with your project's social card
-    // TODO: add social card image
-    // image: "img/docusaurus-social-card.jpg",
+
+    image: "img/social-card.png",
     navbar: {
       title: siteTitle,
       logo: {
