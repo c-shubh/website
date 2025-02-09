@@ -3,7 +3,7 @@ from pathlib import Path
 
 # Paths
 lz_string_src = Path("node_modules/lz-string/libs/lz-string.min.js")
-static_dest = Path("build/tools/random-redirector-url/lz-string.min.js")
+static_dest = Path("build/tools/random-url-redirector/lz-string.min.js")
 
 # Copy the file
 try:

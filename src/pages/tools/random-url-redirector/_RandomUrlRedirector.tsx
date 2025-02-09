@@ -6,9 +6,9 @@ import LZString from "lz-string";
 import { useState } from "react";
 import { copyToClipboard, successToast } from "../../../utils";
 
-// part of implementation is in static\tools\random-redirector-url\random.html file
+// part of implementation is in static\tools\random-url-redirector\random.html file
 
-export default function RandomRedirectorUrl() {
+export default function RandomUrlRedirector() {
   const [text, setText] = useState("");
   const [output, setOutput] = useState("");
 
