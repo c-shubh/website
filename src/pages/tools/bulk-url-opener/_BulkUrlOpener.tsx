@@ -23,7 +23,7 @@ export default function BulkUrlOpener() {
       {() => (
         <Stack spacing={2}>
           {
-            // TODO: use uiwjs/react-codemirror for line numbes later
+            // TODO: use uiwjs/react-codemirror for line numbers later
           }
           <TextField
             label="Paste URLs"

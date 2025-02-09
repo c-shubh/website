@@ -6,7 +6,7 @@ import { themes as prismThemes } from "prism-react-renderer";
 const siteTitle = "Shubh's Digital Garden";
 
 const copyrightText = (() => {
-  const yearName = `Copyright © ${new Date().getFullYear()} Shubh A Chudasama`;
+  const yearName = `Copyright © 2023–${new Date().getFullYear()} Shubh A Chudasama`;
   const gif = `<img src="/img/fire.gif" style="width: 1.5em; margin: 0 0 -0.1em -0.1em;" alt="Fire">`;
   const a = (href: string, text: string) =>
     `<a href="${href}" target="_blank" rel="license noopener noreferrer">${text}</a>`;
