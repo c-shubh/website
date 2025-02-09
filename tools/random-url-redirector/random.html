@@ -1,0 +1,68 @@
+<!-- part of random-url-redirector tool -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random URL Redirector</title>
+    <script src="lz-string.min.js"></script>
+    <script>
+      // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random#getting_a_random_integer_between_two_values_inclusive
+      function getRandomIntInclusive(min, max) {
+        const minCeiled = Math.ceil(min);
+        const maxFloored = Math.floor(max);
+        return Math.floor(
+          Math.random() * (maxFloored - minCeiled + 1) + minCeiled
+        ); // The maximum is inclusive and the minimum is inclusive
+      }
+
+      function fail() {
+        window.location.href = "/tools/random-url-redirector/";
+        return -1;
+      }
+
+      function fixScheme(url) {
+        try {
+          const parsedUrl = new URL(url);
+          // If it has a protocol (like http, https, ftp), no changes needed
+        } catch {
+          // No protocol or invalid URL, so prepend http://
+          url = "http://" + url;
+        }
+        return url;
+      }
+
+      (function () {
+        const hashData = window.location.hash.substring(1); // Get data after '#'
+
+        if (!hashData) {
+          return fail();
+        }
+
+        try {
+          const decompressed =
+            LZString.decompressFromEncodedURIComponent(hashData);
+          const urls = JSON.parse(decompressed);
+
+          if (!Array.isArray(urls) || urls.length === 0) {
+            return fail();
+          }
+
+          const randomIndex = getRandomIntInclusive(0, urls.length - 1);
+          const randomUrl = urls[randomIndex].trim();
+          window.location.href = fixScheme(randomUrl);
+        } catch (error) {
+          document.body.innerHTML = `
+    <p>If you see this, please report the error at <a href="https://cshubh.com/contact" target="_blank">https://cshubh.com/contact</a></p>
+    <pre>${error}</pre>
+  `;
+          return fail();
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    Redirecting...
+  </body>
+</html>
