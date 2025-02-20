@@ -6,6 +6,11 @@ export interface Quote {
 
 export const quotes: Quote[] = [
   {
+    text: "Happiness equals reality minus expectations.",
+    attribution: "https://dateful.com/2021/10/27/my-side-project-story.html",
+    dateAdded: "2025-02-20",
+  },
+  {
     text: "Once you name something, it stops you seeing the whole of it, or why it matters. You focus on the word, which is just the tiniest part, really, the tip of an iceberg.",
     attribution:
       "[Alex Michaelides, The Silent Patient](https://www.goodreads.com/quotes/9685584-once-you-name-something-it-stops-you-seeing-the-whole)",
