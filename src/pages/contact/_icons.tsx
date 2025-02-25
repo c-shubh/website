@@ -116,6 +116,20 @@ const Services = {
       />
     </ServiceContainer>
   ),
+  Instagram: (
+    <ServiceContainer>
+      <Box
+        component={"img"}
+        mb={"-0.380em"}
+        width={ICON_SIZE}
+        src="/img/instagram.colored.svg"
+      ></Box>
+      <ServiceNameAndUrl
+        name="Instagram"
+        url="https://www.instagram.com/c_shubh_/"
+      />
+    </ServiceContainer>
+  ),
 };
 
 export function Profiles() {
@@ -123,6 +137,7 @@ export function Profiles() {
     Services.GitHub,
     Services.X,
     Services.LinkedIn,
+    Services.Instagram,
     Services.HackerRank,
     Services.LeetCode,
     Services.Codeforces,
