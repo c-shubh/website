@@ -1,20 +1,31 @@
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import { useMediaQuery } from "@mui/material";
 import Box from "@mui/material/Box";
 import { useTheme } from "@mui/material/styles";
 import Heading from "@theme/Heading";
 import Layout from "@theme/Layout";
-import clsx from "clsx";
-import { useEffect, useRef } from "react";
-import styles from "./home.module.css";
+import { useEffect, useRef, useState } from "react";
 import TechIUse from "./tech-i-use.mdx";
 
 function HomepageHeader() {
   const theme = useTheme();
   const puddleRef = useRef<HTMLDivElement>(null);
   const puddleInstance = useRef<Puddle | null>(null);
+  const shouldDisableAnimation = useMediaQuery(
+    `(max-width:${theme.breakpoints.values.sm}px) or (pointer: coarse) or (prefers-reduced-motion: reduce)`
+  );
+  const [triggerReinitializationKey, setTriggerReinitializationKey] =
+    useState(0);
 
   useEffect(() => {
-    if (puddleRef.current) {
+    // Cleanup previous instance
+    if (puddleInstance.current) {
+      clearInterval(puddleInstance.current.updateLoop);
+      puddleInstance.current = null;
+    }
+
+    // Reinitialize if animations are allowed
+    if (!shouldDisableAnimation && puddleRef.current) {
       puddleInstance.current = new Puddle(puddleRef.current);
       puddleInstance.current.setNodeStyle("ascii");
       puddleInstance.current.setNodeSize(15);
@@ -26,7 +37,16 @@ function HomepageHeader() {
         puddleInstance.current = null;
       }
     };
-  }, [puddleRef]);
+  }, [shouldDisableAnimation, triggerReinitializationKey]);
+
+  // Listen for screen size changes
+  useEffect(() => {
+    const handleResize = () =>
+      setTriggerReinitializationKey((prevKey) => prevKey + 1);
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <Box
@@ -46,7 +66,7 @@ function HomepageHeader() {
           color: "#000000a3",
           opacity: 0.6,
           position: "absolute",
-          filter: "blur(1px)",
+          filter: "blur(0.6px)",
           top: 0,
           bottom: 0,
           left: 0,
