@@ -174,6 +174,13 @@ const config: Config = {
         href: "https://mastodon.social/@cshubh",
       },
     },
+    {
+      tagName: "script",
+      attributes: {
+        src: "/puddle.js",
+        defer: "true",
+      },
+    },
     /* generated using https://realfavicongenerator.net/ */
     {
       tagName: "link",
