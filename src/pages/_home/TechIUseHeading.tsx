@@ -11,7 +11,7 @@ export default function TechIUseHeading() {
         marginBottom: "var(--ifm-heading-margin-bottom)",
       }}
     >
-      <Box component={"h2"}>Tech I use</Box>
+      <Box component={"h2"}>Tech I Use</Box>
       <Box
         component={"img"}
         src="/img/computer.gif"

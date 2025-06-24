@@ -134,11 +134,11 @@ const config: Config = {
         src: "img/logo.svg?v=1",
       },
       items: [
-        { to: "/projects", label: "🛠️ Projects", position: "left" },
-        { to: "/tools", label: "🔧 Tools", position: "left" },
-        { to: "/blog", label: "✍️ Blog", position: "left" },
-        { to: "/quotes", label: "🗨️ Quotes", position: "left" },
-        { to: "/contact", label: "📧 Contact", position: "left" },
+        { to: "/projects", label: "Projects", position: "left" },
+        { to: "/tools", label: "Tools", position: "left" },
+        { to: "/blog", label: "Blog", position: "left" },
+        { to: "/quotes", label: "Quotes", position: "left" },
+        { to: "/contact", label: "Contact", position: "left" },
         {
           href: "https://github.com/c-shubh",
           label: "GitHub",
