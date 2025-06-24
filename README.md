@@ -8,6 +8,26 @@ Source code for https://cshubh.com
 - [Material UI](https://mui.com/material-ui/) for UI
 - Patience and love ❤️
 
+## Development
+
+Run development server:
+
+```bash
+npm run start
+```
+
+Build the website:
+
+```bash
+npm run build
+```
+
+Deploy the website:
+
+```bash
+npm run deploy
+```
+
 ## License
 
 - The source code in this repository is licensed under the [AGPLv3](./LICENSE-AGPL-3.0-only).

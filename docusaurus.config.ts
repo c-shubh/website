@@ -3,7 +3,7 @@ import type { Config } from "@docusaurus/types";
 import path from "node:path";
 import { themes as prismThemes } from "prism-react-renderer";
 
-const siteTitle = "Shubh's Digital Garden";
+const siteTitle = "Shubh's Website";
 
 const copyrightText = (() => {
   const yearName = `Copyright © ${new Date().getFullYear()} Shubh A Chudasama`;
@@ -205,7 +205,7 @@ const config: Config = {
       tagName: "link",
       attributes: {
         rel: "manifest",
-        href: "/site.webmanifest?v=1",
+        href: "/site.webmanifest?v=2",
       },
     },
     {
