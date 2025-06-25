@@ -55,6 +55,7 @@ export default function WordCount() {
     word: number;
     line: number;
   }>({ character: 0, word: 0, line: 0 });
+  const textRef = React.useRef<HTMLTextAreaElement>(null);
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -62,6 +63,7 @@ export default function WordCount() {
     const reader = new FileReader();
     reader.onload = (e) => {
       const content = e.target?.result as string;
+      textRef.current!.value = content;
       setCount(countCharWordLine(content));
     };
     reader.onerror = () => {
@@ -75,10 +77,12 @@ export default function WordCount() {
       {() => (
         <Stack spacing={1}>
           <TextField
+            inputRef={textRef}
             label="Enter text here"
             variant="outlined"
             multiline
             minRows={1}
+            maxRows={20}
             onChange={(e) => setCount(countCharWordLine(e.target.value))}
             fullWidth
             autoFocus
