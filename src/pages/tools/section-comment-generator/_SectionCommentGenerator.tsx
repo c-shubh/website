@@ -118,7 +118,11 @@ export default function SectionCommentGenerator() {
               size="small"
               value={lineLength}
               sx={{ width: "14ch" }}
-              onChange={(e) => setLineLength(e.target.value)}
+              onChange={(e) => {
+                // @ts-expect-error: this is a number input
+                const value = e.target.value as number;
+                setIndentationSize(Math.max(0, value).toString());
+              }}
             />
             <TextField
               label="Tab size"
@@ -126,7 +130,11 @@ export default function SectionCommentGenerator() {
               size="small"
               sx={{ width: "14ch" }}
               value={indentationSize}
-              onChange={(e) => setIndentationSize(e.target.value)}
+              onChange={(e) => {
+                // @ts-expect-error: this is a number input
+                const value = e.target.value as number;
+                setIndentationSize(Math.max(0, value).toString());
+              }}
             />
           </Stack>
           <Stack direction={"row"} spacing={1} alignItems={"center"}>
