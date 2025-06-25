@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://cshubh.com/blog</id>
-    <title>Shubh's Digital Garden Blog</title>
+    <title>Shubh A Chudasama Blog</title>
     <updated>2025-01-01T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://cshubh.com/blog"/>
-    <subtitle>Shubh's Digital Garden Blog</subtitle>
+    <subtitle>Shubh A Chudasama Blog</subtitle>
     <icon>https://cshubh.com/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[Extracting Discord's Welcome Messages]]></title>
