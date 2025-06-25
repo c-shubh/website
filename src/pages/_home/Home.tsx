@@ -1,4 +1,3 @@
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import { useTheme } from "@mui/material/styles";
@@ -15,38 +14,45 @@ export default function Home(): JSX.Element {
     // TODO: add description for social card
     <Layout>
       <Stack spacing={4}>
-        <header className={clsx("hero hero--primary", styles.heroBanner)}>
+        <Box
+          component="header"
+          sx={{
+            [theme.breakpoints.up("md")]: { paddingY: "4rem" },
+          }}
+          className={clsx("hero hero--primary", styles.heroBanner)}
+        >
           <Box className="container">
             <Box
               component={Heading}
               as="h1"
-              className="hero__title"
               sx={{
-                wordBreak: "keep-all",
-                [theme.breakpoints.down("sm")]: { fontSize: "2.5rem" },
+                [theme.breakpoints.down("sm")]: { fontSize: "2rem" },
+                position: "relative",
               }}
             >
-              Shubh A Chudasama
+              I'm a techie who loves building things.
               <Box
-                component={"img"}
+                component="img"
                 src="/img/hello.gif"
                 alt="Hello bubble"
                 sx={{
                   width: 100,
                   display: { xs: "none", md: "initial" },
+                  position: "absolute",
+                  bottom: 0,
                 }}
               />
             </Box>
-            <p className="hero__subtitle">
-              Software Engineer who loves building things.
-            </p>
+            <Box component="p" sx={{ margin: 0, fontSize: "1.2rem" }}>
+              Hacker • Software Engineer • Builder • Learner
+            </Box>
           </Box>
-        </header>
+        </Box>
         <main>
           {
             // TODO: add more content
           }
-          <section className={"container"}>
+          <section className="container">
             {
               // TODO: make it look better:
               /* 
