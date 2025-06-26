@@ -121,7 +121,7 @@ export default function SectionCommentGenerator() {
               onChange={(e) => {
                 // @ts-expect-error: this is a number input
                 const value = e.target.value as number;
-                setIndentationSize(Math.max(0, value).toString());
+                setLineLength(Math.max(0, value).toString());
               }}
             />
             <TextField
