@@ -38,9 +38,12 @@ export default function PlainTextQrCodeGenerator() {
 
   const handleCountChange = (
     event: React.MouseEvent<HTMLElement>,
-    newAlignment: string | null
+    newCount: string | null
   ) => {
-    setCount(newAlignment);
+    // this makes sure that at least one button is always selected
+    if (newCount !== null) {
+      setCount(newCount);
+    }
   };
 
   // TODO: wifi and upi qr code
@@ -126,28 +129,34 @@ export default function PlainTextQrCodeGenerator() {
           )}
           {count === "many" && (
             <Stack alignItems="center" spacing={2} width={"100%"}>
-              {(text.trim() === "" ? ["hello"] : text.trim().split("\n")).map(
-                (line, index) => (
-                  <React.Fragment key={index}>
-                    <Box>
-                      QR Code #{index + 1}.{" "}
-                      <Box
-                        component={"code"}
-                        sx={{ display: "inline-block", width: "fit-content" }}
-                      >
-                        {line}
-                      </Box>
-                    </Box>
+              {(text.trim() === ""
+                ? // if text is empty, then show a single qr code with "hello"
+                  ["hello"]
+                : // one qr for each non empty line
+                  text
+                    .trim()
+                    .split("\n")
+                    .filter((e) => e.trim() !== "")
+              ).map((line, index) => (
+                <React.Fragment key={index}>
+                  <Box>
+                    QR Code #{index + 1}.{" "}
                     <Box
-                      component={QRCode}
-                      value={line || "hello"}
-                      bgColor="#fff"
-                      size={300}
-                      type={"canvas"}
-                    />
-                  </React.Fragment>
-                )
-              )}
+                      component={"code"}
+                      sx={{ display: "inline-block", width: "fit-content" }}
+                    >
+                      {line}
+                    </Box>
+                  </Box>
+                  <Box
+                    component={QRCode}
+                    value={line || "hello"}
+                    bgColor="#fff"
+                    size={300}
+                    type={"canvas"}
+                  />
+                </React.Fragment>
+              ))}
             </Stack>
           )}
         </Stack>
