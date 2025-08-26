@@ -1,5 +1,6 @@
 import BrowserOnly from "@docusaurus/BrowserOnly";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
+import Box from "@mui/material/Box";
 import FormControl from "@mui/material/FormControl";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormLabel from "@mui/material/FormLabel";
@@ -20,11 +21,22 @@ const styles = {
     start: "#",
     end: "#",
   },
+  Custom: {
+    start: "",
+    end: "",
+  },
 };
+
+type CommentStyleName = keyof typeof styles;
+
+interface CommentStyleWithName {
+  name: CommentStyleName;
+  style: (typeof styles)[CommentStyleName];
+}
 
 function generate(
   text: string,
-  style: "C" | "Python",
+  style: CommentStyleWithName,
   lineLength: number,
   indentationSize: number
 ) {
@@ -32,12 +44,12 @@ function generate(
     text = "Hey there!";
   }
 
-  const open = styles[style].start;
+  const open = style.style.start;
   const gapAfterOpen = " ";
   const gapBeforeText = " ";
   const gapAfterText = " ";
   const gapBeforeClose = " ";
-  const close = styles[style].end;
+  const close = style.style.end;
   const repeatChar = "-";
 
   const leftBuilder = open + gapAfterOpen;
@@ -70,14 +82,17 @@ export default function SectionCommentGenerator() {
   const [text, setText] = useState("");
   const [output, setOutput] = useState("");
   const [lineLength, setLineLength] = useState("80");
-  const [indentationSize, setIndentationSize] = useState("2");
-  const [commentStyle, setCommentStyle] = useState("C");
+  const [indentationSize, setIndentationSize] = useState("0");
+  const [commentStyle, setCommentStyle] = useState<CommentStyleWithName>({
+    name: "C",
+    style: styles.C,
+  });
 
   const refreshOutput = () => {
     setOutput(
       generate(
         text,
-        commentStyle as any,
+        commentStyle,
         parseInt(lineLength),
         parseInt(indentationSize)
       )
@@ -96,46 +111,84 @@ export default function SectionCommentGenerator() {
             onChange={(e) => setText(e.target.value)}
             autoFocus
           />
-          <Stack direction={"row"} gap={2} alignItems={"end"} flexWrap={"wrap"}>
-            <FormControl>
-              <FormLabel>Comment style</FormLabel>
-              <RadioGroup
-                row
-                value={commentStyle}
-                onChange={(e, v) => setCommentStyle(v)}
-              >
-                <FormControlLabel value="C" control={<Radio />} label="C" />
-                <FormControlLabel
-                  value="Python"
-                  control={<Radio />}
-                  label="Python"
-                />
-              </RadioGroup>
-            </FormControl>
-            <TextField
-              label="Line size"
-              type="number"
-              size="small"
-              value={lineLength}
-              sx={{ width: "14ch" }}
-              onChange={(e) => {
-                // @ts-expect-error: this is a number input
-                const value = e.target.value as number;
-                setLineLength(Math.max(0, value).toString());
-              }}
-            />
-            <TextField
-              label="Tab size"
-              type="number"
-              size="small"
-              sx={{ width: "14ch" }}
-              value={indentationSize}
-              onChange={(e) => {
-                // @ts-expect-error: this is a number input
-                const value = e.target.value as number;
-                setIndentationSize(Math.max(0, value).toString());
-              }}
-            />
+          <Stack direction={{ xs: "column", md: "row" }} spacing={2}>
+            <Box>
+              <FormControl>
+                <FormLabel>Comment style</FormLabel>
+                <RadioGroup
+                  row
+                  value={commentStyle.name}
+                  onChange={(e, v) => {
+                    const name = v as CommentStyleName;
+                    if (v in styles)
+                      setCommentStyle({ name, style: styles[name] });
+                  }}
+                >
+                  {Object.keys(styles).map((style) => (
+                    <FormControlLabel
+                      key={style}
+                      value={style}
+                      control={<Radio />}
+                      label={style}
+                    />
+                  ))}
+                </RadioGroup>
+              </FormControl>
+            </Box>
+            <Stack direction={"row"} spacing={2} alignItems={"flex-end"}>
+              <TextField
+                label="Start"
+                type="text"
+                size="small"
+                value={commentStyle.style.start}
+                sx={{ width: "8ch" }}
+                disabled={commentStyle.name !== "Custom"}
+                onChange={(e) =>
+                  setCommentStyle((prev) => ({
+                    ...prev,
+                    style: { ...prev.style, start: e.target.value },
+                  }))
+                }
+              />
+              <TextField
+                label="End"
+                type="text"
+                size="small"
+                value={commentStyle.style.end}
+                sx={{ width: "8ch" }}
+                disabled={commentStyle.name !== "Custom"}
+                onChange={(e) =>
+                  setCommentStyle((prev) => ({
+                    ...prev,
+                    style: { ...prev.style, end: e.target.value },
+                  }))
+                }
+              />
+              <TextField
+                label="Line length"
+                type="number"
+                size="small"
+                value={lineLength}
+                sx={{ width: "10ch" }}
+                onChange={(e) => {
+                  // @ts-expect-error: this is a number input
+                  const value = e.target.value as number;
+                  setLineLength(Math.max(0, value).toString());
+                }}
+              />
+              <TextField
+                label="Indentation"
+                type="number"
+                size="small"
+                sx={{ width: "10ch" }}
+                value={indentationSize}
+                onChange={(e) => {
+                  // @ts-expect-error: this is a number input
+                  const value = e.target.value as number;
+                  setIndentationSize(Math.max(0, value).toString());
+                }}
+              />
+            </Stack>
           </Stack>
           <Stack direction={"row"} spacing={1} alignItems={"center"}>
             <h3>Output</h3>
