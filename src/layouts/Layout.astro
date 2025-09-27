@@ -1,0 +1,66 @@
+---
+// Import the global.css file here so that it is included on
+// all pages through the use of the <Layout /> component.
+import "../styles/global.css";
+//
+import Footer from "../components/Footer.astro";
+import Navbar from "../components/Header.astro";
+import { SITE_TITLE } from "../consts";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const { title, description } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <!-- Global Metadata -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={SITE_TITLE}
+      href={new URL("rss.xml", Astro.site)}
+    />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    {description && <meta name="description" content={description} />}
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    {description && <meta property="og:description" content={description} />}
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={title} />
+    {
+      description && (
+        <meta property="twitter:description" content={description} />
+      )
+    }
+  </head>
+  <body class="font-sans max-w-2xl px-2 mx-auto leading-relaxed">
+    <Navbar />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

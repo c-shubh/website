@@ -1,17 +1,14 @@
 ---
+import dayjs from "dayjs";
+
 interface Props {
-	date: Date;
+  date: Date;
+  className?: astroHTML.JSX.HTMLAttributes["class"];
 }
 
-const { date } = Astro.props;
+const { date, className } = Astro.props;
 ---
 
-<time datetime={date.toISOString()}>
-	{
-		date.toLocaleDateString('en-us', {
-			year: 'numeric',
-			month: 'short',
-			day: 'numeric',
-		})
-	}
+<time datetime={date.toISOString()} class={className}>
+  {dayjs(date).format("MMM DD, YYYY")}
 </time>
