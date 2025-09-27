@@ -2,25 +2,49 @@ import { FormattedDate } from "@/components/FormattedDate";
 import { Hr } from "@/components/Hr";
 import { SITE_TITLE } from "@/constants";
 import { getAllPosts, getPostBySlug } from "@/lib/api";
-import markdownToHtml from "@/lib/markdownToHtml";
 import { Metadata } from "next";
+import { MDXRemote, MDXRemoteProps } from "next-mdx-remote/rsc";
+import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
-type Params = {
+function CustomLink(props: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
+  const href = props.href;
+
+  if (href && href.startsWith("/")) {
+    return (
+      <Link href={href} {...props}>
+        {props.children}
+      </Link>
+    );
+  }
+
+  if (href && href.startsWith("#")) {
+    return <a {...props} />;
+  }
+
+  return <a target="_blank" rel="noopener noreferrer" {...props} />;
+}
+
+const components: MDXRemoteProps["components"] = {
+  hr: Hr,
+  a: CustomLink,
+  img: Image,
+};
+
+type Props = {
   params: Promise<{
     slug: string;
   }>;
 };
 
-export default async function Post(props: Params) {
+export default async function Post(props: Props) {
   const params = await props.params;
   const post = getPostBySlug(params.slug);
 
   if (!post) {
     return notFound();
   }
-
-  const content = await markdownToHtml(post.content || "");
 
   return (
     <article>
@@ -30,19 +54,18 @@ export default async function Post(props: Params) {
           <div>
             <FormattedDate date={new Date(post.date)} />
           </div>
-          <Hr />
         </div>
         {
           // TODO: code highlighting with https://shiki.style/
           // TODO: images in markdown
         }
-        <div dangerouslySetInnerHTML={{ __html: content }} />
+        <MDXRemote source={post.content} components={components} />
       </div>
     </article>
   );
 }
 
-export async function generateMetadata(props: Params): Promise<Metadata> {
+export async function generateMetadata(props: Props): Promise<Metadata> {
   const params = await props.params;
   const post = getPostBySlug(params.slug);
 
