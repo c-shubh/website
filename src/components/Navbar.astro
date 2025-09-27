@@ -1,0 +1,32 @@
+---
+import { SITE_TITLE } from "../consts";
+import Hr from "./Hr.astro";
+
+const links = [
+  { href: "/projects", text: "Projects" },
+  { href: "/tools", text: "Tools" },
+  { href: "/blog", text: "Blog" },
+  { href: "/quotes", text: "Quotes" },
+  { href: "/contact", text: "Contact" },
+];
+---
+
+<header class="my-4">
+  <nav
+    class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4"
+  >
+    <a href="/" class="no-underline text-black text-xl font-bold"
+      >{SITE_TITLE}</a
+    >
+    <div class="space-x-2">
+      {
+        links.map((link) => (
+          <a href={link.href} class="no-underline font-medium">
+            {link.text}
+          </a>
+        ))
+      }
+    </div>
+  </nav>
+  <Hr />
+</header>

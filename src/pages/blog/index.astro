@@ -13,12 +13,12 @@ const posts = (await getCollection("blog")).sort(
   <section class="space-y-4">
     {
       posts.map((post) => (
-        <div class="flex flex-col sm:flex-row sm:items-start gap-0.5 sm:gap-4 ">
+        <div class="flex flex-col-reverse sm:flex-row sm:items-start gap-0.5 sm:gap-4 ">
           <FormattedDate
             date={post.data.date}
             className="text-nowrap font-mono text-xs sm:text-base"
           />
-          <a href={`/blog/${post.id}/`} class="no-underline hover:underline">
+          <a href={`/blog/${post.id}/`} class="no-underline">
             <h4 class="m-0">{post.data.title}</h4>
           </a>
         </div>

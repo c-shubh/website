@@ -1,8 +1,13 @@
 ---
+import Hr from "./Hr.astro";
+
 const today = new Date();
 ---
 
-<footer>
-  &copy; {today.getFullYear()} Shubh A Chudasama.<br /> Code AGPLv3, Content CC BY-NC-SA
-  4.0.
+<footer class="text-center my-4 space-y-4">
+  <Hr />
+  <span>
+    &copy; {today.getFullYear()} Shubh A Chudasama.<br /> Code AGPLv3, Content CC
+    BY-NC-SA 4.0.
+  </span>
 </footer>
