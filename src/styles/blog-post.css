@@ -1,0 +1,36 @@
+/* multiline code block */
+figure[data-rehype-pretty-code-figure] {
+  margin: 0;
+}
+
+figure[data-rehype-pretty-code-figure] > pre {
+  /* rounded-lg */
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  /* p-4 */
+  padding: 1rem;
+  scrollbar-width: thin;
+}
+
+figure[data-rehype-pretty-code-figure] > pre > code > span[data-line] {
+  /* pr-4 */
+  padding-right: 1rem;
+}
+
+/* inline code block */
+span[data-rehype-pretty-code-figure] > code {
+  /* py-0.5 px-1.5 */
+  padding: 0.125rem 0.375rem;
+  /* rounded-sm */
+  border-radius: 0.25rem;
+}
+
+kbd {
+  background-color: #fff;
+  border: 1px solid #ccd0d5;
+  border-radius: 0.2rem;
+  box-shadow: inset 0 -1px 0 #ccd0d5;
+  color: #444950;
+  /* font: 80% monospace; */
+  padding: 0.15rem 0.3rem;
+}

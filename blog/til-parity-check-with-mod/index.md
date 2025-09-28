@@ -7,8 +7,6 @@ tags: [TIL]
 
 The result of modulo operator (%) varies between programming languages especially when one of the operand is negative.
 
-<!-- truncate -->
-
 For example, here's what Python outputs:
 
 ```python

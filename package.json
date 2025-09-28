@@ -3,20 +3,28 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "dev": "next dev",
+    "optimize-images": "next-image-export-optimizer",
+    "build": "next build && pnpm run optimize-images",
+    "clean": "rimraf -v .next out public/images/blog public/images/nextImageExportOptimizer next-image-export-optimizer-hashes.",
     "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {
     "dayjs": "^1.11.18",
     "gray-matter": "^4.0.3",
+    "image-size": "^2.0.2",
     "next": "15.5.2",
+    "next-image-export-optimizer": "^1.19.0",
     "next-mdx-remote": "^5.0.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
+    "rehype-pretty-code": "^0.14.1",
     "remark": "^15.0.1",
-    "remark-html": "^16.0.1"
+    "remark-gfm": "^4.0.1",
+    "remark-html": "^16.0.1",
+    "rimraf": "^6.0.1",
+    "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -26,6 +34,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.5.2",
+    "shiki": "^3.12.2",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

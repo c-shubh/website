@@ -8,8 +8,6 @@ I was learning about [WebSockets](https://en.wikipedia.org/wiki/WebSocket) today
 
 Inspired by how Discord displays a fun random message—e.g. _Welcome, \{name\}. We hope you've brought pizza._—I wanted to use those in my project too. So I thought why not just use Discord's messages, and instantly jumped on to extract those. Who doesn't love [yak shaving](https://www.youtube.com/watch?v=AbSehcT19u0), right?
 
-<!-- truncate -->
-
 First, I loaded all the past chats of a channel by spamming the <kbd>Home</kbd> key. To extract only the welcome messages among others in the channel, I had to identify something which all welcome messages shared in common. It turns out that Discord uses a green arrow icon (<span className="discord-welcome-msg-svg-in-line"> ![](db0473de8224a02f3a88.svg) </span>) for such messages, which has a `.icon_d76df7` class.
 
 Using the class name of the icon, I extracted the parent DOM node of the chat message:

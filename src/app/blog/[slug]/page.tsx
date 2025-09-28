@@ -1,12 +1,18 @@
 import { FormattedDate } from "@/components/FormattedDate";
 import { Hr } from "@/components/Hr";
 import { SITE_TITLE } from "@/constants";
-import { getAllPosts, getPostBySlug } from "@/lib/api";
+import { getAllPosts, getPostBySlug, rehypeImagePrefix } from "@/lib/api";
+import "@/styles/blog-post.css";
+import { imageSizeFromFile } from "image-size/fromFile";
 import { Metadata } from "next";
+import ExportedImage from "next-image-export-optimizer";
 import { MDXRemote, MDXRemoteProps } from "next-mdx-remote/rsc";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import rehypePrettyCode, {
+  Options as RehypePrettyCodeOptions,
+} from "rehype-pretty-code";
+import remarkGfm from "remark-gfm";
 
 function CustomLink(props: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
   const href = props.href;
@@ -29,7 +35,22 @@ function CustomLink(props: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
 const components: MDXRemoteProps["components"] = {
   hr: Hr,
   a: CustomLink,
-  img: Image,
+  img: async (props) => {
+    const dimensions = await imageSizeFromFile(`public${props.src}`);
+    const { alt, ...otherProps } = props;
+    return (
+      <ExportedImage
+        alt={alt || ""}
+        width={dimensions.width}
+        height={dimensions.height}
+        {...otherProps}
+      />
+    );
+  },
+};
+
+const rehypePrettyCodeOptions: RehypePrettyCodeOptions = {
+  defaultLang: "plaintext",
 };
 
 type Props = {
@@ -55,11 +76,22 @@ export default async function Post(props: Props) {
             <FormattedDate date={new Date(post.date)} />
           </div>
         </div>
-        {
-          // TODO: code highlighting with https://shiki.style/
-          // TODO: images in markdown
-        }
-        <MDXRemote source={post.content} components={components} />
+        <MDXRemote
+          source={post.content}
+          components={components}
+          options={{
+            mdxOptions: {
+              remarkPlugins: [
+                // for autolinking urls
+                remarkGfm,
+              ],
+              rehypePlugins: [
+                [rehypeImagePrefix, { slug: post.slug }],
+                [rehypePrettyCode, rehypePrettyCodeOptions],
+              ],
+            },
+          }}
+        />
       </div>
     </article>
   );

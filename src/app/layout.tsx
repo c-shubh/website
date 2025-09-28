@@ -1,8 +1,8 @@
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
-import type { Metadata } from "next";
-import "./globals.css";
 import { SITE_DESCRIPTION, SITE_TITLE } from "@/constants";
+import "@/styles/globals.css";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   // TODO: metadata
