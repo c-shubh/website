@@ -6,7 +6,10 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   // TODO: metadata
-  title: SITE_TITLE,
+  title: {
+    default: SITE_TITLE,
+    template: `%s | ${SITE_TITLE}`,
+  },
   description: SITE_DESCRIPTION,
   // <head>
   //   <!-- Global Metadata -->
