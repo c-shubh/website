@@ -1,3 +1,4 @@
+import { BetterLink } from "@/components/BetterLink";
 import { FormattedDate } from "@/components/FormattedDate";
 import { Hr } from "@/components/Hr";
 import { SITE_TITLE } from "@/constants";
@@ -7,34 +8,15 @@ import { imageSizeFromFile } from "image-size/fromFile";
 import { Metadata } from "next";
 import ExportedImage from "next-image-export-optimizer";
 import { MDXRemote, MDXRemoteProps } from "next-mdx-remote/rsc";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import rehypePrettyCode, {
   Options as RehypePrettyCodeOptions,
 } from "rehype-pretty-code";
 import remarkGfm from "remark-gfm";
 
-function CustomLink(props: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
-  const href = props.href;
-
-  if (href && href.startsWith("/")) {
-    return (
-      <Link href={href} {...props}>
-        {props.children}
-      </Link>
-    );
-  }
-
-  if (href && href.startsWith("#")) {
-    return <a {...props} />;
-  }
-
-  return <a target="_blank" rel="noopener noreferrer" {...props} />;
-}
-
 const components: MDXRemoteProps["components"] = {
   hr: Hr,
-  a: CustomLink,
+  a: BetterLink,
   img: async (props) => {
     const dimensions = await imageSizeFromFile(`public${props.src}`);
     const { alt, ...otherProps } = props;
