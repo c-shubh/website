@@ -1,49 +1,14 @@
-import { BetterLink } from "@/components/BetterLink";
 import "@/styles/quotes.css";
 import type { Metadata } from "next";
-import Markdown from "react-markdown";
-import rehypeRaw from "rehype-raw";
-import remarkGfm from "remark-gfm";
-import { quotes, type Quote } from "./_data";
+import { quotes } from "./_data";
+import { SearchableQuoteList } from "./components/SearchableQuoteList";
 
 export const metadata: Metadata = {
   title: "Quotes",
   description: "A collection of quotes and poems I like.",
 };
 
-function MarkdownView({ children }: { children: string }) {
-  return (
-    <Markdown
-      rehypePlugins={[rehypeRaw]} // required to render <mark> tag
-      remarkPlugins={[remarkGfm]}
-      components={{
-        a: (props) => <BetterLink href={props.href || "#"} {...props} />,
-        h3: (props) => <h3 className="mt-0" {...props} />,
-      }}
-    >
-      {children}
-    </Markdown>
-  );
-}
-
-interface QuoteViewProps {
-  quote: Quote;
-  hideDate?: boolean;
-}
-
-export function QuoteView({ quote, hideDate }: QuoteViewProps) {
-  return (
-    <div>
-      {hideDate || <code className="block mb-2">{quote.dateAdded}</code>}
-      <blockquote className="m-0 border-s-2 border-gray-300 bg-gray-50 px-4 py-2">
-        <MarkdownView>{quote.text}</MarkdownView>
-        <MarkdownView>{`~ ${quote.attribution}`}</MarkdownView>
-      </blockquote>
-    </div>
-  );
-}
-
-export default function Quotes() {
+export default function QuotesPage() {
   return (
     <div>
       {typeof metadata.title === "string" && (
@@ -53,11 +18,7 @@ export default function Quotes() {
       <p>
         <strong>{quotes.length}</strong> quotes
       </p>
-      <div className="space-y-8">
-        {quotes.map((result) => (
-          <QuoteView key={result.text} quote={result} />
-        ))}
-      </div>
+      <SearchableQuoteList quotes={quotes} />
     </div>
   );
 }
