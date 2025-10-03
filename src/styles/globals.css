@@ -2,6 +2,10 @@
 @import "tailwindcss/theme.css" layer(theme);
 @import "tailwindcss/utilities.css" layer(utilities);
 
+* {
+  box-sizing: border-box;
+}
+
 .discord-welcome-msg-svg-in-line {
   transform: translateY(4px);
   display: inline-block;
