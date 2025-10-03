@@ -1,5 +1,10 @@
 import { FormattedDate } from "@/components/FormattedDate";
 import { getAllPosts } from "@/lib/api";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog",
+};
 
 export default function Blog() {
   const posts = getAllPosts();
