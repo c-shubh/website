@@ -1,4 +1,5 @@
 import { BetterLink } from "@/components/BetterLink";
+import { InlineCode } from "@/components/InlineCode";
 import { clsx } from "@/util";
 import type { Metadata } from "next";
 import Markdown from "react-markdown";
@@ -34,7 +35,9 @@ interface QuoteViewProps {
 export function QuoteView({ quote, hideDate }: QuoteViewProps) {
   return (
     <div>
-      {hideDate || <code className="block mb-2">{quote.dateAdded}</code>}
+      {hideDate || (
+        <InlineCode className="block mb-3">{quote.dateAdded}</InlineCode>
+      )}
 
       <blockquote
         className={clsx(
