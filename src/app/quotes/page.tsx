@@ -1,5 +1,5 @@
 import { BetterLink } from "@/components/BetterLink";
-import "@/styles/quotes.css";
+import { clsx } from "@/util";
 import type { Metadata } from "next";
 import Markdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
@@ -35,7 +35,13 @@ export function QuoteView({ quote, hideDate }: QuoteViewProps) {
   return (
     <div>
       {hideDate || <code className="block mb-2">{quote.dateAdded}</code>}
-      <blockquote className="m-0 border-s-2 border-gray-300 bg-gray-50 px-4 py-2">
+
+      <blockquote
+        className={clsx(
+          "m-0 border-s-2 border-gray-300 bg-gray-50 px-4 py-2",
+          "[&>:first-child]:mt-0 [&>:last-child]:mb-0"
+        )}
+      >
         <MarkdownView>{quote.text}</MarkdownView>
         <MarkdownView>{`~ ${quote.attribution}`}</MarkdownView>
       </blockquote>
