@@ -3,6 +3,7 @@
 import { clsx, sleep } from "@/util";
 import { useEffect, useRef, useState } from "react";
 import { BetterLink } from "./BetterLink";
+import { Button } from "./Button";
 
 function* nextChar(line: string) {
   for (const char of line) {
@@ -82,9 +83,9 @@ export function Expressive404(props: Props) {
           // TODO: implement restart button to replay the animation
         }
         {line < props.lines.length && (
-          <button onClick={() => setPause(!pause)}>
+          <Button onClick={() => setPause(!pause)}>
             {pause ? "Resume" : "Pause"}
-          </button>
+          </Button>
         )}
       </div>
     </div>

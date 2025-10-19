@@ -32,7 +32,7 @@ interface QuoteViewProps {
   hideDate?: boolean;
 }
 
-export function QuoteView({ quote, hideDate }: QuoteViewProps) {
+function QuoteView({ quote, hideDate }: QuoteViewProps) {
   return (
     <div>
       {hideDate || (
