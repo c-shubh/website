@@ -1,5 +1,6 @@
 import { BetterLink } from "@/components/BetterLink";
 import { InlineCode } from "@/components/InlineCode";
+import { PageTitleAndDescription } from "@/components/PageTitleAndDescription";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -11,10 +12,10 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      {typeof metadata.title === "string" && (
-        <h1 className="mt-0">{metadata.title}</h1>
-      )}
-      <p>{metadata.description}</p>
+      <PageTitleAndDescription
+        title={metadata.title?.toString()}
+        description={metadata.description?.toString()}
+      />
       <ul>
         <li>
           <BetterLink href="/tools/bulk-url-opener">Bulk URL Opener</BetterLink>{" "}

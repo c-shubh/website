@@ -1,6 +1,7 @@
 import { BetterLink } from "@/components/BetterLink";
 import { Expressive404 } from "@/components/Expressive404";
 import { Hr } from "@/components/Hr";
+import { PageTitleAndDescription } from "@/components/PageTitleAndDescription";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -67,9 +68,7 @@ const tl = [
 export default function NotFound() {
   return (
     <>
-      {typeof metadata.title === "string" && (
-        <h1 className="mt-0">{metadata.title}</h1>
-      )}
+      <PageTitleAndDescription title={metadata.title?.toString()} />
       <p>I take link rot seriously.</p>
       <p>
         Please <BetterLink href="/contact">let me know</BetterLink> about this

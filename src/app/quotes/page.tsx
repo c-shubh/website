@@ -6,6 +6,7 @@ import Markdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
 import { quotes, type Quote } from "./_data";
+import { PageTitleAndDescription } from "@/components/PageTitleAndDescription";
 
 export const metadata: Metadata = {
   title: "Quotes",
@@ -55,10 +56,10 @@ function QuoteView({ quote, hideDate }: QuoteViewProps) {
 export default function Quotes() {
   return (
     <div>
-      {typeof metadata.title === "string" && (
-        <h1 className="mt-0">{metadata.title}</h1>
-      )}
-      <p>{metadata.description}</p>
+      <PageTitleAndDescription
+        title={metadata.title?.toString()}
+        description={metadata.description?.toString()}
+      />
       <p>
         <strong>{quotes.length}</strong> quotes
       </p>
