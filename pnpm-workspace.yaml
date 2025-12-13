@@ -1,2 +1,5 @@
+minimumReleaseAge: 0
+
 onlyBuiltDependencies:
   - esbuild
+  - sharp
