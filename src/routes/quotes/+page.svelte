@@ -9,6 +9,8 @@
 </script>
 
 <div>
+	<h1>Quotes</h1>
+	<p>A collection of quotes and poems I like.</p>
 	<p>
 		<strong>{quotes.length}</strong> quotes
 	</p>

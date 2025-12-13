@@ -8,6 +8,7 @@
 	const projects = data.projects;
 </script>
 
+<h1>Projects</h1>
 {#each projects as project, index (project.title)}
 	<div>
 		<h2>{project.title}</h2>
