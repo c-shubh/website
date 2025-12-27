@@ -1,0 +1,25 @@
+---
+date: 2024-11-09
+slug: til-typo-tolerance-in-passwords
+title: TIL Typo Tolerance in Passwords
+tags: [TIL]
+authors: shubh
+---
+
+TIL that some companies allow typo tolerance in passwords. Instead of simply rejecting a login attempt with small mistakes, they accept some common typos like an accidental uppercase or an extra character.
+
+{/* truncate */}
+
+Years ago, while logging into my Gmail (or was it Instagram?) account, I accidentally typed the first character of my password in uppercase, which was incorrect. But, surprisingly, it let me in! I vaguely remember trying a few other variations, like changing the case of a character in the middle of the password, and they worked too. At the time, I thought it was some bug or glitch and forgot about it.
+
+Today, while binge-reading [Michael Lynch's blog](https://mtlynch.io/posts/) and link-hopping, I came across [this](https://news.ycombinator.com/item?id=13426544) HN post about mistyped passwords and how Facebook handles them:
+
+<div style={{textAlign: 'center'}}>
+
+![Our reply: Hi Christopher, We accept four forms of the user's password to help overcome the most common reasons that authentic logins are rejected. In addition to the original password. we also accept the password if a user inadvertently has caps lock enabled, if their mobile device automatically capitalizes the first character of the password, or if an extra character is added to the end of the password. We feel this does not significantly impact the security of the user's password or their account. Thanks. ~ Kurt, Security](C2dGvgvWEAAienm.jpg)
+
+</div>
+
+A [comment](https://news.ycombinator.com/item?id=13427958) links to a research paper on typo-tolerant authentication schemes: [pASSWORD tYPOS and How to Correct Them Securely](http://www.arijuels.com/wp-content/uploads/2016/07/CAAJ16.pdf). How interesting!
+
+So, next time you notice a site letting you in with common typos in your password, this could be at play! (or maybe their auth is broken :p)
