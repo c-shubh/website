@@ -1,14 +1,11 @@
 ---
-date: 2024-11-28
-slug: til-parity-check-with-mod
-title: TIL Parity check with %
-tags: [TIL]
-authors: shubh
+date: '2024-11-28'
+title: 'TIL Parity check with %'
+tags:
+  - 'TIL'
 ---
 
 The result of modulo operator (%) varies between programming languages especially when one of the operand is negative.
-
-<!-- truncate -->
 
 For example, here's what Python outputs:
 
@@ -39,12 +36,13 @@ bool is_odd(int n) {
     return n % 2 != 0;
 }
 ```
+
 than
 
 ```c
 bool is_odd(int n) {
     // !!! incorrect for n < 0 !!!
-    return n % 2 == 1; 
+    return n % 2 == 1;
 }
 ```
 

@@ -1,14 +1,11 @@
 ---
-date: 2024-11-23
-slug: til-accessing-app-data-adb
-title: TIL Accessing App Data using ADB
-authors: shubh
-tags: [TIL]
+date: '2024-11-23'
+title: 'TIL Accessing App Data using ADB'
+tags:
+  - 'TIL'
 ---
 
 While working on an Android app, I had some issues with the SQLite database and wanted to delete it. This db is stored in the app's internal data directory (`/data/data/com.cshubh.myapp`), which is inaccessible using file managers on the device.
-
-<!-- truncate -->
 
 Android Studio has Device Explorer which allows us to access the internal data directory of a debuggable app, but I didn't want to open that resource hungry IDE for such a simple task. There had to be a way to do it using adb.
 

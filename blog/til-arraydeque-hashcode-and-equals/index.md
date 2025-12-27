@@ -1,10 +1,8 @@
 ---
-slug: til-arraydeque-hashcode-and-equals
-title: TIL ArrayDeque hashCode and equals
+date: '2024-08-16'
+title: 'TIL ArrayDeque hashCode and equals'
 tags:
-  - TIL
-authors:
-  - shubh
+  - 'TIL'
 ---
 
 TIL that `LinkedList` overrides equals and hashCode, but ArrayDeque doesn't!
