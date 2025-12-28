@@ -2,12 +2,11 @@
 import { Image } from 'astro:assets';
 import computer from '../assets/images/computer.gif';
 import hello from '../assets/images/hello.gif';
-import Hr from '../components/Hr.astro';
 import Page from '../layouts/Page.astro';
 import { clsx } from '../utils';
 ---
 
-<Page layout='home'>
+<Page layout="home">
 	<div class={clsx(['flex', 'flex-col'])}>
 		<header class={clsx(['mt-2', 'mb-8'])}>
 			<h1
@@ -25,7 +24,7 @@ import { clsx } from '../utils';
 				{'Hacker  •  Software Engineer  •  Builder  •  Learner'}
 			</p>
 		</header>
-		<Hr />
+		<hr />
 		<main>
 			<section class="">
 				<!-- TODO: make it look better:

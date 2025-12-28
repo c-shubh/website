@@ -1,0 +1,30 @@
+---
+import MarkdownView from '../../components/MarkdownView.astro';
+import Page from '../../layouts/Page.astro';
+import { quotes } from './_data';
+---
+
+<Page title="Quotes">
+	<p>A collection of quotes and poems I like.</p>
+	<p>
+		<strong>{quotes.length}</strong> quotes
+	</p>
+	<div class="space-y-8">
+		{
+			quotes.map((result, index) => (
+				<div>
+					<code class="mb-3">{result.dateAdded}</code>
+					<blockquote>
+						<MarkdownView source={result.text} />
+						<MarkdownView source={`~ ${result.attribution}`} />
+					</blockquote>
+					{index < quotes.length - 1 && (
+						<div class="pt-2">
+							<hr />
+						</div>
+					)}
+				</div>
+			))
+		}
+	</div>
+</Page>

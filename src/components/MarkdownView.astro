@@ -1,0 +1,11 @@
+---
+import { marked } from 'marked';
+
+interface Props {
+	source: string;
+}
+
+const { source }: Props = Astro.props;
+---
+
+<Fragment set:html={marked.parse(source)} />

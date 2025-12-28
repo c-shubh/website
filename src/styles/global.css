@@ -10,11 +10,12 @@
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
 :root {
-	/* --accent: #2337ff;
+	/* 
 	--accent-dark: #000d8a;
 	--black: 15, 18, 25;
 	--gray: 96, 115, 159;
 	--gray-dark: 34, 41, 57; */
+	--accent: #2337ff;
 	--gray-light: 229, 233, 240;
 	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
 	/* --box-shadow:
@@ -49,6 +50,21 @@ img {
 	border-radius: 8px;
 }
 
+blockquote {
+	border-left: 4px solid var(--accent);
+	padding: 0 0 0 20px;
+	margin: 0;
+}
+
+hr {
+	/* ref: https://stackoverflow.com/questions/34365271/hr-inside-container-with-display-flex-become-corrupted */
+	margin-left: 0;
+	margin-right: 0;
+	height: 1px;
+	border: none;
+	@apply bg-gray-300;
+}
+
 /*
 textarea {
 	width: 100%;
@@ -59,11 +75,5 @@ input {
 }
 table {
 	width: 100%;
-}
-blockquote {
-	border-left: 4px solid var(--accent);
-	padding: 0 0 0 20px;
-	margin: 0;
-	font-size: 1.333em;
 }
 */
