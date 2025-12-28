@@ -1,0 +1,18 @@
+---
+import { clsx } from '../utils';
+
+interface Props {
+	className?: string;
+}
+
+const { className, ...props } = Astro.props;
+---
+
+<hr
+	class={clsx([
+		'mx-0', // ref: https://stackoverflow.com/questions/34365271/hr-inside-container-with-display-flex-become-corrupted
+		'h-px border-0 bg-gray-300',
+		className,
+	])}
+	{...props}
+/>

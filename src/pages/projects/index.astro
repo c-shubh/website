@@ -1,5 +1,6 @@
 ---
 import { marked } from 'marked';
+import Hr from '../../components/Hr.astro';
 import Page from '../../layouts/Page.astro';
 import { projects } from './_data';
 ---
@@ -25,7 +26,7 @@ import { projects } from './_data';
 						<strong>Source URL:</strong> <a href={project.srcUrl}>{project.srcUrl}</a>
 					</p>
 				)}
-				{index !== projects.length - 1 && <hr />}
+				{index !== projects.length - 1 && <Hr />}
 			</div>
 		))
 	}
