@@ -41,10 +41,12 @@ props.layout = props.layout ?? 'page';
 					props.layout === 'blog' ? (
 						<article>
 							<div>
-								<h1 class="mt-0">{props.title}</h1>
+								<h1 class="my-0">{props.title}</h1>
 								{props.date && (
 									<div>
-										<FormattedDate date={props.date} />
+										<span class="font-medium">
+											<FormattedDate date={props.date} />
+										</span>
 									</div>
 								)}
 							</div>
