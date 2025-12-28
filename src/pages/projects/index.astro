@@ -1,0 +1,32 @@
+---
+import { marked } from 'marked';
+import Page from '../../layouts/Page.astro';
+import { projects } from './_data';
+---
+
+<Page title="Projects">
+	{
+		projects.map((project, index) => (
+			<div>
+				<h2>{project.title}</h2>
+				<p set:html={marked.parse(project.description)} />
+				<p>
+					<strong>Built with:</strong>
+					{project.builtWith.join(', ')}
+				</p>
+				{project.liveUrl && (
+					<p>
+						<strong>Live URL:</strong>
+						<a href={project.liveUrl}>{project.liveUrl}</a>
+					</p>
+				)}
+				{project.srcUrl && (
+					<p>
+						<strong>Source URL:</strong> <a href={project.srcUrl}>{project.srcUrl}</a>
+					</p>
+				)}
+				{index !== projects.length - 1 && <hr />}
+			</div>
+		))
+	}
+</Page>
