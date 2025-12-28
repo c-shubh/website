@@ -1,0 +1,34 @@
+---
+import { Email } from '../components/Email';
+import Page from '../layouts/Page.astro';
+
+const services = [
+	{
+		name: 'LinkedIn',
+		url: 'https://www.linkedin.com/in/c-shubh/',
+	},
+	{
+		name: 'GitHub',
+		url: 'https://github.com/c-shubh/',
+	},
+];
+---
+
+<Page title="Contact">
+	<p>
+		The best way to reach out to me is by email. I monitor it almost daily so there&apos;s little
+		chance that I miss your email.
+	</p>
+	<Email client:load />
+	<h2>Links</h2>
+	<p>My public profiles on various platforms:</p>
+	<ul>
+		{
+			services.map((service) => (
+				<li>
+					<span class="font-bold">{service.name}:</span> <a href={service.url}>{service.url}</a>
+				</li>
+			))
+		}
+	</ul>
+</Page>
