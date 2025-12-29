@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Link from './Link';
 
 const cipherText = 'ynahn.iysg@msgor.ius';
 const magicNumber = 1982;
@@ -25,9 +26,9 @@ export function Email() {
 			<button onClick={() => setVisible(!visible)}>{!visible ? 'Show' : 'Hide'} Email</button>
 			{visible && (
 				<p>
-					<a href={`mailto:${cipher(cipherText, magicNumber, true)}`}>
+					<Link href={`mailto:${cipher(cipherText, magicNumber, true)}`}>
 						{cipher(cipherText, magicNumber, true)}
-					</a>
+					</Link>
 				</p>
 			)}
 		</>

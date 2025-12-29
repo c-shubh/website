@@ -1,6 +1,7 @@
 ---
 import { SITE_TITLE } from '../consts';
 import { clsx } from '../utils';
+import Link from './Link.astro';
 
 const links = [
 	{ href: '/projects', text: 'Projects' },
@@ -24,15 +25,15 @@ const links = [
 			'sm:items-center',
 		])}
 	>
-		<a href="/" class={clsx(['no-underline', 'text-black', 'text-xl', 'font-bold'])}>
+		<Link href="/" class={clsx(['no-underline', 'text-black', 'text-xl', 'font-bold'])}>
 			{SITE_TITLE}
-		</a>
+		</Link>
 		<div class={clsx(['flex', 'space-x-4', 'flex-wrap'])}>
 			{
 				links.map((link) => (
-					<a href={link.href} class={clsx(['no-underline', 'font-medium'])}>
+					<Link href={link.href} class={clsx(['no-underline', 'font-medium'])}>
 						{link.text}
-					</a>
+					</Link>
 				))
 			}
 		</div>

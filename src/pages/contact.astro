@@ -1,5 +1,6 @@
 ---
 import { Email } from '../components/Email';
+import Link from '../components/Link.astro';
 import Page from '../layouts/Page.astro';
 
 const services = [
@@ -26,7 +27,8 @@ const services = [
 		{
 			services.map((service) => (
 				<li>
-					<span class="font-bold">{service.name}:</span> <a href={service.url}>{service.url}</a>
+					<span class="font-bold">{service.name}:</span>{' '}
+					<Link href={service.url}>{service.url}</Link>
 				</li>
 			))
 		}

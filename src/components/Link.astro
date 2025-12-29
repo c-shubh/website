@@ -1,0 +1,10 @@
+---
+interface Props extends astroHTML.JSX.AnchorHTMLAttributes {}
+const props = Astro.props;
+
+const isExternal =
+	props.href?.toString().startsWith('http://') || props?.href?.toString().startsWith('https://');
+const externalAttrs = isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {};
+---
+
+<a {...props} {...externalAttrs}><slot /></a>
