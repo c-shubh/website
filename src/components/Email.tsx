@@ -1,5 +1,5 @@
+import Link from '@/components/Link';
 import { useState } from 'react';
-import Link from './Link';
 
 const cipherText = 'ynahn.iysg@msgor.ius';
 const magicNumber = 1982;
