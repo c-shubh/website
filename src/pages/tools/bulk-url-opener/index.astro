@@ -1,0 +1,12 @@
+---
+import Page from '@/layouts/Page.astro';
+import { BulkUrlOpener } from './_BulkUrlOpener';
+---
+
+<Page title="Bulk URL Opener">
+	<p>
+		Paste a list of URLs in the textbox below to open all of them in new tabs.<br />
+		Note: Enter <strong>one URL per line.</strong>
+	</p>
+	<BulkUrlOpener client:load />
+</Page>

@@ -1,3 +1,4 @@
+import { Button } from '@/components/Button';
 import Link from '@/components/Link';
 import { useState } from 'react';
 
@@ -23,7 +24,7 @@ export function Email() {
 
 	return (
 		<>
-			<button onClick={() => setVisible(!visible)}>{!visible ? 'Show' : 'Hide'} Email</button>
+			<Button onClick={() => setVisible(!visible)}>{!visible ? 'Show' : 'Hide'} Email</Button>
 			{visible && (
 				<p>
 					<Link href={`mailto:${cipher(cipherText, magicNumber, true)}`}>
