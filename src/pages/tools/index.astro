@@ -1,4 +1,5 @@
 ---
+import Link from '@/components/Link.astro';
 import Page from '@/layouts/Page.astro';
 ---
 
@@ -6,25 +7,26 @@ import Page from '@/layouts/Page.astro';
 	<p>My implementation of simple tools that I find myself looking up every time I need them.</p>
 	<ul>
 		<li>
-			<a href="/tools/bulk-url-opener">Bulk URL Opener</a> – Paste a list of URLs to open them all in
-			new tabs.
+			<Link href="/tools/bulk-url-opener">Bulk URL Opener</Link> – Paste a list of URLs to open them
+			all in new tabs.
 		</li>
 		<li>
-			<a href="/tools/qr-code-generator">QR Code Generator</a> – Quickly generate one or more QR codes.
+			<Link href="/tools/qr-code-generator">QR Code Generator</Link> – Quickly generate one or more QR
+			codes.
 		</li>
 		<li>
-			<a href="/tools/slugify">Slugify</a> – Create <a
-				href="https://en.wikipedia.org/wiki/Clean_URL#Slug">slug</a
+			<Link href="/tools/slugify">Slugify</Link> – Create <Link
+				href="https://en.wikipedia.org/wiki/Clean_URL#Slug">slug</Link
 			> from text.
 		</li>
 		<li>
-			<a href="/tools/word-count">Word Count</a> – Online version of the linux command <code
+			<Link href="/tools/word-count">Word Count</Link> – Online version of the linux command <code
 				>wc</code
 			>.
 		</li>
 		<li>
-			<a href="/tools/section-comment-generator">Section Comment Generator</a> – Generates code comment
-			to be used to mark sections in code.
+			<Link href="/tools/section-comment-generator">Section Comment Generator</Link> – Generates code
+			comment to be used to mark sections in code.
 		</li>
 	</ul>
 </Page>

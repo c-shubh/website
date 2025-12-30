@@ -1,4 +1,5 @@
 ---
+import Link from '@/components/Link.astro';
 import Page from '@/layouts/Page.astro';
 import { marked } from 'marked';
 import { projects } from './_data';
@@ -17,12 +18,12 @@ import { projects } from './_data';
 				{project.liveUrl && (
 					<p>
 						<strong>Live URL:</strong>
-						<a href={project.liveUrl}>{project.liveUrl}</a>
+						<Link href={project.liveUrl}>{project.liveUrl}</Link>
 					</p>
 				)}
 				{project.srcUrl && (
 					<p>
-						<strong>Source URL:</strong> <a href={project.srcUrl}>{project.srcUrl}</a>
+						<strong>Source URL:</strong> <Link href={project.srcUrl}>{project.srcUrl}</Link>
 					</p>
 				)}
 				{index !== projects.length - 1 && <hr />}
