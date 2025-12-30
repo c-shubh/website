@@ -67,36 +67,34 @@ const description = undefined;
 		<meta property="twitter:title" content={title} />
 		{description && <meta property="twitter:description" content={description} />}
 	</head>
-	<body>
-		<div class="flex flex-col min-h-screen m-0 font-sans max-w-2xl px-4 mx-auto leading-relaxed">
-			<Navbar />
-			<main class="flex-grow">
-				{
-					props.layout === 'blog' ? (
-						<article>
-							<div>
-								<h1 class="my-0">{props.title}</h1>
-								{props.date && (
-									<div>
-										<span class="font-medium">
-											<FormattedDate date={props.date} />
-										</span>
-									</div>
-								)}
-							</div>
-							<div>
-								<slot />
-							</div>
-						</article>
-					) : (
-						<>
-							{props.layout === 'page' && <h1 class="mt-0">{props.title}</h1>}
+	<body class="flex flex-col min-h-screen m-0 font-sans max-w-2xl px-4 mx-auto leading-relaxed">
+		<Navbar />
+		<main class="flex-grow">
+			{
+				props.layout === 'blog' ? (
+					<article>
+						<div>
+							<h1 class="my-0">{props.title}</h1>
+							{props.date && (
+								<div>
+									<span class="font-medium">
+										<FormattedDate date={props.date} />
+									</span>
+								</div>
+							)}
+						</div>
+						<div>
 							<slot />
-						</>
-					)
-				}
-			</main>
-			<Footer />
-		</div>
+						</div>
+					</article>
+				) : (
+					<>
+						{props.layout === 'page' && <h1 class="mt-0">{props.title}</h1>}
+						<slot />
+					</>
+				)
+			}
+		</main>
+		<Footer />
 	</body>
 </html>
