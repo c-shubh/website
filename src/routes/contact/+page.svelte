@@ -36,7 +36,7 @@
 	}
 </script>
 
-<h1>Contact</h1>
+<h1 class="mt-0">Contact</h1>
 <p>
 	The best way to reach out to me is by email. I monitor it almost daily so there&apos;s little
 	chance that I miss your email.

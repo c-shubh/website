@@ -8,3 +8,14 @@ p,
 ul {
 	line-height: 1.45;
 }
+
+pre.shiki {
+	@apply my-4 rounded-lg p-4;
+	@apply overflow-x-auto;
+	scrollbar-width: thin;
+	@apply min-w-full;
+}
+
+pre.shiki code {
+	@apply leading-relaxed;
+}

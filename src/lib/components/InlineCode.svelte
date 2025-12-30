@@ -8,10 +8,7 @@
 </script>
 
 <code
-	class={[
-		'w-fit rounded border border-black/10 bg-gray-100 px-1 py-0.5 font-mono text-sm',
-		className
-	]}
+	class={['w-fit rounded border border-black/10 bg-gray-100 px-1 py-0.5 font-mono', className]}
 	{...rest}
 >
 	{@render children?.()}
