@@ -7,15 +7,15 @@ import { Image } from 'astro:assets';
 ---
 
 <Page layout="home">
-	<div class={clsx(['flex', 'flex-col'])}>
-		<header class={clsx(['mt-2', 'mb-8'])}>
+	<div class={clsx('flex', 'flex-col')}>
+		<header class={clsx('mt-2', 'mb-8')}>
 			<h1
-				class={clsx([
+				class={clsx(
 					'relative',
 					'mt-0',
 					'text-center',
-					'sm:text-[1.6rem]', // make text small to fit hello bubble gif
-				])}
+					'sm:text-[1.6rem' // make text small to fit hello bubble gif
+				)}
 			>
 				I&apos;m a techie who loves building things.
 				<Image src={hello} alt="Hello GIF" width={65} class="absolute bottom-0 hidden sm:inline" />

@@ -12,9 +12,9 @@ const links = [
 ];
 ---
 
-<header class={clsx(['my-4'])}>
+<header class={clsx('my-4')}>
 	<nav
-		class={clsx([
+		class={clsx(
 			// default
 			'flex',
 			'flex-col',
@@ -22,16 +22,16 @@ const links = [
 			// sm and up
 			'sm:flex-row',
 			'sm:justify-between',
-			'sm:items-center',
-		])}
+			'sm:items-center'
+		)}
 	>
-		<Link href="/" class={clsx(['no-underline', 'text-black', 'text-xl', 'font-bold'])}>
+		<Link href="/" class={clsx('no-underline', 'text-black', 'text-xl', 'font-bold')}>
 			{SITE_TITLE}
 		</Link>
-		<div class={clsx(['flex', 'space-x-4', 'flex-wrap'])}>
+		<div class={clsx('flex', 'space-x-4', 'flex-wrap')}>
 			{
 				links.map((link) => (
-					<Link href={link.href} class={clsx(['no-underline', 'font-medium'])}>
+					<Link href={link.href} class={clsx('no-underline', 'font-medium')}>
 						{link.text}
 					</Link>
 				))

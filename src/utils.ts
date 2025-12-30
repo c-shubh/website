@@ -1,3 +1,10 @@
-export function clsx(args: (string | undefined)[]) {
-	return args.filter(Boolean).join(' ');
+export function clsx(...args: unknown[]) {
+	return args.reduce((result: string, arg) => {
+		if (typeof arg === 'string') {
+			result += ' ' + arg;
+		}
+		return result;
+	}, '');
+}
+
 }
