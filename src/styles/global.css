@@ -1,7 +1,8 @@
-@import url('./modern-normalize.css');
-
 @layer theme, base, components, utilities;
 @import 'tailwindcss/theme.css' layer(theme);
+@layer base {
+	@import url('./modern-normalize.css');
+}
 @import 'tailwindcss/utilities.css' layer(utilities);
 
 /*
@@ -25,7 +26,6 @@
 
 body {
 	background: linear-gradient(var(--gray-gradient)) no-repeat;
-	background-size: 100% 600px;
 }
 
 code {
