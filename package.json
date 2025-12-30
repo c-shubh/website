@@ -16,6 +16,7 @@
     "@tailwindcss/vite": "^4.1.17",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
+    "antd": "^6.1.0",
     "astro": "^5.16.4",
     "dayjs": "^1.11.19",
     "marked": "^17.0.1",
