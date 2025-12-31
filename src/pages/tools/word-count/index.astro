@@ -1,0 +1,9 @@
+---
+import Page from '@/layouts/Page.astro';
+import { WordCount } from './_WordCount.tsx';
+---
+
+<Page title="Word Count">
+	<p>Enter text below or select a file to see character, word and line count.</p>
+	<WordCount client:load />
+</Page>

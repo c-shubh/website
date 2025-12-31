@@ -1,5 +1,5 @@
 import { Button } from '@/components/Button';
-import Link from '@/components/Link';
+import { Link } from '@/components/Link';
 import { useState } from 'react';
 
 const cipherText = 'ynahn.iysg@msgor.ius';
