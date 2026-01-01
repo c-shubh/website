@@ -63,11 +63,15 @@ export function WordCount() {
 			/>
 			<div>or</div>
 			<div>
-				<input type="file" onChange={handleFileChange} />
+				<input
+					type="file"
+					className="w-full p-2 border border-gray-400"
+					onChange={handleFileChange}
+				/>
 			</div>
 			<div>
 				<h3>Output</h3>
-				<pre>
+				<pre className="overflow-x-auto">
 					Character count: {count.character}
 					<br />
 					Word count: {'     '}
