@@ -3,6 +3,12 @@ import Link from '@/components/Link.astro';
 import { SITE_TITLE } from '@/consts';
 import { clsx } from '@/utils';
 
+interface Props {
+	title?: string;
+}
+
+const props = Astro.props;
+
 const links = [
 	{ href: '/projects', text: 'Projects' },
 	{ href: '/tools', text: 'Tools' },
@@ -31,7 +37,10 @@ const links = [
 		<div class={clsx('flex', 'space-x-4', 'flex-wrap')}>
 			{
 				links.map((link) => (
-					<Link href={link.href} class={clsx('no-underline', 'font-medium')}>
+					<Link
+						href={link.href}
+						class={clsx(props.title === link.text ? 'underline' : 'no-underline', 'font-medium')}
+					>
 						{link.text}
 					</Link>
 				))

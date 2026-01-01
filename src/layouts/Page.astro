@@ -68,7 +68,7 @@ const description = undefined;
 		{description && <meta property="twitter:description" content={description} />}
 	</head>
 	<body class="flex flex-col min-h-screen m-0 font-sans max-w-2xl px-4 mx-auto leading-relaxed">
-		<Navbar />
+		<Navbar title={props.layout !== 'home' ? props.title : undefined} />
 		<main class="flex-grow">
 			{
 				props.layout === 'blog' ? (
