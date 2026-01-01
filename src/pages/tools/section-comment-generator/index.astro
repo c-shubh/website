@@ -1,0 +1,9 @@
+---
+import Page from '@/layouts/Page.astro';
+import { SectionCommentGenerator } from './_SectionCommentGenerator';
+---
+
+<Page title="Section Comment Generator">
+	<p>Enter text to generate a section comment.</p>
+	<SectionCommentGenerator client:load />
+</Page>

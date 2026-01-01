@@ -225,6 +225,10 @@ Add the correct display in Chrome and Safari.
 		rgba(var(--gray), 33%); */
 }
 
+*:not(html):not(body) {
+	scrollbar-width: thin;
+}
+
 body {
 	background: linear-gradient(var(--gray-gradient)) no-repeat;
 }
@@ -238,7 +242,6 @@ code {
 pre.astro-code {
 	padding: 1.5em;
 	border-radius: 8px;
-	scrollbar-width: thin;
 }
 
 pre > code {
