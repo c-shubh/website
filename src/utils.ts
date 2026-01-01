@@ -1,5 +1,5 @@
-export function clsx(...args: unknown[]) {
-	return args.reduce((result: string, arg) => {
+export function clsx(...args: unknown[]): string {
+	return args.reduce<string>((result: string, arg) => {
 		if (typeof arg === 'string') {
 			result += ' ' + arg;
 		}
