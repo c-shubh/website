@@ -13,4 +13,12 @@ export default defineConfig({
 	vite: {
 		plugins: [tailwindcss()],
 	},
+	redirects: {
+		'/github': 'https://github.com/c-shubh/',
+		'/linkedin': 'https://www.linkedin.com/in/c-shubh/',
+		'/leetcode': 'https://leetcode.com/u/c-shubh/',
+		// This website used to have a /links page with list of links to interesting stuff.
+		// Now it's merged into /library.
+		'/links': '/library',
+	},
 });
