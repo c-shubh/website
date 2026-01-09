@@ -1,62 +1,46 @@
-# Astro Starter Kit: Blog
+# My personal website
 
-```sh
-pnpm create astro@latest -- --template blog
+Source code for https://cshubh.com
+
+## Built with
+
+- [Astro](https://astro.build/)
+- [tailwindcss](https://tailwindcss.com/)
+- Patience and love ❤️
+
+## Development
+
+Run development server:
+
+```bash
+pnpm dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Build the website:
 
-Features:
-
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-├── public/
-├── src/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
+```bash
+pnpm build
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+<!-- Deploy the website: -->
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+<!-- TODO: add deploy instructions -->
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+<!-- ```bash -->
+<!-- npm run deploy -->
+<!-- ``` -->
 
-Any static assets, like images, can be placed in the `public/` directory.
+## License
 
-## 🧞 Commands
+- The source code in this repository is licensed under the [AGPLv3](./LICENSE-AGPL-3.0-only).
+- The text content, including documentation and blog posts, is licensed under the [CC BY-NC-SA 4.0](./LICENSE-CC-BY-NC-SA-4.0).
 
-All commands are run from the root of the project, from a terminal:
+For more details, please refer to the respective license files.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+<!--
+website logo source:
+evergreen tree: https://openmoji.org/library/emoji-1F332/
+permalink: https://github.com/hfg-gmuend/openmoji/blob/f6c0046bb42195e025f4802e3ff5210389dd34a3/color/svg/1F332.svg
 
-## 👀 Want to learn more?
-
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-## Credit
-
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+favicon generated using https://realfavicongenerator.net/
+ -->

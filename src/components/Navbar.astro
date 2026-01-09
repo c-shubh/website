@@ -1,7 +1,9 @@
 ---
+import logo from '@/assets/images/logo.svg';
 import Link from '@/components/Link.astro';
 import { SITE_TITLE } from '@/consts';
 import { clsx } from '@/utils';
+import { Image } from 'astro:assets';
 
 interface Props {
 	title?: string;
@@ -31,7 +33,19 @@ const links = [
 			'sm:items-center'
 		)}
 	>
-		<Link href="/" class={clsx('no-underline', 'text-black', 'text-xl', 'font-bold')}>
+		<Link
+			href="/"
+			class={clsx(
+				'no-underline',
+				'text-black',
+				'text-xl',
+				'font-bold',
+				'flex',
+				'items-center',
+				'gap-2'
+			)}
+		>
+			<Image src={logo} alt="Site Logo" width={36} />
 			{SITE_TITLE}
 		</Link>
 		<div class={clsx('flex', 'space-x-4', 'flex-wrap')}>
