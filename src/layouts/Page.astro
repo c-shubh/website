@@ -17,12 +17,15 @@ interface BlogPage {
 	date: Date;
 }
 
-interface Page {
+interface StandalonePage {
 	layout?: 'page';
 	title: string;
 }
 
-type Props = HomePage | BlogPage | Page;
+type Props = (HomePage | BlogPage | StandalonePage) & {
+	archived?: boolean;
+	description?: string;
+};
 
 const props: Props = Astro.props;
 props.layout = props.layout ?? 'page';
@@ -52,6 +55,8 @@ const description = undefined;
 		<meta name="apple-mobile-web-app-title" content={SITE_TITLE} />
 		<link rel="manifest" href="/site.webmanifest" />
 		<link rel="me" href="https://mastodon.social/@cshubh" />
+
+		{props.archived && <meta data-rh="true" name="robots" content="noindex, nofollow" />}
 
 		<!-- Canonical URL -->
 		<link rel="canonical" href={canonicalURL} />

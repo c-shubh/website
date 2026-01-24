@@ -1,0 +1,43 @@
+---
+import Link from '@/components/Link.astro';
+import Page from '@/layouts/Page.astro';
+import { writings } from './_data';
+
+const description = "List of everything I've read, watched, listened to, or otherwise consumed.";
+---
+
+<Page title="Library" description={description} archived>
+	<p>
+		{description}
+	</p>
+
+	<h2>Archival Notice</h2>
+	<p>
+		This page has stopped getting updates. It was hard for me to keep track of links and update
+		here.
+	</p>
+	<p>Previous content preserved below. Archived on 2024-10-26.</p>
+
+	<h2>Writings</h2>
+
+	<ul>
+		{
+			writings.map((link) => (
+				<li>
+					<code>{link.date}</code>
+					<Link href={link.url}>{link.title}</Link>{' '}
+					{link.archiveUrl && (
+						<>
+							- <Link href={link.archiveUrl}>Archive</Link>{' '}
+						</>
+					)}
+					{link.hnUrl && (
+						<>
+							- <Link href={link.hnUrl}>HN discussion</Link>{' '}
+						</>
+					)}
+				</li>
+			))
+		}
+	</ul>
+</Page>
