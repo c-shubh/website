@@ -1,0 +1,13 @@
+---
+import { Expressive404 } from '@/components/Expressive404';
+import { Link } from '@/components/Link';
+import Page from '@/layouts/Page.astro';
+---
+
+<Page title="Page Not Found">
+	<p>
+		If you believe this is a mistake, please <Link href="/contact">let me know</Link>. I will fix
+		it, because I take link rot seriously.
+	</p>
+	<Expressive404 client:load />
+</Page>
