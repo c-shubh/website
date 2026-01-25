@@ -68,7 +68,7 @@ export function Expressive404() {
 	const waitBetweenLines = 300;
 	const [triggerIdx, setTriggerIdx] = useState(0);
 	const [isPaused, setIsPaused] = useState(false);
-	const [isFinished, setIsFinished] = useState(false); // 1. New state
+	const [isFinished, setIsFinished] = useState(false);
 	const pausedRef = useRef(isPaused);
 
 	useEffect(() => {
@@ -139,7 +139,7 @@ export function Expressive404() {
 			<div className="flex flex-col gap-4">
 				<textarea
 					ref={textAreaRef}
-					className="w-full h-64 bg-black text-[#3f0] font-mono p-4 resize-none outline-none leading-relaxed"
+					className="w-full h-64 bg-black text-[#3f0] font-mono p-4 resize-none outline-none leading-relaxed rounded-md"
 					readOnly
 				/>
 				<div className="flex justify-end">
