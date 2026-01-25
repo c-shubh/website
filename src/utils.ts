@@ -1,4 +1,4 @@
-import { COPYRIGHT, FULL_NAME, LANGUAGE, SITE, SITE_DESCRIPTION } from '@/consts';
+import { BLOG_ATOM_FEED, COPYRIGHT, FULL_NAME, LANGUAGE, SITE, SITE_DESCRIPTION } from '@/consts';
 import type { CollectionEntry } from 'astro:content';
 import { Feed, type FeedOptions, type Item } from 'feed';
 import { SITE_TITLE } from './consts';
@@ -41,7 +41,7 @@ export async function generateFeed(type: 'rss' | 'atom', posts: CollectionEntry<
 
 	if (type === 'atom') {
 		feedOptions.feedLinks = {
-			atom: `${blogBaseUrl}/atom.xml`,
+			atom: `${SITE}${BLOG_ATOM_FEED}`,
 		};
 	}
 

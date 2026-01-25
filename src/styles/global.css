@@ -248,7 +248,7 @@ pre > code {
 	all: unset;
 }
 
-img {
+img:not(nav img) {
 	max-width: 100%;
 	height: auto;
 	border-radius: 8px;
@@ -268,16 +268,3 @@ hr {
 	border: none;
 	@apply bg-gray-300;
 }
-
-/*
-textarea {
-	width: 100%;
-	font-size: 16px;
-}
-input {
-	font-size: 16px;
-}
-table {
-	width: 100%;
-}
-*/

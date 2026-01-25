@@ -6,6 +6,8 @@ export const FULL_NAME = 'Shubh A Chudasama';
 export const LANGUAGE = 'en';
 export const SITE_TITLE = FULL_NAME;
 export const SITE_DESCRIPTION = 'My corner of the interwebz ^_^';
+export const BLOG_RSS_FEED = '/blog/rss.xml';
+export const BLOG_ATOM_FEED = '/blog/atom.xml';
 export const COPYRIGHT = {
 	symbol: '©',
 	year: new Date().getFullYear(),

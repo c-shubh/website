@@ -2,7 +2,7 @@
 import Footer from '@/components/Footer.astro';
 import FormattedDate from '@/components/FormattedDate.astro';
 import Navbar from '@/components/Navbar.astro';
-import { LANGUAGE, SITE_TITLE } from '@/consts';
+import { BLOG_ATOM_FEED, BLOG_RSS_FEED, FULL_NAME, LANGUAGE, SITE_TITLE } from '@/consts';
 import '@/styles/global.css';
 import { pageTitle } from '@/utils';
 
@@ -45,9 +45,16 @@ const description = undefined;
 		<link
 			rel="alternate"
 			type="application/rss+xml"
-			title={SITE_TITLE}
-			href={new URL('rss.xml', Astro.site)}
+			href={BLOG_RSS_FEED}
+			title=`${FULL_NAME}'s Blog RSS Feed`
 		/>
+		<link
+			rel="alternate"
+			type="application/atom+xml"
+			href={BLOG_ATOM_FEED}
+			title=`${FULL_NAME}'s Blog Atom Feed`
+		/>
+
 		<meta name="generator" content={Astro.generator} />
 		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
