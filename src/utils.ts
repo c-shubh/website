@@ -25,13 +25,9 @@ export function pageTitle(name: string): string {
 	return `${name} | ${SITE_TITLE}`;
 }
 
-export async function generateFeed(type: 'rss', posts: CollectionEntry<'blog'>[]) {
+export async function generateFeed(type: 'rss' | 'atom', posts: CollectionEntry<'blog'>[]) {
 	const blogBaseUrl = `${SITE}/blog`;
 	const copyrightLine = `${COPYRIGHT.symbol} ${COPYRIGHT.year} ${COPYRIGHT.holder}. ${COPYRIGHT.string}`;
-	const defaultAuthor = {
-		name: FULL_NAME,
-		link: SITE,
-	};
 
 	const feedOptions: FeedOptions = {
 		title: pageTitle('Blog'),
@@ -41,8 +37,13 @@ export async function generateFeed(type: 'rss', posts: CollectionEntry<'blog'>[]
 		copyright: copyrightLine,
 		language: LANGUAGE,
 		favicon: `${SITE}/favicon.ico`,
-		author: defaultAuthor,
 	};
+
+	if (type === 'atom') {
+		feedOptions.feedLinks = {
+			atom: `${blogBaseUrl}/atom.xml`,
+		};
+	}
 
 	const feed = new Feed(feedOptions);
 
@@ -54,10 +55,20 @@ export async function generateFeed(type: 'rss', posts: CollectionEntry<'blog'>[]
 			title: post.data.title,
 			link: blogPostUrl,
 			date: post.data.date,
-			author: [defaultAuthor],
+			author: [
+				{
+					name: FULL_NAME,
+					link: '/',
+				},
+			],
 			copyright: copyrightLine,
 		};
 		feed.addItem(itemOptions);
 	}
-	return feed.rss2();
+
+	if (type === 'atom') {
+		return feed.atom1();
+	} else if (type === 'rss') {
+		return feed.rss2();
+	}
 }
