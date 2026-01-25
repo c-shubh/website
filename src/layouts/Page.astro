@@ -64,7 +64,7 @@ const description = undefined;
 		<link rel="manifest" href="/site.webmanifest" />
 		<link rel="me" href="https://mastodon.social/@cshubh" />
 
-		{props.archived && <meta data-rh="true" name="robots" content="noindex, nofollow" />}
+		{props.archived && <meta name="robots" content="noindex" />}
 
 		<!-- Canonical URL -->
 		<link rel="canonical" href={canonicalURL} />
