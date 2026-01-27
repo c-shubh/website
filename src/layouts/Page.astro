@@ -2,9 +2,17 @@
 import Footer from '@/components/Footer.astro';
 import FormattedDate from '@/components/FormattedDate.astro';
 import Navbar from '@/components/Navbar.astro';
-import { BLOG_ATOM_FEED, BLOG_RSS_FEED, FULL_NAME, LANGUAGE, SITE_TITLE } from '@/consts';
+import {
+	BLOG_ATOM_FEED,
+	BLOG_RSS_FEED,
+	FULL_NAME,
+	LANGUAGE,
+	SITE_DESCRIPTION,
+	SITE_TITLE,
+} from '@/consts';
 import '@/styles/global.css';
 import { pageTitle } from '@/utils';
+import { undefined } from 'astro:schema';
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
@@ -32,7 +40,7 @@ const props: Props = Astro.props;
 props.layout = props.layout ?? 'page';
 
 const title = props.layout === 'home' ? SITE_TITLE : pageTitle(props.title);
-const description = undefined;
+const description = props.layout === 'home' ? SITE_DESCRIPTION : undefined;
 ---
 
 <!doctype html>
