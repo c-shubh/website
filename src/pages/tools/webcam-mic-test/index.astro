@@ -1,0 +1,11 @@
+---
+import Page from '@/layouts/Page.astro';
+import { toolsMap } from '@/pages/tools/_data';
+import { CameraMicTest } from './_CameraMicTest.tsx';
+
+const { name, description } = toolsMap['webcam-mic-test'];
+---
+
+<Page title={name} description={description}>
+	<CameraMicTest client:load />
+</Page>

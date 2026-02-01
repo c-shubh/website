@@ -24,6 +24,11 @@ export const tools = [
 		slug: 'section-comment-generator',
 		description: 'Generate code comment to be used to mark sections in code.',
 	},
+	{
+		name: 'Camera & Mic Test',
+		slug: 'webcam-mic-test',
+		description: 'Test your camera and microphone, take pictures, or record audio.',
+	},
 ] as const;
 
 export type ToolSlug = (typeof tools)[number]['slug'];
