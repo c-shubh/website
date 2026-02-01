@@ -174,7 +174,7 @@ export function CameraMicTest() {
 								devices: audioDevices,
 							} as const,
 						].map((ele) => (
-							<div className="flex flex-col gap-1">
+							<div className="flex flex-col gap-1" key={ele.type}>
 								<label className="text-md font-medium">{ele.label}</label>
 								<select
 									value={ele.value}
@@ -205,6 +205,7 @@ export function CameraMicTest() {
 				autoPlay
 				playsInline
 				muted
+				suppressHydrationWarning
 				className={`w-full border border-slate-300 rounded-lg transition-transform duration-300 ${
 					isMirrored ? '-scale-x-100' : ''
 				}`}
