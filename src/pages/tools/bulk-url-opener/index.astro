@@ -1,9 +1,12 @@
 ---
 import Page from '@/layouts/Page.astro';
+import { toolsMap } from '@/pages/tools/_data';
 import { BulkUrlOpener } from './_BulkUrlOpener';
+
+const { name, description } = toolsMap['bulk-url-opener'];
 ---
 
-<Page title="Bulk URL Opener">
+<Page title={name} description={description}>
 	<p>
 		Paste a list of URLs in the textbox below to open all of them in new tabs.<br />
 		Note: Enter <strong>one URL per line.</strong>

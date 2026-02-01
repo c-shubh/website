@@ -1,9 +1,12 @@
 ---
 import Page from '@/layouts/Page.astro';
+import { toolsMap } from '@/pages/tools/_data';
 import { SectionCommentGenerator } from './_SectionCommentGenerator';
+
+const { name, description } = toolsMap['section-comment-generator'];
 ---
 
-<Page title="Section Comment Generator">
+<Page title={name} description={description}>
 	<p>Enter text to generate a section comment.</p>
 	<SectionCommentGenerator client:load />
 </Page>

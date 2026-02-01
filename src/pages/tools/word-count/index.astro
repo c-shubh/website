@@ -1,9 +1,12 @@
 ---
 import Page from '@/layouts/Page.astro';
+import { toolsMap } from '@/pages/tools/_data';
 import { WordCount } from './_WordCount.tsx';
+
+const { name, description } = toolsMap['word-count'];
 ---
 
-<Page title="Word Count">
+<Page title={name} description={description}>
 	<p>Enter text below or select a file to see character, word and line count.</p>
 	<WordCount client:load />
 </Page>

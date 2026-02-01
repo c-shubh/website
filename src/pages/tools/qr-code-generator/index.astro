@@ -1,9 +1,12 @@
 ---
 import Page from '@/layouts/Page.astro';
+import { toolsMap } from '@/pages/tools/_data';
 import { PlainTextQrCodeGenerator } from './_PlainTextQrCodeGenerator';
+
+const { name, description } = toolsMap['qr-code-generator'];
 ---
 
-<Page title="QR Code Generator">
+<Page title={name} description={description}>
 	<p>Enter or paste text in the textbox below to generate QR code(s).</p>
 	<PlainTextQrCodeGenerator client:load />
 </Page>
