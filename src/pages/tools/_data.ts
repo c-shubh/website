@@ -2,6 +2,7 @@
 export const tools = [
 	{ name: 'Bulk URL Opener', slug: 'bulk-url-opener', description: 'Paste a list of URLs to open them all in new tabs.' },
 	{ name: 'Camera & Mic Test', slug: 'webcam-mic-test', description: 'Test your camera and microphone, take pictures, or record audio.' },
+	{ name: 'Case Converter', slug: 'case-converter', description: 'Convert text to different case styles.', },
 	{ name: 'QR Code Generator', slug: 'qr-code-generator', description: 'Generate one or more QR codes.' },
 	{ name: 'Section Comment Generator', slug: 'section-comment-generator', description: 'Generate code comment to be used to mark sections in code.' },
 	{ name: 'Slugify', slug: 'slugify', description: 'Create slug from text.' },

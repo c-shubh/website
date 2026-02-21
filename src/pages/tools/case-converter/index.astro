@@ -1,0 +1,12 @@
+---
+import Page from '@/layouts/Page.astro';
+import { toolsMap } from '@/pages/tools/_data';
+import { CaseConverter } from './_CaseConverter';
+
+const { name, description } = toolsMap['case-converter'];
+---
+
+<Page title={name} description={description}>
+	<p>Enter text below. Each line will be converted to different case styles.</p>
+	<CaseConverter client:load />
+</Page>
