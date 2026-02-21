@@ -4,6 +4,12 @@ import { QRCode } from 'antd';
 import * as React from 'react';
 import { useState } from 'react';
 
+function getQRCodeCanvas() {
+	return document
+		.getElementById('tools-qr-code-generator-canvas')
+		?.querySelector<HTMLCanvasElement>('canvas');
+}
+
 function doDownload(url: string, fileName: string) {
 	const a = document.createElement('a');
 	a.download = fileName;
@@ -14,28 +20,10 @@ function doDownload(url: string, fileName: string) {
 }
 
 const downloadCanvasQRCode = () => {
-	const canvas = document
-		.getElementById('tools-qr-code-generator-canvas')
-		?.querySelector<HTMLCanvasElement>('canvas');
+	const canvas = getQRCodeCanvas();
 	if (canvas) {
 		const url = canvas.toDataURL();
 		doDownload(url, `QRCode-${Date.now()}.png`);
-	}
-};
-
-const copyCanvasQRCode = async () => {
-	const canvas = document
-		.getElementById('tools-qr-code-generator-canvas')
-		?.querySelector<HTMLCanvasElement>('canvas');
-	if (canvas) {
-		return new Promise<void>((resolve) => {
-			canvas.toBlob(async (blob) => {
-				if (blob) {
-					await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
-				}
-				resolve();
-			}, 'image/png');
-		});
 	}
 };
 
@@ -117,23 +105,11 @@ export function PlainTextQrCodeGenerator() {
 				<div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
 					<QrCode text={text} />
 					<div className="flex flex-col gap-4">
-						<CopyButton getText={() => text} />
+						<CopyButton getCanvas={getQRCodeCanvas} />
 						<div className="flex gap-2">
 							Download as
-							<Button
-								onClick={() => {
-									downloadCanvasQRCode();
-								}}
-							>
-								PNG
-							</Button>
-							<Button
-								onClick={() => {
-									downloadSvgQRCode();
-								}}
-							>
-								SVG
-							</Button>
+							<Button onClick={downloadCanvasQRCode}>PNG</Button>
+							<Button onClick={downloadSvgQRCode}>SVG</Button>
 						</div>
 					</div>
 				</div>

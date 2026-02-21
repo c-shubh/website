@@ -3,7 +3,7 @@ import { Button } from './Button';
 
 type CopyButtonProps =
 	| { getText: () => string; getCanvas?: never }
-	| { getCanvas: () => HTMLCanvasElement | null; getText?: never };
+	| { getCanvas: () => HTMLCanvasElement | null | undefined; getText?: never };
 
 export function CopyButton({ getText, getCanvas }: CopyButtonProps) {
 	const [status, setStatus] = useState<'idle' | 'copied' | 'failed'>('idle');
