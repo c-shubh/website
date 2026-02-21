@@ -7,7 +7,8 @@
 		"build": "astro build",
 		"preview": "astro preview",
 		"astro": "astro",
-		"predeploy": "pnpm build",
+		"clean": "rimraf .astro dist",
+		"predeploy": "pnpm clean && pnpm build",
 		"deploy": "NODE_DEBUG=gh-pages node deploy.cjs"
 	},
 	"dependencies": {
@@ -28,6 +29,7 @@
 		"marked": "^17.0.1",
 		"react": "^19.0.1",
 		"react-dom": "^19.2.1",
+		"rimraf": "6.1.2",
 		"sharp": "^0.34.3",
 		"tailwindcss": "^4.1.17",
 		"typescript": "^5.9.3"
