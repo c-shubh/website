@@ -21,7 +21,7 @@ export default defineConfig({
 			// Docusaurus generated sitemap at /sitemap.xml, but Astro generates it at
 			// /sitemap-index.xml. So copy it over after build to not break existing
 			// sitemap link.
-			name: 'copy-sitemap',
+			name: 'my-copy-sitemap',
 			hooks: {
 				'astro:build:done': async ({ dir, logger }) => {
 					const inFile = new URL('sitemap-index.xml', dir);

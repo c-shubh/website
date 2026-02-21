@@ -1,4 +1,5 @@
 import { Button } from '@/components/Button';
+import { CopyButton } from '@/components/CopyButton';
 import { QRCode } from 'antd';
 import * as React from 'react';
 import { useState } from 'react';
@@ -82,7 +83,6 @@ type Count = 'one' | 'many';
 export function PlainTextQrCodeGenerator() {
 	const [text, setText] = useState('');
 	const [count, setCount] = React.useState<Count | null>('one');
-	const [copied, setCopied] = React.useState(false);
 
 	// TODO: wifi and upi qr code
 	return (
@@ -117,16 +117,7 @@ export function PlainTextQrCodeGenerator() {
 				<div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
 					<QrCode text={text} />
 					<div className="flex flex-col gap-4">
-						<Button
-							onClick={async () => {
-								await copyCanvasQRCode();
-								setCopied(true);
-								setTimeout(() => setCopied(false), 800);
-							}}
-							disabled={copied}
-						>
-							{copied ? 'Copied' : 'Copy'} to Clipboard
-						</Button>
+						<CopyButton getText={() => text} />
 						<div className="flex gap-2">
 							Download as
 							<Button

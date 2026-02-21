@@ -12,15 +12,6 @@ export function clsx(...args: unknown[]): string {
 	}, '');
 }
 
-export async function copyToClipboard(text: string): Promise<boolean> {
-	try {
-		await navigator.clipboard.writeText(text);
-		return true;
-	} catch {
-		return false;
-	}
-}
-
 export function pageTitle(name: string): string {
 	return `${name} | ${SITE_TITLE}`;
 }

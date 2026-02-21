@@ -1,5 +1,4 @@
-import { Button } from '@/components/Button';
-import { copyToClipboard } from '@/utils';
+import { CopyButton } from '@/components/CopyButton';
 import slugify from '@sindresorhus/slugify';
 import { useState } from 'react';
 
@@ -30,20 +29,13 @@ export function Slugify() {
 				<div className="flex flex-col gap-2">
 					<div className="flex gap-2">
 						<h3 className="m-0">Output</h3>
-						<Button
-							onClick={async () => {
-								await copyToClipboard(output.join('\n'));
-								setCopied(true);
-								setTimeout(() => setCopied(false), 800);
-							}}
-							disabled={copied}
-						>
-							{copied ? 'Copied' : 'Copy'}
-						</Button>
+						<CopyButton getText={() => output.join('\n')} />
 					</div>
 					<ul className="mt-0">
 						{output.map((line, index) => (
-							<li key={index}>{line}</li>
+							<li key={index} className="select-all">
+								{line}
+							</li>
 						))}
 					</ul>
 				</div>

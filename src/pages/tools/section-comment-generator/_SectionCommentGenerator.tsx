@@ -1,5 +1,4 @@
-import { Button } from '@/components/Button';
-import { copyToClipboard } from '@/utils';
+import { CopyButton } from '@/components/CopyButton';
 import { useEffect, useState } from 'react';
 
 const styles = {
@@ -89,6 +88,7 @@ export function SectionCommentGenerator() {
 				placeholder="Enter text"
 				value={text}
 				onChange={(e) => setText(e.target.value)}
+				autoFocus
 			/>
 
 			<div className="flex flex-col gap-4">
@@ -186,18 +186,9 @@ export function SectionCommentGenerator() {
 			</div>
 			<div className="flex gap-2 mt-2">
 				<h3 className="m-0">Output</h3>
-				<Button
-					onClick={async () => {
-						await copyToClipboard(output);
-						setCopied(true);
-						setTimeout(() => setCopied(false), 800);
-					}}
-					disabled={copied}
-				>
-					{copied ? 'Copied' : 'Copy'}
-				</Button>
+				<CopyButton getText={() => output} />
 			</div>
-			{output && <pre className="w-full overflow-x-auto">{output}</pre>}
+			{output && <pre className="w-full overflow-x-auto select-all">{output}</pre>}
 		</div>
 	);
 }
