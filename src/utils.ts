@@ -21,7 +21,7 @@ export async function generateFeed(type: 'rss' | 'atom', posts: CollectionEntry<
 	const copyrightLine = `${COPYRIGHT.symbol} ${COPYRIGHT.year} ${COPYRIGHT.holder}. ${COPYRIGHT.string}`;
 
 	const feedOptions: FeedOptions = {
-		title: pageTitle('Blog'),
+		title: `${FULL_NAME}'s Blog`,
 		id: blogBaseUrl,
 		link: blogBaseUrl,
 		description: SITE_DESCRIPTION,
