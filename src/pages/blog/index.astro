@@ -11,17 +11,18 @@ const posts = (await getCollection('blog')).sort(
 
 <Page title="Blog">
 	<section class="space-y-4">
-		<ul>
+		<ul class="list-none p-0 space-y-4">
 			{
 				posts.map((post) => (
 					<li>
+						<Link href={`/blog/${post.id}`} class="no-underline">
+							{post.data.title}
+						</Link>
+						<br />
 						<FormattedDate
 							date={new Date(post.data.date)}
 							class="font-mono text-base text-nowrap"
 						/>
-						<Link href={`/blog/${post.id}`} class="no-underline">
-							{post.data.title}
-						</Link>
 					</li>
 				))
 			}
