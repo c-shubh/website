@@ -6,6 +6,11 @@ export interface Quote {
 
 export const quotes: Quote[] = [
 	{
+		text: 'Your thoughts, your ideas, your personality and quirks are the essence of your website. Everything else is optional.',
+		attribution: '[Susam Pal](https://susam.net/writing-first-tooling-second.html)',
+		dateAdded: '2026-03-04',
+	},
+	{
 		text: 'Happiness equals reality minus expectations.',
 		attribution: 'https://dateful.com/2021/10/27/my-side-project-story.html',
 		dateAdded: '2025-02-20',
