@@ -10,35 +10,36 @@ Source code for https://cshubh.com
 
 ## Development
 
-1. Install dependencies
+1. Install [just 1.46.0](https://github.com/casey/just/releases/tag/1.46.0)
+2. Install dependencies
    ```bash
    pnpm install --frozen-lockfile
    ```
-2. Create a feature branch
+3. Create a feature branch
    ```bash
    git switch --create my-feature
    ```
-3. Run development server
+4. Run development server
    ```bash
-   pnpm dev
+   just dev
    ```
-4. Build to verify changes before deployment
+5. Build to verify changes before deployment
    ```bash
-   pnpm build
+   just build
    ```
-5. Merge feature branch to master
+6. Merge feature branch to master
    ```bash
    git switch master
    git pull origin master
    git merge my-feature
    ```
-6. Push commits to remote master branch
+7. Push commits to remote master branch
    ```bash
    git push origin master
    ```
-7. Deploy the website
+8. Deploy the website
    ```bash
-   pnpm run deploy
+   just deploy
    ```
 
 ## License
