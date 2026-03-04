@@ -12,7 +12,6 @@ import {
 } from '@/consts';
 import '@/styles/global.css';
 import { pageTitle } from '@/utils';
-import { undefined } from 'astro:schema';
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
@@ -23,24 +22,49 @@ interface HomePage {
 interface BlogPage {
 	layout: 'blog';
 	title: string;
+	description?: string;
 	date: Date;
 }
 
 interface StandalonePage {
 	layout?: 'page';
 	title: string;
+	description?: string;
+	archived?: boolean;
 }
 
-type Props = (HomePage | BlogPage | StandalonePage) & {
-	archived?: boolean;
-	description?: string;
-};
+type Props = HomePage | BlogPage | StandalonePage;
 
-const props: Props = Astro.props;
-props.layout = props.layout ?? 'page';
+function getResolvedProps(rawProps: Props) {
+	if (rawProps.layout === 'home') {
+		return {
+			layout: 'home' as const,
+			metaTitle: SITE_TITLE,
+			description: SITE_DESCRIPTION,
+		};
+	} else if (rawProps.layout === 'blog') {
+		return {
+			layout: 'blog' as const,
+			metaTitle: pageTitle(rawProps.title),
+			description: rawProps.description,
 
-const title = props.layout === 'home' ? SITE_TITLE : pageTitle(props.title);
-const description = props.layout === 'home' ? SITE_DESCRIPTION : undefined;
+			h1: rawProps.title,
+			date: rawProps.date,
+		};
+	} else {
+		return {
+			layout: 'page' as const,
+			metaTitle: pageTitle(rawProps.title),
+			description: rawProps.description,
+
+			h1: rawProps.title,
+			archived: rawProps.archived,
+		};
+	}
+}
+
+const rawProps: Props = Astro.props;
+const props = getResolvedProps(rawProps);
 ---
 
 <!doctype html>
@@ -72,30 +96,30 @@ const description = props.layout === 'home' ? SITE_DESCRIPTION : undefined;
 		<link rel="manifest" href="/site.webmanifest" />
 		<link rel="me" href="https://mastodon.social/@cshubh" />
 
-		{props.archived && <meta name="robots" content="noindex" />}
+		{props.layout === 'page' && props.archived && <meta name="robots" content="noindex" />}
 
 		<!-- Canonical URL -->
 		<link rel="canonical" href={canonicalURL} />
 
 		<!-- Primary Meta Tags -->
-		<title>{title}</title>
-		<meta name="title" content={title} />
-		{description && <meta name="description" content={description} />}
+		<title>{props.metaTitle}</title>
+		<meta name="title" content={props.metaTitle} />
+		{props.description && <meta name="description" content={props.description} />}
 
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content={Astro.url} />
-		<meta property="og:title" content={title} />
+		<meta property="og:title" content={props.metaTitle} />
 		<meta property="og:image" content="/images/social-card.png" />
 		<meta property="og:locale" content={LANGUAGE} />
-		{description && <meta property="og:description" content={description} />}
+		{props.description && <meta property="og:description" content={props.description} />}
 
 		<!-- Twitter -->
 		<meta property="twitter:card" content="summary_large_image" />
 		<meta property="twitter:url" content={Astro.url} />
-		<meta property="twitter:title" content={title} />
+		<meta property="twitter:title" content={props.metaTitle} />
 		<meta property="twitter:image" content="/images/social-card.png" />
-		{description && <meta property="twitter:description" content={description} />}
+		{props.description && <meta property="twitter:description" content={props.description} />}
 
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-J52XN60HFW" is:inline></script>
 		<script is:inline>
@@ -108,20 +132,18 @@ const description = props.layout === 'home' ? SITE_DESCRIPTION : undefined;
 		</script>
 	</head>
 	<body class="flex flex-col min-h-screen m-0 font-sans max-w-2xl px-4 mx-auto leading-relaxed">
-		<Navbar title={props.layout !== 'home' ? props.title : undefined} />
+		<Navbar title={props.h1} />
 		<main class="flex-grow">
 			{
 				props.layout === 'blog' ? (
 					<article>
 						<div>
-							<h1 class="my-0">{props.title}</h1>
-							{props.date && (
-								<div>
-									<span class="font-medium">
-										<FormattedDate date={props.date} />
-									</span>
-								</div>
-							)}
+							<h1 class="my-0">{props.h1}</h1>
+							<div>
+								<span class="font-medium">
+									<FormattedDate date={props.date} />
+								</span>
+							</div>
 						</div>
 						<div>
 							<slot />
@@ -129,7 +151,7 @@ const description = props.layout === 'home' ? SITE_DESCRIPTION : undefined;
 					</article>
 				) : (
 					<>
-						{props.layout === 'page' && <h1 class="mt-0">{props.title}</h1>}
+						{props.layout === 'page' && <h1 class="mt-0">{props.h1}</h1>}
 						<slot />
 					</>
 				)

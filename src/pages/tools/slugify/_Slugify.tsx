@@ -4,7 +4,6 @@ import { useState } from 'react';
 
 export function Slugify() {
 	const [output, setOutput] = useState<string[]>([]);
-	const [copied, setCopied] = useState(false);
 
 	const handleChange: React.ChangeEventHandler<HTMLTextAreaElement> = (event) => {
 		const inputText = event.target.value.trim();

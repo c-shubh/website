@@ -72,7 +72,6 @@ export function SectionCommentGenerator() {
 		name: 'C',
 		style: styles.C,
 	});
-	const [copied, setCopied] = useState(false);
 
 	const refreshOutput = () => {
 		setOutput(generate(text, commentStyle, parseInt(lineLength), parseInt(indentationSize)));
