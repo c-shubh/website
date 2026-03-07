@@ -2,9 +2,11 @@
 import { Expressive404 } from '@/components/Expressive404';
 import { Link } from '@/components/Link';
 import Page from '@/layouts/Page.astro';
+
+const title = 'Page Not Found';
 ---
 
-<Page title="Page Not Found">
+<Page title={title} description={title}>
 	<p>
 		If you believe this is a mistake, please <Link href="/contact">let me know</Link>. I will fix
 		it, because I take link rot seriously.

@@ -31,6 +31,7 @@ interface StandalonePage {
 	title: string;
 	description?: string;
 	archived?: boolean;
+	is404?: boolean;
 }
 
 type Props = HomePage | BlogPage | StandalonePage;
@@ -59,6 +60,7 @@ function getResolvedProps(rawProps: Props) {
 
 			h1: rawProps.title,
 			archived: rawProps.archived,
+			is404: rawProps.is404,
 		};
 	}
 }
@@ -96,10 +98,14 @@ const props = getResolvedProps(rawProps);
 		<link rel="manifest" href="/site.webmanifest" />
 		<link rel="me" href="https://mastodon.social/@cshubh" />
 
-		{props.layout === 'page' && props.archived && <meta name="robots" content="noindex" />}
+		{
+			props.layout === 'page' && (props.archived || props.is404) && (
+				<meta name="robots" content="noindex" />
+			)
+		}
 
 		<!-- Canonical URL -->
-		<link rel="canonical" href={canonicalURL} />
+		{!props.is404 && <link rel="canonical" href={canonicalURL} />}
 
 		<!-- Primary Meta Tags -->
 		<title>{props.metaTitle}</title>

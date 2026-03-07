@@ -1,10 +1,15 @@
 ---
-interface Props extends astroHTML.JSX.AnchorHTMLAttributes {}
-const props = Astro.props;
+import { ensureTrailingSlash } from '@/utils';
 
+interface Props extends astroHTML.JSX.AnchorHTMLAttributes {}
+let { href, ...props } = Astro.props;
+
+if (href) {
+	href = ensureTrailingSlash(href.toString());
+}
 const isExternal =
-	props.href?.toString().startsWith('http://') || props?.href?.toString().startsWith('https://');
+	href?.toString().startsWith('http://') || href?.toString().startsWith('https://');
 const externalAttrs = isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {};
 ---
 
-<a {...props} {...externalAttrs}><slot /></a>
+<a {...props} href={href} {...externalAttrs}><slot /></a>

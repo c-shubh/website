@@ -1,10 +1,17 @@
-export function Link(props: React.AnchorHTMLAttributes<HTMLAnchorElement> & { href: string }) {
+import { ensureTrailingSlash } from '@/utils';
+
+export function Link({ href: h, ...props }: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
+	let href = h;
+	if (href) {
+		href = ensureTrailingSlash(href.toString());
+	}
+
 	const isExternal =
-		props.href?.toString().startsWith('http://') || props?.href?.toString().startsWith('https://');
+		href?.toString().startsWith('http://') || href?.toString().startsWith('https://');
 	const externalAttrs = isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {};
 
 	return (
-		<a {...props} {...externalAttrs}>
+		<a {...props} href={href} {...externalAttrs}>
 			{props.children}
 		</a>
 	);
