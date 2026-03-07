@@ -22,18 +22,7 @@ const links = [
 ---
 
 <header class={clsx('my-4')}>
-	<nav
-		class={clsx(
-			// default
-			'flex',
-			'flex-col',
-			'mb-4',
-			// sm and up
-			'sm:flex-row',
-			'sm:justify-between',
-			'sm:items-center'
-		)}
-	>
+	<nav class={clsx('flex', 'flex-row', 'flex-wrap', 'mb-4', 'gap-x-8', 'justify-between')}>
 		<Link
 			href="/"
 			class={clsx(
@@ -43,7 +32,8 @@ const links = [
 				'font-bold',
 				'flex',
 				'items-center',
-				'gap-2'
+				'gap-2',
+				'text-nowrap'
 			)}
 		>
 			<Image src={logo} alt="Site Logo" width={36} />
