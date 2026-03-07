@@ -10,7 +10,7 @@ import { projects } from './_data';
 		projects.map((project, index) => (
 			<div>
 				<h2>{project.title}</h2>
-				<p set:html={marked.parse(project.description)} />
+				<Fragment set:html={marked.parse(project.description)} />
 				<p>
 					<strong>Built with:</strong>
 					{project.builtWith.join(', ')}
