@@ -12,7 +12,7 @@ export const quotes: Quote[] = [
 	},
 	{
 		text: 'Happiness equals reality minus expectations.',
-		attribution: 'https://dateful.com/2021/10/27/my-side-project-story.html',
+		attribution: '[Jonathan Berger](https://dateful.com/2021/10/27/my-side-project-story.html)',
 		dateAdded: '2025-02-20',
 	},
 	{
@@ -97,18 +97,18 @@ The deluded Jīva thinks
 The Self has no attachment  
 to His carriage  
 Foolish is such ignorance!`,
-		attribution: `Madālasā, *Mārkaṇḍeya Purāṇa* (Chapter 23, Verse 11).  
-Sanskrit source available [here](https://archive.org/details/markandeya-purana-sanskrit-text-with-english-translatio/page/25/mode/1up). (English translation from [Gaiea's rendition](https://www.youtube.com/watch?v=uDd3iupKUyI)).`,
+		attribution: `[Madālasā, *Mārkaṇḍeya Purāṇa* (Chapter 23, Verse 11)](https://archive.org/details/markandeya-purana-sanskrit-text-with-english-translatio/page/125/mode/1up).
+(English translation from [Gaiea's rendition](https://www.youtube.com/watch?v=uDd3iupKUyI)).`,
 		dateAdded: '2024-11-14',
 	},
 	{
 		text: 'It is not how much you do – how you do it is what makes life beautiful.',
-		attribution: 'Sadhguru',
+		attribution: '[Sadhguru](https://isha.sadhguru.org/en/wisdom/quotes/date/february-26-2018)',
 		dateAdded: '2024-11-04',
 	},
 	{
 		text: 'Once you enjoy the inner pleasures of your being, external pleasures will seem rudimentary.',
-		attribution: 'Sadhguru',
+		attribution: '[Sadhguru](https://isha.sadhguru.org/en/wisdom/quotes/date/october-27-2024)',
 		dateAdded: '2024-11-04',
 	},
 	{
@@ -249,7 +249,7 @@ If you've cheated the man in the glass.
 	},
 	{
 		text: 'If you’re not sure why you’re doing something, you can never do enough of it.',
-		attribution: 'David Allen, Getting Things Done',
+		attribution: '[David Allen, Getting Things Done](https://www.goodreads.com/quotes/6540518-if-you-re-not-sure-why-you-re-doing-something-you-can)',
 		dateAdded: '2024-09-09',
 	},
 	{
@@ -311,7 +311,7 @@ While there is still time`,
 	},
 	{
 		text: "Every rise and ascent to a higher level represents the death of our lower personality at the level we leave behind. Then, we can gently return to that level and whisper to the ear of the actor playing that role with love, understanding, and affection, 'Yes, you are me, but I am not just you!' This way, we can end the dominion of that role in our lives. We both free it from an existence it actually hates and offer ourselves an opportunity for growth! The biggest obstacle in abandoning the role, that is, the lower personality, is not knowing the existence of a higher level - the fear that if the role goes away, we will fall into a void.",
-		attribution: 'https://news.ycombinator.com/item?id=41403090',
+		attribution: '[Hakan Deryal](https://news.ycombinator.com/item?id=41403090)',
 		dateAdded: '2024-08-31',
 	},
 	{
