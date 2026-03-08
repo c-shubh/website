@@ -15,8 +15,8 @@ deploy: build
     NODE_DEBUG=gh-pages node deploy.cjs
     @echo 'Check https://github.com/c-shubh/website/actions'
 
-dev:
-    pnpm run astro dev
+dev *ARGS:
+    pnpm run astro dev {{ ARGS }}
 
 preview: build
     pnpm run astro preview
