@@ -248,7 +248,7 @@ pre > code {
 	all: unset;
 }
 
-img:not(nav img) {
+img:not(nav img, footer img) {
 	max-width: 100%;
 	height: auto;
 	border-radius: 8px;

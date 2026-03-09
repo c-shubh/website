@@ -1,13 +1,22 @@
 ---
+import gliderSvg from '@/assets/images/glider.svg';
 import { COPYRIGHT } from '@/consts';
+import { Image } from 'astro:assets';
+import Link from './Link.astro';
 ---
 
-<footer class="my-4 space-y-4 text-center">
-	<hr />
+<footer class="my-4 text-center">
+	<hr class="mb-4" />
+	<span class="flex items-center justify-center gap-1">
+		<span>
+			{COPYRIGHT.symbol}{' '}{COPYRIGHT.year}
+			{COPYRIGHT.holder}
+		</span>
+		<Link href={'http://www.catb.org/hacker-emblem/'} class={'flex items-center justify-center'}>
+			<Image src={gliderSvg} alt="Glider" class="inline h-4 w-4 border-0" />
+		</Link>
+	</span>
 	<span>
-		{COPYRIGHT.symbol}{' '}{COPYRIGHT.year}
-		{COPYRIGHT.holder}
-		<br />
 		{COPYRIGHT.string}
 	</span>
 </footer>
