@@ -6,6 +6,11 @@ export interface Quote {
 
 export const quotes: Quote[] = [
 	{
+		text: 'You will remain the same until the pain of remaining the same is greater than the pain of change.',
+		attribution: '[Unknown](https://www.instagram.com/p/DJB5uHVoB75/)',
+		dateAdded: '2026-03-09',
+	},
+	{
 		text: 'Your thoughts, your ideas, your personality and quirks are the essence of your website. Everything else is optional.',
 		attribution: '[Susam Pal](https://susam.net/writing-first-tooling-second.html)',
 		dateAdded: '2026-03-04',
@@ -249,7 +254,8 @@ If you've cheated the man in the glass.
 	},
 	{
 		text: 'If you’re not sure why you’re doing something, you can never do enough of it.',
-		attribution: '[David Allen, Getting Things Done](https://www.goodreads.com/quotes/6540518-if-you-re-not-sure-why-you-re-doing-something-you-can)',
+		attribution:
+			'[David Allen, Getting Things Done](https://www.goodreads.com/quotes/6540518-if-you-re-not-sure-why-you-re-doing-something-you-can)',
 		dateAdded: '2024-09-09',
 	},
 	{
