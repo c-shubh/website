@@ -4,6 +4,8 @@ import { QRCode } from 'antd';
 import * as React from 'react';
 import { useState } from 'react';
 
+const initialText = `https://cshubh.com/tools/qr-code-generator/`;
+
 function getQRCodeCanvas() {
 	return document
 		.getElementById('tools-qr-code-generator-canvas')
@@ -46,7 +48,7 @@ function QrCode({ text }: QrCodeProps) {
 		<>
 			<QRCode
 				id="tools-qr-code-generator-svg"
-				value={text || 'https://cshubh.com/tools/qr-code-generator'}
+				value={text || initialText}
 				bgColor="#fff"
 				size={250}
 				bordered={false}
@@ -55,7 +57,7 @@ function QrCode({ text }: QrCodeProps) {
 			<div className="hidden">
 				<QRCode
 					id="tools-qr-code-generator-canvas"
-					value={text || 'https://cshubh.com/tools/qr-code-generator'}
+					value={text || initialText}
 					bgColor="#fff"
 					size={250}
 					bordered={false}
@@ -118,7 +120,7 @@ export function PlainTextQrCodeGenerator() {
 				<div className="flex flex-col items-center gap-8">
 					{(text.trim() === ''
 						? // if text is empty, then show a single qr code
-						  ['https://cshubh.com/tools/qr-code-generator']
+						  [initialText]
 						: // one qr for each non empty line
 						  text
 								.trim()
@@ -130,7 +132,7 @@ export function PlainTextQrCodeGenerator() {
 								<div>
 									QR Code #{index + 1}. <code>{line}</code>
 								</div>
-								<QrCode text={text} />
+								<QrCode text={line} />
 							</div>
 						</React.Fragment>
 					))}
