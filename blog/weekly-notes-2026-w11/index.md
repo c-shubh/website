@@ -3,8 +3,8 @@ date: '2026-03-15'
 title: 'Weekly Notes: 2026-W11'
 ---
 
-I got back to playing Ukulele this week after a month or so of not touching it.
-I recorded myself singing and playing starting lines of [Ee
+I got back to playing the ukulele this week after a month or so of not touching
+it. I recorded myself singing and playing starting lines of [Ee
 Raathale](https://music.youtube.com/watch?v=pnN9DNmohoo) and posted it on
 [Instagram](https://www.instagram.com/p/DVyw2jPE6Nw/). The lyrics get harder
 after those lines and the pitch gets higher than I can currently reach.
@@ -30,13 +30,13 @@ Most people play it safe. Including myself.
 >    interesting ever again.
 
 I definitely fall under the 2nd category. The perfectionist in me doesn't let
-me post unrefined, spontaneous, thoughts or ramblings. That's a reason I lurk
+me post unrefined, spontaneous thoughts or ramblings. That's one reason I lurk
 on the internet and platforms like Twitter and HN instead of tweeting,
 commenting and sharing my thoughts. Fear of embarrassment is another one. I'm
 trying to offset it by being consistent on these weekly notes. But, these blog
 posts are only possible because I spend 4-5 hours trying to get everything
-right, writing, rewriting and editing multiple times so much so that I get into
-this state:
+right, writing, rewriting and editing multiple times--so much so that I get
+into this state:
 
 > Spending too much time editing puts me in a mental state that’s similar to
 > [semantic satiation](https://en.wikipedia.org/wiki/Semantic_satiation), but
@@ -50,7 +50,7 @@ this state:
 
 I ought to finally read Austin Kleon's book [Show Your
 Work!](https://austinkleon.com/show-your-work/) which I've been procrastinating
-on since a year of getting to know about it.
+on for a year since finding out about it.
 
 ## Step Aside, Phone
 
@@ -87,18 +87,18 @@ on since a year of getting to know about it.
 
 Last week's average was 3.14 hours, and this week it increased to 4.71 hours.
 
-Earlier I used to use Feeder on Android to manage RSS subscriptions, and used
-to read them regularly. Then a couple of months ago, I deleted the app to cut
-down on screen time, and instead used Thunderbird on my laptop just to manage
-feeds, but not actually read them. This Tuesday, I re-installed Feeder,
-imported all the feeds from Thunderbird and started reading new posts to catch
-up.
+Previously, I used [Feeder](https://github.com/spacecowboy/feeder) on Android
+to manage RSS subscriptions, and read them regularly. Then a couple of months
+ago, I deleted the app to cut down on screen time, and instead used Thunderbird
+on my laptop just to manage feeds, but not actually read them. This Tuesday, I
+re-installed Feeder, imported all the feeds from Thunderbird and started
+reading new posts to catch up.
 
 I found that Manu had successfully completed 4 weeks of this challenge and had
 posted his [closing
 thoughts](https://manuelmoreale.com/thoughts/step-aside-phone-closing-thoughts).
-I took this opportunity to read all his posts about this challenge since when
-he started it.
+I took this opportunity to read all his posts about this challenge since he
+started it.
 
 > I said I started because one thing I did this week was delete any app that’s
 > related to content consumption from the phone. I think my personal goal for
@@ -118,18 +118,18 @@ couple of days, and get abandoned.
 My content consumption was through the roof this week.
 
 I received some exciting news on Tuesday morning. I was happy the whole day.
-And as it happens and has always happened in the past, my mind counters that
-with self destructive behaviors. This means excessive phone usage, staying up
-late at night ruining the next day, nostalgia, regrets, and memories of the
-past hitting me like a truck. I was impulsive for the whole week, and was on my
-phone to avoid being with my own thoughts.
+And just like it always has, my mind countered that with self-destructive
+behaviors. This meant excessive phone usage, staying up late at night and
+ruining the next day, and having nostalgia, regrets, and memories of the past
+hit me like a truck. I was impulsive for the whole week and was on my phone to
+avoid being with my own thoughts.
 
 This tells me that, although I can be intentional about phone use and other
 behaviors, it fails spectacularly when the usage happens impulsively. There's
 no way to permanently fix this by following "productivity hacks" or shortcuts.
 The fix has to be on the inside, a patch to my lifestyle, mindset, and my self.
 I've started to take action on it from today, and will discuss its results in
-about month.
+about a month.
 
 ## Changes Since Release 2026.03.2
 
@@ -142,7 +142,7 @@ Here are the changes I made to the website this week:
 ### Release 2026.03.4
 
 - Generation of [Multiple QR Codes](/tools/qr-code-generator/) now works
-  correctly.
+  correctly.  
   This feature was accidentally borked during [the
   rewrite](/blog/the-rewrite-100-days-to-offload-and-step-aside-phone/#:~:text=rewrite%20this%20website).
   Instead of rendering each input line as a separate QR code, it rendered all
@@ -160,7 +160,7 @@ Here are the changes I made to the website this week:
 
 ### Watching
 
-- [Chiquita (2025)](<https://en.wikipedia.org/wiki/Chiquita_(film)>) movie.
+- [Chiquita (2025)](<https://en.wikipedia.org/wiki/Chiquita_(film)>)
   - This movie was recommended in replies to [this](https://x.com/aravind/status/1976839101111582998) tweet.
 
 ### Listening
