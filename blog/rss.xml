@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Shubh A Chudasama's Blog</title>
+        <link>https://cshubh.com/blog/</link>
+        <description>My corner of the interwebz ^_^</description>
+        <lastBuildDate>Sun, 15 Mar 2026 19:21:09 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
+        <copyright>© 2026 Shubh A Chudasama. This work is licensed under CC BY-NC-SA 4.0 License.</copyright>
+        <item>
+            <title><![CDATA[Weekly Notes: 2026-W11]]></title>
+            <link>https://cshubh.com/blog/weekly-notes-2026-w11/</link>
+            <guid isPermaLink="false">https://cshubh.com/blog/weekly-notes-2026-w11/</guid>
+            <pubDate>Sun, 15 Mar 2026 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Weekly Notes: 2026-W10]]></title>
+            <link>https://cshubh.com/blog/weekly-notes-2026-w10/</link>
+            <guid isPermaLink="false">https://cshubh.com/blog/weekly-notes-2026-w10/</guid>
+            <pubDate>Sun, 08 Mar 2026 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[The Rewrite, #100DaysToOffload, and Step Aside, Phone]]></title>
+            <link>https://cshubh.com/blog/the-rewrite-100-days-to-offload-and-step-aside-phone/</link>
+            <guid isPermaLink="false">https://cshubh.com/blog/the-rewrite-100-days-to-offload-and-step-aside-phone</guid>
+            <pubDate>Mon, 02 Mar 2026 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Extracting Discord's Welcome Messages]]></title>
+            <link>https://cshubh.com/blog/extracting-discords-welcome-messages/</link>
+            <guid isPermaLink="false">https://cshubh.com/blog/extracting-discords-welcome-messages</guid>
+            <pubDate>Wed, 01 Jan 2025 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[TIL Parity check with %]]></title>
+            <link>https://cshubh.com/blog/til-parity-check-with-mod/</link>
+            <guid isPermaLink="false">https://cshubh.com/blog/til-parity-check-with-mod</guid>
+            <pubDate>Thu, 28 Nov 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[TIL Accessing App Data using ADB]]></title>
+            <link>https://cshubh.com/blog/til-accessing-app-data-adb/</link>
+            <guid isPermaLink="false">https://cshubh.com/blog/til-accessing-app-data-adb</guid>
+            <pubDate>Sat, 23 Nov 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[TIL Typo Tolerance in Passwords]]></title>
+            <link>https://cshubh.com/blog/til-typo-tolerance-in-passwords/</link>
+            <guid isPermaLink="false">https://cshubh.com/blog/til-typo-tolerance-in-passwords</guid>
+            <pubDate>Sat, 09 Nov 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[TIL Pizza box servers]]></title>
+            <link>https://cshubh.com/blog/til-pizza-box-servers/</link>
+            <guid isPermaLink="false">https://cshubh.com/blog/til-pizza-box-servers</guid>
+            <pubDate>Sun, 01 Sep 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Obfuscate email]]></title>
+            <link>https://cshubh.com/blog/obfuscate-email/</link>
+            <guid isPermaLink="false">https://cshubh.com/blog/obfuscate-email</guid>
+            <pubDate>Tue, 20 Aug 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[TIL Brave bookmarks JSON file]]></title>
+            <link>https://cshubh.com/blog/til-brave-bookmarks-json-file/</link>
+            <guid isPermaLink="false">https://cshubh.com/blog/til-brave-bookmarks-json-file</guid>
+            <pubDate>Sun, 18 Aug 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[TIL ArrayDeque hashCode and equals]]></title>
+            <link>https://cshubh.com/blog/til-arraydeque-hashcode-and-equals/</link>
+            <guid isPermaLink="false">https://cshubh.com/blog/til-arraydeque-hashcode-and-equals</guid>
+            <pubDate>Fri, 16 Aug 2024 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Hello World!]]></title>
+            <link>https://cshubh.com/blog/hello-world/</link>
+            <guid isPermaLink="false">https://cshubh.com/blog/hello-world</guid>
+            <pubDate>Mon, 05 Aug 2024 00:00:00 GMT</pubDate>
+        </item>
+    </channel>
+</rss>

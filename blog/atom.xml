@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://cshubh.com/blog</id>
+    <title>Shubh A Chudasama's Blog</title>
+    <updated>2026-03-15T19:21:09.392Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://cshubh.com/blog/"/>
+    <link rel="self" href="https://cshubh.com/blog/atom.xml"/>
+    <subtitle>My corner of the interwebz ^_^</subtitle>
+    <icon>https://cshubh.com/favicon.ico</icon>
+    <rights>© 2026 Shubh A Chudasama. This work is licensed under CC BY-NC-SA 4.0 License.</rights>
+    <entry>
+        <title type="html"><![CDATA[Weekly Notes: 2026-W11]]></title>
+        <id>https://cshubh.com/blog/weekly-notes-2026-w11/</id>
+        <link href="https://cshubh.com/blog/weekly-notes-2026-w11/"/>
+        <updated>2026-03-15T00:00:00.000Z</updated>
+        <author>
+            <name>Shubh A Chudasama</name>
+            <uri>/</uri>
+        </author>
+        <rights>© 2026 Shubh A Chudasama. This work is licensed under CC BY-NC-SA 4.0 License.</rights>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Weekly Notes: 2026-W10]]></title>
+        <id>https://cshubh.com/blog/weekly-notes-2026-w10/</id>
+        <link href="https://cshubh.com/blog/weekly-notes-2026-w10/"/>
+        <updated>2026-03-08T00:00:00.000Z</updated>
+        <author>
+            <name>Shubh A Chudasama</name>
+            <uri>/</uri>
+        </author>
+        <rights>© 2026 Shubh A Chudasama. This work is licensed under CC BY-NC-SA 4.0 License.</rights>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[The Rewrite, #100DaysToOffload, and Step Aside, Phone]]></title>
+        <id>https://cshubh.com/blog/the-rewrite-100-days-to-offload-and-step-aside-phone</id>
+        <link href="https://cshubh.com/blog/the-rewrite-100-days-to-offload-and-step-aside-phone/"/>
+        <updated>2026-03-02T00:00:00.000Z</updated>
+        <author>
+            <name>Shubh A Chudasama</name>
+            <uri>/</uri>
+        </author>
+        <rights>© 2026 Shubh A Chudasama. This work is licensed under CC BY-NC-SA 4.0 License.</rights>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Extracting Discord's Welcome Messages]]></title>
+        <id>https://cshubh.com/blog/extracting-discords-welcome-messages</id>
+        <link href="https://cshubh.com/blog/extracting-discords-welcome-messages/"/>
+        <updated>2025-01-01T00:00:00.000Z</updated>
+        <author>
+            <name>Shubh A Chudasama</name>
+            <uri>/</uri>
+        </author>
+        <rights>© 2026 Shubh A Chudasama. This work is licensed under CC BY-NC-SA 4.0 License.</rights>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[TIL Parity check with %]]></title>
+        <id>https://cshubh.com/blog/til-parity-check-with-mod</id>
+        <link href="https://cshubh.com/blog/til-parity-check-with-mod/"/>
+        <updated>2024-11-28T00:00:00.000Z</updated>
+        <author>
+            <name>Shubh A Chudasama</name>
+            <uri>/</uri>
+        </author>
+        <rights>© 2026 Shubh A Chudasama. This work is licensed under CC BY-NC-SA 4.0 License.</rights>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[TIL Accessing App Data using ADB]]></title>
+        <id>https://cshubh.com/blog/til-accessing-app-data-adb</id>
+        <link href="https://cshubh.com/blog/til-accessing-app-data-adb/"/>
+        <updated>2024-11-23T00:00:00.000Z</updated>
+        <author>
+            <name>Shubh A Chudasama</name>
+            <uri>/</uri>
+        </author>
+        <rights>© 2026 Shubh A Chudasama. This work is licensed under CC BY-NC-SA 4.0 License.</rights>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[TIL Typo Tolerance in Passwords]]></title>
+        <id>https://cshubh.com/blog/til-typo-tolerance-in-passwords</id>
+        <link href="https://cshubh.com/blog/til-typo-tolerance-in-passwords/"/>
+        <updated>2024-11-09T00:00:00.000Z</updated>
+        <author>
+            <name>Shubh A Chudasama</name>
+            <uri>/</uri>
+        </author>
+        <rights>© 2026 Shubh A Chudasama. This work is licensed under CC BY-NC-SA 4.0 License.</rights>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[TIL Pizza box servers]]></title>
+        <id>https://cshubh.com/blog/til-pizza-box-servers</id>
+        <link href="https://cshubh.com/blog/til-pizza-box-servers/"/>
+        <updated>2024-09-01T00:00:00.000Z</updated>
+        <author>
+            <name>Shubh A Chudasama</name>
+            <uri>/</uri>
+        </author>
+        <rights>© 2026 Shubh A Chudasama. This work is licensed under CC BY-NC-SA 4.0 License.</rights>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Obfuscate email]]></title>
+        <id>https://cshubh.com/blog/obfuscate-email</id>
+        <link href="https://cshubh.com/blog/obfuscate-email/"/>
+        <updated>2024-08-20T00:00:00.000Z</updated>
+        <author>
+            <name>Shubh A Chudasama</name>
+            <uri>/</uri>
+        </author>
+        <rights>© 2026 Shubh A Chudasama. This work is licensed under CC BY-NC-SA 4.0 License.</rights>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[TIL Brave bookmarks JSON file]]></title>
+        <id>https://cshubh.com/blog/til-brave-bookmarks-json-file</id>
+        <link href="https://cshubh.com/blog/til-brave-bookmarks-json-file/"/>
+        <updated>2024-08-18T00:00:00.000Z</updated>
+        <author>
+            <name>Shubh A Chudasama</name>
+            <uri>/</uri>
+        </author>
+        <rights>© 2026 Shubh A Chudasama. This work is licensed under CC BY-NC-SA 4.0 License.</rights>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[TIL ArrayDeque hashCode and equals]]></title>
+        <id>https://cshubh.com/blog/til-arraydeque-hashcode-and-equals</id>
+        <link href="https://cshubh.com/blog/til-arraydeque-hashcode-and-equals/"/>
+        <updated>2024-08-16T00:00:00.000Z</updated>
+        <author>
+            <name>Shubh A Chudasama</name>
+            <uri>/</uri>
+        </author>
+        <rights>© 2026 Shubh A Chudasama. This work is licensed under CC BY-NC-SA 4.0 License.</rights>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Hello World!]]></title>
+        <id>https://cshubh.com/blog/hello-world</id>
+        <link href="https://cshubh.com/blog/hello-world/"/>
+        <updated>2024-08-05T00:00:00.000Z</updated>
+        <author>
+            <name>Shubh A Chudasama</name>
+            <uri>/</uri>
+        </author>
+        <rights>© 2026 Shubh A Chudasama. This work is licensed under CC BY-NC-SA 4.0 License.</rights>
+    </entry>
+</feed>
