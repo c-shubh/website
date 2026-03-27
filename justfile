@@ -9,7 +9,7 @@ check:
     pnpm run astro check
 
 clean:
-    pnpm exec rimraf .astro dist
+    pnpm exec rimraf .astro dist node_modules/.astro node_modules/.cache node_modules/.vite
 
 deploy: build
     NODE_DEBUG=gh-pages node deploy.cjs
