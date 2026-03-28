@@ -10,7 +10,7 @@ import Link from './Link.astro';
 ---
 
 <footer class="my-4 text-center">
-	<hr class="mb-4" />
+	<hr class="mt-10 mb-4" id="oneko-floor" />
 	<div>
 		<a href="https://baccyflap.com/noai/?prv&s=csh" target="_top"
 			><Image
@@ -47,6 +47,28 @@ import Link from './Link.astro';
 <script>
 	// oneko.js: https://github.com/adryd325/oneko.js
 
+	const OnekoConfig = {
+		SPRITE_SIZE: 32,
+		SPRITE_HALF_SIZE: 16,
+		Z_INDEX: '2147483647',
+
+		DEFAULT_SPEED: 10,
+		CATCH_DISTANCE: 48,
+		DIRECTION_THRESHOLD: 0.5,
+
+		FRAME_RATE_MS: 100,
+
+		// in frame ticks
+		WAKE_UP_DURATION: 8,
+		ALERT_DURATION: 7,
+		IDLE_WAIT_DELAY: 10,
+
+		IDLE_ANIM_CHANCE: 50,
+		SLEEP_FRAME_DIVISOR: 4,
+		SLEEP_MAX_FRAMES: 192,
+		DEFAULT_ANIM_MAX_FRAMES: 9,
+	} as const;
+
 	interface OnekoConstructorProps {
 		nekoFile: string;
 	}
@@ -58,11 +80,11 @@ import Link from './Link.astro';
 	}
 
 	class Oneko {
-		nekoPosX = 32;
-		nekoPosY = 32;
+		nekoPosX: number = OnekoConfig.SPRITE_SIZE;
+		nekoPosY: number = OnekoConfig.SPRITE_SIZE;
 		mousePosX = 0;
 		mousePosY = 0;
-		nekoSpeed = 10;
+		nekoSpeed = OnekoConfig.DEFAULT_SPEED;
 
 		currentState: CatState | null = null;
 		stateTimer = 0;
@@ -146,19 +168,25 @@ import Link from './Link.astro';
 					cat.idleAnimationFrame = 0;
 				},
 				update: (cat) => {
-					cat.setSprite('sleeping', Math.floor(cat.idleAnimationFrame / 4));
+					cat.setSprite(
+						'sleeping',
+						Math.floor(cat.idleAnimationFrame / OnekoConfig.SLEEP_FRAME_DIVISOR)
+					);
 					cat.idleAnimationFrame++;
 				},
 				exit: (cat) => {
 					cat.nekoEl.style.cursor = 'default';
 					cat.nekoEl.style.pointerEvents = 'none';
+					cat.nekoEl.style.position = 'fixed';
+					cat.nekoPosY = cat.nekoPosY - window.scrollY;
+					cat.nekoEl.style.top = `${cat.nekoPosY - OnekoConfig.SPRITE_HALF_SIZE}px`;
 				},
 			},
 
 			WAKING_UP: {
 				enter: (cat) => {
 					cat.setSprite('tired', 0);
-					cat.stateTimer = 8;
+					cat.stateTimer = OnekoConfig.WAKE_UP_DURATION;
 				},
 				update: (cat) => {
 					cat.stateTimer--;
@@ -171,12 +199,12 @@ import Link from './Link.astro';
 			ALERT: {
 				enter: (cat) => {
 					cat.setSprite('alert', 0);
-					cat.stateTimer = 7;
+					cat.stateTimer = OnekoConfig.ALERT_DURATION;
 				},
 				update: (cat, distance) => {
 					cat.stateTimer--;
 					if (cat.stateTimer <= 0) {
-						if (distance < cat.nekoSpeed || distance < 48) {
+						if (distance < cat.nekoSpeed || distance < OnekoConfig.CATCH_DISTANCE) {
 							cat.transitionTo('IDLE');
 						} else {
 							cat.transitionTo('MOVING');
@@ -192,7 +220,7 @@ import Link from './Link.astro';
 					cat.idleAnimationFrame = 0;
 				},
 				update: (cat, distance) => {
-					if (distance > 48) {
+					if (distance > OnekoConfig.CATCH_DISTANCE) {
 						cat.transitionTo('ALERT');
 						return;
 					}
@@ -200,15 +228,17 @@ import Link from './Link.astro';
 					cat.stateTimer++;
 
 					if (
-						cat.stateTimer > 10 &&
-						Math.floor(Math.random() * 50) === 0 &&
+						cat.stateTimer > OnekoConfig.IDLE_WAIT_DELAY &&
+						Math.floor(Math.random() * OnekoConfig.IDLE_ANIM_CHANCE) === 0 &&
 						cat.idleAnimation === null
 					) {
 						let availableAnimations: (keyof typeof cat.spriteSets)[] = ['sleeping', 'scratchSelf'];
-						if (cat.nekoPosX < 32) availableAnimations.push('scratchWallW');
-						if (cat.nekoPosY < 32) availableAnimations.push('scratchWallN');
-						if (cat.nekoPosX > window.innerWidth - 32) availableAnimations.push('scratchWallE');
-						if (cat.nekoPosY > window.innerHeight - 32) availableAnimations.push('scratchWallS');
+						if (cat.nekoPosX < OnekoConfig.SPRITE_SIZE) availableAnimations.push('scratchWallW');
+						if (cat.nekoPosY < OnekoConfig.SPRITE_SIZE) availableAnimations.push('scratchWallN');
+						if (cat.nekoPosX > window.innerWidth - OnekoConfig.SPRITE_SIZE)
+							availableAnimations.push('scratchWallE');
+						if (cat.nekoPosY > window.innerHeight - OnekoConfig.SPRITE_SIZE)
+							availableAnimations.push('scratchWallS');
 
 						cat.idleAnimation =
 							availableAnimations[Math.floor(Math.random() * availableAnimations.length)];
@@ -217,15 +247,18 @@ import Link from './Link.astro';
 					if (cat.idleAnimation) {
 						switch (cat.idleAnimation) {
 							case 'sleeping':
-								cat.setSprite('sleeping', Math.floor(cat.idleAnimationFrame / 4));
-								if (cat.idleAnimationFrame > 192) {
+								cat.setSprite(
+									'sleeping',
+									Math.floor(cat.idleAnimationFrame / OnekoConfig.SLEEP_FRAME_DIVISOR)
+								);
+								if (cat.idleAnimationFrame > OnekoConfig.SLEEP_MAX_FRAMES) {
 									cat.idleAnimation = null;
 									cat.idleAnimationFrame = 0;
 								}
 								break;
 							default:
 								cat.setSprite(cat.idleAnimation, cat.idleAnimationFrame);
-								if (cat.idleAnimationFrame > 9) {
+								if (cat.idleAnimationFrame > OnekoConfig.DEFAULT_ANIM_MAX_FRAMES) {
 									cat.idleAnimation = null;
 									cat.idleAnimationFrame = 0;
 								}
@@ -240,7 +273,7 @@ import Link from './Link.astro';
 
 			MOVING: {
 				update: (cat, distance) => {
-					if (distance < cat.nekoSpeed || distance < 48) {
+					if (distance < cat.nekoSpeed || distance < OnekoConfig.CATCH_DISTANCE) {
 						cat.transitionTo('IDLE');
 						return;
 					}
@@ -249,10 +282,10 @@ import Link from './Link.astro';
 					const diffX = cat.nekoPosX - cat.mousePosX;
 					const diffY = cat.nekoPosY - cat.mousePosY;
 
-					let direction = diffY / distance > 0.5 ? 'N' : '';
-					direction += diffY / distance < -0.5 ? 'S' : '';
-					direction += diffX / distance > 0.5 ? 'W' : '';
-					direction += diffX / distance < -0.5 ? 'E' : '';
+					let direction = diffY / distance > OnekoConfig.DIRECTION_THRESHOLD ? 'N' : '';
+					direction += diffY / distance < -OnekoConfig.DIRECTION_THRESHOLD ? 'S' : '';
+					direction += diffX / distance > OnekoConfig.DIRECTION_THRESHOLD ? 'W' : '';
+					direction += diffX / distance < -OnekoConfig.DIRECTION_THRESHOLD ? 'E' : '';
 
 					if (direction in cat.spriteSets) {
 						cat.setSprite(direction as keyof typeof cat.spriteSets, cat.frameCount);
@@ -261,11 +294,17 @@ import Link from './Link.astro';
 					cat.nekoPosX -= (diffX / distance) * cat.nekoSpeed;
 					cat.nekoPosY -= (diffY / distance) * cat.nekoSpeed;
 
-					cat.nekoPosX = Math.min(Math.max(16, cat.nekoPosX), window.innerWidth - 16);
-					cat.nekoPosY = Math.min(Math.max(16, cat.nekoPosY), window.innerHeight - 16);
+					cat.nekoPosX = Math.min(
+						Math.max(OnekoConfig.SPRITE_HALF_SIZE, cat.nekoPosX),
+						window.innerWidth - OnekoConfig.SPRITE_HALF_SIZE
+					);
+					cat.nekoPosY = Math.min(
+						Math.max(OnekoConfig.SPRITE_HALF_SIZE, cat.nekoPosY),
+						window.innerHeight - OnekoConfig.SPRITE_HALF_SIZE
+					);
 
-					cat.nekoEl.style.left = `${cat.nekoPosX - 16}px`;
-					cat.nekoEl.style.top = `${cat.nekoPosY - 16}px`;
+					cat.nekoEl.style.left = `${cat.nekoPosX - OnekoConfig.SPRITE_HALF_SIZE}px`;
+					cat.nekoEl.style.top = `${cat.nekoPosY - OnekoConfig.SPRITE_HALF_SIZE}px`;
 				},
 			},
 		} satisfies Record<string, CatState>;
@@ -289,7 +328,7 @@ import Link from './Link.astro';
 
 		private setSprite(name: keyof typeof this.spriteSets, frame: number) {
 			const sprite = this.spriteSets[name][frame % this.spriteSets[name].length];
-			this.nekoEl.style.backgroundPosition = `${sprite[0] * 32}px ${sprite[1] * 32}px`;
+			this.nekoEl.style.backgroundPosition = `${sprite[0] * OnekoConfig.SPRITE_SIZE}px ${sprite[1] * OnekoConfig.SPRITE_SIZE}px`;
 		}
 
 		private onAnimationFrame = (timestamp: number) => {
@@ -297,7 +336,7 @@ import Link from './Link.astro';
 
 			if (!this.lastFrameTimestamp) this.lastFrameTimestamp = timestamp;
 
-			if (timestamp - this.lastFrameTimestamp > 100) {
+			if (timestamp - this.lastFrameTimestamp > OnekoConfig.FRAME_RATE_MS) {
 				this.lastFrameTimestamp = timestamp;
 
 				const diffX = this.nekoPosX - this.mousePosX;
@@ -314,15 +353,23 @@ import Link from './Link.astro';
 		init() {
 			if (window.matchMedia(`(prefers-reduced-motion: reduce)`).matches) return;
 
+			const floorEl = document.getElementById('oneko-floor');
+			if (floorEl) {
+				const rect = floorEl.getBoundingClientRect();
+
+				this.nekoPosX = rect.left + rect.width / 2;
+				this.nekoPosY = window.scrollY + rect.top - OnekoConfig.SPRITE_HALF_SIZE;
+			}
+
 			this.nekoEl.id = 'oneko';
 			this.nekoEl.ariaHidden = 'true';
-			this.nekoEl.style.width = '32px';
-			this.nekoEl.style.height = '32px';
-			this.nekoEl.style.position = 'fixed';
+			this.nekoEl.style.width = `${OnekoConfig.SPRITE_SIZE}px`;
+			this.nekoEl.style.height = `${OnekoConfig.SPRITE_SIZE}px`;
+			this.nekoEl.style.position = 'absolute';
 			this.nekoEl.style.imageRendering = 'pixelated';
-			this.nekoEl.style.left = `${this.nekoPosX - 16}px`;
-			this.nekoEl.style.top = `${this.nekoPosY - 16}px`;
-			this.nekoEl.style.zIndex = '2147483647';
+			this.nekoEl.style.left = `${this.nekoPosX - OnekoConfig.SPRITE_HALF_SIZE}px`;
+			this.nekoEl.style.top = `${this.nekoPosY - OnekoConfig.SPRITE_HALF_SIZE}px`;
+			this.nekoEl.style.zIndex = OnekoConfig.Z_INDEX;
 			this.nekoEl.style.backgroundImage = `url(${this.nekoFile})`;
 
 			this.nekoEl.addEventListener('click', () => {
