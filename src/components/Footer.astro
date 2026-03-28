@@ -52,103 +52,85 @@ import Link from './Link.astro';
 	}
 
 	class Oneko {
-		idleTime: number;
-		idleAnimation: string | null;
-		nekoPosX: number;
-		nekoPosY: number;
-		mousePosX: number;
-		mousePosY: number;
-		idleAnimationFrame: number;
-		spriteSets: Record<string, number[][]>;
-		nekoEl: HTMLDivElement;
-		persistPosition: boolean;
-		frameCount: number;
-		nekoSpeed: number;
+		idleTime = 0;
+		idleAnimation: keyof typeof this.spriteSets | null = 'sleeping';
+		idleAnimationFrame = 0;
+		nekoPosX = 32;
+		nekoPosY = 32;
+		mousePosX = 0;
+		mousePosY = 0;
+		spriteSets = {
+			idle: [[-3, -3]],
+			alert: [[-7, -3]],
+			scratchSelf: [
+				[-5, 0],
+				[-6, 0],
+				[-7, 0],
+			],
+			scratchWallN: [
+				[0, 0],
+				[0, -1],
+			],
+			scratchWallS: [
+				[-7, -1],
+				[-6, -2],
+			],
+			scratchWallE: [
+				[-2, -2],
+				[-2, -3],
+			],
+			scratchWallW: [
+				[-4, 0],
+				[-4, -1],
+			],
+			tired: [[-3, -2]],
+			sleeping: [
+				[-2, 0],
+				[-2, -1],
+			],
+			N: [
+				[-1, -2],
+				[-1, -3],
+			],
+			NE: [
+				[0, -2],
+				[0, -3],
+			],
+			E: [
+				[-3, 0],
+				[-3, -1],
+			],
+			SE: [
+				[-5, -1],
+				[-5, -2],
+			],
+			S: [
+				[-6, -3],
+				[-7, -2],
+			],
+			SW: [
+				[-5, -3],
+				[-6, -1],
+			],
+			W: [
+				[-4, -2],
+				[-4, -3],
+			],
+			NW: [
+				[-1, 0],
+				[-1, -1],
+			],
+		};
+		nekoEl = document.createElement('div');
+		frameCount = 0;
+		nekoSpeed = 10;
 		lastFrameTimestamp: number | undefined;
 		nekoFile: string;
+		sleeping = true;
+		justAwake = false;
 
 		constructor({ nekoFile }: OnekoConstructorProps) {
 			this.nekoFile = nekoFile;
-
-			this.nekoEl = document.createElement('div');
-			this.persistPosition = true;
-
-			this.nekoPosX = 32;
-			this.nekoPosY = 32;
-
-			this.mousePosX = 0;
-			this.mousePosY = 0;
-
-			this.frameCount = 0;
-			this.idleTime = 0;
-			this.idleAnimation = null;
-			this.idleAnimationFrame = 0;
-
-			this.nekoSpeed = 10;
-			this.spriteSets = {
-				idle: [[-3, -3]],
-				alert: [[-7, -3]],
-				scratchSelf: [
-					[-5, 0],
-					[-6, 0],
-					[-7, 0],
-				],
-				scratchWallN: [
-					[0, 0],
-					[0, -1],
-				],
-				scratchWallS: [
-					[-7, -1],
-					[-6, -2],
-				],
-				scratchWallE: [
-					[-2, -2],
-					[-2, -3],
-				],
-				scratchWallW: [
-					[-4, 0],
-					[-4, -1],
-				],
-				tired: [[-3, -2]],
-				sleeping: [
-					[-2, 0],
-					[-2, -1],
-				],
-				N: [
-					[-1, -2],
-					[-1, -3],
-				],
-				NE: [
-					[0, -2],
-					[0, -3],
-				],
-				E: [
-					[-3, 0],
-					[-3, -1],
-				],
-				SE: [
-					[-5, -1],
-					[-5, -2],
-				],
-				S: [
-					[-6, -3],
-					[-7, -2],
-				],
-				SW: [
-					[-5, -3],
-					[-6, -1],
-				],
-				W: [
-					[-4, -2],
-					[-4, -3],
-				],
-				NW: [
-					[-1, 0],
-					[-1, -1],
-				],
-			};
-
-			this.lastFrameTimestamp = undefined;
 		}
 
 		private idle() {
@@ -160,7 +142,7 @@ import Link from './Link.astro';
 				Math.floor(Math.random() * 200) == 0 &&
 				this.idleAnimation == null
 			) {
-				let availableIdleAnimations = ['sleeping', 'scratchSelf'];
+				let availableIdleAnimations: (keyof typeof this.spriteSets)[] = ['sleeping', 'scratchSelf'];
 				if (this.nekoPosX < 32) {
 					availableIdleAnimations.push('scratchWallW');
 				}
@@ -179,12 +161,12 @@ import Link from './Link.astro';
 
 			switch (this.idleAnimation) {
 				case 'sleeping':
-					if (this.idleAnimationFrame < 8) {
+					if (this.idleAnimationFrame < 8 && !this.sleeping) {
 						this.setSprite('tired', 0);
 						break;
 					}
 					this.setSprite('sleeping', Math.floor(this.idleAnimationFrame / 4));
-					if (this.idleAnimationFrame > 192) {
+					if (this.idleAnimationFrame > 192 && !this.sleeping) {
 						this.resetIdleAnimation();
 					}
 					break;
@@ -210,6 +192,7 @@ import Link from './Link.astro';
 			if (!this.nekoEl.isConnected) {
 				return;
 			}
+
 			if (!this.lastFrameTimestamp) {
 				this.lastFrameTimestamp = timestamp;
 			}
@@ -220,7 +203,7 @@ import Link from './Link.astro';
 			window.requestAnimationFrame(this.onAnimationFrame);
 		};
 
-		private setSprite(name: string, frame: number) {
+		private setSprite(name: keyof typeof this.spriteSets, frame: number) {
 			const sprite = this.spriteSets[name][frame % this.spriteSets[name].length];
 			this.nekoEl.style.backgroundPosition = `${sprite[0] * 32}px ${sprite[1] * 32}px`;
 		}
@@ -236,7 +219,7 @@ import Link from './Link.astro';
 			const diffY = this.nekoPosY - this.mousePosY;
 			const distance = Math.sqrt(diffX ** 2 + diffY ** 2);
 
-			if (distance < this.nekoSpeed || distance < 48) {
+			if (!this.justAwake && (distance < this.nekoSpeed || distance < 48 || this.sleeping)) {
 				this.idle();
 				return;
 			}
@@ -252,12 +235,15 @@ import Link from './Link.astro';
 				return;
 			}
 
-			let direction;
-			direction = diffY / distance > 0.5 ? 'N' : '';
+			this.justAwake = false;
+
+			let direction = diffY / distance > 0.5 ? 'N' : '';
 			direction += diffY / distance < -0.5 ? 'S' : '';
 			direction += diffX / distance > 0.5 ? 'W' : '';
 			direction += diffX / distance < -0.5 ? 'E' : '';
-			this.setSprite(direction, this.frameCount);
+			if (direction in this.spriteSets) {
+				this.setSprite(direction as keyof typeof this.spriteSets, this.frameCount);
+			}
 
 			this.nekoPosX -= (diffX / distance) * this.nekoSpeed;
 			this.nekoPosY -= (diffY / distance) * this.nekoSpeed;
@@ -275,33 +261,32 @@ import Link from './Link.astro';
 
 			if (isReducedMotion) return;
 
-			if (this.persistPosition) {
-				let storedNeko = JSON.parse(window.localStorage.getItem('oneko')!);
-				if (storedNeko !== null) {
-					this.nekoPosX = storedNeko.nekoPosX;
-					this.nekoPosY = storedNeko.nekoPosY;
-					this.mousePosX = storedNeko.mousePosX;
-					this.mousePosY = storedNeko.mousePosY;
-					this.frameCount = storedNeko.frameCount;
-					this.idleTime = storedNeko.idleTime;
-					this.idleAnimation = storedNeko.idleAnimation;
-					this.idleAnimationFrame = storedNeko.idleAnimationFrame;
-					this.nekoEl.style.backgroundPosition = storedNeko.bgPos;
-				}
-			}
-
 			this.nekoEl.id = 'oneko';
 			this.nekoEl.ariaHidden = 'true';
 			this.nekoEl.style.width = '32px';
 			this.nekoEl.style.height = '32px';
 			this.nekoEl.style.position = 'fixed';
-			this.nekoEl.style.pointerEvents = 'none';
 			this.nekoEl.style.imageRendering = 'pixelated';
 			this.nekoEl.style.left = `${this.nekoPosX - 16}px`;
 			this.nekoEl.style.top = `${this.nekoPosY - 16}px`;
 			this.nekoEl.style.zIndex = '2147483647';
-
 			this.nekoEl.style.backgroundImage = `url(${this.nekoFile})`;
+
+			if (this.sleeping) {
+				this.nekoEl.style.cursor = 'pointer';
+			} else {
+				this.nekoEl.style.pointerEvents = 'none';
+			}
+
+			this.nekoEl.addEventListener('click', () => {
+				this.sleeping = false;
+				this.justAwake = true;
+				this.idleAnimation = null;
+				this.nekoEl.style.left = `${this.nekoPosX - 16}px`;
+				this.nekoEl.style.top = `${this.nekoPosY - 16}px`;
+				this.nekoEl.style.pointerEvents = 'none';
+				this.nekoEl.style.cursor = 'pointer';
+			});
 
 			document.body.appendChild(this.nekoEl);
 
@@ -309,25 +294,6 @@ import Link from './Link.astro';
 				this.mousePosX = event.clientX;
 				this.mousePosY = event.clientY;
 			});
-
-			if (this.persistPosition) {
-				window.addEventListener('beforeunload', (event) => {
-					window.localStorage.setItem(
-						'oneko',
-						JSON.stringify({
-							nekoPosX: this.nekoPosX,
-							nekoPosY: this.nekoPosY,
-							mousePosX: this.mousePosX,
-							mousePosY: this.mousePosY,
-							frameCount: this.frameCount,
-							idleTime: this.idleTime,
-							idleAnimation: this.idleAnimation,
-							idleAnimationFrame: this.idleAnimationFrame,
-							bgPos: this.nekoEl.style.backgroundPosition,
-						})
-					);
-				});
-			}
 
 			window.requestAnimationFrame(this.onAnimationFrame);
 		}
