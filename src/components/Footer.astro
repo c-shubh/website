@@ -51,14 +51,30 @@ import Link from './Link.astro';
 		nekoFile: string;
 	}
 
+	interface CatState {
+		enter?: (cat: Oneko) => void;
+		update: (cat: Oneko, distance: number) => void;
+		exit?: (cat: Oneko) => void;
+	}
+
 	class Oneko {
-		idleTime = 0;
-		idleAnimation: keyof typeof this.spriteSets | null = 'sleeping';
-		idleAnimationFrame = 0;
 		nekoPosX = 32;
 		nekoPosY = 32;
 		mousePosX = 0;
 		mousePosY = 0;
+		nekoSpeed = 10;
+
+		currentState: CatState | null = null;
+		stateTimer = 0;
+		frameCount = 0;
+
+		idleAnimation: keyof typeof this.spriteSets | null = null;
+		idleAnimationFrame = 0;
+
+		nekoEl = document.createElement('div');
+		lastFrameTimestamp: number | undefined;
+		nekoFile: string;
+
 		spriteSets = {
 			idle: [[-3, -3]],
 			alert: [[-7, -3]],
@@ -121,145 +137,182 @@ import Link from './Link.astro';
 				[-1, -1],
 			],
 		};
-		nekoEl = document.createElement('div');
-		frameCount = 0;
-		nekoSpeed = 10;
-		lastFrameTimestamp: number | undefined;
-		nekoFile: string;
-		sleeping = true;
-		justAwake = false;
+
+		private states = {
+			SLEEPING: {
+				enter: (cat) => {
+					cat.nekoEl.style.cursor = 'pointer';
+					cat.nekoEl.style.pointerEvents = 'auto';
+					cat.idleAnimationFrame = 0;
+				},
+				update: (cat) => {
+					cat.setSprite('sleeping', Math.floor(cat.idleAnimationFrame / 4));
+					cat.idleAnimationFrame++;
+				},
+				exit: (cat) => {
+					cat.nekoEl.style.cursor = 'default';
+					cat.nekoEl.style.pointerEvents = 'none';
+				},
+			},
+
+			WAKING_UP: {
+				enter: (cat) => {
+					cat.setSprite('tired', 0);
+					cat.stateTimer = 8;
+				},
+				update: (cat) => {
+					cat.stateTimer--;
+					if (cat.stateTimer <= 0) {
+						cat.transitionTo('ALERT');
+					}
+				},
+			},
+
+			ALERT: {
+				enter: (cat) => {
+					cat.setSprite('alert', 0);
+					cat.stateTimer = 7;
+				},
+				update: (cat, distance) => {
+					cat.stateTimer--;
+					if (cat.stateTimer <= 0) {
+						if (distance < cat.nekoSpeed || distance < 48) {
+							cat.transitionTo('IDLE');
+						} else {
+							cat.transitionTo('MOVING');
+						}
+					}
+				},
+			},
+
+			IDLE: {
+				enter: (cat) => {
+					cat.stateTimer = 0;
+					cat.idleAnimation = null;
+					cat.idleAnimationFrame = 0;
+				},
+				update: (cat, distance) => {
+					if (distance > 48) {
+						cat.transitionTo('ALERT');
+						return;
+					}
+
+					cat.stateTimer++;
+
+					if (
+						cat.stateTimer > 10 &&
+						Math.floor(Math.random() * 50) === 0 &&
+						cat.idleAnimation === null
+					) {
+						let availableAnimations: (keyof typeof cat.spriteSets)[] = ['sleeping', 'scratchSelf'];
+						if (cat.nekoPosX < 32) availableAnimations.push('scratchWallW');
+						if (cat.nekoPosY < 32) availableAnimations.push('scratchWallN');
+						if (cat.nekoPosX > window.innerWidth - 32) availableAnimations.push('scratchWallE');
+						if (cat.nekoPosY > window.innerHeight - 32) availableAnimations.push('scratchWallS');
+
+						cat.idleAnimation =
+							availableAnimations[Math.floor(Math.random() * availableAnimations.length)];
+					}
+
+					if (cat.idleAnimation) {
+						switch (cat.idleAnimation) {
+							case 'sleeping':
+								cat.setSprite('sleeping', Math.floor(cat.idleAnimationFrame / 4));
+								if (cat.idleAnimationFrame > 192) {
+									cat.idleAnimation = null;
+									cat.idleAnimationFrame = 0;
+								}
+								break;
+							default:
+								cat.setSprite(cat.idleAnimation, cat.idleAnimationFrame);
+								if (cat.idleAnimationFrame > 9) {
+									cat.idleAnimation = null;
+									cat.idleAnimationFrame = 0;
+								}
+								break;
+						}
+						cat.idleAnimationFrame++;
+					} else {
+						cat.setSprite('idle', 0);
+					}
+				},
+			},
+
+			MOVING: {
+				update: (cat, distance) => {
+					if (distance < cat.nekoSpeed || distance < 48) {
+						cat.transitionTo('IDLE');
+						return;
+					}
+
+					cat.frameCount++;
+					const diffX = cat.nekoPosX - cat.mousePosX;
+					const diffY = cat.nekoPosY - cat.mousePosY;
+
+					let direction = diffY / distance > 0.5 ? 'N' : '';
+					direction += diffY / distance < -0.5 ? 'S' : '';
+					direction += diffX / distance > 0.5 ? 'W' : '';
+					direction += diffX / distance < -0.5 ? 'E' : '';
+
+					if (direction in cat.spriteSets) {
+						cat.setSprite(direction as keyof typeof cat.spriteSets, cat.frameCount);
+					}
+
+					cat.nekoPosX -= (diffX / distance) * cat.nekoSpeed;
+					cat.nekoPosY -= (diffY / distance) * cat.nekoSpeed;
+
+					cat.nekoPosX = Math.min(Math.max(16, cat.nekoPosX), window.innerWidth - 16);
+					cat.nekoPosY = Math.min(Math.max(16, cat.nekoPosY), window.innerHeight - 16);
+
+					cat.nekoEl.style.left = `${cat.nekoPosX - 16}px`;
+					cat.nekoEl.style.top = `${cat.nekoPosY - 16}px`;
+				},
+			},
+		} satisfies Record<string, CatState>;
 
 		constructor({ nekoFile }: OnekoConstructorProps) {
 			this.nekoFile = nekoFile;
+			this.transitionTo('SLEEPING');
 		}
 
-		private idle() {
-			this.idleTime += 1;
-
-			// every ~ 20 seconds
-			if (
-				this.idleTime > 10 &&
-				Math.floor(Math.random() * 200) == 0 &&
-				this.idleAnimation == null
-			) {
-				let availableIdleAnimations: (keyof typeof this.spriteSets)[] = ['sleeping', 'scratchSelf'];
-				if (this.nekoPosX < 32) {
-					availableIdleAnimations.push('scratchWallW');
-				}
-				if (this.nekoPosY < 32) {
-					availableIdleAnimations.push('scratchWallN');
-				}
-				if (this.nekoPosX > window.innerWidth - 32) {
-					availableIdleAnimations.push('scratchWallE');
-				}
-				if (this.nekoPosY > window.innerHeight - 32) {
-					availableIdleAnimations.push('scratchWallS');
-				}
-				this.idleAnimation =
-					availableIdleAnimations[Math.floor(Math.random() * availableIdleAnimations.length)];
+		transitionTo(stateName: keyof typeof this.states) {
+			if (this.currentState?.exit) {
+				this.currentState.exit(this);
 			}
 
-			switch (this.idleAnimation) {
-				case 'sleeping':
-					if (this.idleAnimationFrame < 8 && !this.sleeping) {
-						this.setSprite('tired', 0);
-						break;
-					}
-					this.setSprite('sleeping', Math.floor(this.idleAnimationFrame / 4));
-					if (this.idleAnimationFrame > 192 && !this.sleeping) {
-						this.resetIdleAnimation();
-					}
-					break;
-				case 'scratchWallN':
-				case 'scratchWallS':
-				case 'scratchWallE':
-				case 'scratchWallW':
-				case 'scratchSelf':
-					this.setSprite(this.idleAnimation, this.idleAnimationFrame);
-					if (this.idleAnimationFrame > 9) {
-						this.resetIdleAnimation();
-					}
-					break;
-				default:
-					this.setSprite('idle', 0);
-					return;
+			this.currentState = this.states[stateName];
+
+			if (this.currentState.enter) {
+				this.currentState.enter(this);
 			}
-			this.idleAnimationFrame += 1;
 		}
-
-		private onAnimationFrame = (timestamp: number) => {
-			// Stops execution if the neko element is removed from DOM
-			if (!this.nekoEl.isConnected) {
-				return;
-			}
-
-			if (!this.lastFrameTimestamp) {
-				this.lastFrameTimestamp = timestamp;
-			}
-			if (timestamp - this.lastFrameTimestamp > 100) {
-				this.lastFrameTimestamp = timestamp;
-				this.frame();
-			}
-			window.requestAnimationFrame(this.onAnimationFrame);
-		};
 
 		private setSprite(name: keyof typeof this.spriteSets, frame: number) {
 			const sprite = this.spriteSets[name][frame % this.spriteSets[name].length];
 			this.nekoEl.style.backgroundPosition = `${sprite[0] * 32}px ${sprite[1] * 32}px`;
 		}
 
-		private resetIdleAnimation() {
-			this.idleAnimation = null;
-			this.idleAnimationFrame = 0;
-		}
+		private onAnimationFrame = (timestamp: number) => {
+			if (!this.nekoEl.isConnected) return;
 
-		private frame() {
-			this.frameCount += 1;
-			const diffX = this.nekoPosX - this.mousePosX;
-			const diffY = this.nekoPosY - this.mousePosY;
-			const distance = Math.sqrt(diffX ** 2 + diffY ** 2);
+			if (!this.lastFrameTimestamp) this.lastFrameTimestamp = timestamp;
 
-			if (!this.justAwake && (distance < this.nekoSpeed || distance < 48 || this.sleeping)) {
-				this.idle();
-				return;
+			if (timestamp - this.lastFrameTimestamp > 100) {
+				this.lastFrameTimestamp = timestamp;
+
+				const diffX = this.nekoPosX - this.mousePosX;
+				const diffY = this.nekoPosY - this.mousePosY;
+				const distance = Math.sqrt(diffX ** 2 + diffY ** 2);
+
+				if (this.currentState) {
+					this.currentState.update(this, distance);
+				}
 			}
-
-			this.idleAnimation = null;
-			this.idleAnimationFrame = 0;
-
-			if (this.idleTime > 1) {
-				this.setSprite('alert', 0);
-				// count down after being alerted before moving
-				this.idleTime = Math.min(this.idleTime, 7);
-				this.idleTime -= 1;
-				return;
-			}
-
-			this.justAwake = false;
-
-			let direction = diffY / distance > 0.5 ? 'N' : '';
-			direction += diffY / distance < -0.5 ? 'S' : '';
-			direction += diffX / distance > 0.5 ? 'W' : '';
-			direction += diffX / distance < -0.5 ? 'E' : '';
-			if (direction in this.spriteSets) {
-				this.setSprite(direction as keyof typeof this.spriteSets, this.frameCount);
-			}
-
-			this.nekoPosX -= (diffX / distance) * this.nekoSpeed;
-			this.nekoPosY -= (diffY / distance) * this.nekoSpeed;
-
-			this.nekoPosX = Math.min(Math.max(16, this.nekoPosX), window.innerWidth - 16);
-			this.nekoPosY = Math.min(Math.max(16, this.nekoPosY), window.innerHeight - 16);
-
-			this.nekoEl.style.left = `${this.nekoPosX - 16}px`;
-			this.nekoEl.style.top = `${this.nekoPosY - 16}px`;
-		}
+			window.requestAnimationFrame(this.onAnimationFrame);
+		};
 
 		init() {
-			const isReducedMotion =
-				window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
-
-			if (isReducedMotion) return;
+			if (window.matchMedia(`(prefers-reduced-motion: reduce)`).matches) return;
 
 			this.nekoEl.id = 'oneko';
 			this.nekoEl.ariaHidden = 'true';
@@ -272,20 +325,10 @@ import Link from './Link.astro';
 			this.nekoEl.style.zIndex = '2147483647';
 			this.nekoEl.style.backgroundImage = `url(${this.nekoFile})`;
 
-			if (this.sleeping) {
-				this.nekoEl.style.cursor = 'pointer';
-			} else {
-				this.nekoEl.style.pointerEvents = 'none';
-			}
-
 			this.nekoEl.addEventListener('click', () => {
-				this.sleeping = false;
-				this.justAwake = true;
-				this.idleAnimation = null;
-				this.nekoEl.style.left = `${this.nekoPosX - 16}px`;
-				this.nekoEl.style.top = `${this.nekoPosY - 16}px`;
-				this.nekoEl.style.pointerEvents = 'none';
-				this.nekoEl.style.cursor = 'pointer';
+				if (this.currentState === this.states['SLEEPING']) {
+					this.transitionTo('WAKING_UP');
+				}
 			});
 
 			document.body.appendChild(this.nekoEl);
