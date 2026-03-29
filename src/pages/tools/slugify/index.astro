@@ -1,4 +1,5 @@
 ---
+import ClientOnlyFallback from '@/components/ClientOnlyFallback.astro';
 import Page from '@/layouts/Page.astro';
 import { toolsMap } from '@/pages/tools/_data';
 import { Slugify } from './_Slugify.tsx';
@@ -8,5 +9,9 @@ const { name, description } = toolsMap['slugify'];
 
 <Page title={name} description={description}>
 	<p>Enter text below. Each line will be converted to a slug.</p>
-	<Slugify client:load />
+	<Slugify client:only="react">
+		<div slot="fallback">
+			<ClientOnlyFallback />
+		</div>
+	</Slugify>
 </Page>
