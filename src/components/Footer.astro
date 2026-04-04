@@ -25,7 +25,6 @@ import neovim from '@/assets/images/neovim.gif';
 import poke from '@/assets/images/poke.gif';
 import rightToRepair01 from '@/assets/images/right_to_repair_01.jpg';
 import rss from '@/assets/images/rss.gif';
-import shubh from '@/assets/images/shubh.png';
 import testedOnFirefox from '@/assets/images/tested-on-firefox.webp';
 import tr1xem from '@/assets/images/tr1xem.gif';
 import ublockOrigin from '@/assets/images/ublock-origin.webp';
@@ -43,7 +42,7 @@ interface CommonBadgeProps {
 
 interface ImageBadge extends CommonBadgeProps {
 	id?: string;
-	src: ImageMetadata;
+	src: ImageMetadata | string;
 	alt: string;
 	href?: string;
 }
@@ -59,7 +58,7 @@ type Badge = ({ type: 'image' } & ImageBadge) | ({ type: 'component' } & Compone
 const badges: Badge[] = [
 	{
 		type: 'image',
-		src: shubh,
+		src: '/images/shubh.png',
 		alt: 'Shubh',
 		// 1. Background: https://cyber.dabamos.de/88x31/notebook.gif
 		// 2. Remove heart with ImageMagick: magick ~/tmp/notebook.gif -coalesce -fill "#fffad7" -draw "rectangle 76,16 85,25" -layers optimize notebook-no-heart.gif
@@ -240,15 +239,14 @@ const badges: Badge[] = [
 			{
 				badges.map((badge) => {
 					if (badge.type === 'image') {
-						if (badge.href) {
-							return (
-								<Link href={badge.href}>
-									<Image src={badge.src} alt={badge.alt} id={badge.id} />
-								</Link>
+						const badgeImage =
+							typeof badge.src === 'string' ? (
+								<Image src={badge.src} alt={badge.alt} id={badge.id} width={88} height={31} />
+							) : (
+								<Image src={badge.src} alt={badge.alt} id={badge.id} />
 							);
-						} else {
-							return <Image src={badge.src} alt={badge.alt} id={badge.id} />;
-						}
+
+						return badge.href ? <Link href={badge.href}>{badgeImage}</Link> : badgeImage;
 					}
 					if (badge.type === 'component') {
 						const Component = badge.component;
