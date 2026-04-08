@@ -20,3 +20,18 @@ dev *ARGS:
 
 preview: build
     pnpm run astro preview
+
+blog:
+    #!/usr/bin/env bash
+
+    dt=$(date -I)
+    id=$(head /dev/urandom | tr -dc a-z0-9 | head -c10)
+    mkdir blog/$id
+    cat >blog/$id/index.mdx <<EOF
+    ---
+    id: '${id}'
+    date: '${dt}'
+    title: '${id}'
+    ---
+
+    EOF
