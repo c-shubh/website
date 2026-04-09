@@ -19,10 +19,7 @@ const posts = (await getCollection('blog')).sort(
 							{post.data.title}
 						</Link>
 						<br />
-						<FormattedDate
-							date={new Date(post.data.date)}
-							class="font-mono text-base text-nowrap"
-						/>
+						<FormattedDate date={new Date(post.data.date)} />
 					</li>
 				))
 			}
