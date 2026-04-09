@@ -47,10 +47,7 @@ export async function generateFeed(type: 'rss' | 'atom', posts: CollectionEntry<
 			title: post.data.title,
 			// Add trailing slash for all post links
 			link: `${blogBaseUrl}${post.id}/`,
-			id:
-				post.data.date <= new Date('2026-03-02')
-					? `${blogBaseUrl}${post.id}` // Old posts keep the old ID
-					: `${blogBaseUrl}${post.id}/`, // New posts get the new ID
+			id: post.data.id,
 			date: post.data.date,
 			author: [
 				{
