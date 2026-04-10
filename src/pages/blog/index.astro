@@ -10,12 +10,12 @@ const posts = (await getCollection('blog')).sort(
 ---
 
 <Page title="Blog">
-	<section class="space-y-4">
-		<ul class="list-none p-0 space-y-4">
+	<section >
+		<ul >
 			{
 				posts.map((post) => (
 					<li>
-						<Link href={`/blog/${post.id}`} class="no-underline">
+						<Link href={`/blog/${post.id}`} >
 							{post.data.title}
 						</Link>
 						<br />

@@ -137,16 +137,16 @@ const props = getResolvedProps(rawProps);
 			gtag('config', 'G-J52XN60HFW');
 		</script>
 	</head>
-	<body class="flex flex-col min-h-screen m-0 font-sans max-w-2xl px-4 mx-auto leading-relaxed">
+	<body>
 		<Navbar title={props.h1} />
-		<main class="flex-grow">
+		<main>
 			{
 				props.layout === 'blog' ? (
 					<article>
 						<div>
-							<h1 class="my-0">{props.h1}</h1>
+							<h1>{props.h1}</h1>
 							<div>
-								<span class="font-medium">
+								<span>
 									<FormattedDate date={props.date} />
 								</span>
 							</div>
@@ -157,7 +157,7 @@ const props = getResolvedProps(rawProps);
 					</article>
 				) : (
 					<>
-						{props.layout === 'page' && <h1 class="mt-0">{props.h1}</h1>}
+						{props.layout === 'page' && <h1>{props.h1}</h1>}
 						<slot />
 					</>
 				)

@@ -232,10 +232,10 @@ const badges: Badge[] = [
 ];
 ---
 
-<footer class="my-4 text-center">
-	<hr class="mb-4" />
-	<div class="space-y-4">
-		<div class="flex flex-row flex-wrap justify-center gap-2 w-fit mx-auto">
+<footer >
+	<hr  />
+	<div >
+		<div >
 			{
 				badges.map((badge) => {
 					if (badge.type === 'image') {
@@ -279,13 +279,13 @@ const badges: Badge[] = [
 			>
 		</div>
 	</div>
-	<span class="flex items-center justify-center gap-1">
+	<span >
 		<span>
 			{COPYRIGHT.symbol}{' '}{COPYRIGHT.year}
 			{COPYRIGHT.holder}
 		</span>
-		<Link href={'http://www.catb.org/hacker-emblem/'} class={'flex items-center justify-center'}>
-			<Image src={gliderSvg} alt="Glider" class="inline h-4 w-4 border-0" />
+		<Link href={'http://www.catb.org/hacker-emblem/'} >
+			<Image src={gliderSvg} alt="Glider"  />
 		</Link>
 	</span>
 	<span>

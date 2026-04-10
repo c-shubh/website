@@ -2,41 +2,33 @@
 import computer from '@/assets/images/computer.gif';
 import hello from '@/assets/images/hello.gif';
 import Page from '@/layouts/Page.astro';
-import { clsx } from '@/utils';
 import { Image } from 'astro:assets';
 ---
 
 <Page layout="home">
-	<div class={clsx('flex', 'flex-col')}>
-		<header class={clsx('mt-2', 'mb-8')}>
-			<h1
-				class={clsx(
-					'relative',
-					'mt-0',
-					'text-center',
-					'sm:text-[1.6rem]' // make text small to fit hello bubble gif
-				)}
-			>
+	<div>
+		<header>
+			<h1>
 				I&apos;m a techie who loves building things.
-				<Image src={hello} alt="Hello GIF" width={65} class="absolute bottom-2 hidden sm:inline" />
+				<Image src={hello} alt="Hello GIF" width={65} />
 			</h1>
-			<p class="mb-0 text-center text-lg whitespace-pre-wrap">
+			<p>
 				{'Hacker  •  Software Engineer  •  Builder  •  Learner'}
 			</p>
 		</header>
 		<hr />
 		<main>
-			<section class="">
+			<section>
 				<!-- TODO: make it look better:
 				 - icons
 				 - different layout
 				 -->
-				<div class="flex items-center gap-2">
-					<h3 class="mt-6">Tech I Use</h3>
-					<Image src={computer} alt="Computer GIF" width={32} class="hidden sm:inline" />
+				<div>
+					<h3>Tech I Use</h3>
+					<Image src={computer} alt="Computer GIF" width={32} />
 					<!-- <ExportedImage src={'/images/computer.gif'} alt="Computer gif" width={32} height={28} /> -->
 				</div>
-				<ul class="mt-0">
+				<ul>
 					<li>Typescript, React, HTML, CSS, TailwindCSS, Redux and Webpack/Vite for web apps.</li>
 					<li>Node.js Express for backend.</li>
 					<li>React Native, NativeWind, React Native Paper, and Redux for mobile apps.</li>

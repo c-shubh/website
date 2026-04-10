@@ -124,42 +124,23 @@ export function CameraMicTest() {
 	};
 
 	return (
-		<div className="space-y-4">
+		<div>
 			{!stream ? (
 				<Button onClick={startMedia}>Turn on Camera & Mic</Button>
 			) : (
 				<>
-					<div className="flex flex-row flex-wrap gap-4 w-full">
-						<Button onClick={stopMedia} className="grow shrink-0 basis-auto whitespace-nowrap">
-							Turn off Camera & Mic
-						</Button>
-						<Button
-							onClick={() => setIsMirrored(!isMirrored)}
-							className="grow shrink-0 basis-auto whitespace-nowrap"
-						>
-							Mirror Video
-						</Button>
-						<Button onClick={takePicture} className="grow shrink-0 basis-auto whitespace-nowrap">
-							Take Photo
-						</Button>
+					<div>
+						<Button onClick={stopMedia}>Turn off Camera & Mic</Button>
+						<Button onClick={() => setIsMirrored(!isMirrored)}>Mirror Video</Button>
+						<Button onClick={takePicture}>Take Photo</Button>
 						{!isRecording ? (
-							<Button
-								onClick={startRecording}
-								className="grow shrink-0 basis-auto whitespace-nowrap"
-							>
-								Record Audio
-							</Button>
+							<Button onClick={startRecording}>Record Audio</Button>
 						) : (
-							<Button
-								onClick={stopRecording}
-								className="grow shrink-0 basis-auto whitespace-nowrap"
-							>
-								Stop Recording
-							</Button>
+							<Button onClick={stopRecording}>Stop Recording</Button>
 						)}
 					</div>
 
-					<div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+					<div>
 						{[
 							{
 								label: 'Camera',
@@ -174,13 +155,9 @@ export function CameraMicTest() {
 								devices: audioDevices,
 							} as const,
 						].map((ele) => (
-							<div className="flex flex-col gap-1" key={ele.type}>
-								<label className="text-md font-medium">{ele.label}</label>
-								<select
-									value={ele.value}
-									onChange={(e) => switchDevice(ele.type, e.target.value)}
-									className="w-full p-2"
-								>
+							<div key={ele.type}>
+								<label>{ele.label}</label>
+								<select value={ele.value} onChange={(e) => switchDevice(ele.type, e.target.value)}>
 									{ele.devices.map((device) => (
 										<option key={device.deviceId} value={device.deviceId}>
 											{device.label || `${ele.label} ${ele.devices.indexOf(device) + 1}`}
@@ -194,22 +171,13 @@ export function CameraMicTest() {
 			)}
 
 			{audioUrl && (
-				<div className="flex flex-col gap-2">
-					<span className="text-md font-medium">Playback Recording:</span>
-					<audio src={audioUrl} controls className="w-full" />
+				<div>
+					<span>Playback Recording:</span>
+					<audio src={audioUrl} controls />
 				</div>
 			)}
 
-			<video
-				ref={videoRef}
-				autoPlay
-				playsInline
-				muted
-				suppressHydrationWarning
-				className={`w-full border border-slate-300 rounded-lg transition-transform duration-300 ${
-					isMirrored ? '-scale-x-100' : ''
-				}`}
-			/>
+			<video ref={videoRef} autoPlay playsInline muted suppressHydrationWarning />
 		</div>
 	);
 }

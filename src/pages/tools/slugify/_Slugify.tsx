@@ -17,24 +17,16 @@ export function Slugify() {
 
 	return (
 		<>
-			<div className="flex flex-col gap-4">
-				<textarea
-					placeholder="Enter text here"
-					rows={10}
-					className="px-2 py-2 resize-y"
-					onChange={handleChange}
-					autoFocus
-				/>
-				<div className="flex flex-col gap-2">
-					<div className="flex gap-2">
-						<h3 className="m-0">Output</h3>
+			<div>
+				<textarea placeholder="Enter text here" rows={10} onChange={handleChange} autoFocus />
+				<div>
+					<div>
+						<h3>Output</h3>
 						<CopyButton getText={() => output.join('\n')} />
 					</div>
-					<ul className="mt-0">
+					<ul>
 						{output.map((line, index) => (
-							<li key={index} className="select-all">
-								{line}
-							</li>
+							<li key={index}>{line}</li>
 						))}
 					</ul>
 				</div>

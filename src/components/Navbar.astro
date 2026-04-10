@@ -21,36 +21,15 @@ const links = [
 ];
 ---
 
-<header class={clsx('my-4')}>
-	<nav class={clsx('flex', 'flex-row', 'flex-wrap', 'mb-4', 'gap-x-8', 'justify-between')}>
-		<Link
-			href="/"
-			class={clsx(
-				'no-underline',
-				'text-black',
-				'text-xl',
-				'font-bold',
-				'flex',
-				'items-center',
-				'gap-2',
-				'text-nowrap'
-			)}
-		>
+<header>
+	<nav>
+		<Link href="/">
 			<Image src={logo} alt="Site Logo" width={36} />
 			{SITE_TITLE}
 		</Link>
-		<div class={clsx('flex', 'space-x-4', 'flex-wrap', 'items-center')}>
-			{
-				links.map((link) => (
-					<Link
-						href={link.href}
-						class={clsx(props.title === link.text ? 'underline' : 'no-underline', 'font-medium')}
-					>
-						{link.text}
-					</Link>
-				))
-			}
-			<Link href={BLOG_RSS_FEED} class={clsx('no-underline', 'font-medium', 'flex')}>
+		<div>
+			{links.map((link) => <Link href={link.href}>{link.text}</Link>)}
+			<Link href={BLOG_RSS_FEED}>
 				<Image src={rssIcon} alt="RSS Feed" width={20} />
 			</Link>
 		</div>

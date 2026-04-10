@@ -18,5 +18,5 @@ export interface Tool {
 }
 
 export const toolsMap: Record<ToolSlug, Tool> = Object.fromEntries(
-	tools.map((tool) => [tool.slug, tool])
+	tools.map((tool) => [tool.slug, tool]),
 ) as Record<ToolSlug, Tool>;

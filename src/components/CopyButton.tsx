@@ -17,7 +17,7 @@ export function CopyButton({ getText, getCanvas }: CopyButtonProps) {
 				if (!canvasEl) throw new Error('Canvas element not found');
 
 				const blob = await new Promise<Blob | null>((resolve) =>
-					canvasEl.toBlob(resolve, 'image/png')
+					canvasEl.toBlob(resolve, 'image/png'),
 				);
 
 				if (!blob) throw new Error('Failed to generate image blob');

@@ -52,26 +52,21 @@ export function WordCount() {
 	};
 
 	return (
-		<div className="flex flex-col gap-4">
+		<div>
 			<textarea
 				ref={textRef}
 				placeholder="Enter text here"
 				rows={10}
-				className="px-2 py-2 resize-y"
 				onChange={(e) => setCount(countCharWordLine(e.target.value))}
 				autoFocus
 			/>
 			<div>or</div>
 			<div>
-				<input
-					type="file"
-					className="w-full p-2 border border-gray-400"
-					onChange={handleFileChange}
-				/>
+				<input type="file" onChange={handleFileChange} />
 			</div>
 			<div>
 				<h3>Output</h3>
-				<pre className="overflow-x-auto">
+				<pre>
 					Character count: {count.character}
 					<br />
 					Word count: {'     '}

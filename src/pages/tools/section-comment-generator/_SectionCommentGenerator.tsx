@@ -27,7 +27,7 @@ function generate(
 	text: string,
 	style: CommentStyleWithName,
 	lineLength: number,
-	indentationSize: number
+	indentationSize: number,
 ) {
 	if (!text) {
 		text = 'Hey there!';
@@ -80,21 +80,20 @@ export function SectionCommentGenerator() {
 	useEffect(refreshOutput, [text, lineLength, indentationSize, commentStyle]);
 
 	return (
-		<div className="flex flex-col gap-4">
+		<div>
 			<input
 				type="text"
-				className="w-full p-2"
 				placeholder="Enter text"
 				value={text}
 				onChange={(e) => setText(e.target.value)}
 				autoFocus
 			/>
 
-			<div className="flex flex-col gap-4">
-				<span className="font-medium">Style</span>
-				<div className="flex flex-wrap gap-4 items-center h-full">
+			<div>
+				<span>Style</span>
+				<div>
 					{Object.keys(styles).map((style) => (
-						<label key={style} className="inline-flex items-center gap-2 cursor-pointer">
+						<label key={style}>
 							<input
 								type="radio"
 								name="comment-style"
@@ -109,15 +108,12 @@ export function SectionCommentGenerator() {
 				</div>
 			</div>
 
-			<div className="flex gap-4">
-				<div className="flex-1 flex flex-col gap-1">
-					<label htmlFor="start-token" className="font-medium">
-						Start
-					</label>
+			<div>
+				<div>
+					<label htmlFor="start-token">Start</label>
 					<input
 						type="text"
 						id="start-token"
-						className="w-full p-2"
 						value={commentStyle.style.start}
 						disabled={commentStyle.name !== 'Custom'}
 						onChange={(e) =>
@@ -128,14 +124,11 @@ export function SectionCommentGenerator() {
 						}
 					/>
 				</div>
-				<div className="flex-1 flex flex-col gap-1">
-					<label htmlFor="end-token" className="font-medium">
-						End
-					</label>
+				<div>
+					<label htmlFor="end-token">End</label>
 					<input
 						type="text"
 						id="end-token"
-						className="w-full p-2"
 						value={commentStyle.style.end}
 						disabled={commentStyle.name !== 'Custom'}
 						onChange={(e) =>
@@ -148,15 +141,12 @@ export function SectionCommentGenerator() {
 				</div>
 			</div>
 
-			<div className="flex gap-4">
-				<div className="flex-1 flex flex-col gap-1">
-					<label htmlFor="line-length" className="font-medium">
-						Line Length
-					</label>
+			<div>
+				<div>
+					<label htmlFor="line-length">Line Length</label>
 					<input
 						type="number"
 						id="line-length"
-						className="w-full p-2"
 						value={lineLength}
 						onChange={(e) => {
 							// @ts-expect-error: number input
@@ -166,14 +156,11 @@ export function SectionCommentGenerator() {
 					/>
 				</div>
 
-				<div className="flex-1 flex flex-col gap-1">
-					<label htmlFor="indent-size" className="font-medium">
-						Indentation
-					</label>
+				<div>
+					<label htmlFor="indent-size">Indentation</label>
 					<input
 						type="number"
 						id="indent-size"
-						className="w-full p-2"
 						value={indentationSize}
 						onChange={(e) => {
 							// @ts-expect-error: number input
@@ -183,11 +170,11 @@ export function SectionCommentGenerator() {
 					/>
 				</div>
 			</div>
-			<div className="flex gap-2 mt-2">
-				<h3 className="m-0">Output</h3>
+			<div>
+				<h3>Output</h3>
 				<CopyButton getText={() => output} />
 			</div>
-			{output && <pre className="w-full overflow-x-auto select-all">{output}</pre>}
+			{output && <pre>{output}</pre>}
 		</div>
 	);
 }

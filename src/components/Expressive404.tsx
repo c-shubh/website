@@ -136,13 +136,9 @@ export function Expressive404() {
 	return (
 		<>
 			<p>The webserver says:</p>
-			<div className="flex flex-col gap-4">
-				<textarea
-					ref={textAreaRef}
-					className="w-full h-64 bg-black text-[#3f0] font-mono p-4 resize-none outline-none leading-relaxed rounded-md"
-					readOnly
-				/>
-				<div className="flex justify-end">
+			<div>
+				<textarea ref={textAreaRef} readOnly />
+				<div>
 					<Button onClick={isFinished ? handleRestart : () => setIsPaused(!isPaused)}>
 						{isFinished ? 'Restart' : isPaused ? 'Resume' : 'Pause'}
 					</Button>

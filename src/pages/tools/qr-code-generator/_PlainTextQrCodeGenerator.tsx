@@ -54,7 +54,7 @@ function QrCode({ text }: QrCodeProps) {
 				bordered={false}
 				type="svg"
 			/>
-			<div className="hidden">
+			<div>
 				<QRCode
 					id="tools-qr-code-generator-canvas"
 					value={text || initialText}
@@ -76,21 +76,20 @@ export function PlainTextQrCodeGenerator() {
 
 	// TODO: wifi and upi qr code
 	return (
-		<div className="flex flex-col gap-4">
+		<div>
 			<textarea
 				placeholder="Enter text"
 				rows={10}
 				value={text}
 				onChange={(e) => setText(e.target.value)}
-				className="p-2 resize-y"
 				autoFocus
 			/>
-			<div className="sm:space-x-4">
+			<div>
 				{[
 					{ value: 'one', label: 'Single QR Code' },
 					{ value: 'many', label: 'Multiple QR Codes (one per line)' },
 				].map((option) => (
-					<div className="sm:inline space-x-2" key={option.value}>
+					<div key={option.value}>
 						<input
 							type="radio"
 							name="count"
@@ -104,11 +103,11 @@ export function PlainTextQrCodeGenerator() {
 				))}
 			</div>
 			{count === 'one' && (
-				<div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
+				<div>
 					<QrCode text={text} />
-					<div className="flex flex-col gap-4">
+					<div>
 						<CopyButton getCanvas={getQRCodeCanvas} />
-						<div className="flex gap-2">
+						<div>
 							Download as
 							<Button onClick={downloadCanvasQRCode}>PNG</Button>
 							<Button onClick={downloadSvgQRCode}>SVG</Button>
@@ -117,18 +116,18 @@ export function PlainTextQrCodeGenerator() {
 				</div>
 			)}
 			{count === 'many' && (
-				<div className="flex flex-col items-center gap-8">
+				<div>
 					{(text.trim() === ''
 						? // if text is empty, then show a single qr code
-						  [initialText]
+							[initialText]
 						: // one qr for each non empty line
-						  text
+							text
 								.trim()
 								.split('\n')
 								.filter((e) => e.trim() !== '')
 					).map((line, index) => (
 						<React.Fragment key={index}>
-							<div className="flex flex-col items-center gap-4">
+							<div>
 								<div>
 									QR Code #{index + 1}. <code>{line}</code>
 								</div>

@@ -8,6 +8,6 @@ interface Props {
 const { date } = Astro.props;
 ---
 
-<time datetime={date.toISOString()} class={Astro.props.class}>
+<time datetime={date.toISOString()} >
 	{dayjs(date).format('MMM DD, YYYY')}
 </time>

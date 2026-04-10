@@ -43,18 +43,17 @@ export function CaseConverter() {
 		.join('\n');
 
 	return (
-		<div className="flex flex-col gap-4">
+		<div>
 			<textarea
 				placeholder="Enter text here"
 				rows={10}
-				className="px-2 py-2 resize-y"
 				value={input}
 				onChange={(e) => setInput(e.target.value)}
 				autoFocus
 			/>
-			<div className="space-x-4 space-y-2">
+			<div>
 				{casesList.map((caseName) => (
-					<label key={caseName} className="inline-flex items-center gap-2 font-mono">
+					<label key={caseName}>
 						<input
 							type="radio"
 							name="case-selection"
@@ -66,11 +65,11 @@ export function CaseConverter() {
 					</label>
 				))}
 			</div>
-			<div className="flex gap-2 mt-2">
-				<h3 className="m-0">Output</h3>
+			<div>
+				<h3>Output</h3>
 				<CopyButton getText={() => output} />
 			</div>
-			<pre className="whitespace-pre-wrap break-all">{output}</pre>
+			<pre>{output}</pre>
 		</div>
 	);
 }
