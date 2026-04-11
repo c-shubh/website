@@ -1,4 +1,5 @@
 ---
+import FormattedDate from '@/components/FormattedDate.astro';
 import MarkdownView from '@/components/MarkdownView.astro';
 import Page from '@/layouts/Page.astro';
 import { quotes } from './_data';
@@ -9,21 +10,22 @@ import { quotes } from './_data';
 	<p>
 		<strong>{quotes.length}</strong> quotes
 	</p>
-	<div >
+	<div>
 		{
 			quotes.map((result, index) => (
-				<div>
-					<code >{result.dateAdded}</code>
-					<blockquote>
-						<MarkdownView source={result.text} />
-						<MarkdownView source={`~ ${result.attribution}`} />
-					</blockquote>
-					{index < quotes.length - 1 && (
-						<div >
-							<hr />
-						</div>
-					)}
-				</div>
+				<article>
+					<FormattedDate date={new Date(result.dateAdded)} />
+					<figure>
+						<blockquote>
+							<MarkdownView source={result.text} />
+						</blockquote>
+
+						<figcaption>
+							<MarkdownView source={`— ${result.attribution}`} />
+						</figcaption>
+					</figure>
+					{index < quotes.length - 1 && <hr />}
+				</article>
 			))
 		}
 	</div>

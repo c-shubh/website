@@ -2,27 +2,22 @@
 import FormattedDate from '@/components/FormattedDate.astro';
 import Link from '@/components/Link.astro';
 import Page from '@/layouts/Page.astro';
-import { getCollection } from 'astro:content';
+import { getBlogPosts } from '@/serverUtils';
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.date.valueOf() - a.data.date.valueOf()
-);
+const posts = await getBlogPosts();
 ---
 
 <Page title="Blog">
-	<section >
-		<ul >
-			{
-				posts.map((post) => (
-					<li>
-						<Link href={`/blog/${post.id}`} >
-							{post.data.title}
-						</Link>
-						<br />
+	<ul>
+		{
+			posts.map((post) => (
+				<li>
+					<Link href={`/blog/${post.id}`}>{post.data.title}</Link>
+					<div>
 						<FormattedDate date={new Date(post.data.date)} />
-					</li>
-				))
-			}
-		</ul>
-	</section>
+					</div>
+				</li>
+			))
+		}
+	</ul>
 </Page>

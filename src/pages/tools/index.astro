@@ -8,13 +8,17 @@ const description =
 
 <Page title="Tools" description={description}>
 	<p>{description}</p>
-	<ul>
+	<dl class="space-y-2">
 		{
 			tools.map((tool) => (
-				<li>
-					<Link href={`/tools/${tool.slug}`}>{tool.name}</Link> – {tool.description}
-				</li>
+				<div>
+					<dt class="inline">
+						<Link href={`/tools/${tool.slug}`}>{tool.name}</Link>
+					</dt>
+
+					<dd class="inline p-0">– {tool.description}</dd>
+				</div>
 			))
 		}
-	</ul>
+	</dl>
 </Page>

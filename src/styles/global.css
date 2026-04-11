@@ -1,0 +1,56 @@
+@import 'tailwindcss';
+
+@plugin "daisyui" {
+	themes: all;
+}
+
+@utility prose {
+	color: var(--color-base-content);
+
+	ul,
+	ol {
+		li {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+	}
+
+	li > ul {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	blockquote {
+		font-style: normal;
+		font-weight: normal;
+
+		/* Disable adding quote marks to block-quotes: https://github.com/tailwindlabs/tailwindcss-typography/issues/66#issuecomment-2635113327 */
+		p {
+			&:first-of-type::before,
+			&:last-of-type::after {
+				content: none;
+			}
+		}
+	}
+}
+
+@plugin "@tailwindcss/typography";
+
+@keyframes poke-right {
+	0% {
+		transform: translateX(0);
+	}
+	40% {
+		transform: translateX(30px);
+	}
+	60% {
+		transform: translateX(-10px);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+.animate-poke-right {
+	animation: poke-right 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}

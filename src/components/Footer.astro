@@ -14,7 +14,6 @@ import catMeooow from '@/assets/images/cat-meooow.gif';
 import ccByNcSa from '@/assets/images/cc-by-nc-sa-4.0.png';
 import clickHereRed from '@/assets/images/clickhere_red.gif';
 import ffmpeg from '@/assets/images/ffmpeg.png';
-import gliderSvg from '@/assets/images/glider.svg';
 import gnuLinux from '@/assets/images/gnu-linux.gif';
 import haveASmile from '@/assets/images/have-a-smile.gif';
 import iLikeComputer from '@/assets/images/i_like_computer.png';
@@ -230,68 +229,164 @@ const badges: Badge[] = [
 		href: 'https://trix.is-a.dev/',
 	},
 ];
+
+const themes = [
+	'light',
+	'dark',
+	'cupcake',
+	'bumblebee',
+	'emerald',
+	'corporate',
+	'synthwave',
+	'retro',
+	'cyberpunk',
+	'valentine',
+	'halloween',
+	'garden',
+	'forest',
+	'aqua',
+	'lofi',
+	'pastel',
+	'fantasy',
+	'wireframe',
+	'black',
+	'luxury',
+	'dracula',
+	'cmyk',
+	'autumn',
+	'business',
+	'acid',
+	'lemonade',
+	'night',
+	'coffee',
+	'winter',
+	'dim',
+	'nord',
+	'sunset',
+	'caramellatte',
+	'abyss',
+	'silk',
+];
 ---
 
-<footer >
-	<hr  />
-	<div >
-		<div >
-			{
-				badges.map((badge) => {
-					if (badge.type === 'image') {
-						const badgeImage =
-							typeof badge.src === 'string' ? (
-								<Image src={badge.src} alt={badge.alt} id={badge.id} width={88} height={31} />
-							) : (
-								<Image src={badge.src} alt={badge.alt} id={badge.id} />
-							);
-
-						return badge.href ? <Link href={badge.href}>{badgeImage}</Link> : badgeImage;
-					}
-					if (badge.type === 'component') {
-						const Component = badge.component;
-						return <Component />;
-					}
-				})
-			}
-		</div>
-		<div>
-			<a href="https://baccyflap.com/noai/?prv&s=csh" target="_top"
-				><Image
-					src={noAiWidget0}
-					alt="previous no ai webring site"
-					title="previous no ai webring site"
-				/></a
-			><a href="https://baccyflap.com/noai" target="_blank"
-				><Image src={noAiWidget1} alt="no ai webring" title="no ai webring" /></a
-			><a href="https://baccyflap.com/noai/?rnd" target="_top"
-				><Image
-					src={noAiWidget2}
-					alt="random no ai webring site"
-					title="random no ai webring site"
-				/></a
-			><a href="https://baccyflap.com/noai/?nxt&s=csh" target="_top"
-				><Image
-					src={noAiWidget3}
-					alt="next no ai webring site"
-					title="next no ai webring site"
-				/></a
-			>
-		</div>
+<footer class="footer footer-horizontal footer-center bg-base-200 text-base-content rounded p-6">
+	<!-- https://github.com/saadeghi/daisyui/blob/c2da238a8681aaa80260404a3203ec3125b7ddce/packages/docs/src/components/ThemePreviews.svelte -->
+	<div class="w-full rounded-box flex gap-3 overflow-x-auto pb-4 p-2 text-left">
+		{
+			themes.map((theme) => (
+				<div
+					class="border-base-content/20 hover:border-base-content/40 w-34 shrink-0 overflow-hidden rounded-lg border outline-2 outline-offset-2 outline-transparent"
+					data-set-theme={theme}
+					data-act-class="outline-base-content!"
+				>
+					<div
+						data-theme={theme}
+						class="bg-base-100 text-base-content w-full cursor-pointer font-sans"
+					>
+						<div class="grid grid-cols-5 grid-rows-3">
+							<div class="bg-base-200 col-start-1 row-span-2 row-start-1" />
+							<div class="bg-base-300 col-start-1 row-start-3" />
+							<div class="bg-base-100 col-span-4 col-start-2 row-span-3 row-start-1 flex flex-col gap-1 p-1">
+								<div class="font-bold text-sm">{theme}</div>
+								<div class="flex flex-wrap gap-1">
+									<div class="bg-primary flex aspect-square w-5 items-center justify-center rounded">
+										<div class="text-primary-content text-xs font-bold">A</div>
+									</div>
+									<div class="bg-secondary flex aspect-square w-5 items-center justify-center rounded">
+										<div class="text-secondary-content text-xs font-bold">A</div>
+									</div>
+									<div class="bg-accent flex aspect-square w-5 items-center justify-center rounded">
+										<div class="text-accent-content text-xs font-bold">A</div>
+									</div>
+									<div class="bg-neutral flex aspect-square w-5 items-center justify-center rounded">
+										<div class="text-neutral-content text-xs font-bold">A</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			))
+		}
 	</div>
-	<span >
-		<span>
-			{COPYRIGHT.symbol}{' '}{COPYRIGHT.year}
+
+	<div class="flex flex-row flex-wrap justify-center gap-2 w-fit mx-auto">
+		{
+			badges.map((badge) => {
+				if (badge.type === 'image') {
+					const badgeImage =
+						typeof badge.src === 'string' ? (
+							<Image src={badge.src} alt={badge.alt} id={badge.id} width={88} height={31} />
+						) : (
+							<Image src={badge.src} alt={badge.alt} id={badge.id} />
+						);
+
+					return badge.href ? <Link href={badge.href}>{badgeImage}</Link> : badgeImage;
+				}
+				if (badge.type === 'component') {
+					const Component = badge.component;
+					return <Component />;
+				}
+			})
+		}
+	</div>
+
+	<nav class="flex gap-0">
+		<a href="https://baccyflap.com/noai/?prv&s=csh" target="_top"
+			><Image
+				src={noAiWidget0}
+				alt="previous no ai webring site"
+				title="previous no ai webring site"
+			/></a
+		><a href="https://baccyflap.com/noai" target="_blank"
+			><Image src={noAiWidget1} alt="no ai webring" title="no ai webring" /></a
+		><a href="https://baccyflap.com/noai/?rnd" target="_top"
+			><Image
+				src={noAiWidget2}
+				alt="random no ai webring site"
+				title="random no ai webring site"
+			/></a
+		><a href="https://baccyflap.com/noai/?nxt&s=csh" target="_top"
+			><Image src={noAiWidget3} alt="next no ai webring site" title="next no ai webring site" /></a
+		>
+	</nav>
+	<small class="text-sm">
+		<p>
+			{COPYRIGHT.symbol}
+			{COPYRIGHT.year}
 			{COPYRIGHT.holder}
-		</span>
-		<Link href={'http://www.catb.org/hacker-emblem/'} >
-			<Image src={gliderSvg} alt="Glider"  />
-		</Link>
-	</span>
-	<span>
-		{COPYRIGHT.string}
-	</span>
+		</p>
+		<p>{COPYRIGHT.string}</p>
+	</small>
 </footer>
+
+<script>
+	const themeButtons = document.querySelectorAll('div[data-set-theme]');
+	const htmlElement = document.documentElement;
+	const currentTheme = localStorage.getItem('theme')!;
+	updateActiveUI(currentTheme);
+
+	themeButtons.forEach((btn) => {
+		btn.addEventListener('click', () => {
+			const selectedTheme = btn.getAttribute('data-set-theme')!;
+			htmlElement.setAttribute('data-theme', selectedTheme);
+			localStorage.setItem('theme', selectedTheme);
+			updateActiveUI(selectedTheme);
+		});
+	});
+
+	function updateActiveUI(activeTheme: string) {
+		themeButtons.forEach((btn) => {
+			if (btn.getAttribute('data-set-theme') === activeTheme) {
+				btn.classList.add('outline-base-content');
+				btn.classList.remove('outline-transparent');
+			} else {
+				btn.classList.remove('outline-base-content');
+				btn.classList.add('outline-transparent');
+			}
+		});
+	}
+</script>
 
 <script>
 	import confetti from 'canvas-confetti';

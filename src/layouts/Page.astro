@@ -127,6 +127,24 @@ const props = getResolvedProps(rawProps);
 		<meta property="twitter:image" content="/images/social-card.png" />
 		{props.description && <meta property="twitter:description" content={props.description} />}
 
+		<script is:inline>
+			const savedTheme = localStorage.getItem('theme');
+			const osThemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+			const htmlElement = document.documentElement;
+
+			if (savedTheme) {
+				htmlElement.setAttribute('data-theme', savedTheme);
+			} else {
+				htmlElement.setAttribute('data-theme', osThemeQuery.matches ? 'dark' : 'light');
+			}
+
+			osThemeQuery.addEventListener('change', (e) => {
+				if (!localStorage.getItem('theme')) {
+					document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+				}
+			});
+		</script>
+
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-J52XN60HFW" is:inline></script>
 		<script is:inline>
 			window.dataLayer = window.dataLayer || [];
@@ -137,20 +155,16 @@ const props = getResolvedProps(rawProps);
 			gtag('config', 'G-J52XN60HFW');
 		</script>
 	</head>
-	<body>
+	<body class="min-h-screen flex flex-col max-w-5xl mx-auto gap-8 items-center">
 		<Navbar title={props.h1} />
-		<main>
+		<main class="flex-grow px-4 prose w-full max-w-3xl">
 			{
 				props.layout === 'blog' ? (
 					<article>
-						<div>
-							<h1>{props.h1}</h1>
-							<div>
-								<span>
-									<FormattedDate date={props.date} />
-								</span>
-							</div>
-						</div>
+						<header>
+							<h1 class="mb-4">{props.h1}</h1>
+							<FormattedDate date={props.date} class="font-medium" />
+						</header>
 						<div>
 							<slot />
 						</div>

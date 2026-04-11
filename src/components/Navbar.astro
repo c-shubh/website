@@ -1,16 +1,13 @@
 ---
 import rssIcon from '@/assets/images/Feed-icon.svg';
 import logo from '@/assets/images/logo.svg';
-import Link from '@/components/Link.astro';
 import { BLOG_RSS_FEED, SITE_TITLE } from '@/consts';
-import { clsx } from '@/utils';
 import { Image } from 'astro:assets';
+import Link from './Link.astro';
 
 interface Props {
 	title?: string;
 }
-
-const props = Astro.props;
 
 const links = [
 	{ href: '/projects', text: 'Projects' },
@@ -21,18 +18,64 @@ const links = [
 ];
 ---
 
-<header>
-	<nav>
-		<Link href="/">
-			<Image src={logo} alt="Site Logo" width={36} />
-			{SITE_TITLE}
-		</Link>
-		<div>
-			{links.map((link) => <Link href={link.href}>{link.text}</Link>)}
-			<Link href={BLOG_RSS_FEED}>
-				<Image src={rssIcon} alt="RSS Feed" width={20} />
+<nav class="max-md:collapse bg-base-200 shadow-sm w-full rounded-md">
+	<input id="navbar-1-toggle" class="peer hidden" type="checkbox" />
+	<label for="navbar-1-toggle" class="fixed inset-0 hidden max-md:peer-checked:block"></label>
+	<div class="collapse-title navbar justify-between">
+		<div class="navbar-start">
+			<Link href="/" class="btn btn-ghost text-lg sm:text-xl">
+				<Image src={logo} alt="Site Logo" width={36} />
+				{SITE_TITLE}
 			</Link>
 		</div>
-	</nav>
-	<hr />
-</header>
+		<div class="navbar-center hidden md:flex">
+			<ul class="menu menu-horizontal px-1">
+				{
+					links.map((link) => (
+						<li>
+							<Link href={link.href}>{link.text}</Link>
+						</li>
+					))
+				}
+				<li>
+					<Link href={BLOG_RSS_FEED} title={'RSS Feed'}>
+						<Image src={rssIcon} alt="RSS Feed" width={20} />
+					</Link>
+				</li>
+			</ul>
+		</div>
+		<div class="navbar-end md:hidden">
+			<label for="navbar-1-toggle" class="btn btn-ghost md:hidden">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					class="h-5 w-5"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke="currentColor"
+					><path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M4 6h16M4 12h8m-8 6h16"></path></svg
+				>
+			</label>
+		</div>
+	</div>
+
+	<div class="collapse-content md:hidden z-1">
+		<ul class="menu">
+			{
+				links.map((link) => (
+					<li>
+						<Link href={link.href}>{link.text}</Link>
+					</li>
+				))
+			}
+			<li>
+				<Link href={BLOG_RSS_FEED} title={'RSS Feed'}>
+					<Image src={rssIcon} alt="RSS Feed" width={20} />
+				</Link>
+			</li>
+		</ul>
+	</div>
+</nav>

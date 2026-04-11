@@ -1,4 +1,5 @@
 ---
+import FormattedDate from '@/components/FormattedDate.astro';
 import Link from '@/components/Link.astro';
 import Page from '@/layouts/Page.astro';
 import { writings } from './_data';
@@ -11,33 +12,56 @@ const description = "List of everything I've read, watched, listened to, or othe
 		{description}
 	</p>
 
-	<h2>Archival Notice</h2>
-	<p>
-		This page has stopped getting updates. It was hard for me to keep track of links and update
-		here.
-	</p>
-	<p>Previous content preserved below. Archived on 2024-10-26.</p>
+	<div role="alert" class="alert alert-vertical sm:alert-horizontal">
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			fill="none"
+			viewBox="0 0 24 24"
+			class="stroke-info h-6 w-6 shrink-0"
+		>
+			<path
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				stroke-width="2"
+				d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+		</svg>
+		<div>
+			<h3 class="mt-0 mb-0">Archival Notice</h3>
+			<div class="text-sm">
+				This page has stopped getting updates. It was hard for me to keep track of links and update
+				here. Previous content is preserved below. Archived on <FormattedDate
+					date={new Date('2024-10-26')}
+				/>.
+			</div>
+		</div>
+	</div>
 
-	<h2>Writings</h2>
+	<section>
+		<h2>Writings</h2>
 
-	<ul>
-		{
-			writings.map((link) => (
-				<li>
-					<code>{link.date}</code>
-					<Link href={link.url}>{link.title}</Link>{' '}
-					{link.archiveUrl && (
-						<>
-							- <Link href={link.archiveUrl}>Archive</Link>{' '}
-						</>
-					)}
-					{link.hnUrl && (
-						<>
-							- <Link href={link.hnUrl}>HN discussion</Link>{' '}
-						</>
-					)}
-				</li>
-			))
-		}
-	</ul>
+		<ul>
+			{
+				writings.map((link) => (
+					<li>
+						<Link href={link.url}>{link.title}</Link>
+						<span class="text-sm">
+							{link.archiveUrl && (
+								<>
+									— <Link href={link.archiveUrl}>Archive</Link>
+								</>
+							)}
+							{link.hnUrl && (
+								<>
+									— <Link href={link.hnUrl}>HN discussion</Link>
+								</>
+							)}
+						</span>
+						<div>
+							<FormattedDate date={new Date(link.date)} />
+						</div>
+					</li>
+				))
+			}
+		</ul>
+	</section>
 </Page>

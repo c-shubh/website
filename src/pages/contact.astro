@@ -1,6 +1,4 @@
 ---
-import ClientOnlyFallback from '@/components/ClientOnlyFallback.astro';
-import { Email } from '@/components/Email';
 import Link from '@/components/Link.astro';
 import Page from '@/layouts/Page.astro';
 
@@ -13,7 +11,13 @@ const services = [
 		name: 'GitHub',
 		url: 'https://github.com/c-shubh/',
 	},
+	{
+		name: 'Instagram',
+		url: 'https://www.instagram.com/c_shubh_/',
+	},
 ];
+
+const email = 'contact@cshubh.com';
 ---
 
 <Page title="Contact">
@@ -21,21 +25,24 @@ const services = [
 		The best way to reach out to me is by email. I monitor it almost daily so there&apos;s little
 		chance that I miss your email.
 	</p>
-	<Email client:only="react">
-		<div slot="fallback">
-			<ClientOnlyFallback />
-		</div>
-	</Email>
+	<address class="not-italic">
+		<Link href={`mailto:${email}`}>{email}</Link>
+	</address>
 	<h2>Links</h2>
 	<p>My public profiles on various platforms:</p>
-	<ul>
-		{
-			services.map((service) => (
-				<li>
-					<span >{service.name}:</span>{' '}
-					<Link href={service.url}>{service.url}</Link>
-				</li>
-			))
-		}
-	</ul>
+
+	<address class="not-italic">
+		<dl>
+			{
+				services.map((service) => (
+					<div>
+						<dt class="inline font-semibold">{service.name}:</dt>{' '}
+						<dd class="inline p-0">
+							<Link href={service.url}>{service.url}</Link>
+						</dd>
+					</div>
+				))
+			}
+		</dl>
+	</address>
 </Page>

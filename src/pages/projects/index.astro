@@ -8,26 +8,27 @@ import { projects } from './_data';
 <Page title="Projects">
 	{
 		projects.map((project, index) => (
-			<div>
+			<article>
 				<h2>{project.title}</h2>
 				<Fragment set:html={marked.parse(project.description)} />
-				<p>
-					<strong>Built with:</strong>
-					{project.builtWith.join(', ')}
-				</p>
-				{project.liveUrl && (
-					<p>
-						<strong>Live URL:</strong>
-						<Link href={project.liveUrl}>{project.liveUrl}</Link>
-					</p>
-				)}
-				{project.srcUrl && (
-					<p>
-						<strong>Source URL:</strong> <Link href={project.srcUrl}>{project.srcUrl}</Link>
-					</p>
-				)}
-				{index !== projects.length - 1 && <hr />}
-			</div>
+				<ul>
+					<li>
+						<strong>Built with:</strong> {project.builtWith.join(', ')}
+					</li>
+					{project.liveUrl && (
+						<li>
+							<strong>Live URL:</strong>
+							<Link href={project.liveUrl}>{project.liveUrl}</Link>
+						</li>
+					)}
+					{project.srcUrl && (
+						<li>
+							<strong>Source URL:</strong>
+							<Link href={project.srcUrl}>{project.srcUrl}</Link>
+						</li>
+					)}
+				</ul>
+			</article>
 		))
 	}
 </Page>

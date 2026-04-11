@@ -1,45 +1,59 @@
 ---
 import computer from '@/assets/images/computer.gif';
-import hello from '@/assets/images/hello.gif';
+import FormattedDate from '@/components/FormattedDate.astro';
+import Link from '@/components/Link.astro';
 import Page from '@/layouts/Page.astro';
+import { getBlogPosts } from '@/serverUtils';
 import { Image } from 'astro:assets';
+
+const posts = await getBlogPosts();
+posts.splice(10);
 ---
 
 <Page layout="home">
-	<div>
-		<header>
-			<h1>
-				I&apos;m a techie who loves building things.
-				<Image src={hello} alt="Hello GIF" width={65} />
-			</h1>
-			<p>
-				{'Hacker  •  Software Engineer  •  Builder  •  Learner'}
-			</p>
-		</header>
-		<hr />
-		<main>
-			<section>
-				<!-- TODO: make it look better:
-				 - icons
-				 - different layout
-				 -->
-				<div>
-					<h3>Tech I Use</h3>
-					<Image src={computer} alt="Computer GIF" width={32} />
-					<!-- <ExportedImage src={'/images/computer.gif'} alt="Computer gif" width={32} height={28} /> -->
-				</div>
-				<ul>
-					<li>Typescript, React, HTML, CSS, TailwindCSS, Redux and Webpack/Vite for web apps.</li>
-					<li>Node.js Express for backend.</li>
-					<li>React Native, NativeWind, React Native Paper, and Redux for mobile apps.</li>
-					<li>Python for scripting and automation.</li>
-					<li>Java for practicing Data Structure and Algorithms.</li>
-					<li>Rust for building CLI applications.</li>
-					<li>Tools: Git, Docker.</li>
-					<li>OS: Linux.</li>
-					<li>Current Distro: Linux Mint Cinnamon. Previously: Xubuntu, Arch Linux + XFCE.</li>
-				</ul>
-			</section>
-		</main>
-	</div>
+	<header>
+		<h1 class="leading-relaxed">
+			Hi there! 👋
+			<br />
+			I&apos;m a <Link
+				href="http://www.catb.org/~esr/jargon/html/H/hacker.html"
+				class="font-extrabold">hacker</Link
+			> who loves building things.
+		</h1>
+	</header>
+	<div class="divider"></div>
+	<section>
+		<h2>Recent Posts ✍️</h2>
+		<ul>
+			{
+				posts.map((post) => (
+					<li>
+						<Link href={`/blog/${post.id}`}>{post.data.title}</Link>
+						<div>
+							<FormattedDate date={new Date(post.data.date)} />
+						</div>
+					</li>
+				))
+			}
+		</ul>
+	</section>
+	<section>
+		<h2>
+			Tech I Use&nbsp;
+			<Image src={computer} alt="Computer GIF" width={32} class="not-prose inline-block m-0" />
+		</h2>
+		<ul>
+			<li>Programming Languages & Web: TypeScript, Python, Rust, Java, HTML, CSS</li>
+			<li>Frontend Frameworks: React, Next.js, Astro</li>
+			<li>Styling: Tailwind CSS, Material UI (MUI), daisyUI</li>
+			<li>Backend Frameworks & Runtimes: Node.js, Express, Django, axum</li>
+			<li>Databases: SQLite, MariaDB, MySQL</li>
+			<li>Build Tools, DevOps & Version Control: Git, Docker, Vite, webpack</li>
+			<li>Cross-Platform & Mobile: Electron, Capacitor</li>
+			<li>
+				Operating Systems & Desktop Environments: Arch Linux (with Xfce), Linux Mint (Cinnamon
+				Edition), Xubuntu
+			</li>
+		</ul>
+	</section>
 </Page>
