@@ -1,4 +1,3 @@
-import { Button } from '@/components/Button';
 import { useEffect, useRef, useState } from 'react';
 
 const tl = [
@@ -139,9 +138,9 @@ export function Expressive404() {
 			<div>
 				<textarea ref={textAreaRef} readOnly />
 				<div>
-					<Button onClick={isFinished ? handleRestart : () => setIsPaused(!isPaused)}>
+					<button type="button" onClick={isFinished ? handleRestart : () => setIsPaused(!isPaused)}>
 						{isFinished ? 'Restart' : isPaused ? 'Resume' : 'Pause'}
-					</Button>
+					</button>
 				</div>
 			</div>
 		</>

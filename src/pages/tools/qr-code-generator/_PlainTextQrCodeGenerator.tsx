@@ -1,4 +1,3 @@
-import { Button } from '@/components/Button';
 import { CopyButton } from '@/components/CopyButton';
 import { QRCode } from 'antd';
 import * as React from 'react';
@@ -41,22 +40,23 @@ const downloadSvgQRCode = () => {
 
 interface QrCodeProps {
 	text: string;
+	idSuffix?: string;
 }
 
-function QrCode({ text }: QrCodeProps) {
+function QrCode({ text, idSuffix = '' }: QrCodeProps) {
 	return (
 		<>
 			<QRCode
-				id="tools-qr-code-generator-svg"
+				id={`tools-qr-code-generator-svg${idSuffix}`}
 				value={text || initialText}
 				bgColor="#fff"
 				size={250}
 				bordered={false}
 				type="svg"
 			/>
-			<div>
+			<div className="hidden">
 				<QRCode
-					id="tools-qr-code-generator-canvas"
+					id={`tools-qr-code-generator-canvas${idSuffix}`}
 					value={text || initialText}
 					bgColor="#fff"
 					size={250}
@@ -76,20 +76,29 @@ export function PlainTextQrCodeGenerator() {
 
 	// TODO: wifi and upi qr code
 	return (
-		<div>
-			<textarea
-				placeholder="Enter text"
-				rows={10}
-				value={text}
-				onChange={(e) => setText(e.target.value)}
-				autoFocus
-			/>
+		<div className="flex flex-col gap-6">
 			<div>
+				<label htmlFor="qr-input-text" className="sr-only">
+					Enter text
+				</label>
+				<textarea
+					id="qr-input-text"
+					placeholder="Enter text"
+					rows={10}
+					value={text}
+					onChange={(e) => setText(e.target.value)}
+					className="resize-y w-full textarea"
+					autoFocus
+				/>
+			</div>
+
+			<fieldset className="sm:space-x-4 flex flex-wrap gap-4 items-center">
+				<legend className="sr-only">Generation Mode</legend>
 				{[
 					{ value: 'one', label: 'Single QR Code' },
 					{ value: 'many', label: 'Multiple QR Codes (one per line)' },
 				].map((option) => (
-					<div key={option.value}>
+					<div className="sm:inline space-x-2 flex items-center" key={option.value}>
 						<input
 							type="radio"
 							name="count"
@@ -97,46 +106,67 @@ export function PlainTextQrCodeGenerator() {
 							checked={count === option.value}
 							onChange={() => setCount(option.value as Count)}
 							id={`tools-qr-code-generator-count-${option.value}`}
+							className="radio"
 						/>
 						<label htmlFor={`tools-qr-code-generator-count-${option.value}`}>{option.label}</label>
 					</div>
 				))}
-			</div>
-			{count === 'one' && (
-				<div>
-					<QrCode text={text} />
-					<div>
-						<CopyButton getCanvas={getQRCodeCanvas} />
-						<div>
-							Download as
-							<Button onClick={downloadCanvasQRCode}>PNG</Button>
-							<Button onClick={downloadSvgQRCode}>SVG</Button>
-						</div>
-					</div>
-				</div>
-			)}
-			{count === 'many' && (
-				<div>
-					{(text.trim() === ''
-						? // if text is empty, then show a single qr code
-							[initialText]
-						: // one qr for each non empty line
-							text
-								.trim()
-								.split('\n')
-								.filter((e) => e.trim() !== '')
-					).map((line, index) => (
-						<React.Fragment key={index}>
-							<div>
-								<div>
-									QR Code #{index + 1}. <code>{line}</code>
+			</fieldset>
+
+			<div>
+				<h2 className="mt-0">Output</h2>
+
+				<output htmlFor="qr-input-text tools-qr-code-generator-count-one tools-qr-code-generator-count-many">
+					{count === 'one' && (
+						<div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
+							<QrCode text={text} />
+							<div className="flex flex-col gap-4">
+								<CopyButton getCanvas={getQRCodeCanvas} className={'btn-sm'} />
+								<div className="flex gap-2 items-center">
+									Download as
+									<button
+										type="button"
+										className="btn btn-neutral btn-sm"
+										onClick={downloadCanvasQRCode}
+									>
+										PNG
+									</button>
+									<button
+										type="button"
+										className="btn btn-neutral btn-sm"
+										onClick={downloadSvgQRCode}
+									>
+										SVG
+									</button>
 								</div>
-								<QrCode text={line} />
 							</div>
-						</React.Fragment>
-					))}
-				</div>
-			)}
+						</div>
+					)}
+
+					{count === 'many' && (
+						<ul className="flex flex-col items-center gap-8 list-none p-0 m-0">
+							{(text.trim() === ''
+								? // if text is empty, then show a single qr code
+								  [initialText]
+								: // one qr for each non empty line
+								  text
+										.trim()
+										.split('\n')
+										.filter((e) => e.trim() !== '')
+							).map((line, index) => (
+								<li key={index} className="flex flex-col items-center gap-4">
+									<figure className="mt-0 mb-0 flex flex-col items-center gap-2">
+										<figcaption className="text-sm">
+											QR Code #{index + 1}. <code className="break-all">{line}</code>
+										</figcaption>
+										<QrCode text={line} idSuffix={`-${index}`} />
+									</figure>
+								</li>
+							))}
+						</ul>
+					)}
+				</output>
+			</div>
 		</div>
 	);
 }
