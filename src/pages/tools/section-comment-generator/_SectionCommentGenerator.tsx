@@ -195,7 +195,7 @@ export function SectionCommentGenerator() {
 
 			<div className="flex items-center gap-2">
 				<h2 className="mt-0 mb-0">Output</h2>
-				<CopyButton getText={() => output} />
+				<CopyButton getText={() => output}  className={'btn-xs'} />
 			</div>
 
 			{output && (

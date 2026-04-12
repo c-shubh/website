@@ -7,7 +7,7 @@ import { projects } from './_data';
 
 <Page title="Projects">
 	{
-		projects.map((project, index) => (
+		projects.map((project) => (
 			<article>
 				<h2>{project.title}</h2>
 				<Fragment set:html={marked.parse(project.description)} />

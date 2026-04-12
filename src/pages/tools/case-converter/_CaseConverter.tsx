@@ -43,7 +43,7 @@ export function CaseConverter() {
 		.join('\n');
 
 	return (
-		<div className="space-y-4">
+		<div className="space-y-6">
 			<div>
 				<label htmlFor="tool-case-converter-input" className="sr-only">
 					Text to convert
@@ -76,7 +76,7 @@ export function CaseConverter() {
 			</fieldset>
 			<div className="flex items-center gap-2">
 				<h2 className="mt-0 mb-0">Output</h2>
-				<CopyButton getText={() => output} />
+				<CopyButton getText={() => output} className={'btn-xs'} />
 			</div>
 			{output && (
 				<output htmlFor="tool-case-converter-input">
