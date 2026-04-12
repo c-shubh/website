@@ -1,4 +1,3 @@
-import { Button } from '@/components/Button';
 import { useRef, useState } from 'react';
 
 export function CameraMicTest() {
@@ -124,23 +123,33 @@ export function CameraMicTest() {
 	};
 
 	return (
-		<div>
+		<div className="space-y-4">
 			{!stream ? (
-				<Button onClick={startMedia}>Turn on Camera & Mic</Button>
+				<button type="button" onClick={startMedia} className="btn btn-neutral btn-sm">
+					Turn on Camera & Mic
+				</button>
 			) : (
 				<>
-					<div>
-						<Button onClick={stopMedia}>Turn off Camera & Mic</Button>
-						<Button onClick={() => setIsMirrored(!isMirrored)}>Mirror Video</Button>
-						<Button onClick={takePicture}>Take Photo</Button>
-						{!isRecording ? (
-							<Button onClick={startRecording}>Record Audio</Button>
-						) : (
-							<Button onClick={stopRecording}>Stop Recording</Button>
+					<div className="flex flex-wrap gap-2">
+						{(
+							[
+								['Turn off Camera & Mic', stopMedia, true],
+								['Mirror Video', () => setIsMirrored(!isMirrored), true],
+								['Take Photo', takePicture, true],
+								['Record Audio', startRecording, !isRecording],
+								['Stop Recording', stopRecording, isRecording],
+							] as const
+						).map(
+							([label, fn, show], idx) =>
+								show && (
+									<button key={idx} className="btn btn-neutral btn-sm" type="button" onClick={fn}>
+										{label}
+									</button>
+								)
 						)}
 					</div>
 
-					<div>
+					<div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
 						{[
 							{
 								label: 'Camera',
@@ -155,29 +164,50 @@ export function CameraMicTest() {
 								devices: audioDevices,
 							} as const,
 						].map((ele) => (
-							<div key={ele.type}>
-								<label>{ele.label}</label>
-								<select value={ele.value} onChange={(e) => switchDevice(ele.type, e.target.value)}>
+							<fieldset key={ele.type} className="fieldset">
+								<label
+									htmlFor={`tool-camera-mic-test-device-select-${ele.type}`}
+									className="fieldset-legend"
+								>
+									{ele.label}
+								</label>
+								<select
+									id={`tool-camera-mic-test-device-select-${ele.type}`}
+									className="select w-full"
+									onChange={(e) => switchDevice(ele.type, e.target.value)}
+									value={ele.value}
+								>
 									{ele.devices.map((device) => (
 										<option key={device.deviceId} value={device.deviceId}>
 											{device.label || `${ele.label} ${ele.devices.indexOf(device) + 1}`}
 										</option>
 									))}
 								</select>
-							</div>
+							</fieldset>
 						))}
 					</div>
 				</>
 			)}
 
 			{audioUrl && (
-				<div>
-					<span>Playback Recording:</span>
-					<audio src={audioUrl} controls />
-				</div>
+				<figure className="not-prose flex flex-col gap-2">
+					<figcaption className="text-sm font-medium">Playback Recording:</figcaption>
+					<audio src={audioUrl} controls className="w-full" />
+				</figure>
 			)}
 
-			<video ref={videoRef} autoPlay playsInline muted suppressHydrationWarning />
+			<video
+				ref={videoRef}
+				autoPlay
+				playsInline
+				muted
+				suppressHydrationWarning
+				className={`w-full rounded-lg transition-transform duration-300 ${
+					isMirrored ? '-scale-x-100' : ''
+				}`}
+			>
+				Your browser does not support the video element.
+			</video>
 		</div>
 	);
 }
