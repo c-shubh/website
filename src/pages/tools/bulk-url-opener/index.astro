@@ -8,10 +8,8 @@ const { name, description } = toolsMap['bulk-url-opener'];
 ---
 
 <Page title={name} description={description}>
-	<p>
-		Paste a list of URLs in the textbox below to open all of them in new tabs.<br />
-		Note: Enter <strong>one URL per line.</strong>
-	</p>
+	<p>Paste a list of URLs in the textbox below to open all of them in new tabs.</p>
+	<p>Note: Enter <strong>one URL per line.</strong></p>
 	<BulkUrlOpener client:only="react">
 		<div slot="fallback">
 			<ClientOnlyFallback />
