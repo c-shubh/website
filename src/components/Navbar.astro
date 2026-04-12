@@ -10,10 +10,10 @@ interface Props {
 }
 
 const links = [
-	{ href: '/projects', text: 'Projects' },
-	{ href: '/tools', text: 'Tools' },
 	{ href: '/blog', text: 'Blog' },
+	{ href: '/tools', text: 'Tools' },
 	{ href: '/quotes', text: 'Quotes' },
+	{ href: '/projects', text: 'Projects' },
 	{ href: '/contact', text: 'Contact' },
 ];
 ---
@@ -48,16 +48,17 @@ const links = [
 			<label for="navbar-1-toggle" class="btn btn-ghost md:hidden">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					class="h-5 w-5"
 					fill="none"
 					viewBox="0 0 24 24"
+					stroke-width="1.5"
 					stroke="currentColor"
-					><path
+					class="size-6"
+				>
+					<path
 						stroke-linecap="round"
 						stroke-linejoin="round"
-						stroke-width="2"
-						d="M4 6h16M4 12h8m-8 6h16"></path></svg
-				>
+						d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+				</svg>
 			</label>
 		</div>
 	</div>
