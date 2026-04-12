@@ -133,16 +133,29 @@ export function Expressive404() {
 	};
 
 	return (
-		<>
-			<p>The webserver says:</p>
-			<div>
-				<textarea ref={textAreaRef} readOnly />
-				<div>
-					<button type="button" onClick={isFinished ? handleRestart : () => setIsPaused(!isPaused)}>
-						{isFinished ? 'Restart' : isPaused ? 'Resume' : 'Pause'}
-					</button>
-				</div>
+		<figure className="mt-0 flex flex-col gap-2">
+			<figcaption className="not-prose">The webserver says:</figcaption>
+
+			<div className="flex flex-col gap-4">
+				<label htmlFor="expressive-404-terminal" className="sr-only">
+					Server terminal output
+				</label>
+				<textarea
+					id="expressive-404-terminal"
+					ref={textAreaRef}
+					className="w-full h-64 bg-black text-[#3f0] font-mono p-4 resize-none outline-none leading-relaxed rounded-md"
+					readOnly
+				/>
 			</div>
-		</>
+			<div className="flex justify-end">
+				<button
+					className="btn btn-neutral btn-sm"
+					type="button"
+					onClick={isFinished ? handleRestart : () => setIsPaused(!isPaused)}
+				>
+					{isFinished ? 'Restart' : isPaused ? 'Resume' : 'Pause'}
+				</button>
+			</div>
+		</figure>
 	);
 }
