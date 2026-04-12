@@ -1,11 +1,14 @@
+import { clsx } from '@/utils';
 import { useState } from 'react';
-import { Button } from './Button';
 
-type CopyButtonProps =
+type CopyButtonProps = (
 	| { getText: () => string; getCanvas?: never }
-	| { getCanvas: () => HTMLCanvasElement | null | undefined; getText?: never };
+	| { getCanvas: () => HTMLCanvasElement | null | undefined; getText?: never }
+) & {
+	className?: string | null;
+};
 
-export function CopyButton({ getText, getCanvas }: CopyButtonProps) {
+export function CopyButton({ getText, getCanvas, className }: CopyButtonProps) {
 	const [status, setStatus] = useState<'idle' | 'copied' | 'failed'>('idle');
 
 	const handleCopy = async () => {
@@ -17,7 +20,7 @@ export function CopyButton({ getText, getCanvas }: CopyButtonProps) {
 				if (!canvasEl) throw new Error('Canvas element not found');
 
 				const blob = await new Promise<Blob | null>((resolve) =>
-					canvasEl.toBlob(resolve, 'image/png'),
+					canvasEl.toBlob(resolve, 'image/png')
 				);
 
 				if (!blob) throw new Error('Failed to generate image blob');
@@ -34,8 +37,13 @@ export function CopyButton({ getText, getCanvas }: CopyButtonProps) {
 	};
 
 	return (
-		<Button onClick={handleCopy} disabled={status !== 'idle'}>
+		<button
+			type="button"
+			onClick={handleCopy}
+			disabled={status !== 'idle'}
+			className={clsx('btn btn-neutral', className)}
+		>
 			{status === 'copied' ? 'Copied' : status === 'failed' ? 'Failed' : 'Copy'}
-		</Button>
+		</button>
 	);
 }

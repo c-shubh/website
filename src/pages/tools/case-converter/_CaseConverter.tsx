@@ -43,33 +43,46 @@ export function CaseConverter() {
 		.join('\n');
 
 	return (
-		<div>
-			<textarea
-				placeholder="Enter text here"
-				rows={10}
-				value={input}
-				onChange={(e) => setInput(e.target.value)}
-				autoFocus
-			/>
+		<div className="space-y-4">
 			<div>
+				<label htmlFor="tool-case-converter-input" className="sr-only">
+					Text to convert
+				</label>
+				<textarea
+					id="tool-case-converter-input"
+					placeholder="Enter text here"
+					rows={10}
+					className="textarea resize-y w-full"
+					value={input}
+					onChange={(e) => setInput(e.target.value)}
+					autoFocus
+				/>
+			</div>
+			<fieldset className="space-x-4">
+				<legend className="sr-only">Select target case formatting</legend>
 				{casesList.map((caseName) => (
-					<label key={caseName}>
+					<label key={caseName} className="inline-flex items-center gap-2 font-mono">
 						<input
 							type="radio"
 							name="case-selection"
 							value={caseName}
 							checked={selectedCase === caseName}
 							onChange={() => setCase(caseName)}
+							className="radio"
 						/>
 						{caseName}
 					</label>
 				))}
-			</div>
-			<div>
-				<h3>Output</h3>
+			</fieldset>
+			<div className="flex items-center gap-2">
+				<h2 className="mt-0 mb-0">Output</h2>
 				<CopyButton getText={() => output} />
 			</div>
-			<pre>{output}</pre>
+			{output && (
+				<output htmlFor="tool-case-converter-input">
+					<pre>{output}</pre>
+				</output>
+			)}
 		</div>
 	);
 }
