@@ -58,12 +58,9 @@ every other day so that I can be consistent.
 Here are the changes I made to the website this week:
 
 ### Release 2026.03.1
-
 - Made the [blog list](/blog/) page easy to read on mobile.
   The bullet list and its left padding took up valuable horizontal space before:
-
   ![Side-by-side comparison of a blog list changing from a horizontal bulleted layout (Before) to a mobile-optimized vertical stacked layout with titles above dates (After).](./blog-list-before-after.webp)
-
 - Renamed blog in RSS and Atom feed.  
   I was trying to find my own feed in an RSS reader and it wasn't where I
   expected it to be when sorted by blog name.  
@@ -79,11 +76,9 @@ Here are the changes I made to the website this week:
   `just` allows me to specify commands so that they depend on each other and
   run in an order.
 - Fixed page meta description.
-
   I accidentally used `undefined` from the `astro:schema` package instead of
   using the `undefined` keyword. This caused the below to be set as description
   of all pages:
-
   ```js
   (params) => {
   	return new ZodUndefined({
@@ -92,7 +87,6 @@ Here are the changes I made to the website this week:
   	});
   };
   ```
-
   I found this bug while doing [POSSE](https://indieweb.org/POSSE) of my
   [previous post](/blog/the-rewrite-100-days-to-offload-and-step-aside-phone/)
   on other platforms. I was surprised that it wasn't caught when running
@@ -106,40 +100,30 @@ Here are the changes I made to the website this week:
   Recently, I started using Signal again. The last time I used it was when it
   didn't yet support usernames.  
   I already have redirects to my profile on
-
   - GitHub: [/github/](/github/)
   - LinkedIn: [/linkedin/](/linkedin/)
   - LeetCode: [/leetcode/](/leetcode/)
-
   These links are helpful during conversations where I can just give people a
   clean redirect URL.
-
 - Added a quote by Susam Pal. Go check it out on the [quotes page](/quotes/)!
 - Changed all internal, feed, sitemap and redirect URLs to use a trailing slash.  
   Yesterday I woke up to this email by Google:
-
   > New reasons prevent pages in a sitemap from being indexed on site cshubh.com
-
   Here's a simplified explanation of this issue: When navigating to a URL
   without a trailing slash, GitHub Pages--where this site is hosted--responds
   with [HTTP 301](https://http.cat/301) redirect to the URL with a trailing
   slash. There's a slight delay due to this. My sitemap also used URLs without
   the trailing slash, hence the complaint from Big G that the content is not
   present where it's declared to be present in the sitemap.
-
   I used these resources to resolve this:
-
   - https://justoffbyone.com/posts/trailing-slash-tax/
   - https://github.com/slorber/trailing-slash-guide
-
 - Removed `<link rel="canonical" href={canonicalURL} />` and added
   `<meta name="robots" content="noindex" />` to 404 pages.
-
   I use a common layout for the whole site where metadata and body structure is
   set up. There was no special handling for 404 pages, and
   `<link rel="canonical">` tag was added to those pages too which is not
   correct.
-
 - Improved the navbar wrapping so it doesn't wrap the site's name.
 - Fixed nested `<p />` tag on the [projects](/projects/) page.
 
@@ -189,12 +173,10 @@ Here are the changes I made to the website this week:
   - IFUNC resolvers
   - The exploit
 - Huberman Lab podcast: [Unlearn Negative Thoughts & Behaviors Patterns | Dr. Alok Kanojia (Healthy Gamer)](https://www.youtube.com/watch?v=9G2MRFs4vac)
-  {/* <!-- prettier-ignore --> */}
   - This is a 3-hour video. I watched it all in a single sitting and learned a
     lot.
   - <details>
      <summary>Here are the chapters from the video</summary>
-
     - Alok Kanojia (Dr. K)
     - Internet, Computer Games; Academic Pressure
     - Millennials & Self-Awareness, Hijacking Mental Health Language
