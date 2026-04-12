@@ -1,5 +1,6 @@
 ---
 import Link from '@/components/Link.astro';
+import Table from '@/components/Table.astro';
 import Page from '@/layouts/Page.astro';
 import { type CollectionEntry, getCollection, render } from 'astro:content';
 
@@ -17,6 +18,7 @@ const { Content } = await render(post);
 const components = {
 	// Note: This only works on .mdx files
 	a: Link,
+	table: Table,
 };
 ---
 

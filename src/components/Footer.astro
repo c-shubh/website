@@ -269,9 +269,17 @@ const themes = [
 ];
 ---
 
+<noscript>
+	<style>
+		#footer-theme-selector {
+			display: none;
+		}
+	</style>
+</noscript>
+
 <footer class="footer footer-horizontal footer-center bg-base-200 text-base-content rounded p-6">
 	<!-- https://github.com/saadeghi/daisyui/blob/c2da238a8681aaa80260404a3203ec3125b7ddce/packages/docs/src/components/ThemePreviews.svelte -->
-	<div class="w-full rounded-box flex gap-3 overflow-x-auto pb-4 p-2 text-left">
+	<div id="footer-theme-selector" class="w-full rounded-box flex gap-3 overflow-x-auto pb-4 p-2 text-left">
 		{
 			themes.map((theme) => (
 				<div

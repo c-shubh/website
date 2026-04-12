@@ -1,0 +1,12 @@
+---
+import { clsx } from '@/utils';
+
+interface Props extends astroHTML.JSX.AnchorHTMLAttributes {}
+let { class: klass, ...props } = Astro.props;
+---
+
+<div class="overflow-x-hidden">
+	<div class="overflow-x-auto">
+		<table {...props} class={clsx('table', klass)}><slot /></table>
+	</div>
+</div>
