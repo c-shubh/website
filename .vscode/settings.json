@@ -1,4 +1,7 @@
 {
-	"cSpell.words": ["clsx"],
+	"cSpell.words": [
+		"clsx",
+		"Webrings"
+	],
 	"typescript.tsdk": "node_modules/typescript/lib"
 }

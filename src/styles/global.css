@@ -1,3 +1,8 @@
+/* workaround for daisyui bug: https://github.com/saadeghi/daisyui/issues/4471 */
+script {
+	display: none;
+}
+
 @import 'tailwindcss';
 
 @plugin "daisyui" {

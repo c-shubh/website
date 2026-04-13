@@ -1,0 +1,21 @@
+---
+import { COPYRIGHT } from '@/consts';
+import Badges from './Badges.astro';
+import Themes from './Themes.astro';
+import Webrings from './Webrings.astro';
+---
+
+<footer class="footer footer-horizontal footer-center bg-base-200 text-base-content rounded p-6">
+	<Themes />
+
+	<Badges />
+
+	<Webrings />
+
+	<small class="text-sm">
+		<p>
+			{COPYRIGHT.symbol}{' '}{COPYRIGHT.year}{' '}{COPYRIGHT.holder}
+		</p>
+		<p>{COPYRIGHT.string}</p>
+	</small>
+</footer>
