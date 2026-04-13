@@ -1,9 +1,9 @@
 ---
-import rssIcon from '@/assets/images/Feed-icon.svg';
 import logo from '@/assets/images/logo.svg';
-import { BLOG_RSS_FEED, SITE_TITLE } from '@/consts';
+import Link from '@/components/Link.astro';
+import { SITE_TITLE } from '@/consts';
 import { Image } from 'astro:assets';
-import Link from './Link.astro';
+import Menu from './Menu.astro';
 
 interface Props {
 	title?: string;
@@ -30,18 +30,7 @@ const links = [
 		</div>
 		<div class="navbar-center hidden md:flex">
 			<ul class="menu menu-horizontal px-1">
-				{
-					links.map((link) => (
-						<li>
-							<Link href={link.href}>{link.text}</Link>
-						</li>
-					))
-				}
-				<li>
-					<Link href={BLOG_RSS_FEED} title={'RSS Feed'}>
-						<Image src={rssIcon} alt="RSS Feed" width={20} />
-					</Link>
-				</li>
+				<Menu links={links} />
 			</ul>
 		</div>
 		<div class="navbar-end md:hidden">
@@ -65,18 +54,7 @@ const links = [
 
 	<div class="collapse-content md:hidden z-1">
 		<ul class="menu">
-			{
-				links.map((link) => (
-					<li>
-						<Link href={link.href}>{link.text}</Link>
-					</li>
-				))
-			}
-			<li>
-				<Link href={BLOG_RSS_FEED} title={'RSS Feed'}>
-					<Image src={rssIcon} alt="RSS Feed" width={20} />
-				</Link>
-			</li>
+			<Menu links={links} />
 		</ul>
 	</div>
 </nav>

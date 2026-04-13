@@ -1,0 +1,29 @@
+---
+import rssIcon from '@/assets/images/Feed-icon.svg';
+
+import Link from '@/components/Link.astro';
+import { BLOG_RSS_FEED } from '@/consts';
+import { Image } from 'astro:assets';
+
+interface Props {
+	links: {
+		href: string;
+		text: string;
+	}[];
+}
+
+const { links } = Astro.props;
+---
+
+{
+	links.map((link) => (
+		<li>
+			<Link href={link.href}>{link.text}</Link>
+		</li>
+	))
+}
+<li>
+	<Link href={BLOG_RSS_FEED} title={'RSS Feed'}>
+		<Image src={rssIcon} alt="RSS Feed" width={20} />
+	</Link>
+</li>
