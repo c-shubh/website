@@ -1,5 +1,6 @@
 ---
 import logo from '@/assets/images/logo.svg';
+import Bars3Icon from '@/components/icons/Bars3Icon.astro';
 import Link from '@/components/Link.astro';
 import { SITE_TITLE } from '@/consts';
 import { Image } from 'astro:assets';
@@ -35,19 +36,7 @@ const links = [
 		</div>
 		<div class="navbar-end md:hidden">
 			<label for="navbar-1-toggle" class="btn btn-ghost md:hidden">
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					fill="none"
-					viewBox="0 0 24 24"
-					stroke-width="1.5"
-					stroke="currentColor"
-					class="size-6"
-				>
-					<path
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
-				</svg>
+				<Bars3Icon />
 			</label>
 		</div>
 	</div>
