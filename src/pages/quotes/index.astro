@@ -2,7 +2,9 @@
 import FormattedDate from '@/components/FormattedDate.astro';
 import MarkdownView from '@/components/MarkdownView.astro';
 import Page from '@/layouts/Page.astro';
-import { quotes } from './_data';
+import { quotes as q } from './_data';
+
+const quotes = q.sort((a, b) => new Date(b.dateAdded).valueOf() - new Date(a.dateAdded).valueOf());
 ---
 
 <Page title="Quotes">

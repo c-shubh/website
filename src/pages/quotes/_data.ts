@@ -6,6 +6,23 @@ export interface Quote {
 
 export const quotes: Quote[] = [
 	{
+		text: 'Pure l33t skills does not a career ladder make.',
+		attribution: '[ChilledTonic](https://news.ycombinator.com/item?id=42504183)',
+		dateAdded: '2026-03-29',
+	},
+	{
+		text: 'The curse of intelligence is restlessness, the curse of lacking intelligence is envy. The curse of courage is isolation, the curse of lacking courage is regret.',
+		attribution: '[Hemant Mohapatra](https://x.com/MohapatraHemant/status/2035571708913193127)',
+		dateAdded: '2026-03-26',
+	},
+	{
+		text: `Your death will come on an ordinary day, in the middle of unfinished plans, and the world will continue without you.
+
+So live a little.`,
+		attribution: '[Unknown](https://www.instagram.com/reels/DV9HpOhiPfe/)',
+		dateAdded: '2026-03-22',
+	},
+	{
 		text: 'You will remain the same until the pain of remaining the same is greater than the pain of change.',
 		attribution: '[Unknown](https://www.instagram.com/p/DJB5uHVoB75/)',
 		dateAdded: '2026-03-09',
