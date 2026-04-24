@@ -19,31 +19,33 @@ const links = [
 ];
 ---
 
-<nav class="max-md:collapse bg-base-200 shadow-sm w-full rounded-md">
-	<input id="navbar-1-toggle" class="peer hidden" type="checkbox" />
-	<label for="navbar-1-toggle" class="fixed inset-0 hidden max-md:peer-checked:block"></label>
-	<div class="collapse-title navbar justify-between">
-		<div class="navbar-start">
-			<Link href="/" class="btn btn-ghost text-lg sm:text-xl">
-				<Image src={logo} alt="Site Logo" width={36} />
-				{SITE_TITLE}
-			</Link>
+<nav class="bg-base-200 shadow-sm">
+	<div class="max-w-5xl mx-auto w-full max-md:collapse">
+		<input id="navbar-1-toggle" class="peer hidden" type="checkbox" />
+		<label for="navbar-1-toggle" class="fixed inset-0 hidden max-md:peer-checked:block"></label>
+		<div class="collapse-title navbar justify-between">
+			<div class="navbar-start">
+				<Link href="/" class="btn btn-ghost text-lg sm:text-xl">
+					<Image src={logo} alt="Site Logo" width={36} />
+					{SITE_TITLE}
+				</Link>
+			</div>
+			<div class="navbar-center hidden md:flex">
+				<ul class="menu menu-horizontal px-1">
+					<Menu links={links} />
+				</ul>
+			</div>
+			<div class="navbar-end md:hidden">
+				<label for="navbar-1-toggle" class="btn btn-ghost md:hidden">
+					<Bars3Icon />
+				</label>
+			</div>
 		</div>
-		<div class="navbar-center hidden md:flex">
-			<ul class="menu menu-horizontal px-1">
+
+		<div class="collapse-content md:hidden z-1">
+			<ul class="menu">
 				<Menu links={links} />
 			</ul>
 		</div>
-		<div class="navbar-end md:hidden">
-			<label for="navbar-1-toggle" class="btn btn-ghost md:hidden">
-				<Bars3Icon />
-			</label>
-		</div>
-	</div>
-
-	<div class="collapse-content md:hidden z-1">
-		<ul class="menu">
-			<Menu links={links} />
-		</ul>
 	</div>
 </nav>

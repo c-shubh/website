@@ -155,9 +155,9 @@ const props = getResolvedProps(rawProps);
 			gtag('config', 'G-J52XN60HFW');
 		</script>
 	</head>
-	<body class="min-h-screen flex flex-col max-w-5xl mx-auto gap-8 items-center">
+	<body class="min-h-screen flex flex-col">
 		<Navbar title={props.h1} />
-		<main class="flex-grow px-4 prose w-full max-w-3xl">
+		<main class="flex-grow px-4 prose w-full max-w-3xl mx-auto my-8">
 			{
 				props.layout === 'blog' ? (
 					<article>
