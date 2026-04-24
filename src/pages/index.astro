@@ -1,6 +1,7 @@
 ---
 import computer from '@/assets/images/computer.gif';
 import FormattedDate from '@/components/FormattedDate.astro';
+import TimeSinceLastPostTimer from '@/components/Home/TimeSinceLastPostTimer.astro';
 import Link from '@/components/Link.astro';
 import Page from '@/layouts/Page.astro';
 import { getBlogPosts } from '@/serverUtils';
@@ -9,6 +10,14 @@ import { Image } from 'astro:assets';
 const posts = await getBlogPosts();
 posts.splice(10);
 ---
+
+<noscript>
+	<style>
+		#time-since-last-post-timer-container {
+			display: none;
+		}
+	</style>
+</noscript>
 
 <Page layout="home">
 	<header>
@@ -36,6 +45,15 @@ posts.splice(10);
 				))
 			}
 		</ul>
+		<div
+			id="time-since-last-post-timer-container"
+			class="not-prose card card-border bg-base-100 w-full shadow-sm flex flex-col items-center mt-8"
+		>
+			<div class="card-body">
+				<h3 class="card-title">Time Since Last Post</h3>
+			</div>
+			<TimeSinceLastPostTimer lastPostDate={posts[0].data.date} className={'px-10 pb-10'} />
+		</div>
 	</section>
 	<section>
 		<h2>
