@@ -50,11 +50,11 @@ export function WordCount() {
 	return (
 		<div className="space-y-6">
 			<div>
-				<label htmlFor="wordcount-text" className="sr-only">
+				<label htmlFor="tool-wordcount-text" className="sr-only">
 					Text to analyze
 				</label>
 				<textarea
-					id="wordcount-text"
+					id="tool-wordcount-text"
 					ref={textRef}
 					placeholder="Enter text here"
 					rows={10}
@@ -67,11 +67,11 @@ export function WordCount() {
 			<div className="divider">OR</div>
 
 			<div className="fieldset">
-				<label htmlFor="wordcount-file" className="fieldset-legend pt-0">
+				<label htmlFor="tool-wordcount-file" className="fieldset-legend pt-0">
 					Pick a text file
 				</label>
 				<input
-					id="wordcount-file"
+					id="tool-wordcount-file"
 					type="file"
 					className="file-input w-full"
 					onChange={handleFileChange}
@@ -80,7 +80,7 @@ export function WordCount() {
 
 			<div>
 				<h2 className="mt-0 mb-4">Output</h2>
-				<output htmlFor="wordcount-text wordcount-file">
+				<output htmlFor="tool-wordcount-text tool-wordcount-file">
 					<dl className="stats mt-0 shadow w-full">
 						{[
 							['Characters', count.character],

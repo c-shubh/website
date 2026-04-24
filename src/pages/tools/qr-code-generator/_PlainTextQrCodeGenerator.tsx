@@ -78,11 +78,11 @@ export function PlainTextQrCodeGenerator() {
 	return (
 		<div className="flex flex-col gap-6">
 			<div>
-				<label htmlFor="qr-input-text" className="sr-only">
+				<label htmlFor="tool-qr-input-text" className="sr-only">
 					Enter text
 				</label>
 				<textarea
-					id="qr-input-text"
+					id="tool-qr-input-text"
 					placeholder="Enter text"
 					rows={10}
 					value={text}
@@ -116,7 +116,7 @@ export function PlainTextQrCodeGenerator() {
 			<div>
 				<h2 className="mt-0">Output</h2>
 
-				<output htmlFor="qr-input-text tools-qr-code-generator-count-one tools-qr-code-generator-count-many">
+				<output htmlFor="tool-qr-input-text tools-qr-code-generator-count-one tools-qr-code-generator-count-many">
 					{count === 'one' && (
 						<div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
 							<QrCode text={text} />

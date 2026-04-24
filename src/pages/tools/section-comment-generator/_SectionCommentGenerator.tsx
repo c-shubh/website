@@ -86,11 +86,11 @@ export function SectionCommentGenerator() {
 	return (
 		<div className="flex flex-col gap-6">
 			<div>
-				<label htmlFor="comment-text" className="sr-only">
+				<label htmlFor="tool-comment-text" className="sr-only">
 					Comment Text
 				</label>
 				<input
-					id="comment-text"
+					id="tool-comment-text"
 					type="text"
 					className="input w-full"
 					placeholder="Enter text"
@@ -199,7 +199,7 @@ export function SectionCommentGenerator() {
 			</div>
 
 			{output && (
-				<output htmlFor="comment-text line-length indent-size start-token end-token">
+				<output htmlFor="tool-comment-text line-length indent-size start-token end-token">
 					<pre className="w-full mt-0 mb-0 overflow-x-auto select-all">{output}</pre>
 				</output>
 			)}
