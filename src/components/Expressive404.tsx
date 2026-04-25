@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
+// from https://cmarshall.net/Error_404.html
 const tl = [
 	'The requested document is totally not here! ',
 	'Nothing but 404 here. ',
