@@ -15,7 +15,7 @@ export default defineConfig({
 		mdx(),
 		react(),
 		sitemap({
-			filter: (page) => page !== `${SITE}/library`,
+			filter: (page) => page !== `${SITE}/library/` && page !== `${SITE}/projects/`,
 		}),
 		{
 			// Docusaurus generated sitemap at /sitemap.xml, but Astro generates it at
@@ -41,7 +41,8 @@ export default defineConfig({
 		'/github/': 'https://github.com/c-shubh/',
 		'/linkedin/': 'https://www.linkedin.com/in/c-shubh/',
 		'/leetcode/': 'https://leetcode.com/u/c-shubh/',
-		'/signal/': 'https://signal.me/#eu/KhV7h5bCIHVJCqd-yw03iAagx8l3XZCYqcKEEWMu5SAwZifVvuVFEKKhky6e5Rcp',
+		'/signal/':
+			'https://signal.me/#eu/KhV7h5bCIHVJCqd-yw03iAagx8l3XZCYqcKEEWMu5SAwZifVvuVFEKKhky6e5Rcp',
 		'/instagram/': 'https://www.instagram.com/c_shubh_/',
 		// This website used to have a /links page with list of links to interesting stuff.
 		// Now it's merged into /library.
