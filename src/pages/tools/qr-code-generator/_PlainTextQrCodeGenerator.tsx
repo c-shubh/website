@@ -1,9 +1,10 @@
 import { CopyButton } from '@/components/CopyButton';
+import { SITE } from '@/consts';
 import { QRCode } from 'antd';
 import * as React from 'react';
 import { useState } from 'react';
 
-const initialText = `https://cshubh.com/tools/qr-code-generator/`;
+const initialText = SITE;
 
 function getQRCodeCanvas() {
 	return document
