@@ -78,15 +78,15 @@ const props = getResolvedProps(rawProps);
 		<link rel="sitemap" href="/sitemap-index.xml" />
 		<link
 			rel="alternate"
-			type="application/rss+xml"
-			href={BLOG_RSS_FEED}
-			title=`${FULL_NAME}'s Blog RSS Feed`
-		/>
-		<link
-			rel="alternate"
 			type="application/atom+xml"
 			href={BLOG_ATOM_FEED}
 			title=`${FULL_NAME}'s Blog Atom Feed`
+		/>
+		<link
+			rel="alternate"
+			type="application/rss+xml"
+			href={BLOG_RSS_FEED}
+			title=`${FULL_NAME}'s Blog RSS Feed`
 		/>
 
 		<meta name="generator" content={Astro.generator} />
