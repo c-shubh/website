@@ -6,6 +6,17 @@ export interface Quote {
 
 export const quotes: Quote[] = [
 	{
+		text: 'Spirituality becomes real only when the pain of ignorance tears you from within. If you are comfortable with your ignorance, you will never really seek.',
+		attribution: '[Sadhguru](https://x.com/SadhguruJV/status/1945088897832149105)',
+		dateAdded: '2026-05-15',
+	},
+	{
+		text: 'It is a cliche in our business that the first 90 percent of the work is easy, the second 90 percent wears you down, and the last 90 percent - the attention to detail - makes a good product.',
+		attribution:
+			'[Ron Avitzur](https://www.nucalc.com/Story/) ([via HN](https://news.ycombinator.com/item?id=48132437))',
+		dateAdded: '2026-05-15',
+	},
+	{
 		text: 'Pure l33t skills does not a career ladder make.',
 		attribution: '[ChilledTonic](https://news.ycombinator.com/item?id=42504183)',
 		dateAdded: '2026-03-29',
