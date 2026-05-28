@@ -1,11 +1,14 @@
-# My personal website
+# My corner of the interwebz ^_^ 
 
 Source code for https://cshubh.com
 
 ## Built with
 
 - [Astro](https://astro.build/)
+- [daisyUI](https://daisyui.com/)
 - [tailwindcss](https://tailwindcss.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [React](https://react.dev/)
 - Patience and love ❤️
 
 ## Development
