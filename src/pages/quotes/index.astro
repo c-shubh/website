@@ -5,10 +5,11 @@ import Page from '@/layouts/Page.astro';
 import { quotes as q } from './_data';
 
 const quotes = q.sort((a, b) => new Date(b.dateAdded).valueOf() - new Date(a.dateAdded).valueOf());
+const description = 'A collection of quotes and poems I like or relate to.';
 ---
 
-<Page title="Quotes">
-	<p>A collection of quotes and poems I like.</p>
+<Page title="Quotes" description={description}>
+	<p>{description}</p>
 	<p>
 		<strong>{quotes.length}</strong> quotes
 	</p>

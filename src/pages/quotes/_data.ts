@@ -6,6 +6,33 @@ export interface Quote {
 
 export const quotes: Quote[] = [
 	{
+		text: 'Never find an explanation for your failure. People who are successful have no explanation; they know it takes endless striving.',
+		attribution: '[Sadhguru](https://www.instagram.com/reel/DABLAa2zYFz/), [Miracle of Mind](https://www.instagram.com/p/DY3b8-kMb2r/)',
+		dateAdded: '2026-05-28',
+	},
+	{
+		text: `>15 close friends, 50 regular contacts, 150 active acquaintances
+
+Seems like a lot. For me, it's 0 close friends, 0 regular contacts, and 0 active acquaintances. I think I simply never developed any useful social skills which would help me make and keep friends or acquaintances. I wish I had (somehow) kept in touch with at least some people I have met throughout my life. It has never been easier to stay in contact than in all of human history, but no, I had to ghost and ignore everyone and everything. After 29 revolutions around the sun, I have only now started to realize that all that vacuous superiority has led me nowhere. There is only a faint aftertaste of missing out, which sticks to me like tar. I can’t wash it off.`,
+		attribution: '[ZpJuUuNaQ5](https://news.ycombinator.com/item?id=48306219)',
+		dateAdded: '2026-05-28',
+	},
+	{
+		text: `In the nicest possible way, this is basically the oldest lesson there is.
+
+You weren’t happy because you optimized your feelings or had the right opinions. You were happy because you stopped focusing on yourself and became responsible for other people. Six kids needed you, in the real world, every week. That kind of outward focus kills emptiness fast.
+
+Chasing happiness, moral righteousness, or political engagement just loops you back into your own head, helping people doesn’t. Feeling good is a side-effect of being useful, not the goal.`,
+		attribution:
+			'[bengale](https://news.ycombinator.com/item?id=47199926) ([context](https://ben-mini.com/2026/the-happiest-ive-ever-been))',
+		dateAdded: '2026-05-28',
+	},
+	{
+		text: 'Every longing is actually a longing for the infinite, finding expression in installments.',
+		attribution: '[Sadhguru](https://isha.sadhguru.org/en/wisdom/quotes/date/august-08-2022)',
+		dateAdded: '2026-05-28',
+	},
+	{
 		text: 'Spirituality becomes real only when the pain of ignorance tears you from within. If you are comfortable with your ignorance, you will never really seek.',
 		attribution: '[Sadhguru](https://x.com/SadhguruJV/status/1945088897832149105)',
 		dateAdded: '2026-05-15',
