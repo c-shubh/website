@@ -6,8 +6,14 @@ export interface Quote {
 
 export const quotes: Quote[] = [
 	{
+		text: 'Wealth, women and wine can make anything happen in this world!',
+		attribution: '[Ravinder Singh, Can Love Happen Twice?](https://www.goodreads.com/quotes/3224663-wealth-women-and-wine-can-make-anything-happen-in-this)',
+		dateAdded: '2026-05-30',
+	},
+	{
 		text: 'Never find an explanation for your failure. People who are successful have no explanation; they know it takes endless striving.',
-		attribution: '[Sadhguru](https://www.instagram.com/reel/DABLAa2zYFz/), [Miracle of Mind](https://www.instagram.com/p/DY3b8-kMb2r/)',
+		attribution:
+			'[Sadhguru](https://www.instagram.com/reel/DABLAa2zYFz/), [Miracle of Mind](https://www.instagram.com/p/DY3b8-kMb2r/)',
 		dateAdded: '2026-05-28',
 	},
 	{
