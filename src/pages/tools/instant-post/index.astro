@@ -1,0 +1,19 @@
+---
+import ClientOnlyFallback from '@/components/ClientOnlyFallback.astro';
+import Page from '@/layouts/Page.astro';
+import { toolsMap } from '@/pages/tools/_data';
+import { InstantPost } from './_InstantPost';
+
+const { name, description } = toolsMap['instant-post'];
+---
+
+<Page title={name} description={description}>
+	<p>
+		Draft your post below, then click the generated links to cross-post to X, Mastodon, or Bluesky.
+	</p>
+	<InstantPost client:only="react">
+		<div slot="fallback">
+			<ClientOnlyFallback />
+		</div>
+	</InstantPost>
+</Page>
