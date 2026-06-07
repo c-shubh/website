@@ -1,23 +1,26 @@
 ---
 import { COPYRIGHT } from '@/consts';
 import Badges from './Badges.astro';
+import FooterNav from './FooterNav.astro';
 import Themes from './Themes.astro';
 import Webrings from './Webrings.astro';
 ---
 
 <footer class="bg-base-200">
-	<div class="footer footer-horizontal footer-center max-w-5xl mx-auto text-base-content p-6">
+	<div
+		class="footer footer-horizontal footer-center max-w-5xl mx-auto text-base-content py-8 px-6 gap-10"
+	>
+		<FooterNav />
+
 		<Themes />
 
 		<Badges />
 
 		<Webrings />
 
-		<small class="text-sm">
-			<p>
-				{COPYRIGHT.symbol}{' '}{COPYRIGHT.year}{' '}{COPYRIGHT.holder}
-			</p>
-			<p>{COPYRIGHT.string}</p>
+		<small class="text-sm leading-relaxed">
+			{COPYRIGHT.symbol}{' '}{COPYRIGHT.year}{' '}{COPYRIGHT.holder}<br />
+			{COPYRIGHT.string}
 		</small>
 	</div>
 </footer>

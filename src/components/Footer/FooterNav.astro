@@ -1,0 +1,15 @@
+---
+import Link from '@/components/Link.astro';
+import { slashPages } from '@/slashPages';
+---
+
+<nav class="flex flex-wrap justify-center gap-2.5 prose">
+	{
+		slashPages.map((page, idx) => (
+			<>
+				<Link href={page.href}>{page.name}</Link>
+				{idx !== slashPages.length - 1 ? <span class="select-none">•</span> : null}
+			</>
+		))
+	}
+</nav>
