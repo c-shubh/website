@@ -1,0 +1,47 @@
+---
+import Link from '@/components/Link.astro';
+import { FIRST_NAME } from '@/consts';
+import Page from '@/layouts/Page.astro';
+import { Image } from 'astro:assets';
+import songs from './_data.json';
+---
+
+<Page title={`${FIRST_NAME} Listens To Music`}>
+	<p>
+		<strong>{songs.length}</strong>
+		{songs.length === 1 ? 'song' : 'songs'}
+	</p>
+
+	<ul class="grid sm:grid-cols-3 gap-6 not-prose">
+		{
+			songs
+				.sort((a, b) => {
+					if (a.title < b.title) return -1;
+					if (a.title > b.title) return 1;
+					return 0;
+				})
+				.map((song) => (
+					<li>
+						<Link class="card card-sm shadow-sm h-full" href={song.url}>
+							{song.image ? (
+								<figure>
+									<Image
+										src={song.image}
+										alt={`Thumbnail for ${song.title} - ${song.artist}`}
+										width={480}
+										height={360}
+										loading={'lazy'}
+										class={song.explicit_image === 'TRUE' ? 'blur-sm' : ''}
+									/>
+								</figure>
+							) : null}
+							<div class="card-body">
+								<span class="card-title">{song.title}</span>
+								<p>{song.artist}</p>
+							</div>
+						</Link>
+					</li>
+				))
+		}
+	</ul>
+</Page>

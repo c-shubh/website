@@ -2,17 +2,18 @@ export const slashPages = [
 	{ href: '/blog/', name: 'Blog', showInHeader: true },
 	{ href: '/tools/', name: 'Tools', showInHeader: true },
 	{ href: '/quotes/', name: 'Quotes', showInHeader: true },
+	{ href: '/listens/', name: 'Listens' },
 	{ href: '/contact/', name: 'Contact', showInHeader: true },
 ] as const;
 
-type Href = (typeof slashPages)[number]['href'];
+type Name = (typeof slashPages)[number]['name'];
 
 export interface SlashPage {
-	name: string;
-	href: Href;
+	name: Name;
+	href: string;
 	showInHeader?: boolean;
 }
 
-export const slashPagesMap: Record<Href, SlashPage> = Object.fromEntries(
-	slashPages.map((page) => [page.href, page])
-) as Record<Href, SlashPage>;
+export const slashPagesMap: Record<Name, SlashPage> = Object.fromEntries(
+	slashPages.map((page) => [page.name, page])
+) as Record<Name, SlashPage>;

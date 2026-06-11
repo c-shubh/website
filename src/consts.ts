@@ -1,8 +1,6 @@
-// Place any global data in this file.
-// You can import this data from anywhere in your site by using the `import` keyword.
-
 export const SITE = 'https://cshubh.com';
-export const FULL_NAME = 'Shubh A Chudasama';
+export const FIRST_NAME = 'Shubh';
+export const FULL_NAME = `${FIRST_NAME} A Chudasama`;
 export const LANGUAGE = 'en';
 export const SITE_TITLE = FULL_NAME;
 export const SITE_DESCRIPTION = 'My corner of the interwebz ^_^';

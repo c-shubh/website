@@ -11,7 +11,7 @@ interface Props {
 	title?: string;
 }
 
-const links = slashPages.filter((page) => page.showInHeader);
+const links = slashPages.filter((page) => 'showInHeader' in page && page.showInHeader);
 ---
 
 <nav class="bg-base-200 shadow-sm">
