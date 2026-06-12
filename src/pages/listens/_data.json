@@ -21,6 +21,13 @@
 		"explicit_image": "TRUE"
 	},
 	{
+		"title": "Sad airplane",
+		"artist": "Tyler Burkhart",
+		"url": "https://www.youtube.com/watch?v=8hF71eZjqgk",
+		"image": "https://img.youtube.com/vi_webp/8hF71eZjqgk/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
 		"title": "Self Aware",
 		"artist": "Temper City",
 		"url": "https://www.youtube.com/watch?v=R-hYM3BqTbA",
@@ -32,6 +39,13 @@
 		"artist": "SALES",
 		"url": "https://www.youtube.com/watch?v=jRFpmA4IIAo",
 		"image": "https://img.youtube.com/vi_webp/jRFpmA4IIAo/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Just The Way You Are",
+		"artist": "Milky",
+		"url": "https://www.youtube.com/watch?v=1iDrQta26zo",
+		"image": "https://img.youtube.com/vi_webp/1iDrQta26zo/mqdefault.webp",
 		"explicit_image": ""
 	},
 	{
@@ -89,6 +103,13 @@
 		"url": "https://www.youtube.com/watch?v=g3tDx7Jud3E",
 		"image": "https://img.youtube.com/vi_webp/g3tDx7Jud3E/mqdefault.webp",
 		"explicit_image": ""
+	},
+	{
+		"title": "Gundelonaa",
+		"artist": "Sowjanya",
+		"url": "https://www.youtube.com/watch?v=TlkO6I8u-7I",
+		"image": "https://img.youtube.com/vi_webp/TlkO6I8u-7I/mqdefault.webp",
+		"explicit_image": "TRUE"
 	},
 	{
 		"title": "Birds",
