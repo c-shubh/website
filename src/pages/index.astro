@@ -11,14 +11,6 @@ const posts = await getBlogPosts();
 posts.splice(10);
 ---
 
-<noscript>
-	<style>
-		#time-since-last-post-timer-container {
-			display: none;
-		}
-	</style>
-</noscript>
-
 <Page layout="home">
 	<header>
 		<h1 class="leading-relaxed">
@@ -45,6 +37,13 @@ posts.splice(10);
 				))
 			}
 		</ul>
+		<noscript>
+			<style>
+				#time-since-last-post-timer-container {
+					display: none;
+				}
+			</style>
+		</noscript>
 		<div
 			id="time-since-last-post-timer-container"
 			class="not-prose card card-border bg-base-100 w-full shadow-sm flex flex-col items-center mt-8"
