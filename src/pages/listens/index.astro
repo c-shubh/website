@@ -16,11 +16,12 @@ import songs from './_data.json';
 	<ul class="grid min-[30rem]:grid-cols-2 sm:grid-cols-3 gap-4 md:gap-6 not-prose">
 		{
 			songs
-				.sort((a, b) => a.title.localeCompare(b.title) || a.artist.localeCompare(b.artist))
+				.slice(0, 5)
+				.toSorted((a, b) => a.title.localeCompare(b.title) || a.artist.localeCompare(b.artist))
 				.map((song) => (
 					<li>
 						<Link class="card card-sm shadow-sm h-full" href={song.url}>
-							{song.image ? (
+							{!song.image ? (
 								<figure>
 									<Image
 										src={song.image}
@@ -32,9 +33,32 @@ import songs from './_data.json';
 									/>
 								</figure>
 							) : null}
-							<div class="card-body justify-between">
+							<div class="card-body">
 								<span class="card-title">{song.title}</span>
-								<p class="grow-0">{song.artist}</p>
+								<p>{song.artist}</p>
+								<div class="mt-1">
+									<button class="btn">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											viewBox="0 0 24 24"
+											fill="none"
+											stroke="currentColor"
+											stroke-width="2.5"
+											class="size-[1.2em]"
+										>
+											<path d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z" />
+										</svg>
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											viewBox="0 0 24 24"
+											fill="#d22f27"
+											class="size-[1.2em]"
+										>
+											<path d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z" />
+										</svg>
+										0
+									</button>
+								</div>
 							</div>
 						</Link>
 					</li>
