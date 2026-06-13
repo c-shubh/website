@@ -242,9 +242,16 @@ const badges: Badge[] = [
 			if (badge.type === 'image') {
 				const badgeImage =
 					typeof badge.src === 'string' ? (
-						<Image src={badge.src} alt={badge.alt} id={badge.id} width={88} height={31} />
+						<Image
+							src={badge.src}
+							alt={badge.alt}
+							id={badge.id}
+							width={88}
+							height={31}
+							loading={'lazy'}
+						/>
 					) : (
-						<Image src={badge.src} alt={badge.alt} id={badge.id} />
+						<Image src={badge.src} alt={badge.alt} id={badge.id} loading={'lazy'} />
 					);
 
 				return badge.href ? <Link href={badge.href}>{badgeImage}</Link> : badgeImage;
