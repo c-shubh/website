@@ -38,4 +38,10 @@ blog:
 
 listens FILE_PATH:
     #!/usr/bin/env nu
-    open '{{ FILE_PATH }}' | where draft == "" | reject draft | to json | ^jq --tab . | save -f src/pages/listens/_data.json
+    open '{{ FILE_PATH }}'
+    | where draft == ""
+    | reject draft
+    | update title {|row| $row.title | into string }
+    | to json
+    | ^jq --tab .
+    | save -f src/pages/listens/_data.json

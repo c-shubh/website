@@ -1,120 +1,939 @@
 [
 	{
+		"title": "Apocalypse",
+		"artist": "Cigarettes After Sex",
+		"url": "https://music.youtube.com/watch?v=sElE_BfQ67s",
+		"image": "https://img.youtube.com/vi_webp/sElE_BfQ67s/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Peace and Tranquility (A Hat in Time: Seal the Deal OST)",
+		"artist": "Pascal Michael Stiefel",
+		"url": "https://music.youtube.com/watch?v=vVcQNC-FGOo",
+		"image": "https://img.youtube.com/vi_webp/vVcQNC-FGOo/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "everything i wanted",
+		"artist": "Billie Eilish",
+		"url": "https://music.youtube.com/watch?v=qCTMq7xvdXU",
+		"image": "https://img.youtube.com/vi_webp/qCTMq7xvdXU/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Pretty Girl",
+		"artist": "Clairo",
+		"url": "https://music.youtube.com/watch?v=Heuxm7pZ-Fs",
+		"image": "https://img.youtube.com/vi_webp/Heuxm7pZ-Fs/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Dreams (2004 Remaster)",
+		"artist": "Fleetwood Mac",
+		"url": "https://music.youtube.com/watch?v=swJOIjjW69U",
+		"image": "https://img.youtube.com/vi_webp/swJOIjjW69U/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Swing Lynn",
+		"artist": "Twin Cabins",
+		"url": "https://music.youtube.com/watch?v=D7DVSZ_poHk",
+		"image": "https://img.youtube.com/vi_webp/D7DVSZ_poHk/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
 		"title": "Oopiri Aaguthunnadey",
 		"artist": "Revanth",
-		"url": "https://www.youtube.com/watch?v=wEx_I-1SjIQ",
+		"url": "https://music.youtube.com/watch?v=wEx_I-1SjIQ",
 		"image": "https://img.youtube.com/vi_webp/wEx_I-1SjIQ/mqdefault.webp",
 		"explicit_image": "TRUE"
 	},
 	{
+		"title": "Flower Dance",
+		"artist": "DJ Okawari",
+		"url": "https://music.youtube.com/watch?v=AULG4MoYxQk",
+		"image": "https://img.youtube.com/vi_webp/AULG4MoYxQk/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Low Earth Orbit",
+		"artist": "Mike Noise",
+		"url": "https://music.youtube.com/watch?v=T00v8iXjgRU",
+		"image": "https://img.youtube.com/vi_webp/T00v8iXjgRU/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
 		"title": "Nuclear Lethargy (Khåen Remix)",
 		"artist": "Lane 8",
-		"url": "https://www.youtube.com/watch?v=7MjNTd-tpUo",
+		"url": "https://music.youtube.com/watch?v=7MjNTd-tpUo",
 		"image": "https://img.youtube.com/vi_webp/7MjNTd-tpUo/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Let’s Go",
+		"artist": "Stuck in the Sound",
+		"url": "https://music.youtube.com/watch?v=mSFKMCMTcow",
+		"image": "https://img.youtube.com/vi_webp/mSFKMCMTcow/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Everytime",
+		"artist": "boy pablo",
+		"url": "https://music.youtube.com/watch?v=OPUi06yv1jc",
+		"image": "https://img.youtube.com/vi_webp/OPUi06yv1jc/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Overdue (Instrumental)",
+		"artist": "Metro Boomin",
+		"url": "https://music.youtube.com/watch?v=v2pKObchssE",
+		"image": "https://img.youtube.com/vi_webp/v2pKObchssE/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Orinoco",
+		"artist": "Morabeza Tobacco",
+		"url": "https://music.youtube.com/watch?v=3RMpVTq0BRU",
+		"image": "https://img.youtube.com/vi_webp/3RMpVTq0BRU/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Never Die (aLone Remix)",
+		"artist": "Re:Sengie",
+		"url": "https://music.youtube.com/watch?v=ESKRVAkHGqc",
+		"image": "https://img.youtube.com/vi_webp/ESKRVAkHGqc/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "SugarCrash!",
+		"artist": "ElyOtto",
+		"url": "https://music.youtube.com/watch?v=BfV4ZDgumTQ",
+		"image": "https://img.youtube.com/vi_webp/BfV4ZDgumTQ/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Daddy Issues",
+		"artist": "The Neighbourhood",
+		"url": "https://music.youtube.com/watch?v=vnLAa6_hB9A",
+		"image": "https://img.youtube.com/vi_webp/vnLAa6_hB9A/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Go Solo",
+		"artist": "Tom Rosenthal",
+		"url": "https://music.youtube.com/watch?v=VePaI3jX4Sk",
+		"image": "https://img.youtube.com/vi_webp/VePaI3jX4Sk/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Magic",
+		"artist": "Coldplay",
+		"url": "https://music.youtube.com/watch?v=219pQObZq2I",
+		"image": "https://img.youtube.com/vi_webp/219pQObZq2I/mqdefault.webp",
 		"explicit_image": ""
 	},
 	{
 		"title": "Mari Mari",
 		"artist": "Gowthami",
-		"url": "https://www.youtube.com/watch?v=gE668zuRzR8",
+		"url": "https://music.youtube.com/watch?v=gE668zuRzR8",
 		"image": "https://img.youtube.com/vi_webp/gE668zuRzR8/mqdefault.webp",
 		"explicit_image": "TRUE"
 	},
 	{
+		"title": "Halfway",
+		"artist": "Rayons",
+		"url": "https://music.youtube.com/watch?v=9r0t3GJQCRs",
+		"image": "https://img.youtube.com/vi_webp/9r0t3GJQCRs/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "ＮＯ ＬＵＣＩＤＩＴＹ",
+		"artist": "J E N",
+		"url": "https://music.youtube.com/watch?v=sB-R4UIO4V4",
+		"image": "https://img.youtube.com/vi_webp/sB-R4UIO4V4/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Pirates of the Caribbean Theme (Fingerstyle Guitar Cover)",
+		"artist": "Eddie van der Meer",
+		"url": "https://music.youtube.com/watch?v=e_k-yLShHC8",
+		"image": "https://img.youtube.com/vi_webp/e_k-yLShHC8/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Where Your Mind Wants to Go",
+		"artist": "Blonde Redhead",
+		"url": "https://music.youtube.com/watch?v=iXUqxseba64",
+		"image": "https://img.youtube.com/vi_webp/iXUqxseba64/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Oblivion",
+		"artist": "Grimes",
+		"url": "https://music.youtube.com/watch?v=JtH68PJIQLE",
+		"image": "https://img.youtube.com/vi_webp/JtH68PJIQLE/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "dreamy night ♫",
+		"artist": "LilyPichu",
+		"url": "https://music.youtube.com/watch?v=DXuNJ267Vss",
+		"image": "https://img.youtube.com/vi_webp/DXuNJ267Vss/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "For the Damaged Coda",
+		"artist": "Blonde Redhead",
+		"url": "https://music.youtube.com/watch?v=5SSdvNcAagI",
+		"image": "https://img.youtube.com/vi_webp/5SSdvNcAagI/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Passionfruit",
+		"artist": "Drake",
+		"url": "https://music.youtube.com/watch?v=COz9lDCFHjw",
+		"image": "https://img.youtube.com/vi_webp/COz9lDCFHjw/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "It Pulls Me Under",
+		"artist": "Butterfly Boucher",
+		"url": "https://music.youtube.com/watch?v=-rZ5YRhPvN4",
+		"image": "https://img.youtube.com/vi_webp/-rZ5YRhPvN4/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Isabella's Lullaby",
+		"artist": "Takahiro Obata",
+		"url": "https://music.youtube.com/watch?v=-b8_89vlkaI",
+		"image": "https://img.youtube.com/vi_webp/-b8_89vlkaI/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Do I Wanna Know?",
+		"artist": "Arctic Monkeys",
+		"url": "https://music.youtube.com/watch?v=pqrUQrAcfo4",
+		"image": "https://img.youtube.com/vi_webp/pqrUQrAcfo4/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Baby One More Time",
+		"artist": "The Marías",
+		"url": "https://music.youtube.com/watch?v=YPHn4xSvjNM",
+		"image": "https://img.youtube.com/vi_webp/YPHn4xSvjNM/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "505",
+		"artist": "Arctic Monkeys",
+		"url": "https://music.youtube.com/watch?v=qU9mHegkTc4",
+		"image": "https://img.youtube.com/vi_webp/qU9mHegkTc4/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Paris",
+		"artist": "Else",
+		"url": "https://music.youtube.com/watch?v=r8Yqbi4uVUg",
+		"image": "https://img.youtube.com/vi_webp/r8Yqbi4uVUg/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Dancin (Krono Remix)",
+		"artist": "Aaron Smith",
+		"url": "https://music.youtube.com/watch?v=LjtvF_UuRIU",
+		"image": "https://img.youtube.com/vi_webp/LjtvF_UuRIU/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Overdue (feat. Travis Scott)",
+		"artist": "Metro Boomin",
+		"url": "https://music.youtube.com/watch?v=5bUOV7wYjbk",
+		"image": "https://img.youtube.com/vi_webp/5bUOV7wYjbk/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Bang Bang",
+		"artist": "Dua Lipa",
+		"url": "https://music.youtube.com/watch?v=tcsHxrhQEfo",
+		"image": "https://img.youtube.com/vi_webp/tcsHxrhQEfo/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Where Are You",
+		"artist": "Otnicka",
+		"url": "https://music.youtube.com/watch?v=w3t8Rhckg9g",
+		"image": "https://img.youtube.com/vi_webp/w3t8Rhckg9g/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Ambition of the Dictator",
+		"artist": "Tatsuya Kato, Shayne Holland & YUKI KANESAKA",
+		"url": "https://music.youtube.com/watch?v=UhKvDKLAsz0",
+		"image": "https://img.youtube.com/vi_webp/UhKvDKLAsz0/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Past Lives",
+		"artist": "sapientdream & Slushii",
+		"url": "https://music.youtube.com/watch?v=hK59OMfBN8E",
+		"image": "https://img.youtube.com/vi_webp/hK59OMfBN8E/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Anlatamam (Slowed)",
+		"artist": "Toygar Işıklı",
+		"url": "https://music.youtube.com/watch?v=PTPD-ZDSJzI",
+		"image": "https://img.youtube.com/vi_webp/PTPD-ZDSJzI/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
 		"title": "Sad airplane",
 		"artist": "Tyler Burkhart",
-		"url": "https://www.youtube.com/watch?v=8hF71eZjqgk",
+		"url": "https://music.youtube.com/watch?v=8hF71eZjqgk",
 		"image": "https://img.youtube.com/vi_webp/8hF71eZjqgk/mqdefault.webp",
 		"explicit_image": ""
 	},
 	{
 		"title": "Self Aware",
 		"artist": "Temper City",
-		"url": "https://www.youtube.com/watch?v=R-hYM3BqTbA",
+		"url": "https://music.youtube.com/watch?v=R-hYM3BqTbA",
 		"image": "https://img.youtube.com/vi_webp/R-hYM3BqTbA/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "The Scientist",
+		"artist": "Coldplay",
+		"url": "https://music.youtube.com/watch?v=gm-Y9idMMQ4",
+		"image": "https://img.youtube.com/vi_webp/gm-Y9idMMQ4/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Sad Romance (a.k.a. Sad Violin)",
+		"artist": "Ji Pyeong Kwon",
+		"url": "https://music.youtube.com/watch?v=6Nr9V7DSA9I",
+		"image": "https://img.youtube.com/vi_webp/6Nr9V7DSA9I/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Intro (Long Version)",
+		"artist": "The xx",
+		"url": "https://music.youtube.com/watch?v=veHqJSC-9Lo",
+		"image": "https://img.youtube.com/vi/veHqJSC-9Lo/mqdefault.jpg",
+		"explicit_image": ""
+	},
+	{
+		"title": "What Love Is",
+		"artist": "Zimmer90",
+		"url": "https://music.youtube.com/watch?v=27zRcIVCcx4",
+		"image": "https://img.youtube.com/vi_webp/27zRcIVCcx4/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Y.ou",
+		"artist": "C.HAOS",
+		"url": "https://music.youtube.com/watch?v=Z-YDAaMfC84",
+		"image": "https://img.youtube.com/vi_webp/Z-YDAaMfC84/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Arcade",
+		"artist": "Duncan Laurence",
+		"url": "https://music.youtube.com/watch?v=oFrvRiixXcA",
+		"image": "https://img.youtube.com/vi_webp/oFrvRiixXcA/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Go Solo",
+		"artist": "Zwette feat. Tom Rosenthal",
+		"url": "https://music.youtube.com/watch?v=XMD72ez_d5Q",
+		"image": "https://img.youtube.com/vi_webp/XMD72ez_d5Q/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Alag Aasmaan",
+		"artist": "Anuv Jain",
+		"url": "https://music.youtube.com/watch?v=i1IDh_ZoJgI",
+		"image": "https://img.youtube.com/vi_webp/i1IDh_ZoJgI/mqdefault.webp",
 		"explicit_image": ""
 	},
 	{
 		"title": "Pope Is a Rockstar",
 		"artist": "SALES",
-		"url": "https://www.youtube.com/watch?v=jRFpmA4IIAo",
+		"url": "https://music.youtube.com/watch?v=jRFpmA4IIAo",
 		"image": "https://img.youtube.com/vi_webp/jRFpmA4IIAo/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "If I Had A Heart",
+		"artist": "Fever Ray",
+		"url": "https://music.youtube.com/watch?v=EBAzlNJonO8",
+		"image": "https://img.youtube.com/vi/EBAzlNJonO8/mqdefault.jpg",
+		"explicit_image": ""
+	},
+	{
+		"title": "Timro Pratiksa",
+		"artist": "Shallum Lama",
+		"url": "https://music.youtube.com/watch?v=-dB5K2re9hs",
+		"image": "https://img.youtube.com/vi_webp/-dB5K2re9hs/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Oceania",
+		"artist": "Nadaka",
+		"url": "https://music.youtube.com/watch?v=iq66wLUg-gE",
+		"image": "https://img.youtube.com/vi_webp/iq66wLUg-gE/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Golden Brown",
+		"artist": "The Stranglers",
+		"url": "https://music.youtube.com/watch?v=W2o_HupXq1g",
+		"image": "https://img.youtube.com/vi_webp/W2o_HupXq1g/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Such a Whore (Instrumental)",
+		"artist": "JVLA",
+		"url": "https://music.youtube.com/watch?v=A7JmioB0v-w",
+		"image": "https://img.youtube.com/vi_webp/A7JmioB0v-w/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Float",
+		"artist": "Zane Alexander",
+		"url": "https://music.youtube.com/watch?v=E6JyInQknZI",
+		"image": "https://img.youtube.com/vi_webp/E6JyInQknZI/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "King",
+		"artist": "Lauren Aquilina",
+		"url": "https://music.youtube.com/watch?v=dS5GfL9F7L4",
+		"image": "https://img.youtube.com/vi_webp/dS5GfL9F7L4/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Pink + White",
+		"artist": "Frank Ocean",
+		"url": "https://music.youtube.com/watch?v=uzS3WG6__G4",
+		"image": "https://img.youtube.com/vi_webp/uzS3WG6__G4/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "SAD!",
+		"artist": "XXXTENTACION",
+		"url": "https://music.youtube.com/watch?v=pgN-vvVVxMA",
+		"image": "https://img.youtube.com/vi_webp/pgN-vvVVxMA/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "We Are Young (ft. Janelle Monáe)",
+		"artist": "Fun.",
+		"url": "https://music.youtube.com/watch?v=Sv6dMFF_yts",
+		"image": "https://img.youtube.com/vi_webp/Sv6dMFF_yts/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Immigrant Song (Remaster)",
+		"artist": "Led Zeppelin",
+		"url": "https://music.youtube.com/watch?v=y8OtzJtp-EM",
+		"image": "https://img.youtube.com/vi_webp/y8OtzJtp-EM/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "All The Stars",
+		"artist": "Kendrick Lamar & SZA",
+		"url": "https://music.youtube.com/watch?v=vdXsLt0o_9g",
+		"image": "https://img.youtube.com/vi_webp/vdXsLt0o_9g/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Ploua",
+		"artist": "Mihaita Piticu",
+		"url": "https://music.youtube.com/watch?v=zpoLEkQLezs",
+		"image": "https://img.youtube.com/vi_webp/zpoLEkQLezs/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Yellow",
+		"artist": "Coldplay",
+		"url": "https://music.youtube.com/watch?v=9qnqYL0eNNI",
+		"image": "https://img.youtube.com/vi_webp/9qnqYL0eNNI/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "1 A.M Study Session 📚",
+		"artist": "Lofi Girl",
+		"url": "https://music.youtube.com/watch?v=lTRiuFIWV54",
+		"image": "https://img.youtube.com/vi_webp/lTRiuFIWV54/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Numb",
+		"artist": "Men I Trust",
+		"url": "https://music.youtube.com/watch?v=xAz_DzPUjrM",
+		"image": "https://img.youtube.com/vi_webp/xAz_DzPUjrM/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Mrs Magic (Strings Version)",
+		"artist": "Strawberry Guy",
+		"url": "https://music.youtube.com/watch?v=r22AG0WKV1M",
+		"image": "https://img.youtube.com/vi_webp/r22AG0WKV1M/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Nuvole Bianche",
+		"artist": "Ludovico Einaudi",
+		"url": "https://music.youtube.com/watch?v=PhXEL2FRSag",
+		"image": "https://img.youtube.com/vi_webp/PhXEL2FRSag/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "I Ran (So Far Away)",
+		"artist": "A Flock Of Seagulls",
+		"url": "https://music.youtube.com/watch?v=iIpfWORQWhU",
+		"image": "https://img.youtube.com/vi_webp/iIpfWORQWhU/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "blue",
+		"artist": "yung kai",
+		"url": "https://music.youtube.com/watch?v=MHCsrKA9gh8",
+		"image": "https://img.youtube.com/vi_webp/MHCsrKA9gh8/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "I Want To Break Free",
+		"artist": "Queen",
+		"url": "https://music.youtube.com/watch?v=wIqa9uVnXCQ",
+		"image": "https://img.youtube.com/vi_webp/wIqa9uVnXCQ/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Gangsta's Paradise (TikTok Remix)",
+		"artist": "Lofi Fruits",
+		"url": "https://music.youtube.com/watch?v=RnEypwmJiaA",
+		"image": "https://img.youtube.com/vi_webp/RnEypwmJiaA/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Let Me Down Slowly",
+		"artist": "Alec Benjamin",
+		"url": "https://music.youtube.com/watch?v=RT3W0cUnTmI",
+		"image": "https://img.youtube.com/vi_webp/RT3W0cUnTmI/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Show Me How",
+		"artist": "Men I Trust",
+		"url": "https://music.youtube.com/watch?v=OZRYzH0Q0pU",
+		"image": "https://img.youtube.com/vi_webp/OZRYzH0Q0pU/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Photograph",
+		"artist": "Ed Sheeran",
+		"url": "https://music.youtube.com/watch?v=SlbfAYvA_gI",
+		"image": "https://img.youtube.com/vi_webp/SlbfAYvA_gI/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Beautiful",
+		"artist": "Eminem",
+		"url": "https://music.youtube.com/watch?v=F4yb0CBd4I4",
+		"image": "https://img.youtube.com/vi_webp/F4yb0CBd4I4/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Husn",
+		"artist": "Anuv Jain",
+		"url": "https://music.youtube.com/watch?v=_deqdZmKzyg",
+		"image": "https://img.youtube.com/vi_webp/_deqdZmKzyg/mqdefault.webp",
 		"explicit_image": ""
 	},
 	{
 		"title": "Just The Way You Are",
 		"artist": "Milky",
-		"url": "https://www.youtube.com/watch?v=1iDrQta26zo",
+		"url": "https://music.youtube.com/watch?v=1iDrQta26zo",
 		"image": "https://img.youtube.com/vi_webp/1iDrQta26zo/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Smells Like Teen Spirit (Acoustic Version)",
+		"artist": "Nirvana",
+		"url": "https://music.youtube.com/watch?v=tODGKsBkVNQ",
+		"image": "https://img.youtube.com/vi_webp/tODGKsBkVNQ/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Where Your Mind Wants To Go (Ludovico Einaudi Version)",
+		"artist": "Blonde Redhead",
+		"url": "https://music.youtube.com/watch?v=IRtEqQ6ijwg",
+		"image": "https://img.youtube.com/vi_webp/IRtEqQ6ijwg/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "W.T.P.",
+		"artist": "Eminem",
+		"url": "https://music.youtube.com/watch?v=Inc3n7oDRNE",
+		"image": "https://img.youtube.com/vi_webp/Inc3n7oDRNE/mqdefault.webp",
 		"explicit_image": ""
 	},
 	{
 		"title": "Veridis Quo",
 		"artist": "Daft Punk",
-		"url": "https://www.youtube.com/watch?v=TCd6PfxOy0Y",
+		"url": "https://music.youtube.com/watch?v=TCd6PfxOy0Y",
 		"image": "https://img.youtube.com/vi_webp/TCd6PfxOy0Y/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "my future",
+		"artist": "Billie Eilish",
+		"url": "https://music.youtube.com/watch?v=LRq3xHN2s_c",
+		"image": "https://img.youtube.com/vi_webp/LRq3xHN2s_c/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Bohemian Rhapsody",
+		"artist": "Queen",
+		"url": "https://music.youtube.com/watch?v=fJ9rUzIMcZQ",
+		"image": "https://img.youtube.com/vi_webp/fJ9rUzIMcZQ/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Only Love Can Hurt Like This",
+		"artist": "Paloma Faith",
+		"url": "https://music.youtube.com/watch?v=whBJ7h_tjdc",
+		"image": "https://img.youtube.com/vi_webp/whBJ7h_tjdc/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Runaway",
+		"artist": "AURORA",
+		"url": "https://music.youtube.com/watch?v=BRpS93I8_Jk",
+		"image": "https://img.youtube.com/vi_webp/BRpS93I8_Jk/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "City of Stars",
+		"artist": "Ryan Gosling & Emma Stone",
+		"url": "https://music.youtube.com/watch?v=xkqfm3muuhM",
+		"image": "https://img.youtube.com/vi_webp/xkqfm3muuhM/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Therefore I Am",
+		"artist": "Billie Eilish",
+		"url": "https://music.youtube.com/watch?v=oDn4eKyhSH4",
+		"image": "https://img.youtube.com/vi_webp/oDn4eKyhSH4/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "everything i wanted",
+		"artist": "JP Cooper",
+		"url": "https://music.youtube.com/watch?v=IupinNthqx4",
+		"image": "https://img.youtube.com/vi_webp/IupinNthqx4/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Boulevard of Broken Dreams",
+		"artist": "Green Day",
+		"url": "https://music.youtube.com/watch?v=gYCTXzOTnXg",
+		"image": "https://img.youtube.com/vi_webp/gYCTXzOTnXg/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "4ÆM",
+		"artist": "Grimes",
+		"url": "https://music.youtube.com/watch?v=AgKJdvcEZAo",
+		"image": "https://img.youtube.com/vi_webp/AgKJdvcEZAo/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Wishes (feat. Talwiinder)",
+		"artist": "Hasan Raheem & Umair",
+		"url": "https://music.youtube.com/watch?v=roryaci7NvM",
+		"image": "https://img.youtube.com/vi_webp/roryaci7NvM/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Vermont Kiss (バーモント・キッス)",
+		"artist": "Sōtaisei Riron (相対性理論)",
+		"url": "https://music.youtube.com/watch?v=K1oH4EVqZMk",
+		"image": "https://img.youtube.com/vi_webp/K1oH4EVqZMk/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Just the Two of Us (feat. Bill Withers)",
+		"artist": "Grover Washington, Jr.",
+		"url": "https://music.youtube.com/watch?v=6POZlJAZsok",
+		"image": "https://img.youtube.com/vi_webp/6POZlJAZsok/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Khush To Hai Na",
+		"artist": "Osho Jain",
+		"url": "https://music.youtube.com/watch?v=F652A0WP-24",
+		"image": "https://img.youtube.com/vi_webp/F652A0WP-24/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Nights (middle part perfectly looped)",
+		"artist": "Frank Ocean",
+		"url": "https://music.youtube.com/watch?v=WjFfW2oygYM",
+		"image": "https://img.youtube.com/vi_webp/WjFfW2oygYM/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Let Her Go",
+		"artist": "Passenger",
+		"url": "https://music.youtube.com/watch?v=B3EN7Ewwwvs",
+		"image": "https://img.youtube.com/vi_webp/B3EN7Ewwwvs/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Price Tag",
+		"artist": "Jessie J",
+		"url": "https://music.youtube.com/watch?v=W_12imke4UQ",
+		"image": "https://img.youtube.com/vi_webp/W_12imke4UQ/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "A Thousand Years",
+		"artist": "Christina Perri",
+		"url": "https://music.youtube.com/watch?v=TA1W-pHNKl8",
+		"image": "https://img.youtube.com/vi_webp/TA1W-pHNKl8/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "17",
+		"artist": "Ocean Beats & Shiloh Dynasty",
+		"url": "https://music.youtube.com/watch?v=_ekhb0UaKTw",
+		"image": "https://img.youtube.com/vi_webp/_ekhb0UaKTw/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "The Less I Know The Better",
+		"artist": "Tame Impala",
+		"url": "https://music.youtube.com/watch?v=2SUwOgmvzK4",
+		"image": "https://img.youtube.com/vi_webp/2SUwOgmvzK4/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Owls of the Night",
+		"artist": "Kupla",
+		"url": "https://music.youtube.com/watch?v=juUhUvgoyc0",
+		"image": "https://img.youtube.com/vi_webp/juUhUvgoyc0/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "i've got my eye on you",
+		"artist": "omar",
+		"url": "https://music.youtube.com/watch?v=rzki3LVBBKg",
+		"image": "https://img.youtube.com/vi_webp/rzki3LVBBKg/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "The Turning Point",
+		"artist": "Wantaways",
+		"url": "https://music.youtube.com/watch?v=Uut1BXyYzCY",
+		"image": "https://img.youtube.com/vi_webp/Uut1BXyYzCY/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Billie Jean [Acoustic Cover]",
+		"artist": "MAIKA",
+		"url": "https://music.youtube.com/watch?v=mFQfIqm2hRs",
+		"image": "https://img.youtube.com/vi_webp/mFQfIqm2hRs/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "It's Your Move",
+		"artist": "Diana Ross",
+		"url": "https://music.youtube.com/watch?v=vtlgWW8L8f4",
+		"image": "https://img.youtube.com/vi_webp/vtlgWW8L8f4/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Sleepyhead (Borgore Remix)",
+		"artist": "Passion Pit",
+		"url": "https://music.youtube.com/watch?v=-BLEKahY5aY",
+		"image": "https://img.youtube.com/vi_webp/-BLEKahY5aY/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Lose Yourself",
+		"artist": "Eminem",
+		"url": "https://music.youtube.com/watch?v=4wOLVrGHiIU",
+		"image": "https://img.youtube.com/vi_webp/4wOLVrGHiIU/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Night Changes",
+		"artist": "One Direction",
+		"url": "https://music.youtube.com/watch?v=syFZfO_wfMQ",
+		"image": "https://img.youtube.com/vi_webp/syFZfO_wfMQ/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Ainsa (feat. Niraj Naik)",
+		"artist": "Enahm Hof",
+		"url": "https://music.youtube.com/watch?v=6Og2pz-GUqM",
+		"image": "https://img.youtube.com/vi_webp/6Og2pz-GUqM/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Somewhere Only We Know",
+		"artist": "Keane",
+		"url": "https://music.youtube.com/watch?v=0LuignGmX_0",
+		"image": "https://img.youtube.com/vi_webp/0LuignGmX_0/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Sahiba",
+		"artist": "Aditya Rikhari",
+		"url": "https://music.youtube.com/watch?v=tNc2coVC2aw",
+		"image": "https://img.youtube.com/vi_webp/tNc2coVC2aw/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Romantic Homicide",
+		"artist": "d4vd",
+		"url": "https://music.youtube.com/watch?v=FpO31FVxxb4",
+		"image": "https://img.youtube.com/vi_webp/FpO31FVxxb4/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Tus Besos",
+		"artist": "Freebot, Cuvan & Aneth",
+		"url": "https://music.youtube.com/watch?v=d_h5y1DfF5Q",
+		"image": "https://img.youtube.com/vi_webp/d_h5y1DfF5Q/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Lose Control",
+		"artist": "Meduza, Becky Hill, Goodboys",
+		"url": "https://music.youtube.com/watch?v=Qv4wzkiBA4g",
+		"image": "https://img.youtube.com/vi_webp/Qv4wzkiBA4g/mqdefault.webp",
 		"explicit_image": ""
 	},
 	{
 		"title": "Lotus Feet | International Jazz Day Istanbul",
 		"artist": "John McLaughlin, Jean-Luc Ponty, Zakir Hussain",
-		"url": "https://www.youtube.com/watch?v=HDyfFNJGRDA",
+		"url": "https://music.youtube.com/watch?v=HDyfFNJGRDA",
 		"image": "https://img.youtube.com/vi_webp/HDyfFNJGRDA/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Ninnila",
+		"artist": "Armaan Malik & Thaman S",
+		"url": "https://music.youtube.com/watch?v=XVgsZcMZTic",
+		"image": "https://img.youtube.com/vi_webp/XVgsZcMZTic/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Mazaak",
+		"artist": "Anuv Jain",
+		"url": "https://music.youtube.com/watch?v=m8_wuycQRAE",
+		"image": "https://img.youtube.com/vi_webp/m8_wuycQRAE/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Get You The Moon (feat. Snøw)",
+		"artist": "Kina",
+		"url": "https://music.youtube.com/watch?v=JtN3eRbSHEM",
+		"image": "https://img.youtube.com/vi_webp/JtN3eRbSHEM/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Shooting Stars",
+		"artist": "Bag Raiders",
+		"url": "https://music.youtube.com/watch?v=mllzzUjMezU",
+		"image": "https://img.youtube.com/vi_webp/mllzzUjMezU/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Radioactive",
+		"artist": "Imagine Dragons",
+		"url": "https://music.youtube.com/watch?v=R_BO8C05XLA",
+		"image": "https://img.youtube.com/vi_webp/R_BO8C05XLA/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Gats",
+		"artist": "Susumu Hirasawa",
+		"url": "https://music.youtube.com/watch?v=auLopgsgJ_s",
+		"image": "https://img.youtube.com/vi_webp/auLopgsgJ_s/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "1-800-273-8255 (feat. Khalid & Alessia Cara)",
+		"artist": "Logic",
+		"url": "https://music.youtube.com/watch?v=cycUHgg0zzU",
+		"image": "https://img.youtube.com/vi_webp/cycUHgg0zzU/mqdefault.webp",
 		"explicit_image": ""
 	},
 	{
 		"title": "Money Trees (feat. Jay Rock)",
 		"artist": "Kendrick Lamar",
-		"url": "https://www.youtube.com/watch?v=Iy-dJwHVX84",
+		"url": "https://music.youtube.com/watch?v=Iy-dJwHVX84",
 		"image": "https://img.youtube.com/vi_webp/Iy-dJwHVX84/mqdefault.webp",
 		"explicit_image": ""
 	},
 	{
 		"title": "Lotus Feet",
 		"artist": "Shakti",
-		"url": "https://www.youtube.com/watch?v=oJ-r1OwrJ-s",
+		"url": "https://music.youtube.com/watch?v=oJ-r1OwrJ-s",
 		"image": "https://img.youtube.com/vi_webp/oJ-r1OwrJ-s/mqdefault.webp",
 		"explicit_image": ""
 	},
 	{
 		"title": "Tujhe Bhula Diya",
 		"artist": "Mohit Chauhan, Shekhar Ravjiani, Shruti Pathak & Vishal-Shekhar",
-		"url": "https://www.youtube.com/watch?v=o-9VdyXZKsQ",
+		"url": "https://music.youtube.com/watch?v=o-9VdyXZKsQ",
 		"image": "https://img.youtube.com/vi_webp/o-9VdyXZKsQ/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Past Lives",
+		"artist": "BØRNS",
+		"url": "https://music.youtube.com/watch?v=Cux2qJjApGA",
+		"image": "https://img.youtube.com/vi_webp/Cux2qJjApGA/mqdefault.webp",
 		"explicit_image": ""
 	},
 	{
 		"title": "Sky Walker (feat. Travis Scott)",
 		"artist": "Miguel",
-		"url": "https://www.youtube.com/watch?v=y1UR2jVgvIU",
+		"url": "https://music.youtube.com/watch?v=y1UR2jVgvIU",
 		"image": "https://img.youtube.com/vi_webp/y1UR2jVgvIU/mqdefault.webp",
 		"explicit_image": ""
 	},
 	{
 		"title": "Let It Happen",
 		"artist": "Tame Impala",
-		"url": "https://www.youtube.com/watch?v=NMRhx71bGo4",
+		"url": "https://music.youtube.com/watch?v=NMRhx71bGo4",
 		"image": "https://img.youtube.com/vi_webp/NMRhx71bGo4/mqdefault.webp",
 		"explicit_image": ""
 	},
 	{
 		"title": "Maate Vinadhuga",
 		"artist": "Sid Sriram",
-		"url": "https://www.youtube.com/watch?v=g3tDx7Jud3E",
+		"url": "https://music.youtube.com/watch?v=g3tDx7Jud3E",
 		"image": "https://img.youtube.com/vi_webp/g3tDx7Jud3E/mqdefault.webp",
 		"explicit_image": ""
 	},
 	{
 		"title": "Gundelonaa",
 		"artist": "Sowjanya",
-		"url": "https://www.youtube.com/watch?v=TlkO6I8u-7I",
+		"url": "https://music.youtube.com/watch?v=TlkO6I8u-7I",
 		"image": "https://img.youtube.com/vi_webp/TlkO6I8u-7I/mqdefault.webp",
 		"explicit_image": "TRUE"
 	},
 	{
 		"title": "Birds",
 		"artist": "Imagine Dragons",
-		"url": "https://www.youtube.com/watch?v=Sa-dxgZt4rY",
+		"url": "https://music.youtube.com/watch?v=Sa-dxgZt4rY",
 		"image": "https://img.youtube.com/vi_webp/Sa-dxgZt4rY/mqdefault.webp",
 		"explicit_image": ""
 	}
