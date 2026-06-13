@@ -1,5 +1,7 @@
 ---
-import { COPYRIGHT } from '@/consts';
+import '@/components/Link.astro';
+import Link from '@/components/Link.astro';
+import { COPYRIGHT, EMAIL, FIRST_NAME, FULL_NAME } from '@/consts';
 import Badges from './Badges.astro';
 import FooterNav from './FooterNav.astro';
 import Themes from './Themes.astro';
@@ -22,5 +24,23 @@ import Webrings from './Webrings.astro';
 			{COPYRIGHT.symbol}{' '}{COPYRIGHT.year}{' '}{COPYRIGHT.holder}<br />
 			{COPYRIGHT.string}
 		</small>
+
+		<div class="h-card" hidden>
+			<Link class="u-url u-uid p-name" href="/">{FULL_NAME}</Link>
+			<span class="p-given-name">{FIRST_NAME}</span>
+			<span class="p-additional-name">A</span>
+			<span class="p-family-name">Chudasama</span>
+			<Link class="u-email" href={`mailto:${EMAIL}`}>{EMAIL}</Link>
+			<img class="u-photo u-logo" src={'/images/profile-pic.png'} alt={FULL_NAME} loading="lazy" />
+
+			<div class="p-adr h-adr">
+				<span class="p-locality">Hyderabad</span>,
+				<span class="p-region">Telangana</span>,
+				<span class="p-country-name">India</span>
+			</div>
+
+			<span class="p-sex">M</span>
+			<span class="p-gender-identity">M</span>
+		</div>
 	</div>
 </footer>
