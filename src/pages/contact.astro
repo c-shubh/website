@@ -1,5 +1,6 @@
 ---
 import Link from '@/components/Link.astro';
+import { EMAIL } from '@/consts';
 import Page from '@/layouts/Page.astro';
 
 const services = [
@@ -16,8 +17,6 @@ const services = [
 		url: 'https://www.instagram.com/c_shubh_/',
 	},
 ];
-
-const email = 'contact@cshubh.com';
 ---
 
 <Page title="Contact">
@@ -26,7 +25,7 @@ const email = 'contact@cshubh.com';
 		chance that I miss your email.
 	</p>
 	<address class="not-italic">
-		<Link href={`mailto:${email}`}>{email}</Link>
+		<Link href={`mailto:${EMAIL}`}>{EMAIL}</Link>
 	</address>
 	<h2>Links</h2>
 	<p>My public profiles on various platforms:</p>

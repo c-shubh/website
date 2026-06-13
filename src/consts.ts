@@ -1,4 +1,5 @@
 export const SITE = 'https://cshubh.com';
+export const EMAIL = 'contact@cshubh.com';
 export const FIRST_NAME = 'Shubh';
 export const FULL_NAME = `${FIRST_NAME} A Chudasama`;
 export const LANGUAGE = 'en';
