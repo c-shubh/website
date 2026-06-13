@@ -2,6 +2,7 @@
 import Link from '@/components/Link.astro';
 import { FIRST_NAME } from '@/consts';
 import Page from '@/layouts/Page.astro';
+import { clsx } from '@/utils';
 import { Image } from 'astro:assets';
 import songs from './_data.json';
 ---
@@ -12,7 +13,7 @@ import songs from './_data.json';
 		{songs.length === 1 ? 'song' : 'songs'}
 	</p>
 
-	<ul class="grid sm:grid-cols-3 gap-6 not-prose">
+	<ul class="grid min-[30rem]:grid-cols-2 sm:grid-cols-3 gap-4 md:gap-6 not-prose">
 		{
 			songs
 				.sort((a, b) => a.title.localeCompare(b.title) || a.artist.localeCompare(b.artist))
@@ -27,7 +28,7 @@ import songs from './_data.json';
 										width={320}
 										height={180}
 										loading={'lazy'}
-										class={song.explicit_image === 'TRUE' ? 'blur-sm' : ''}
+										class={clsx('w-full', song.explicit_image === 'TRUE' ? 'blur-sm' : '')}
 									/>
 								</figure>
 							) : null}
