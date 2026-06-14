@@ -875,6 +875,13 @@
 		"explicit_image": ""
 	},
 	{
+		"title": "Chlorine",
+		"artist": "twenty one pilots",
+		"url": "https://music.youtube.com/watch?v=zKFzKIa_pIM",
+		"image": "https://img.youtube.com/vi_webp/zKFzKIa_pIM/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
 		"title": "Money Trees (feat. Jay Rock)",
 		"artist": "Kendrick Lamar",
 		"url": "https://music.youtube.com/watch?v=Iy-dJwHVX84",
@@ -935,6 +942,13 @@
 		"artist": "Imagine Dragons",
 		"url": "https://music.youtube.com/watch?v=Sa-dxgZt4rY",
 		"image": "https://img.youtube.com/vi_webp/Sa-dxgZt4rY/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Chiru Chiru",
+		"artist": "Yuvan Shankar Raja, Haricharan, Sagar Desai & Chandra Bose",
+		"url": "https://music.youtube.com/watch?v=ZnkFETFCoDw",
+		"image": "https://img.youtube.com/vi_webp/ZnkFETFCoDw/mqdefault.webp",
 		"explicit_image": ""
 	}
 ]
