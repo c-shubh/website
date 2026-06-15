@@ -343,10 +343,10 @@
 		"explicit_image": ""
 	},
 	{
-		"title": "Go Solo",
-		"artist": "Zwette feat. Tom Rosenthal",
-		"url": "https://music.youtube.com/watch?v=XMD72ez_d5Q",
-		"image": "https://img.youtube.com/vi_webp/XMD72ez_d5Q/mqdefault.webp",
+		"title": "Go Solo (feat. Tom Rosenthal)",
+		"artist": "Zwette",
+		"url": "https://music.youtube.com/watch?v=5ij4KTZH4Ao",
+		"image": "https://img.youtube.com/vi_webp/5ij4KTZH4Ao/mqdefault.webp",
 		"explicit_image": ""
 	},
 	{
@@ -924,6 +924,20 @@
 		"explicit_image": ""
 	},
 	{
+		"title": "Lucid Dreams",
+		"artist": "Juice WRLD",
+		"url": "https://music.youtube.com/watch?v=hHtv2XMZlKs",
+		"image": "https://img.youtube.com/vi_webp/hHtv2XMZlKs/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "The Child In Us",
+		"artist": "Enigma",
+		"url": "https://music.youtube.com/watch?v=32uTT424Nx4",
+		"image": "https://img.youtube.com/vi_webp/32uTT424Nx4/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
 		"title": "Maate Vinadhuga",
 		"artist": "Sid Sriram",
 		"url": "https://music.youtube.com/watch?v=g3tDx7Jud3E",
@@ -938,6 +952,27 @@
 		"explicit_image": "TRUE"
 	},
 	{
+		"title": "novacaine (addicted to you)",
+		"artist": "Lofuu, Shiloh Dynasty & dprk",
+		"url": "https://music.youtube.com/watch?v=KFTN3RvFadQ",
+		"image": "https://img.youtube.com/vi_webp/KFTN3RvFadQ/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Jocelyn Flores",
+		"artist": "XXXTENTACION",
+		"url": "https://music.youtube.com/watch?v=C1D3G2VGQ_8",
+		"image": "https://img.youtube.com/vi_webp/C1D3G2VGQ_8/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Where'd All The Time Go?",
+		"artist": "Dr. Dog",
+		"url": "https://music.youtube.com/watch?v=bmZQpbNK7t4",
+		"image": "https://img.youtube.com/vi_webp/bmZQpbNK7t4/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
 		"title": "Birds",
 		"artist": "Imagine Dragons",
 		"url": "https://music.youtube.com/watch?v=Sa-dxgZt4rY",
@@ -949,6 +984,20 @@
 		"artist": "Yuvan Shankar Raja, Haricharan, Sagar Desai & Chandra Bose",
 		"url": "https://music.youtube.com/watch?v=ZnkFETFCoDw",
 		"image": "https://img.youtube.com/vi_webp/ZnkFETFCoDw/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Everybody Dies In Their Nightmares",
+		"artist": "XXXTENTACION",
+		"url": "https://music.youtube.com/watch?v=Tg6HGcj7pGo",
+		"image": "https://img.youtube.com/vi_webp/Tg6HGcj7pGo/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Golden Brown (Unpeeled)",
+		"artist": "Cage The Elephant",
+		"url": "https://music.youtube.com/watch?v=X5GAhmOhRy8",
+		"image": "https://img.youtube.com/vi_webp/X5GAhmOhRy8/mqdefault.webp",
 		"explicit_image": ""
 	}
 ]
