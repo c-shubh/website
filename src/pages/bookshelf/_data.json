@@ -12,10 +12,10 @@
 		"end": "2026-06-17"
 	},
 	{
-		"title": "Continence and Its Creative Power",
-		"author": "Swami Jagadishwarananda",
-		"start": "2025-01-22",
-		"end": "2025-01-24"
+		"title": "A Mathematician's Lament",
+		"author": "Paul Lockhart",
+		"start": "2025-06-15",
+		"end": "2025-06-21"
 	},
 	{
 		"title": "Eat That Frog!",
@@ -25,9 +25,123 @@
 		"end": "2025-04-27"
 	},
 	{
-		"title": "A Mathematician's Lament",
-		"author": "Paul Lockhart",
-		"start": "2025-06-15",
-		"end": "2025-06-21"
+		"title": "Continence and Its Creative Power",
+		"author": "Swami Jagadishwarananda",
+		"start": "2025-01-22",
+		"end": "2025-01-24"
+	},
+	{
+		"title": "The Village by the Sea",
+		"author": "Anita Desai"
+	},
+	{
+		"title": "Durgeshnandini",
+		"author": "Bankim Chandra Chatterjee"
+	},
+	{
+		"title": "Deep Work",
+		"subtitle": "Rules for Focused Success in a Distracted World",
+		"author": "Cal Newport"
+	},
+	{
+		"title": "Digital Minimalism",
+		"subtitle": "Choosing a Focused Life in a Noisy World",
+		"author": "Cal Newport"
+	},
+	{
+		"title": "How to Break Up with Your Phone",
+		"subtitle": "The 30-Day Plan to Take Back Your Life",
+		"author": "Catherine Price"
+	},
+	{
+		"title": "Demon Dentist",
+		"author": "David Walliams"
+	},
+	{
+		"title": "Nineteen Eighty-Four",
+		"author": "George Orwell"
+	},
+	{
+		"title": "Three Feet from Gold",
+		"subtitle": "Turn Your Obstacles Into Opportunities!",
+		"author": "Sharon L. Lechter, Greg S. Reid"
+	},
+	{
+		"title": "Atomic Habits",
+		"subtitle": "An Easy & Proven Way to Build Good Habits & Break Bad Ones",
+		"author": "James Clear"
+	},
+	{
+		"title": "Diary of a Wimpy Kid",
+		"author": "Jeff Kinney"
+	},
+	{
+		"title": "Turtles All the Way Down",
+		"author": "John Green"
+	},
+	{
+		"title": "The Art of Invisibility",
+		"subtitle": "The World's Most Famous Hacker Teaches You How to Be Safe in the Age of Big Brother and Big Data",
+		"author": "Kevin Mitnick"
+	},
+	{
+		"title": "Train to Pakistan",
+		"author": "Khushwant Singh"
+	},
+	{
+		"title": "Number the Stars",
+		"author": "Lois Lowry"
+	},
+	{
+		"title": "Autobiography of a Yogi",
+		"author": "Paramahansa Yogananda"
+	},
+	{
+		"title": "The Dark Room",
+		"author": "R. K. Narayan"
+	},
+	{
+		"title": "The Guide",
+		"author": "R. K. Narayan"
+	},
+	{
+		"title": "Can Love Happen Twice?",
+		"author": "Ravinder Singh"
+	},
+	{
+		"title": "I Too Had a Love Story",
+		"author": "Ravinder Singh"
+	},
+	{
+		"title": "The Monk Who Sold His Ferrari",
+		"subtitle": "A Fable About Fulfilling Your Dreams and Reaching Your Destiny",
+		"author": "Robin Sharma"
+	},
+	{
+		"title": "Death; An Inside Story",
+		"subtitle": "A book for all those who shall die",
+		"author": "Sadhguru"
+	},
+	{
+		"title": "Inner Engineering",
+		"subtitle": "A Yogi's Guide to Joy",
+		"author": "Sadhguru"
+	},
+	{
+		"title": "Conquest of Fear",
+		"author": "Sivananda Saraswati"
+	},
+	{
+		"title": "Mind–Its Mysteries and Control",
+		"author": "Sivananda Saraswati"
+	},
+	{
+		"title": "Practice of Brahmacharya",
+		"author": "Sivananda Saraswati"
+	},
+	{
+		"title": "The Science of the Rishis",
+		"subtitle": "The Spiritual and Material Discoveries of the Ancient Sages of India",
+		"author": "Vanamali"
 	}
 ]

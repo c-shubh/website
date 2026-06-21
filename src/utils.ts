@@ -142,3 +142,26 @@ export function ensureTrailingSlash(href: string): string {
 	// Otherwise, it was a hash, reattach with #
 	return `${normalizedPath}#${queryAndHashPart}`;
 }
+
+type SortCriterion<T> = [keyof T, ('asc' | 'desc')?];
+
+export function orderBy<T extends object>(array: T[], ...criteria: SortCriterion<T>[]): T[] {
+	return [...array].sort((a, b) => {
+		for (const [key, direction = 'asc'] of criteria) {
+			const valA = a[key];
+			const valB = b[key];
+
+			if (valA === valB) continue;
+
+			const isAsc = direction === 'asc';
+
+			if (valA < valB) return isAsc ? -1 : 1;
+			if (valA > valB) return isAsc ? 1 : -1;
+		}
+
+		return 0;
+	});
+}
+
+// https://github.com/microsoft/TypeScript/issues/30825#issuecomment-673002409
+export type OmitStrict<T, K extends keyof T> = T extends any ? Pick<T, Exclude<keyof T, K>> : never;

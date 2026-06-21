@@ -1,9 +1,65 @@
 ---
 import FormattedDate from '@/components/FormattedDate.astro';
 import Page from '@/layouts/Page.astro';
+import { orderBy, type OmitStrict } from '@/utils';
 import books from './_data.json';
 
-const finishedCount = books.reduce((prev, curr) => prev + (curr.end ? 1 : 0), 0);
+interface RawBook {
+	title: string;
+	subtitle?: string;
+	author: string;
+	start?: string;
+	end?: string;
+}
+
+interface BaseBook {
+	title: string;
+	subtitle?: string;
+	author: string;
+}
+
+interface InProgressBook extends BaseBook {
+	status: 'reading';
+	start: string;
+}
+
+interface ReadWithDateBook extends BaseBook {
+	status: 'readWithDate';
+	start: string;
+	end: string;
+}
+
+interface ReadWithoutDateBook extends BaseBook {
+	status: 'readWithoutDate';
+}
+
+type TaggedBook = InProgressBook | ReadWithDateBook | ReadWithoutDateBook;
+
+books satisfies OmitStrict<TaggedBook, 'status'>[];
+
+const inProgressBooks: InProgressBook[] = [];
+const readBooksWithDate: ReadWithDateBook[] = [];
+const readBooksWithoutDate: ReadWithoutDateBook[] = [];
+
+for (const book of books as RawBook[]) {
+	if (book.start && book.end) {
+		readBooksWithDate.push({ ...book, status: 'readWithDate', start: book.start, end: book.end });
+	} else if (book.start) {
+		inProgressBooks.push({ ...book, status: 'reading', start: book.start });
+	} else {
+		readBooksWithoutDate.push({ ...book, status: 'readWithoutDate' });
+	}
+}
+
+const finishedCount = readBooksWithDate.length + readBooksWithoutDate.length;
+
+const sortedBooks: TaggedBook[] = [
+	...orderBy(inProgressBooks, ['start', 'desc'], ['author'], ['title']),
+	...orderBy(readBooksWithDate, ['end', 'desc'], ['author'], ['title']),
+	...orderBy(readBooksWithoutDate, ['author'], ['title']),
+];
+
+console.log(JSON.stringify(sortedBooks));
 ---
 
 <Page title={'Bookshelf'} underConstruction>
@@ -12,35 +68,25 @@ const finishedCount = books.reduce((prev, curr) => prev + (curr.end ? 1 : 0), 0)
 		{finishedCount === 1 ? ' book' : ' books'} read
 	</p>
 
-	<ul>
-		{
-			books
-				.sort((a, b) => {
-					// for books in progress, sort by start date
-					if (!a.end && !b.end) return new Date(b.start).getTime() - new Date(a.start).getTime();
-					// if book a is in progress, place it first
-					if (!a.end) return -1;
-					// if book b is in progress, place it first
-					if (!b.end) return 1;
-					// sort by end date
-					return new Date(b.end).getTime() - new Date(a.end).getTime();
-				})
-				.map((book, index) => (
-					<li>
-						{book.title}
-						{book.subtitle ? <>: {book.subtitle}</> : null}
-						<br />
-						By {book.author}
-						<br />
-						Read{book.end ? '' : 'ing'} from <FormattedDate date={new Date(book.start)} />
-						{book.end ? (
-							<>
-								{' '}
-								to <FormattedDate date={new Date(book.end)} />
-							</>
-						) : null}
-					</li>
-				))
-		}
-	</ul>
+	{
+		sortedBooks.map((book) => (
+			<p>
+				{book.subtitle ? `${book.title}: ${book.subtitle}` : book.title}
+				<br />
+				By {book.author}
+				<br />
+				{book.status === 'reading' && (
+					<>
+						Reading from <FormattedDate date={new Date(book.start)} />
+					</>
+				)}
+				{book.status === 'readWithDate' && (
+					<>
+						Read from <FormattedDate date={new Date(book.start)} /> to{' '}
+						<FormattedDate date={new Date(book.end)} />
+					</>
+				)}
+			</p>
+		))
+	}
 </Page>
