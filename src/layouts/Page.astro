@@ -33,6 +33,7 @@ interface StandalonePage {
 	description?: string;
 	archived?: boolean;
 	is404?: boolean;
+	underConstruction?: boolean;
 }
 
 type Props = HomePage | BlogPage | StandalonePage;
@@ -62,6 +63,7 @@ function getResolvedProps(rawProps: Props) {
 			h1: rawProps.title,
 			archived: rawProps.archived,
 			is404: rawProps.is404,
+			underConstruction: rawProps.underConstruction,
 		};
 	}
 }
@@ -159,6 +161,19 @@ const props = getResolvedProps(rawProps);
 	</head>
 	<body class="min-h-screen flex flex-col">
 		<Navbar title={props.h1} />
+		{
+			props.underConstruction ? (
+				/* data-nosnippet hides it from search previews */
+				<aside
+					data-nosnippet
+					class="w-full flex justify-center bg-[repeating-linear-gradient(-45deg,#fbbf24,#fbbf24_20px,#1f2937_20px,#1f2937_40px)]"
+				>
+					<div class="bg-gray-800 text-yellow-400 text-xs font-bold tracking-[0.15em] my-1 px-2 py-1 rounded-full shadow-lg text-center">
+						🚧 UNDER CONSTRUCTION
+					</div>
+				</aside>
+			) : null
+		}
 		<main class="flex-grow px-4 prose w-full max-w-3xl mx-auto my-8">
 			{
 				props.layout === 'blog' ? (

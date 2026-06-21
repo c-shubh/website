@@ -1,0 +1,46 @@
+---
+import FormattedDate from '@/components/FormattedDate.astro';
+import Page from '@/layouts/Page.astro';
+import books from './_data.json';
+
+const finishedCount = books.reduce((prev, curr) => prev + (curr.end ? 1 : 0), 0);
+---
+
+<Page title={'Bookshelf'} underConstruction>
+	<p>
+		<strong>{finishedCount}</strong>
+		{finishedCount === 1 ? ' book' : ' books'} read
+	</p>
+
+	<ul>
+		{
+			books
+				.sort((a, b) => {
+					// for books in progress, sort by start date
+					if (!a.end && !b.end) return new Date(b.start).getTime() - new Date(a.start).getTime();
+					// if book a is in progress, place it first
+					if (!a.end) return -1;
+					// if book b is in progress, place it first
+					if (!b.end) return 1;
+					// sort by end date
+					return new Date(b.end).getTime() - new Date(a.end).getTime();
+				})
+				.map((book, index) => (
+					<li>
+						{book.title}
+						{book.subtitle ? <>: {book.subtitle}</> : null}
+						<br />
+						By {book.author}
+						<br />
+						Read{book.end ? '' : 'ing'} from <FormattedDate date={new Date(book.start)} />
+						{book.end ? (
+							<>
+								{' '}
+								to <FormattedDate date={new Date(book.end)} />
+							</>
+						) : null}
+					</li>
+				))
+		}
+	</ul>
+</Page>
