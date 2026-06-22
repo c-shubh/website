@@ -2,6 +2,7 @@
 import FormattedDate from '@/components/FormattedDate.astro';
 import Page from '@/layouts/Page.astro';
 import { orderBy, type OmitStrict } from '@/utils';
+import { Image } from 'astro:assets';
 import books from './_data.json';
 
 interface RawBook {
@@ -10,12 +11,14 @@ interface RawBook {
 	author: string;
 	start?: string;
 	end?: string;
+	image?: string;
 }
 
 interface BaseBook {
 	title: string;
 	subtitle?: string;
 	author: string;
+	image?: string;
 }
 
 interface InProgressBook extends BaseBook {
@@ -58,34 +61,63 @@ const sortedBooks: TaggedBook[] = [
 	...orderBy(readBooksWithDate, ['end', 'desc'], ['author'], ['title']),
 	...orderBy(readBooksWithoutDate, ['author'], ['title']),
 ];
-
 ---
 
-<Page title={'Bookshelf'} underConstruction>
+<Page title={'Bookshelf'}>
 	<p>
 		<strong>{finishedCount}</strong>
 		{finishedCount === 1 ? ' book' : ' books'} read
 	</p>
 
-	{
-		sortedBooks.map((book) => (
-			<p>
-				{book.subtitle ? `${book.title}: ${book.subtitle}` : book.title}
-				<br />
-				By {book.author}
-				<br />
-				{book.status === 'reading' && (
-					<>
-						Reading from <FormattedDate date={new Date(book.start)} />
-					</>
-				)}
-				{book.status === 'readWithDate' && (
-					<>
-						Read from <FormattedDate date={new Date(book.start)} /> to{' '}
-						<FormattedDate date={new Date(book.end)} />
-					</>
-				)}
-			</p>
-		))
-	}
+	<ul class="grid min-[30rem]:grid-cols-2 sm:grid-cols-3 gap-4 md:gap-6 not-prose">
+		{
+			sortedBooks.map((book) => (
+				<li class="card card-sm shadow-sm">
+					{book.image ? (
+						<figure>
+							<Image
+								src={book.image}
+								alt={`Cover of ${book.title} - ${book.author}`}
+								width={229}
+								height={343}
+								loading={'lazy'}
+								class="w-full"
+							/>
+						</figure>
+					) : null}
+					<div class="card-body">
+						{book.status === 'reading' ? (
+							<span class="badge badge-sm badge-primary font-medium">Reading</span>
+						) : null}
+						<span class="card-title">{book.title}</span>
+						{book.subtitle ? <p class="grow-0">{book.subtitle}</p> : null}
+						<p class="text-sm font-medium">{book.author}</p>
+
+						<div class="mt-4 pt-3 border-t border-base-200 flex flex-col gap-1">
+							<p class="text-xs text-base-content/70">
+								{'start' in book && book.start ? (
+									<>
+										<span class="font-semibold">Started:</span>{' '}
+										<FormattedDate date={new Date(book.start)} />
+									</>
+								) : (
+									<br />
+								)}
+							</p>
+							<p class="text-xs text-base-content/70">
+								{'end' in book && book.end ? (
+									<>
+										<span class="font-semibold">Finished:</span>{' '}
+										<FormattedDate date={new Date(book.end)} />
+									</>
+								) : (
+									<br />
+								)}
+							</p>
+						</div>
+					</div>
+				</li>
+			))
+		}
+	</ul>
 </Page>

@@ -45,3 +45,12 @@ listens FILE_PATH:
     | to json
     | ^jq --tab .
     | save -f src/pages/listens/_data.json
+
+bookshelf FILE_PATH:
+    #!/usr/bin/env nu
+    open '{{ FILE_PATH }}'
+    | where draft == ""
+    | reject draft
+    | to json
+    | ^jq --tab .
+    | save -f src/pages/bookshelf/_data.json

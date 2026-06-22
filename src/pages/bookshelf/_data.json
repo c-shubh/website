@@ -1,147 +1,242 @@
 [
 	{
-		"title": "How to Win Friends and Influence People (1953 Unrevised Edition)",
+		"title": "How to Win Friends and Influence People",
+		"subtitle": "(1953 Unrevised Edition)",
 		"author": "Dale Carnegie",
-		"start": "2026-06-21"
+		"start": "2026-06-21",
+		"end": "",
+		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1348670562i/6945594.jpg"
 	},
 	{
 		"title": "Show Your Work!",
 		"subtitle": "10 Ways to Share Your Creativity and Get Discovered",
 		"author": "Austin Kleon",
 		"start": "2026-06-06",
-		"end": "2026-06-17"
+		"end": "2026-06-17",
+		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1404580714i/18290401.jpg"
 	},
 	{
 		"title": "A Mathematician's Lament",
+		"subtitle": "",
 		"author": "Paul Lockhart",
 		"start": "2025-06-15",
-		"end": "2025-06-21"
+		"end": "2025-06-21",
+		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1354903601i/6232657.jpg"
 	},
 	{
 		"title": "Eat That Frog!",
 		"subtitle": "21 Great Ways to Stop Procrastinating and Get More Done in Less Time",
 		"author": "Brian Tracy",
 		"start": "2025-04-08",
-		"end": "2025-04-27"
+		"end": "2025-04-27",
+		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1328854785i/95887.jpg"
 	},
 	{
 		"title": "Continence and Its Creative Power",
+		"subtitle": "",
 		"author": "Swami Jagadishwarananda",
 		"start": "2025-01-22",
-		"end": "2025-01-24"
+		"end": "2025-01-24",
+		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1585837132i/52892015.jpg"
 	},
 	{
 		"title": "The Village by the Sea",
-		"author": "Anita Desai"
+		"subtitle": "",
+		"author": "Anita Desai",
+		"start": "",
+		"end": "",
+		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1387708466i/275600.jpg"
 	},
 	{
 		"title": "Durgeshnandini",
-		"author": "Bankim Chandra Chatterjee"
+		"subtitle": "",
+		"author": "Bankim Chandra Chatterjee",
+		"start": "",
+		"end": "",
+		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1334893991i/13609459.jpg"
 	},
 	{
 		"title": "Deep Work",
 		"subtitle": "Rules for Focused Success in a Distracted World",
-		"author": "Cal Newport"
+		"author": "Cal Newport",
+		"start": "",
+		"end": "",
+		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1447957962i/25744928.jpg"
 	},
 	{
 		"title": "Digital Minimalism",
 		"subtitle": "Choosing a Focused Life in a Noisy World",
-		"author": "Cal Newport"
+		"author": "Cal Newport",
+		"start": "",
+		"end": "",
+		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1549433350i/40672036.jpg"
 	},
 	{
 		"title": "How to Break Up with Your Phone",
 		"subtitle": "The 30-Day Plan to Take Back Your Life",
-		"author": "Catherine Price"
+		"author": "Catherine Price",
+		"start": "",
+		"end": "",
+		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1514998972i/35209767.jpg"
 	},
 	{
 		"title": "Demon Dentist",
-		"author": "David Walliams"
+		"subtitle": "",
+		"author": "David Walliams",
+		"start": "",
+		"end": "",
+		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1380874441i/18269507.jpg"
 	},
 	{
 		"title": "Nineteen Eighty-Four",
-		"author": "George Orwell"
+		"subtitle": "",
+		"author": "George Orwell",
+		"start": "",
+		"end": "",
+		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1616476203i/57502604.jpg"
 	},
 	{
 		"title": "Three Feet from Gold",
 		"subtitle": "Turn Your Obstacles Into Opportunities!",
-		"author": "Sharon L. Lechter, Greg S. Reid"
+		"author": "Sharon L. Lechter, Greg S. Reid",
+		"start": "",
+		"end": "",
+		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1356177017i/6983077.jpg"
 	},
 	{
 		"title": "Atomic Habits",
 		"subtitle": "An Easy & Proven Way to Build Good Habits & Break Bad Ones",
-		"author": "James Clear"
+		"author": "James Clear",
+		"start": "",
+		"end": "",
+		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1655988385i/40121378.jpg"
 	},
 	{
 		"title": "Diary of a Wimpy Kid",
-		"author": "Jeff Kinney"
+		"subtitle": "",
+		"author": "Jeff Kinney",
+		"start": "",
+		"end": "",
+		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1388183826i/389627.jpg"
 	},
 	{
 		"title": "Turtles All the Way Down",
-		"author": "John Green"
+		"subtitle": "",
+		"author": "John Green",
+		"start": "",
+		"end": "",
+		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1503002776i/35504431.jpg"
 	},
 	{
 		"title": "The Art of Invisibility",
 		"subtitle": "The World's Most Famous Hacker Teaches You How to Be Safe in the Age of Big Brother and Big Data",
-		"author": "Kevin Mitnick"
-	},
-	{
-		"title": "Train to Pakistan",
-		"author": "Khushwant Singh"
+		"author": "Kevin Mitnick",
+		"start": "",
+		"end": "",
+		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1465761955i/30363785.jpg"
 	},
 	{
 		"title": "Number the Stars",
-		"author": "Lois Lowry"
+		"subtitle": "",
+		"author": "Lois Lowry",
+		"start": "",
+		"end": "",
+		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1630542426i/47281.jpg"
 	},
 	{
 		"title": "Autobiography of a Yogi",
-		"author": "Paramahansa Yogananda"
+		"subtitle": "",
+		"author": "Paramahansa Yogananda",
+		"start": "",
+		"end": "",
+		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1347427162i/639864.jpg"
 	},
 	{
 		"title": "The Dark Room",
-		"author": "R. K. Narayan"
+		"subtitle": "",
+		"author": "R. K. Narayan",
+		"start": "",
+		"end": "",
+		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1434171440i/1376314.jpg"
 	},
 	{
 		"title": "The Guide",
-		"author": "R. K. Narayan"
+		"subtitle": "",
+		"author": "R. K. Narayan",
+		"start": "",
+		"end": "",
+		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1415460598i/6487744.jpg"
 	},
 	{
 		"title": "Can Love Happen Twice?",
-		"author": "Ravinder Singh"
+		"subtitle": "",
+		"author": "Ravinder Singh",
+		"start": "",
+		"end": "",
+		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1321016822i/13041934.jpg"
 	},
 	{
 		"title": "I Too Had a Love Story",
-		"author": "Ravinder Singh"
+		"subtitle": "",
+		"author": "Ravinder Singh",
+		"start": "",
+		"end": "",
+		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1439162367i/19427193.jpg"
 	},
 	{
 		"title": "The Monk Who Sold His Ferrari",
 		"subtitle": "A Fable About Fulfilling Your Dreams and Reaching Your Destiny",
-		"author": "Robin Sharma"
+		"author": "Robin Sharma",
+		"start": "",
+		"end": "",
+		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1388189325i/43877.jpg"
 	},
 	{
 		"title": "Death; An Inside Story",
 		"subtitle": "A book for all those who shall die",
-		"author": "Sadhguru"
+		"author": "Sadhguru",
+		"start": "",
+		"end": "",
+		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1578160242i/50273386.jpg"
 	},
 	{
 		"title": "Inner Engineering",
 		"subtitle": "A Yogi's Guide to Joy",
-		"author": "Sadhguru"
+		"author": "Sadhguru",
+		"start": "",
+		"end": "",
+		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1484851488i/29513878.jpg"
 	},
 	{
 		"title": "Conquest of Fear",
-		"author": "Sivananda Saraswati"
+		"subtitle": "",
+		"author": "Sivananda Saraswati",
+		"start": "",
+		"end": "",
+		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1390246374i/20591354.jpg"
 	},
 	{
 		"title": "Mind–Its Mysteries and Control",
-		"author": "Sivananda Saraswati"
+		"subtitle": "",
+		"author": "Sivananda Saraswati",
+		"start": "",
+		"end": "",
+		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1183531928i/1431121.jpg"
 	},
 	{
 		"title": "Practice of Brahmacharya",
-		"author": "Sivananda Saraswati"
+		"subtitle": "",
+		"author": "Sivananda Saraswati",
+		"start": "",
+		"end": "",
+		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1628876692i/58762140.jpg"
 	},
 	{
 		"title": "The Science of the Rishis",
 		"subtitle": "The Spiritual and Material Discoveries of the Ancient Sages of India",
-		"author": "Vanamali"
+		"author": "Vanamali",
+		"start": "",
+		"end": "",
+		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1397777416i/20736545.jpg"
 	}
 ]
