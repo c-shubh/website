@@ -52,7 +52,7 @@ export function InstantPost() {
 								<Link href={`https://x.com/intent/post?text=${encodedText}`}>Share to X</Link>
 							</li>
 							<li>
-								<Link href={`https://mastodonshare.com/?text=${encodedText}`}>
+								<Link href={`https://share.joinmastodon.org/#text=${encodedText}`}>
 									Share to Mastodon
 								</Link>
 							</li>
