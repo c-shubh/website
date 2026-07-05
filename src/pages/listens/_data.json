@@ -882,6 +882,13 @@
 		"explicit_image": ""
 	},
 	{
+		"title": "The Night We Met",
+		"artist": "Lord Huron",
+		"url": "https://music.youtube.com/watch?v=90DKXLbzLto",
+		"image": "https://img.youtube.com/vi_webp/90DKXLbzLto/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
 		"title": "Money Trees (feat. Jay Rock)",
 		"artist": "Kendrick Lamar",
 		"url": "https://music.youtube.com/watch?v=Iy-dJwHVX84",
@@ -903,10 +910,24 @@
 		"explicit_image": ""
 	},
 	{
+		"title": "All I Ask of You (feat. Pennybirdrabbit)",
+		"artist": "Skrillex",
+		"url": "https://music.youtube.com/watch?v=PzEgrNigZdw",
+		"image": "https://img.youtube.com/vi_webp/PzEgrNigZdw/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
 		"title": "Past Lives",
 		"artist": "BØRNS",
 		"url": "https://music.youtube.com/watch?v=Cux2qJjApGA",
 		"image": "https://img.youtube.com/vi_webp/Cux2qJjApGA/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Moral of the Story",
+		"artist": "Ashe",
+		"url": "https://music.youtube.com/watch?v=WQq98YPV8yk",
+		"image": "https://img.youtube.com/vi_webp/WQq98YPV8yk/mqdefault.webp",
 		"explicit_image": ""
 	},
 	{
@@ -931,6 +952,13 @@
 		"explicit_image": ""
 	},
 	{
+		"title": "Hotline Bling",
+		"artist": "Drake",
+		"url": "https://music.youtube.com/watch?v=zt6aRKpf9T4",
+		"image": "https://img.youtube.com/vi_webp/zt6aRKpf9T4/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
 		"title": "The Child In Us",
 		"artist": "Enigma",
 		"url": "https://music.youtube.com/watch?v=32uTT424Nx4",
@@ -942,6 +970,13 @@
 		"artist": "Sid Sriram",
 		"url": "https://music.youtube.com/watch?v=g3tDx7Jud3E",
 		"image": "https://img.youtube.com/vi_webp/g3tDx7Jud3E/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Sparks",
+		"artist": "Coldplay",
+		"url": "https://music.youtube.com/watch?v=1aokooixKIo",
+		"image": "https://img.youtube.com/vi_webp/1aokooixKIo/mqdefault.webp",
 		"explicit_image": ""
 	},
 	{
@@ -959,6 +994,20 @@
 		"explicit_image": ""
 	},
 	{
+		"title": "Beanie",
+		"artist": "Chezile",
+		"url": "https://music.youtube.com/watch?v=Ro0vTEuSUuo",
+		"image": "https://img.youtube.com/vi_webp/Ro0vTEuSUuo/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Toxic",
+		"artist": "BoyWithUke",
+		"url": "https://music.youtube.com/watch?v=gTdStPLAdkU",
+		"image": "https://img.youtube.com/vi_webp/gTdStPLAdkU/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
 		"title": "Jocelyn Flores",
 		"artist": "XXXTENTACION",
 		"url": "https://music.youtube.com/watch?v=C1D3G2VGQ_8",
@@ -970,6 +1019,13 @@
 		"artist": "Dr. Dog",
 		"url": "https://music.youtube.com/watch?v=bmZQpbNK7t4",
 		"image": "https://img.youtube.com/vi_webp/bmZQpbNK7t4/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Illegal",
+		"artist": "PinkPantheress",
+		"url": "https://music.youtube.com/watch?v=XuKq7zT_0nM",
+		"image": "https://img.youtube.com/vi_webp/XuKq7zT_0nM/mqdefault.webp",
 		"explicit_image": ""
 	},
 	{
@@ -987,6 +1043,34 @@
 		"explicit_image": ""
 	},
 	{
+		"title": "Unnatundi Gundey",
+		"artist": "Karthik & Chinmayi",
+		"url": "https://music.youtube.com/watch?v=yiKbHbjLESE",
+		"image": "https://img.youtube.com/vi_webp/yiKbHbjLESE/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "No Surprises",
+		"artist": "Radiohead",
+		"url": "https://music.youtube.com/watch?v=LBt60dfwEBY",
+		"image": "https://img.youtube.com/vi_webp/LBt60dfwEBY/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Chamber Of Reflection",
+		"artist": "Mac DeMarco",
+		"url": "https://music.youtube.com/watch?v=pQsF3pzOc54",
+		"image": "https://img.youtube.com/vi_webp/pQsF3pzOc54/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "The Reason",
+		"artist": "Hoobastank",
+		"url": "https://music.youtube.com/watch?v=qQ0zxuWFxrY",
+		"image": "https://img.youtube.com/vi_webp/qQ0zxuWFxrY/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
 		"title": "Everybody Dies In Their Nightmares",
 		"artist": "XXXTENTACION",
 		"url": "https://music.youtube.com/watch?v=Tg6HGcj7pGo",
@@ -998,6 +1082,48 @@
 		"artist": "Cage The Elephant",
 		"url": "https://music.youtube.com/watch?v=X5GAhmOhRy8",
 		"image": "https://img.youtube.com/vi_webp/X5GAhmOhRy8/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Levitate",
+		"artist": "Hadouken!",
+		"url": "https://music.youtube.com/watch?v=b2CsCTk5qLY",
+		"image": "https://img.youtube.com/vi_webp/b2CsCTk5qLY/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "I Thought I Saw Your Face Today",
+		"artist": "She & Him",
+		"url": "https://music.youtube.com/watch?v=HJstyRBLqBQ",
+		"image": "https://img.youtube.com/vi_webp/HJstyRBLqBQ/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "End of Beginning",
+		"artist": "Djo",
+		"url": "https://music.youtube.com/watch?v=Kf5pXDhx5Vc",
+		"image": "https://img.youtube.com/vi_webp/Kf5pXDhx5Vc/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "End of Beginning (live at Laneway 2025)",
+		"artist": "Djo",
+		"url": "https://music.youtube.com/watch?v=Ec08db2hP10",
+		"image": "https://img.youtube.com/vi_webp/Ec08db2hP10/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Akhand Roji Harina Hathma",
+		"artist": "Niranjan Pandya",
+		"url": "https://music.youtube.com/watch?v=GxP8hD0Z8sU",
+		"image": "https://img.youtube.com/vi_webp/GxP8hD0Z8sU/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Homage",
+		"artist": "Mild High Club",
+		"url": "https://music.youtube.com/watch?v=4u7kNELI76A",
+		"image": "https://img.youtube.com/vi_webp/4u7kNELI76A/mqdefault.webp",
 		"explicit_image": ""
 	}
 ]
