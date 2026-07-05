@@ -6,8 +6,25 @@ export interface Quote {
 
 export const quotes: Quote[] = [
 	{
+		text: `So I now value ***local first***, which implies *full* data ownership, with content in a highly portable format, without rigid dependence on 3rd parties, especially not networks or remote services.
+
+Of course, I now enjoy the specter of losing my backups, but I prefer being (ir)responsible to myself over being beholden to the mysterious demigods that reside in The Cloud Computer.`,
+		attribution: '[Aditya Athalye](https://www.evalapply.org/posts/why-and-how-i-use-org-mode/index.html)',
+		dateAdded: '2026-07-05',
+	},
+	{
+		text: `I somehow see what's beautiful  
+In things that are ephemeral  
+I'm my only friend of mine  
+And love is just a piece of time  
+In the world, in the world`,
+		attribution: 'She & Him, "I Thought I Saw Your Face Today"',
+		dateAdded: '2026-07-05',
+	},
+	{
 		text: 'Wealth, women and wine can make anything happen in this world!',
-		attribution: '[Ravinder Singh, Can Love Happen Twice?](https://www.goodreads.com/quotes/3224663-wealth-women-and-wine-can-make-anything-happen-in-this)',
+		attribution:
+			'[Ravinder Singh, Can Love Happen Twice?](https://www.goodreads.com/quotes/3224663-wealth-women-and-wine-can-make-anything-happen-in-this)',
 		dateAdded: '2026-05-30',
 	},
 	{
