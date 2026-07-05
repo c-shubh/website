@@ -87,7 +87,10 @@ const sortedBooks: TaggedBook[] = [
 					) : null}
 					<div class="card-body">
 						{book.status === 'reading' ? (
-							<span class="badge badge-sm badge-primary font-medium">Reading</span>
+							<div class="space-x-2">
+								<span class="badge badge-sm badge-primary font-medium">Reading</span>
+								<span class="hidden" data-progress-title={book.title} />
+							</div>
 						) : null}
 						<span class="card-title">{book.title}</span>
 						{book.subtitle ? <p class="grow-0">{book.subtitle}</p> : null}
@@ -120,4 +123,47 @@ const sortedBooks: TaggedBook[] = [
 			))
 		}
 	</ul>
+
+	<script>
+		async function fetchProgress() {
+			const sheetUrl =
+				'https://docs.google.com/spreadsheets/d/1nVMcwhfriKQnWcikfY35FdEkG-fjhLay5K9rg7S4LzY/export?format=csv';
+			try {
+				const response = await fetch(sheetUrl);
+				const csvText = await response.text();
+
+				const progressMap = new Map();
+				csvText
+					.split('\n')
+					.slice(1)
+					.forEach((row) => {
+						const parts = row
+							.trim()
+							.split(',')
+							.map((s) => s.trim());
+						if (parts.length >= 3) {
+							const total = parseInt(parts.pop() || '0', 10);
+							const current = parseInt(parts.pop() || '0', 10);
+							const title = parts.join(',').replace(/^"|"$/g, '').trim();
+							if (!isNaN(total) && !isNaN(current)) {
+								progressMap.set(title, { current, total });
+							}
+						}
+					});
+
+				document.querySelectorAll('[data-progress-title]').forEach((el) => {
+					const title = el.getAttribute('data-progress-title');
+					if (title && progressMap.has(title)) {
+						const { current, total } = progressMap.get(title);
+						el.textContent = `${current} of ${total} pages`;
+						el.classList.remove('hidden');
+					}
+				});
+			} catch (error) {
+				console.error('Failed to load reading progress', error);
+			}
+		}
+
+		fetchProgress();
+	</script>
 </Page>
