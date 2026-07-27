@@ -1,5 +1,16 @@
 [
 	{
+		"title": "A Philosophy of Software Design",
+		"subtitle": "",
+		"author": "John Ousterhout",
+		"start": "2026-07-27",
+		"end": "",
+		"status": "reading",
+		"current_page": "",
+		"total_pages": "",
+		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1627437742i/58648004.jpg"
+	},
+	{
 		"title": "How to Win Friends and Influence People",
 		"subtitle": "(1953 Unrevised Edition)",
 		"author": "Dale Carnegie",
@@ -168,8 +179,8 @@
 		"title": "Turtles All the Way Down",
 		"subtitle": "",
 		"author": "John Green",
-		"start": "",
-		"end": "",
+		"start": "2022-09-17",
+		"end": "2022-09-18",
 		"status": "read",
 		"current_page": "",
 		"total_pages": "",

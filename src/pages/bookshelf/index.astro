@@ -50,7 +50,7 @@ import books from './_data.json';
 					<h2>
 						{el.status} ({el.books.length})
 					</h2>
-					<ul class="grid min-[30rem]:grid-cols-2 sm:grid-cols-3 gap-4 md:gap-6 not-prose">
+					<ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-6 not-prose">
 						{el.books.map((book) => (
 							<li class="card card-sm shadow-sm">
 								{book.image ? (
@@ -79,24 +79,12 @@ import books from './_data.json';
 
 									<div class="mt-4 pt-3 border-t border-base-200 flex flex-col gap-1">
 										<p class="text-xs text-base-content/70">
-											{'start' in book && book.start ? (
-												<>
-													<span class="font-semibold">Start:</span>{' '}
-													<FormattedDate date={new Date(book.start)} />
-												</>
-											) : (
-												<br />
-											)}
+											<span class="font-semibold">Start:</span>{' '}
+											{book.start != '' ? <FormattedDate date={new Date(book.start)} /> : 'N/A'}
 										</p>
 										<p class="text-xs text-base-content/70">
-											{'end' in book && book.end ? (
-												<>
-													<span class="font-semibold">End:</span>{' '}
-													<FormattedDate date={new Date(book.end)} />
-												</>
-											) : (
-												<br />
-											)}
+											<span class="font-semibold">End:</span>{' '}
+											{book.end != '' ? <FormattedDate date={new Date(book.end)} /> : 'N/A'}
 										</p>
 									</div>
 								</div>
