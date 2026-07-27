@@ -4,7 +4,10 @@
 		"subtitle": "(1953 Unrevised Edition)",
 		"author": "Dale Carnegie",
 		"start": "2026-06-21",
-		"end": "",
+		"end": "2026-07-27",
+		"status": "abandoned",
+		"current_page": 83,
+		"total_pages": 304,
 		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1348670562i/6945594.jpg"
 	},
 	{
@@ -13,6 +16,9 @@
 		"author": "Austin Kleon",
 		"start": "2026-06-06",
 		"end": "2026-06-17",
+		"status": "read",
+		"current_page": "",
+		"total_pages": "",
 		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1404580714i/18290401.jpg"
 	},
 	{
@@ -21,6 +27,9 @@
 		"author": "Paul Lockhart",
 		"start": "2025-06-15",
 		"end": "2025-06-21",
+		"status": "read",
+		"current_page": "",
+		"total_pages": "",
 		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1354903601i/6232657.jpg"
 	},
 	{
@@ -29,6 +38,9 @@
 		"author": "Brian Tracy",
 		"start": "2025-04-08",
 		"end": "2025-04-27",
+		"status": "read",
+		"current_page": "",
+		"total_pages": "",
 		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1328854785i/95887.jpg"
 	},
 	{
@@ -37,6 +49,9 @@
 		"author": "Swami Jagadishwarananda",
 		"start": "2025-01-22",
 		"end": "2025-01-24",
+		"status": "read",
+		"current_page": "",
+		"total_pages": "",
 		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1585837132i/52892015.jpg"
 	},
 	{
@@ -45,6 +60,9 @@
 		"author": "Anita Desai",
 		"start": "",
 		"end": "",
+		"status": "read",
+		"current_page": "",
+		"total_pages": "",
 		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1387708466i/275600.jpg"
 	},
 	{
@@ -53,6 +71,9 @@
 		"author": "Bankim Chandra Chatterjee",
 		"start": "",
 		"end": "",
+		"status": "read",
+		"current_page": "",
+		"total_pages": "",
 		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1334893991i/13609459.jpg"
 	},
 	{
@@ -61,6 +82,9 @@
 		"author": "Cal Newport",
 		"start": "",
 		"end": "",
+		"status": "read",
+		"current_page": "",
+		"total_pages": "",
 		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1447957962i/25744928.jpg"
 	},
 	{
@@ -69,6 +93,9 @@
 		"author": "Cal Newport",
 		"start": "",
 		"end": "",
+		"status": "read",
+		"current_page": "",
+		"total_pages": "",
 		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1549433350i/40672036.jpg"
 	},
 	{
@@ -77,6 +104,9 @@
 		"author": "Catherine Price",
 		"start": "",
 		"end": "",
+		"status": "read",
+		"current_page": "",
+		"total_pages": "",
 		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1514998972i/35209767.jpg"
 	},
 	{
@@ -85,6 +115,9 @@
 		"author": "David Walliams",
 		"start": "",
 		"end": "",
+		"status": "read",
+		"current_page": "",
+		"total_pages": "",
 		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1380874441i/18269507.jpg"
 	},
 	{
@@ -93,6 +126,9 @@
 		"author": "George Orwell",
 		"start": "",
 		"end": "",
+		"status": "read",
+		"current_page": "",
+		"total_pages": "",
 		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1616476203i/57502604.jpg"
 	},
 	{
@@ -101,6 +137,9 @@
 		"author": "Sharon L. Lechter, Greg S. Reid",
 		"start": "",
 		"end": "",
+		"status": "read",
+		"current_page": "",
+		"total_pages": "",
 		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1356177017i/6983077.jpg"
 	},
 	{
@@ -109,6 +148,9 @@
 		"author": "James Clear",
 		"start": "",
 		"end": "",
+		"status": "read",
+		"current_page": "",
+		"total_pages": "",
 		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1655988385i/40121378.jpg"
 	},
 	{
@@ -117,6 +159,9 @@
 		"author": "Jeff Kinney",
 		"start": "",
 		"end": "",
+		"status": "read",
+		"current_page": "",
+		"total_pages": "",
 		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1388183826i/389627.jpg"
 	},
 	{
@@ -125,6 +170,9 @@
 		"author": "John Green",
 		"start": "",
 		"end": "",
+		"status": "read",
+		"current_page": "",
+		"total_pages": "",
 		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1503002776i/35504431.jpg"
 	},
 	{
@@ -133,6 +181,9 @@
 		"author": "Kevin Mitnick",
 		"start": "",
 		"end": "",
+		"status": "read",
+		"current_page": "",
+		"total_pages": "",
 		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1465761955i/30363785.jpg"
 	},
 	{
@@ -141,6 +192,9 @@
 		"author": "Lois Lowry",
 		"start": "",
 		"end": "",
+		"status": "read",
+		"current_page": "",
+		"total_pages": "",
 		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1630542426i/47281.jpg"
 	},
 	{
@@ -149,6 +203,9 @@
 		"author": "Paramahansa Yogananda",
 		"start": "",
 		"end": "",
+		"status": "read",
+		"current_page": "",
+		"total_pages": "",
 		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1347427162i/639864.jpg"
 	},
 	{
@@ -157,6 +214,9 @@
 		"author": "R. K. Narayan",
 		"start": "",
 		"end": "",
+		"status": "read",
+		"current_page": "",
+		"total_pages": "",
 		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1434171440i/1376314.jpg"
 	},
 	{
@@ -165,6 +225,9 @@
 		"author": "R. K. Narayan",
 		"start": "",
 		"end": "",
+		"status": "read",
+		"current_page": "",
+		"total_pages": "",
 		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1415460598i/6487744.jpg"
 	},
 	{
@@ -173,6 +236,9 @@
 		"author": "Ravinder Singh",
 		"start": "",
 		"end": "",
+		"status": "read",
+		"current_page": "",
+		"total_pages": "",
 		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1321016822i/13041934.jpg"
 	},
 	{
@@ -181,6 +247,9 @@
 		"author": "Ravinder Singh",
 		"start": "",
 		"end": "",
+		"status": "read",
+		"current_page": "",
+		"total_pages": "",
 		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1439162367i/19427193.jpg"
 	},
 	{
@@ -189,6 +258,9 @@
 		"author": "Robin Sharma",
 		"start": "",
 		"end": "",
+		"status": "read",
+		"current_page": "",
+		"total_pages": "",
 		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1388189325i/43877.jpg"
 	},
 	{
@@ -197,6 +269,9 @@
 		"author": "Sadhguru",
 		"start": "",
 		"end": "",
+		"status": "read",
+		"current_page": "",
+		"total_pages": "",
 		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1578160242i/50273386.jpg"
 	},
 	{
@@ -205,6 +280,9 @@
 		"author": "Sadhguru",
 		"start": "",
 		"end": "",
+		"status": "read",
+		"current_page": "",
+		"total_pages": "",
 		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1484851488i/29513878.jpg"
 	},
 	{
@@ -213,6 +291,9 @@
 		"author": "Sivananda Saraswati",
 		"start": "",
 		"end": "",
+		"status": "read",
+		"current_page": "",
+		"total_pages": "",
 		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1390246374i/20591354.jpg"
 	},
 	{
@@ -221,6 +302,9 @@
 		"author": "Sivananda Saraswati",
 		"start": "",
 		"end": "",
+		"status": "read",
+		"current_page": "",
+		"total_pages": "",
 		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1183531928i/1431121.jpg"
 	},
 	{
@@ -229,6 +313,9 @@
 		"author": "Sivananda Saraswati",
 		"start": "",
 		"end": "",
+		"status": "read",
+		"current_page": "",
+		"total_pages": "",
 		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1628876692i/58762140.jpg"
 	},
 	{
@@ -237,6 +324,9 @@
 		"author": "Vanamali",
 		"start": "",
 		"end": "",
+		"status": "read",
+		"current_page": "",
+		"total_pages": "",
 		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1397777416i/20736545.jpg"
 	}
 ]

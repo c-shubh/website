@@ -1,128 +1,111 @@
 ---
 import FormattedDate from '@/components/FormattedDate.astro';
 import Page from '@/layouts/Page.astro';
-import { orderBy, type OmitStrict } from '@/utils';
+import { orderBy } from '@/utils';
 import { Image } from 'astro:assets';
 import books from './_data.json';
-
-interface RawBook {
-	title: string;
-	subtitle?: string;
-	author: string;
-	start?: string;
-	end?: string;
-	image?: string;
-}
-
-interface BaseBook {
-	title: string;
-	subtitle?: string;
-	author: string;
-	image?: string;
-}
-
-interface InProgressBook extends BaseBook {
-	status: 'reading';
-	start: string;
-}
-
-interface ReadWithDateBook extends BaseBook {
-	status: 'readWithDate';
-	start: string;
-	end: string;
-}
-
-interface ReadWithoutDateBook extends BaseBook {
-	status: 'readWithoutDate';
-}
-
-type TaggedBook = InProgressBook | ReadWithDateBook | ReadWithoutDateBook;
-
-books satisfies OmitStrict<TaggedBook, 'status'>[];
-
-const inProgressBooks: InProgressBook[] = [];
-const readBooksWithDate: ReadWithDateBook[] = [];
-const readBooksWithoutDate: ReadWithoutDateBook[] = [];
-
-for (const book of books as RawBook[]) {
-	if (book.start && book.end) {
-		readBooksWithDate.push({ ...book, status: 'readWithDate', start: book.start, end: book.end });
-	} else if (book.start) {
-		inProgressBooks.push({ ...book, status: 'reading', start: book.start });
-	} else {
-		readBooksWithoutDate.push({ ...book, status: 'readWithoutDate' });
-	}
-}
-
-const finishedCount = readBooksWithDate.length + readBooksWithoutDate.length;
-
-const sortedBooks: TaggedBook[] = [
-	...orderBy(inProgressBooks, ['start', 'desc'], ['author'], ['title']),
-	...orderBy(readBooksWithDate, ['end', 'desc'], ['author'], ['title']),
-	...orderBy(readBooksWithoutDate, ['author'], ['title']),
-];
 ---
 
 <Page title={'Bookshelf'}>
-	<p>
-		<strong>{finishedCount}</strong>
-		{finishedCount === 1 ? ' book' : ' books'} read
-	</p>
+	{
+		[
+			{
+				status: 'Reading',
+				books: orderBy(
+					books.filter((book) => book.status == 'reading'),
+					['start', 'desc'],
+					['author'],
+					['title']
+				),
+			},
+			{
+				status: 'Read',
+				books: [
+					...orderBy(
+						books.filter((book) => book.status == 'read' && book.end),
+						['end', 'desc'],
+						['author'],
+						['title']
+					),
+					...orderBy(
+						books.filter((book) => book.status == 'read' && !book.end),
+						['author'],
+						['title']
+					),
+				],
+			},
+			{
+				status: 'Abandoned',
+				books: orderBy(
+					books.filter((book) => book.status == 'abandoned'),
+					['end', 'desc'],
+					['author'],
+					['title']
+				),
+			},
+		]
+			.filter((el) => el.books.length > 0)
+			.map((el) => (
+				<>
+					<h2>
+						{el.status} ({el.books.length})
+					</h2>
+					<ul class="grid min-[30rem]:grid-cols-2 sm:grid-cols-3 gap-4 md:gap-6 not-prose">
+						{el.books.map((book) => (
+							<li class="card card-sm shadow-sm">
+								{book.image ? (
+									<figure>
+										<Image
+											src={book.image}
+											alt={`Cover of ${book.title} - ${book.author}`}
+											width={229}
+											height={343}
+											loading={'lazy'}
+											class="w-full"
+										/>
+									</figure>
+								) : null}
+								<div class="card-body">
+									<div class="space-x-2">
+										{book.current_page != '' && book.total_pages != '' ? (
+											<span>{`${book.current_page} of ${book.total_pages} pages`}</span>
+										) : (
+											<span class="hidden" data-progress-title={book.title} />
+										)}
+									</div>
+									<span class="card-title">{book.title}</span>
+									{book.subtitle ? <p class="grow-0">{book.subtitle}</p> : null}
+									<p class="text-sm font-medium">{book.author}</p>
 
-	<ul class="grid min-[30rem]:grid-cols-2 sm:grid-cols-3 gap-4 md:gap-6 not-prose">
-		{
-			sortedBooks.map((book) => (
-				<li class="card card-sm shadow-sm">
-					{book.image ? (
-						<figure>
-							<Image
-								src={book.image}
-								alt={`Cover of ${book.title} - ${book.author}`}
-								width={229}
-								height={343}
-								loading={'lazy'}
-								class="w-full"
-							/>
-						</figure>
-					) : null}
-					<div class="card-body">
-						{book.status === 'reading' ? (
-							<div class="space-x-2">
-								<span class="badge badge-sm badge-primary font-medium">Reading</span>
-								<span class="hidden" data-progress-title={book.title} />
-							</div>
-						) : null}
-						<span class="card-title">{book.title}</span>
-						{book.subtitle ? <p class="grow-0">{book.subtitle}</p> : null}
-						<p class="text-sm font-medium">{book.author}</p>
-
-						<div class="mt-4 pt-3 border-t border-base-200 flex flex-col gap-1">
-							<p class="text-xs text-base-content/70">
-								{'start' in book && book.start ? (
-									<>
-										<span class="font-semibold">Started:</span>{' '}
-										<FormattedDate date={new Date(book.start)} />
-									</>
-								) : (
-									<br />
-								)}
-							</p>
-							<p class="text-xs text-base-content/70">
-								{'end' in book && book.end ? (
-									<>
-										<span class="font-semibold">Finished:</span>{' '}
-										<FormattedDate date={new Date(book.end)} />
-									</>
-								) : (
-									<br />
-								)}
-							</p>
-						</div>
-					</div>
-				</li>
+									<div class="mt-4 pt-3 border-t border-base-200 flex flex-col gap-1">
+										<p class="text-xs text-base-content/70">
+											{'start' in book && book.start ? (
+												<>
+													<span class="font-semibold">Start:</span>{' '}
+													<FormattedDate date={new Date(book.start)} />
+												</>
+											) : (
+												<br />
+											)}
+										</p>
+										<p class="text-xs text-base-content/70">
+											{'end' in book && book.end ? (
+												<>
+													<span class="font-semibold">End:</span>{' '}
+													<FormattedDate date={new Date(book.end)} />
+												</>
+											) : (
+												<br />
+											)}
+										</p>
+									</div>
+								</div>
+							</li>
+						))}
+					</ul>
+				</>
 			))
-		}
-	</ul>
+	}
 
 	<script>
 		async function fetchProgress() {
