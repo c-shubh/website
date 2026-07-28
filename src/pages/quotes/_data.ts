@@ -6,10 +6,17 @@ export interface Quote {
 
 export const quotes: Quote[] = [
 	{
+		text: 'Writing computer software is one of the purest creative activities in the history of the human race. Programmers aren’t bound by practical limitations such as the laws of physics; we can create exciting virtual worlds with behaviors that could never exist in the real world. Programming doesn’t require great physical skill or coordination, like ballet or basketball. All programming requires is a creative mind and the ability to organize your thoughts. If you can visualize a system, you can probably implement it in a computer program.',
+		dateAdded: '2026-07-28',
+		attribution:
+			'John Ousterhout, [A Philosophy of Software Design, 2nd Edition](https://web.stanford.edu/~ouster/cgi-bin/aposd.php)',
+	},
+	{
 		text: `So I now value ***local first***, which implies *full* data ownership, with content in a highly portable format, without rigid dependence on 3rd parties, especially not networks or remote services.
 
 Of course, I now enjoy the specter of losing my backups, but I prefer being (ir)responsible to myself over being beholden to the mysterious demigods that reside in The Cloud Computer.`,
-		attribution: '[Aditya Athalye](https://www.evalapply.org/posts/why-and-how-i-use-org-mode/index.html)',
+		attribution:
+			'[Aditya Athalye](https://www.evalapply.org/posts/why-and-how-i-use-org-mode/index.html)',
 		dateAdded: '2026-07-05',
 	},
 	{
