@@ -6,6 +6,20 @@ export interface Quote {
 
 export const quotes: Quote[] = [
 	{
+		text: 'A facility for quotation covers the absence of original thought.',
+		dateAdded: '2026-08-04',
+		attribution: 'Dorothy Sayers ([via HN](https://news.ycombinator.com/item?id=48501355))'
+	},
+	{
+		text: `I have spent almost my entire adult life (since 1986) shipping products. One of the very first things that I learned, was that "shipping" > "designing".
+
+There's so much work in delivering products that will carry your brand, and then must be supported.
+
+I liken it to having children. Conceiving them is fun. Delivering them is painful. Raising them, is a lifetime of work.`,
+		dateAdded: '2026-08-04',
+		attribution: '[Chris Marshall](https://news.ycombinator.com/item?id=48467629)'
+	},
+	{
 		text: 'Writing computer software is one of the purest creative activities in the history of the human race. Programmers aren’t bound by practical limitations such as the laws of physics; we can create exciting virtual worlds with behaviors that could never exist in the real world. Programming doesn’t require great physical skill or coordination, like ballet or basketball. All programming requires is a creative mind and the ability to organize your thoughts. If you can visualize a system, you can probably implement it in a computer program.',
 		dateAdded: '2026-07-28',
 		attribution:
