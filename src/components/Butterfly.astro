@@ -1,0 +1,85 @@
+---
+import butterfly from '@/assets/images/butterfly-flying.gif';
+---
+
+<!-- inspired from https://xpace.nekoweb.org/webringpage.html -->
+<div
+	id="butterfly-trail"
+	hidden
+	class="fixed top-0 left-0 pointer-events-none z-[100] opacity-0 transition-opacity duration-300"
+>
+	<img src={butterfly.src} width={50} height={50} alt="" draggable="false" />
+</div>
+
+<script>
+	const TRAIL_SPEED = 60;
+
+	const OFFSET_X = 18;
+	const OFFSET_Y = -16;
+
+	const trail = document.getElementById('butterfly-trail')!;
+
+	if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+		trail.remove();
+	} else {
+		const image = trail.querySelector('img')!;
+
+		let imageLoaded = false;
+		let initialized = false;
+
+		let mouseX = 0;
+		let mouseY = 0;
+
+		let trailX = 0;
+		let trailY = 0;
+
+		const showTrail = () => {
+			if (imageLoaded && initialized) {
+				trail.hidden = false;
+				void trail.offsetWidth; // force reflow
+				trail.classList.remove('opacity-0');
+			}
+		};
+
+		// https://stackoverflow.com/questions/16678993/why-is-image-onload-not-working/73062650#73062650
+		if (image.complete && image.naturalHeight > 0) {
+			imageLoaded = true;
+			showTrail();
+		} else {
+			image.addEventListener(
+				'load',
+				() => {
+					imageLoaded = true;
+					showTrail();
+				},
+				{ once: true }
+			);
+		}
+
+		const animate = () => {
+			trailX += (mouseX - trailX) / TRAIL_SPEED;
+			trailY += (mouseY - trailY) / TRAIL_SPEED;
+
+			trail.style.left = `${trailX + OFFSET_X}px`;
+			trail.style.top = `${trailY + OFFSET_Y}px`;
+
+			trail.style.transform = mouseX >= trailX ? 'scaleX(1)' : 'scaleX(-1)';
+
+			requestAnimationFrame(animate);
+		};
+
+		window.addEventListener('mousemove', (event: MouseEvent) => {
+			mouseX = event.clientX;
+			mouseY = event.clientY;
+
+			if (!initialized) {
+				trailX = mouseX;
+				trailY = mouseY;
+
+				initialized = true;
+				showTrail();
+				animate();
+			}
+		});
+	}
+</script>
