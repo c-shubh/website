@@ -1,0 +1,64 @@
+---
+import FormattedDate from '@/components/FormattedDate.astro';
+import Page from '@/layouts/Page.astro';
+import { slashPagesMap } from '@/slashPages';
+import { orderBy } from '@/utils';
+import { Image } from 'astro:assets';
+import movies from './_data.json';
+---
+
+<Page title={slashPagesMap['Movies'].name}>
+	<p>
+		<strong>{movies.length}</strong> movies watched
+	</p>
+	<ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-6 not-prose">
+		{
+			[
+				// movies with done date
+				...orderBy(
+					movies.filter((m) => m['Done Watching'] !== 'idk'),
+					['Done Watching', 'desc']
+				),
+				// movies without done date
+				...orderBy(
+					movies.filter((m) => m['Done Watching'] === 'idk'),
+					['Year Released', 'desc'],
+					['Title', 'asc']
+				),
+			].map((movie) => (
+				<li class="card card-sm shadow-sm">
+					{movie.Poster ? (
+						<figure>
+							{/* images hotlinked from https://www.omdbapi.com/ or https://www.imdb.com/ */}
+							<Image
+								src={movie.Poster}
+								alt={`Poster of ${movie.Title}`}
+								width={166}
+								height={270}
+								loading={'lazy'}
+								class="w-full"
+							/>
+						</figure>
+					) : null}
+
+					<div class="card-body">
+						<span class="card-title">{movie.Title}</span>
+						<p class="grow-0">⏳️ {movie.Duration}</p>
+						<p class="grow-0">💬 {movie.Language}</p>
+						<p>🗓️ {movie['Year Released']}</p>
+
+						<div class="mt-4 pt-3 border-t border-base-200 flex flex-col gap-1">
+							<p class="text-xs text-base-content/70">
+								{movie['Done Watching'] !== 'idk' ? (
+									<FormattedDate date={new Date(movie['Done Watching'])} />
+								) : (
+									'N/A'
+								)}
+							</p>
+						</div>
+					</div>
+				</li>
+			))
+		}
+	</ul>
+</Page>

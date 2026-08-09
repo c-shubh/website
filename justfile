@@ -54,3 +54,14 @@ bookshelf FILE_PATH:
     | to json
     | ^jq --tab .
     | save -f src/pages/bookshelf/_data.json
+
+movies FILE_PATH:
+    #!/usr/bin/env nu
+    open '{{ FILE_PATH }}'
+    | where Draft == ""
+    | reject Draft
+    | select Title "Done Watching" "Year Released" Language Duration Poster
+    | sort-by Title
+    | to json
+    | ^jq --tab .
+    | save -f src/pages/movies/_data.json

@@ -1,10 +1,10 @@
 ---
 import FormattedDate from '@/components/FormattedDate.astro';
 import Page from '@/layouts/Page.astro';
+import { slashPagesMap } from '@/slashPages';
 import { orderBy } from '@/utils';
 import { Image } from 'astro:assets';
 import books from './_data.json';
-import { slashPagesMap } from '@/slashPages';
 ---
 
 <Page title={slashPagesMap['Bookshelf'].name}>
@@ -56,11 +56,12 @@ import { slashPagesMap } from '@/slashPages';
 							<li class="card card-sm shadow-sm">
 								{book.image ? (
 									<figure>
+										{/* images hotlinked from https://www.goodreads.com/ */}
 										<Image
 											src={book.image}
 											alt={`Cover of ${book.title} - ${book.author}`}
-											width={229}
-											height={343}
+											width={166}
+											height={270}
 											loading={'lazy'}
 											class="w-full"
 										/>
