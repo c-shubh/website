@@ -1,12 +1,13 @@
 ---
 import Link from '@/components/Link.astro';
 import Page from '@/layouts/Page.astro';
+import { slashPagesMap } from '@/slashPages';
 import { tools } from './_data';
 const description =
 	'Implementation of simple tools that I find myself looking up every time I need them.';
 ---
 
-<Page title="Tools" description={description}>
+<Page title={slashPagesMap['Tools'].name} description={description}>
 	<p>{description}</p>
 	<dl class="space-y-2">
 		{

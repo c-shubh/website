@@ -3,11 +3,12 @@ import FormattedDate from '@/components/FormattedDate.astro';
 import Link from '@/components/Link.astro';
 import Page from '@/layouts/Page.astro';
 import { getBlogPosts } from '@/serverUtils';
+import { slashPagesMap } from '@/slashPages';
 
 const posts = await getBlogPosts();
 ---
 
-<Page title="Blog">
+<Page title={slashPagesMap['Blog'].name}>
 	<ul>
 		{
 			posts.map((post) => (

@@ -2,6 +2,7 @@
 import Link from '@/components/Link.astro';
 import { EMAIL } from '@/consts';
 import Page from '@/layouts/Page.astro';
+import { slashPagesMap } from '@/slashPages';
 
 const services = [
 	{
@@ -19,7 +20,7 @@ const services = [
 ];
 ---
 
-<Page title="Contact">
+<Page title={slashPagesMap['Contact'].name}>
 	<p>
 		The best way to reach out to me is by email. I monitor it almost daily so there&apos;s little
 		chance that I miss your email.

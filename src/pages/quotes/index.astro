@@ -2,13 +2,14 @@
 import FormattedDate from '@/components/FormattedDate.astro';
 import MarkdownView from '@/components/MarkdownView.astro';
 import Page from '@/layouts/Page.astro';
+import { slashPagesMap } from '@/slashPages';
 import { quotes as q } from './_data';
 
 const quotes = q.sort((a, b) => new Date(b.dateAdded).valueOf() - new Date(a.dateAdded).valueOf());
 const description = 'A collection of quotes and poems I like or relate to.';
 ---
 
-<Page title="Quotes" description={description}>
+<Page title={slashPagesMap['Quotes'].name} description={description}>
 	<p>{description}</p>
 	<p>
 		<strong>{quotes.length}</strong> quotes

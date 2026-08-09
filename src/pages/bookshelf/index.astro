@@ -4,9 +4,10 @@ import Page from '@/layouts/Page.astro';
 import { orderBy } from '@/utils';
 import { Image } from 'astro:assets';
 import books from './_data.json';
+import { slashPagesMap } from '@/slashPages';
 ---
 
-<Page title={'Bookshelf'}>
+<Page title={slashPagesMap['Bookshelf'].name}>
 	{
 		[
 			{
