@@ -4,6 +4,7 @@ export const slashPages = [
 	{ href: '/quotes/', name: 'Quotes', showInHeader: true },
 	{ href: '/listens/', name: 'Listens' },
 	{ href: '/bookshelf/', name: 'Bookshelf' },
+	{ href: '/blank/', name: 'Blank' },
 	{ href: '/contact/', name: 'Contact', showInHeader: true },
 ] as const;
 

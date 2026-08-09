@@ -1,0 +1,10 @@
+---
+import Page from '@/layouts/Page.astro';
+import { slashPagesMap } from '@/slashPages';
+
+const description = 'This page intentionally left blank.';
+---
+
+<Page title={slashPagesMap['Blank'].name} description={description}>
+	<p>{description}</p>
+</Page>
