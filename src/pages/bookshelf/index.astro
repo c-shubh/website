@@ -98,27 +98,22 @@ import books from './_data.json';
 	<script>
 		async function fetchProgress() {
 			const sheetUrl =
-				'https://docs.google.com/spreadsheets/d/1nVMcwhfriKQnWcikfY35FdEkG-fjhLay5K9rg7S4LzY/export?format=csv';
+				'https://docs.google.com/spreadsheets/d/1nVMcwhfriKQnWcikfY35FdEkG-fjhLay5K9rg7S4LzY/export?format=tsv';
 			try {
 				const response = await fetch(sheetUrl);
-				const csvText = await response.text();
+				const tsvText = await response.text();
 
 				const progressMap = new Map();
-				csvText
+				tsvText
 					.split('\n')
 					.slice(1)
 					.forEach((row) => {
-						const parts = row
-							.trim()
-							.split(',')
-							.map((s) => s.trim());
-						if (parts.length >= 3) {
-							const total = parseInt(parts.pop() || '0', 10);
-							const current = parseInt(parts.pop() || '0', 10);
-							const title = parts.join(',').replace(/^"|"$/g, '').trim();
-							if (!isNaN(total) && !isNaN(current)) {
-								progressMap.set(title, { current, total });
-							}
+						row = row.trim();
+						if (!row) return;
+						const parts = row.split('\t').map((ele) => ele.trim());
+						let [title, current, total] = parts;
+						if (total !== '' && current !== '') {
+							progressMap.set(title, { current, total });
 						}
 					});
 
