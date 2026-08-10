@@ -433,7 +433,7 @@
 	},
 	{
 		"Title": "Hridayam",
-		"Done Watching": "idk",
+		"Done Watching": "2023-03-27",
 		"Year Released": 2022,
 		"Language": "Malyalam",
 		"Duration": "2h 51m",
@@ -520,6 +520,14 @@
 		"Poster": "https://m.media-amazon.com/images/M/MV5BY2VkZjk5ZjMtM2ExOS00ZDA1LTg1ZDEtYTliNGZiYTc4ZWZiXkEyXkFqcGc@._V1_SX300.jpg"
 	},
 	{
+		"Title": "Khoobsurat",
+		"Done Watching": "idk",
+		"Year Released": 2014,
+		"Language": "Hindi",
+		"Duration": "2h 10m",
+		"Poster": "https://m.media-amazon.com/images/M/MV5BMTU0MzI0MzAxM15BMl5BanBnXkFtZTgwNzk0MTA2MjE@._V1_SX300.jpg"
+	},
+	{
 		"Title": "Kushi",
 		"Done Watching": "2023-03-26",
 		"Year Released": 2001,
@@ -590,6 +598,14 @@
 		"Language": "Telugu",
 		"Duration": "2h 31m",
 		"Poster": "https://m.media-amazon.com/images/M/MV5BMThjYWZlYTgtYzIyMy00NDUyLWJiMDItN2I2OGE2NjFlMWM4XkEyXkFqcGc@._V1_SX300.jpg"
+	},
+	{
+		"Title": "Major",
+		"Done Watching": "2022-08-11",
+		"Year Released": 2022,
+		"Language": "Hindi",
+		"Duration": "2h 26m",
+		"Poster": "https://m.media-amazon.com/images/M/MV5BNWNiM2JjNzUtZTA1NC00ODMzLTk2NGItZjVmNDYwYmVmYTIwXkEyXkFqcGc@._V1_SX300.jpg"
 	},
 	{
 		"Title": "Mathu Vadalara",
@@ -817,7 +833,7 @@
 	},
 	{
 		"Title": "Rocketry: The Nambi Effect",
-		"Done Watching": "idk",
+		"Done Watching": "2022-08-12",
 		"Year Released": 2022,
 		"Language": "Hindi",
 		"Duration": "2h 37m",
@@ -830,6 +846,14 @@
 		"Language": "Telugu",
 		"Duration": "2h 9m",
 		"Poster": "https://m.media-amazon.com/images/M/MV5BNTY4MzU5YjQtYjNhNS00MjVlLWE1ZTAtN2VjYjJlNDMyNmI2XkEyXkFqcGc@._V1_SX300.jpg"
+	},
+	{
+		"Title": "Run",
+		"Done Watching": "2025-01-04",
+		"Year Released": 2020,
+		"Language": "English",
+		"Duration": "1h 29m",
+		"Poster": "https://m.media-amazon.com/images/M/MV5BOTViNDViNDgtNDc0Ny00NWZkLTljMzctYjgzNzI5MTYwZjJlXkEyXkFqcGc@._V1_SX300.jpg"
 	},
 	{
 		"Title": "Sapta Saagaradaache Ello – Side A",
@@ -878,6 +902,14 @@
 		"Language": "Telugu",
 		"Duration": "2h 43m",
 		"Poster": "https://m.media-amazon.com/images/M/MV5BYWE0NDNiNzEtNThmMi00NjZlLTk3NDAtYzIzOWNmNWQyYTI3XkEyXkFqcGc@._V1_SX300.jpg"
+	},
+	{
+		"Title": "Sky Force",
+		"Done Watching": "2025-03-30",
+		"Year Released": 2025,
+		"Language": "Hindi",
+		"Duration": "2h 5m",
+		"Poster": "https://m.media-amazon.com/images/M/MV5BZTViYzEwYjMtMDJlNy00ZTdiLWE3YWMtN2Q3MWFiYTFjZGZmXkEyXkFqcGc@._V1_SX300.jpg"
 	},
 	{
 		"Title": "Soul",
@@ -1110,6 +1142,14 @@
 		"Language": "English",
 		"Duration": "1h 56m",
 		"Poster": "https://m.media-amazon.com/images/M/MV5BODg3ZTM2YWQtZDE5Ny00NGNiLTkzYjgtYWVlYjNkOTg5NDI1XkEyXkFqcGc@._V1_SX300.jpg"
+	},
+	{
+		"Title": "Yeh Hai Zindagi (Yevade Subramanyam)",
+		"Done Watching": "idk",
+		"Year Released": 2015,
+		"Language": "Hindi",
+		"Duration": "2h 30m",
+		"Poster": "https://m.media-amazon.com/images/M/MV5BMjE1NzEzNDc2NF5BMl5BanBnXkFtZTgwMzA2NTQ0NjE@._V1_SX300.jpg"
 	},
 	{
 		"Title": "Yeh Jawaani Hai Deewani",
