@@ -4,93 +4,84 @@ date: '2026-08-10'
 title: 'h41g8yu5vj'
 ---
 
-Last month I added [listens](/listens/) and [bookshelf](/bookshelf/) page to
+Last month I added [listens](/listens/) and [bookshelf](/bookshelf/) pages to
 this site. I wanted to add a [movies](/movies/) page too, but procrastinated at
-that time due to inconsistent and messy data.
+the time due to inconsistent and messy data.
 
-On Friday, August 7, I watched Spider-Man: Brand New Day. The next day while
-scrolling through feed entries on [Miniflux](https://miniflux.app/), I found
-[Rishabh's entry](https://blog.rishabhps.com/movies/1786206999875/) for the
-same movie.
+On Friday, August 7, 2026, I watched _Spider-Man: Brand New Day_. The next day
+while scrolling through feed entries on [Miniflux](https://miniflux.app/), I
+found [Rishabh's entry](https://blog.rishabhps.com/movies/1786206999875/) for
+the same movie.
 
 Seeing that entry, the cute [Oneko cat](https://github.com/adryd325/oneko.js/)
-moving around the site, and a bored me on a lazy Saturday, I got the energy to
-finally take on the time taking process to gather all the data I needed for the
-new [movies](/movies/) page.
+moving around his site, and a bored me on a lazy Saturday, I finally got the
+energy to take on the time taking process of gathering all the data I needed
+for my own movies page.
 
-The very first thing I did is merge [the
-bird](https://idreesinc.itch.io/pocket-bird) I had added to my site, but had
-held off deploying it thinking I'd add a enable/disable toggle for it. (TKTK
-merge the bird won't be understood by non devs). But seeing the cat on
-Rishabh's site made me badly want a pet on my own site! I made sure to respect 
+The very first thing I did was to add [the
+bird](https://idreesinc.itch.io/pocket-bird) to my site. I had previously
+implemented it, but held off deploying it, thinking I'd add an enable/disable
+toggle first. I made sure to respect
 [`prefers-reduced-motion`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion#user_preferences)
-which hides the bird if you prefer it that way.
+to hide the bird for users who prefer it that way.
 
-The next thing I did was roll my sleeves up and start working on the
-[movies](/movies/) page. The page layout is a copy of the
-[bookshelf](/bookshelf/) page. Cleaning up the data took the whole evening.
+I then rolled my sleeves up and started working on the movies page. The page
+layout is a copy of the bookshelf page, but cleaning up the data took the
+entire evening.
 
-Since around 2022 I've been maintaining a movies note in Google Keep. I
-followed a simple workflow:
+Since around 2022, I'd been maintaining a movies note in Google Keep using a
+simple workflow:
 
-1. Look up the movie on Google
-2. Copy movie info as it's shown and paste into
-the note.  
-   E.g. searching for spider man brand new day gives  
+1. Look up the movie on Google.
+2. Copy the movie info exactly as it's shown and paste it into the note.  
+   E.g., searching for _Spider-Man: Brand New Day_ gives:
    ```
-   Spider-Man: Brand New Day  
+   Spider-Man: Brand New Day
    2026 ‧ Action/Adventure ‧ 2h 25m
    ```
 
-It has title, year released, genre, duration and sometimes content rating too,
-which I ignore.
-
-Over time this note became a shared list where my friends would add their
-recommendations for me. 90%+ Telugu movies and anime I watched were
-recommendations from friends. These days I get most recommendations from
-Instagram, Twitter, YouTube Shorts, etc.
+Over time, this note became a shared list where my friends would add their
+recommendations for me. 90%+ of the Telugu movies and anime I watched were
+recommendations from friends. These days, I get most of my recommendations from
+Instagram, Twitter, and YouTube Shorts.
 
 Towards the end of college, I moved this note to a spreadsheet. I tracked the
-Title, Year Released, Started Watching, Done Watching, Language (the language I
-watched the movie in) and Duration fields.
+Title, Year Released, Started Watching, Done Watching, Language, and Duration
+fields.
 
-As of today the sheet has 300+ rows, each a movie or a series I've watched or
-yet to watch. I now had to decide which rows from the sheet should end up as
-movies on the [movies](/movies/) page. Ideally the logic would be that if a
-movie has Done Watching date, then that movie should be visible on the
-[movies](/movies/) page. But majority of movies--ones migrated from keep notes
-to sheets--didn't have the done date set because I hadn't tracked that in the
-Google Keep note.
+As of today, the sheet has 300+ rows of movies and series I've either watched
+or plan to watch. I had to decide which rows should actually end up on the
+site. Ideally, if a movie had a "Done Watching" date, it would be visible. But,
+most of the movies migrated from Keep to Sheets didn't have a completion date
+since I hadn't tracked that originally.
 
-So I went through each row, marked it to be included on [movies](/movies/) page
-or not based on if I remembered watching it or if it already had a done date.
-Lucky for me, whenever I finished watching a movie recommended by someone, I
-texted them that I had finished watching it. Other things that also helped is
-my philosophy to never clear WhatsApp chats and  always using "canonical" movie
-names with correct spellings (ocdmaxxing). This helped me find done dates back
-till 2020. But it was a slow and tedious process. And thank god WhatsApp allows
-double quotes to search for exact text. I needed it for a few movies.
+So, I went through each row manually, marking whether it should be included
+based on if I remembered watching it or if it already had a watch date. Lucky
+for me, whenever I finished a movie recommended by someone, I texted them that
+I had watched it. What also helped was my philosophy of never clearing WhatsApp
+chats and always using "canonical" movie names with correct spellings
+(ocdmaxxing). This helped me find done dates all the way back to 2020. It was a
+slow and tedious process.
 
-Even after doing the above, and despite having the movies mentioned in chats,
-for some movies I couldn't find the exact done date because I had texted that I
-started watching, and some chats later I'd find conversation about my thoughts
-on the movie, etc., but those could've been sent on the day I watched movie, or
-later when they ask me about it, or later when I remember it randomly. So those
-and other movies not existing in chats remain without a done date.
+Even with the chat history, I couldn't find the exact completion date for
+everything. Sometimes I had texted that I _started_ watching, and later chats
+about my thoughts on the movie could have been sent on the day I watched it, or
+days later when asked about it. Those movies, and the movies never mentioned in
+chats, remain without a finish date.
 
-After filling in all the done dates I could find, I now had to find posters for
-the movies. First I tried using images from [IMDb](https://www.imdb.com/) but
-it was hard and slow doing it manually. Then I went to [OMDb
-API](https://www.omdbapi.com/). The landing page of OMDb has a form hooked up
-to a demo API key which had some relaxed rate limits I guess. I didn't
-encounter any rate limit exceeded or such errors at all when manually searching
-movie info there. The API response provides poster URL which I hotlinked on the
-[movies](/movies/) page.
+After filling in all the dates I could find, I had to find the movie posters. I
+first tried manually using images from [IMDb](https://www.imdb.com/), but it
+was hard and slow. Then I turned to the [OMDb API](https://www.omdbapi.com/).
+Their landing page has a form hooked up to a demo API key with relaxed rate
+limits. I didn't encounter a single error when manually searching movie info
+rapidly. The API response provided a poster URL, which I just hotlinked on the
+site.
 
-After doing this for a couple of movies, I copied the request from Firefox as a
-cURL command, wrote a bash script to send a request and output the poster link.
-This worked for most movies and the posters were good enough for my usage. For
-the movies it couldn't find, or where posters were not to my liking, I manually
-went to IMDb, got the poster link through DevTools.
+After doing this manually for a couple of movies, I copied the request from
+Firefox as a cURL command and wrote a bash script to send the request and
+output the poster link. This worked for most of the list, and the posters were
+good enough for my usage. For the ones it couldn't find, or where posters
+weren't to my liking, I manually went to IMDb and got the poster link through
+DevTools.
 
-And that's how the [movies](/movies/) page came to be.
+And that's how the movies page came to be.
