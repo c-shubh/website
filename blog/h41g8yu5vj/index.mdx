@@ -1,0 +1,98 @@
+---
+id: 'h41g8yu5vj'
+date: '2026-08-10'
+title: 'h41g8yu5vj'
+---
+
+
+added listens page in june
+added bookshelf page in june
+had planned to add movies page then
+
+but data was messy
+and i procrastinated on cleaning it
+
+watched spider man new movie on friday
+on saturday i saw https://blog.rishabhps.com/movies/1786206999875/ in feed
+it had movie + neko cat
+it urged me to finally add a movies page
+and i did
+
+had implemented bird, but hadn't pushed, 
+already respect prefers reduced motion but procrastinated putting an on/off button
+
+seeing rishab's site didn't have it too, i went through and added it
+
+
+cleaning up data for movies took an evening
+layout and page wise i just copied bookshelf page and changed some stuff
+
+but the main time took in data cleaning
+
+some history:
+been maintaining a movies note in gkeep
+where i list watched and to watch movies
+
+i follow a simple format:
+google search the movie name
+
+copy text as it gives
+
+
+Spider-Man: Brand New Day
+2026 ‧ Action/Adventure ‧ 2h 25m
+
+it has title, year released, genre, duration
+sometimes it also gives content rating, but i ignore that
+
+over time this became a shared list where my friends would add their recommendations
+
+\> 90% telugu movies and anime are recommendations from friends
+
+these days i get most recs from from instagram, twitter, youtube shorts etc
+
+at end of college i moved it to a spreadsheet
+where i tracked 
+Title, Year Released, Started Watching, Done Watching, Language, Duration
+
+language = the lang i watched the movie in
+
+for it to be made into the movies page you see
+i had to first decide what rows to actually show on the movies page
+movies migrated from gkeep didn't have done dates
+some rows had start date, some had done date, etc
+
+so i went through each row, marked that to be included on movies page or not based on if i remembered watching it or if it already had a done date
+
+lucky for me, whenever i finished watching a movie recommended by someone, i texted them that i had finished watching it
+
+this + my philosophy to never clear whatsapp chats + always using "canonical" movie names with correct spellings (ocdmaxxing) helped me find done dates back to 2020
+
+but it was a slow and tedious process
+
+thank god whatsapp allows double quotes to search for exact text. i needed it for a few movies
+
+even after doing the above, and despite having the movie mentioned in chats, i couldn't find the exact done date coz i had texted that i started watching, and some chats later i'd find convo about my thoughts on the movie, but those could've been send on the day i watched movie, or later when they ask me about it during a convo or when i remember it randomly
+
+so those and other movies not existing in chats remain without a done date.
+
+for them i had to find posters, fill in duration which was missing for about half of the movies which were newly added in spreadsheet where i'd just write movie name, year, language and keep other details blank coz effort
+
+first i tried using images from imdb
+but it was hard and slow manually doing it
+
+then i went to omdb api
+the landing page has a form hooked up to a demo key
+which probably has some relaxed rate limits, i didn't encounter any rate limit exceeded or such errors at all when manually searching movie info there
+
+after doing this for a couple of movies
+i copied request from firefox as curl, 
+wrote a script which would echo movie name, 
+run curl and jq to get movie poster
+
+this worked for most movies
+the posters were good enough for the most part
+
+for the movies it couldn't find, or where posters were not to my liking, i manually went to imdb got poster link through devtools
+
+and that's how i got the movies page
