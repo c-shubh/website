@@ -42,6 +42,7 @@ listens FILE_PATH:
     | where draft == ""
     | reject draft
     | update title {|row| $row.title | into string }
+    | sort-by title artist
     | to json
     | ^jq --tab .
     | save -f src/pages/listens/_data.json
