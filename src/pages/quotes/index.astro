@@ -18,6 +18,7 @@ const description = 'A collection of quotes and poems I like or relate to.';
 		{
 			quotes.map((result, index) => (
 				<article>
+					<hr />
 					<FormattedDate date={new Date(result.dateAdded)} />
 					<figure>
 						<blockquote>
@@ -28,7 +29,6 @@ const description = 'A collection of quotes and poems I like or relate to.';
 							<MarkdownView source={`— ${result.attribution}`} />
 						</figcaption>
 					</figure>
-					{index < quotes.length - 1 && <hr />}
 				</article>
 			))
 		}

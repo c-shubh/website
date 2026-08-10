@@ -1237,5 +1237,26 @@
 		"url": "https://music.youtube.com/watch?v=ny4o2yLCdio",
 		"image": "https://img.youtube.com/vi_webp/ny4o2yLCdio/mqdefault.webp",
 		"explicit_image": ""
+	},
+	{
+		"title": "Forever",
+		"artist": "The Little Dippers",
+		"url": "https://music.youtube.com/watch?v=gVS_ZLBPEck",
+		"image": "https://img.youtube.com/vi_webp/gVS_ZLBPEck/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "To the Point",
+		"artist": "Dean Evenson & Tom Barabas",
+		"url": "https://music.youtube.com/watch?v=4bqqQsroL7cc",
+		"image": "https://img.youtube.com/vi_webp/4bqqQsroL7c/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "All I Want",
+		"artist": "Kodaline",
+		"url": "https://music.youtube.com/watch?v=3AUtk1wJJBc",
+		"image": "https://img.youtube.com/vi_webp/3AUtk1wJJBc/mqdefault.webp",
+		"explicit_image": ""
 	}
 ]

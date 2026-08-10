@@ -6,6 +6,47 @@ export interface Quote {
 
 export const quotes: Quote[] = [
 	{
+		text: `There's a formula I've bookmarked from someone to help you get better social capital. In order to increase your surface for social capital you need to expand your influence, therefore you need to increase your luck:
+
+L (luck) = D (doing) x T (telling)
+
+Basically, you need to be able to show you are able to do stuff (D) and with enough people seeing this by you sharing (T) through different channels, can open doors. I haven't been doing it as heavily but it has already given me incredible opportunities.`,
+		attribution: '[William Estoque](https://news.ycombinator.com/item?id=48520648)',
+		dateAdded: '2026-08-10',
+	},
+	{
+		text: 'The pursuit of excellence does not need justification.',
+		attribution: '[Mitchell Hashimoto](https://x.com/mitchellh/status/2074225453217505494)',
+		dateAdded: '2026-08-10',
+	},
+	{
+		text: `Have faith in yourself,  
+and let hard work lead the way.
+
+Without faith in yourself,  
+faith in God remains incomplete.
+
+Singing, “God will take care of me,”  
+means little without effort.
+
+Don’t wait for miracles,  
+become one through your actions.`,
+		attribution:
+			'[આપણે ભરોસે આપણે હાલીએ – પ્રહલાદ પારેખ](https://tahuko.com/?p=5320) ([via](https://www.instagram.com/reel/DauOXguythD/))',
+		dateAdded: '2026-08-10',
+	},
+	{
+		text: "A man on a thousand mile walk has to forget his goal and say to himself every morning, 'Today I'm going to cover twenty-five miles and then rest up and sleep.",
+		attribution:
+			'[Leo Tolstoy, War and Peace](https://www.goodreads.com/quotes/623903-a-man-on-a-thousand-mile-walk-has-to-forget)',
+		dateAdded: '2026-08-10',
+	},
+	{
+		text: 'An idiot in motion goes much further than a genius at rest',
+		attribution: 'Unknown ([via](https://x.com/BoringBiz_/status/2086433906748739744))',
+		dateAdded: '2026-08-10',
+	},
+	{
 		text: 'A lack of purpose leads to romantic obsessions.',
 		dateAdded: '2026-07-16',
 		attribution: '[ixcarus](https://ixcarus.substack.com/p/a-lack-of-purpose-leads-to-romantic)',
