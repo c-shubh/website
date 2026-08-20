@@ -6,6 +6,20 @@ export interface Quote {
 
 export const quotes: Quote[] = [
 	{
+		text: `Either way, you will suffer.
+
+The discipline hurts now.  
+Regret hurts later.
+
+One of them is temporary.  
+The other one follows you into every room for the rest of your life.
+
+Therefore, think carefully about which pain you choose.
+`,
+		attribution: '[Unknown](https://www.instagram.com/reels/DcM6-V9yeSc/)',
+		dateAdded: '2026-08-20',
+	},
+	{
 		text: `There's a formula I've bookmarked from someone to help you get better social capital. In order to increase your surface for social capital you need to expand your influence, therefore you need to increase your luck:
 
 L (luck) = D (doing) x T (telling)
