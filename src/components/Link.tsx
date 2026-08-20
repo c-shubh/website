@@ -1,18 +1,16 @@
-import { ensureTrailingSlash } from '@/utils';
+import { getLinkAttributes } from '@/utils';
+import React from 'react';
 
-export function Link({ href: h, ...props }: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
-	let href = h;
-	if (href) {
-		href = ensureTrailingSlash(href.toString());
-	}
-
-	const isExternal =
-		href?.toString().startsWith('http://') || href?.toString().startsWith('https://');
-	const externalAttrs = isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {};
+export function Link({
+	href: rawHref,
+	children,
+	...props
+}: React.AnchorHTMLAttributes<HTMLAnchorElement>) {
+	const { href, target, rel } = getLinkAttributes(rawHref);
 
 	return (
-		<a {...props} href={href} {...externalAttrs}>
-			{props.children}
+		<a {...props} href={href} target={target} rel={rel}>
+			{children}
 		</a>
 	);
 }

@@ -3,6 +3,24 @@ import type { CollectionEntry } from 'astro:content';
 import { Feed, type FeedOptions, type Item } from 'feed';
 import { SITE_TITLE } from './consts';
 
+interface LinkAttributes {
+	href: string;
+	target?: string;
+	rel?: string;
+}
+
+export function getLinkAttributes(rawHref?: string | URL | null): LinkAttributes {
+	if (!rawHref) return { href: '' };
+
+	const href = ensureTrailingSlash(rawHref.toString());
+	const isExternal = href.startsWith('http://') || href.startsWith('https://');
+
+	return {
+		href,
+		...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {}),
+	};
+}
+
 export function clsx(...args: unknown[]): string {
 	return args.reduce<string>((result: string, arg) => {
 		if (typeof arg === 'string') {

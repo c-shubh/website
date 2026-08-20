@@ -1,15 +1,9 @@
 ---
-import { ensureTrailingSlash } from '@/utils';
+import { getLinkAttributes } from '@/utils';
 
 interface Props extends astroHTML.JSX.AnchorHTMLAttributes {}
-let { href, ...props } = Astro.props;
-
-if (href) {
-	href = ensureTrailingSlash(href.toString());
-}
-const isExternal =
-	href?.toString().startsWith('http://') || href?.toString().startsWith('https://');
-const externalAttrs = isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {};
+const { href: rawHref, ...props } = Astro.props;
+const { href, target, rel } = getLinkAttributes(rawHref);
 ---
 
-<a {...props} href={href} {...externalAttrs}><slot /></a>
+<a {...props} href={href} target={target} rel={rel}><slot /></a>
