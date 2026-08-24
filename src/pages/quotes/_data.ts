@@ -6,6 +6,11 @@ export interface Quote {
 
 export const quotes: Quote[] = [
 	{
+		text: '80% of personal websites only have a single blog post from two years ago where the author mentions they want to write more.',
+		attribution: '[Arman Kumaraswamy](https://x.com/ksw_arman/status/2091201471773614095) ([via](https://news.ycombinator.com/item?id=49410109))',
+		dateAdded: '2026-08-24',
+	},
+	{
 		text: `Either way, you will suffer.
 
 The discipline hurts now.  
