@@ -42,10 +42,17 @@ listens FILE_PATH:
     | where draft == ""
     | reject draft
     | update title {|row| $row.title | into string }
+    | update language {|row|
+        $row.language
+        | split row ","
+        | each {|lang| $lang | str trim }
+        | where {|lang| $lang != "" }
+    }
     | sort-by title artist
     | to json
     | ^jq --tab .
     | save -f src/pages/listens/_data.json
+    pnpm exec prettier -w src/pages/listens/_data.json
 
 bookshelf FILE_PATH:
     #!/usr/bin/env nu
