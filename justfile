@@ -42,8 +42,8 @@ listens FILE_PATH:
     | where draft == ""
     | reject draft
     | update title {|row| $row.title | into string }
-    | update language {|row|
-        $row.language
+    | update languages {|row|
+        $row.languages
         | split row ","
         | each {|lang| $lang | str trim }
         | where {|lang| $lang != "" }

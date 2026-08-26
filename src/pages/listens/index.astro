@@ -5,20 +5,58 @@ import Page from '@/layouts/Page.astro';
 import { clsx } from '@/utils';
 import { Image } from 'astro:assets';
 import songs from './_data.json';
+
+const languageCounts = songs.reduce(
+	(counts, song) => {
+		for (const language of song.languages) {
+			counts[language] = (counts[language] ?? 0) + 1;
+		}
+		return counts;
+	},
+	{} as { [key: string]: number }
+);
+
+const languages = Object.entries(languageCounts)
+	.sort((a, b) => b[1] - a[1])
+	.map(([language]) => language);
+
+languages.unshift('All');
 ---
 
 <Page title={`${FIRST_NAME} Listens To Music`}>
 	<p>
-		<strong>{songs.length}</strong>
-		{songs.length === 1 ? 'song' : 'songs'}
+		<strong id="listens-song-count">{songs.length}</strong>
+		<span id="listens-song-label">{songs.length === 1 ? 'song' : 'songs'}</span>
 	</p>
+
+	<!-- TODO: make it horizontally scrollable -->
+	<fieldset class="space-x-4 mb-6" id="listens-language-filter">
+		<legend class="sr-only">Select language</legend>
+		{
+			languages.map((language) => (
+				<label class="inline-flex items-center gap-2">
+					<input
+						type="radio"
+						name="language"
+						value={language === 'All' ? '' : language}
+						class="radio"
+						checked={language === 'All'}
+					/>
+					{language}
+				</label>
+			))
+		}
+	</fieldset>
 
 	<ul class="grid min-[30rem]:grid-cols-2 sm:grid-cols-3 gap-4 md:gap-6 not-prose">
 		{
 			songs
 				.sort((a, b) => a.title.localeCompare(b.title) || a.artist.localeCompare(b.artist))
 				.map((song, index) => (
-					<li class="max-w-[240px] w-full mx-auto sm:max-w-none">
+					<li
+						class="max-w-[240px] w-full mx-auto sm:max-w-none"
+						data-listens-languages={JSON.stringify(song.languages)}
+					>
 						<Link class="card card-sm shadow-sm h-full" href={song.url}>
 							{song.image ? (
 								<figure class="aspect-square">
@@ -44,4 +82,33 @@ import songs from './_data.json';
 				))
 		}
 	</ul>
+
+	<!-- TODO: progressive enhancement when js is disabled -->
+	<script>
+		const filter = document.getElementById('listens-language-filter');
+		const count = document.getElementById('listens-song-count');
+		const label = document.getElementById('listens-song-label');
+
+		filter?.addEventListener('change', (event) => {
+			const input = event.target;
+
+			if (!(input instanceof HTMLInputElement)) return;
+
+			const language = input.value;
+			let visible = 0;
+
+			document.querySelectorAll('li[data-listens-languages]').forEach((card) => {
+				const languages = JSON.parse(card.getAttribute('data-listens-languages') ?? '[]');
+
+				const matches = language === '' || languages.includes(language);
+
+				(card as HTMLLIElement).hidden = !matches;
+
+				if (matches) visible++;
+			});
+
+			if (count) count.textContent = String(visible);
+			if (label) label.textContent = visible === 1 ? 'song' : 'songs';
+		});
+	</script>
 </Page>
