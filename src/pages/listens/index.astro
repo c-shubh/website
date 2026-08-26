@@ -18,22 +18,25 @@ import songs from './_data.json';
 			songs
 				.sort((a, b) => a.title.localeCompare(b.title) || a.artist.localeCompare(b.artist))
 				.map((song, index) => (
-					<li>
+					<li class="max-w-[240px] w-full mx-auto sm:max-w-none">
 						<Link class="card card-sm shadow-sm h-full" href={song.url}>
 							{song.image ? (
-								<figure>
+								<figure class="aspect-square">
 									<Image
 										src={song.image}
 										alt={`Thumbnail for ${song.title} - ${song.artist}`}
-										width={320}
-										height={180}
+										width={240}
+										height={240}
 										loading={index < 9 ? 'eager' : 'lazy'}
-										class={clsx('w-full', song.explicit_image === 'TRUE' ? 'blur-sm' : '')}
+										class={clsx(
+											'w-full h-full object-cover scale-[1.33]',
+											song.explicit_image === 'TRUE' ? 'blur-sm' : ''
+										)}
 									/>
 								</figure>
 							) : null}
 							<div class="card-body justify-between">
-								<span class="card-title">{song.title}</span>
+								<span class="card-title line-clamp-2">{song.title}</span>
 								<p class="grow-0">{song.artist}</p>
 							</div>
 						</Link>
