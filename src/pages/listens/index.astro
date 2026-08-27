@@ -29,23 +29,17 @@ languages.unshift('All');
 		<span id="listens-song-label">{songs.length === 1 ? 'song' : 'songs'}</span>
 	</p>
 
-	<!-- TODO: make it horizontally scrollable -->
-	<fieldset class="space-x-4 mb-6" id="listens-language-filter">
-		<legend class="sr-only">Select language</legend>
-		{
-			languages.map((language) => (
-				<label class="inline-flex items-center gap-2">
-					<input
-						type="radio"
-						name="language"
-						value={language === 'All' ? '' : language}
-						class="radio"
-						checked={language === 'All'}
-					/>
-					{language}
-				</label>
-			))
-		}
+	<fieldset class="fieldset mb-6">
+		<legend class="fieldset-legend">Language</legend>
+		<select class="select" id="listens-language-filter">
+			{
+				languages.map((language) => (
+					<option value={language} selected={language === 'All'}>
+						{language}
+					</option>
+				))
+			}
+		</select>
 	</fieldset>
 
 	<ul class="grid min-[30rem]:grid-cols-2 sm:grid-cols-3 gap-4 md:gap-6 not-prose">
@@ -90,17 +84,14 @@ languages.unshift('All');
 		const label = document.getElementById('listens-song-label');
 
 		filter?.addEventListener('change', (event) => {
-			const input = event.target;
-
-			if (!(input instanceof HTMLInputElement)) return;
-
+			const input = event.target as HTMLSelectElement;
 			const language = input.value;
 			let visible = 0;
 
 			document.querySelectorAll('li[data-listens-languages]').forEach((card) => {
 				const languages = JSON.parse(card.getAttribute('data-listens-languages') ?? '[]');
 
-				const matches = language === '' || languages.includes(language);
+				const matches = language === 'All' || languages.includes(language);
 
 				(card as HTMLLIElement).hidden = !matches;
 
