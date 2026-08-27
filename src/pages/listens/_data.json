@@ -120,6 +120,14 @@
 		"explicit_image": ""
 	},
 	{
+		"title": "Another Love",
+		"artist": "Tom Odell",
+		"languages": ["English"],
+		"url": "https://music.youtube.com/watch?v=H4buRu9-Wb4",
+		"image": "https://img.youtube.com/vi_webp/H4buRu9-Wb4/mqdefault.webp",
+		"explicit_image": ""
+	},
+	{
 		"title": "Apocalypse",
 		"artist": "Cigarettes After Sex",
 		"languages": ["English"],
@@ -1293,6 +1301,14 @@
 		"languages": ["Sanskrit", "Latin", "English"],
 		"url": "https://music.youtube.com/watch?v=32uTT424Nx4",
 		"image": "https://img.youtube.com/vi_webp/32uTT424Nx4/hqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "The Fate of Ophelia",
+		"artist": "Taylor Swift",
+		"languages": ["English"],
+		"url": "https://music.youtube.com/watch?v=7nVctvQVz0U",
+		"image": "https://img.youtube.com/vi_webp/7nVctvQVz0U/mqdefault.webp",
 		"explicit_image": ""
 	},
 	{
