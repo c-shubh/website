@@ -128,6 +128,22 @@
 		"Poster": "https://m.media-amazon.com/images/M/MV5BMDhlYjFiMjUtZDViYy00MzQ2LTg4YTgtZjYyYTU5NGJjMTdmXkEyXkFqcGc@._V1_SX300.jpg"
 	},
 	{
+		"Title": "Ant-Man",
+		"Done Watching": "idk",
+		"Year Released": 2015,
+		"Language": "English",
+		"Duration": "1h 57m",
+		"Poster": "https://m.media-amazon.com/images/M/MV5BMjM2NTQ5Mzc2M15BMl5BanBnXkFtZTgwNTcxMDI2NTE@._V1_SX300.jpg"
+	},
+	{
+		"Title": "Ant-Man and the Wasp",
+		"Done Watching": "idk",
+		"Year Released": 2018,
+		"Language": "English",
+		"Duration": "1h 58m",
+		"Poster": "https://m.media-amazon.com/images/M/MV5BODVkY2ZmZTAtYzFhMi00YzZlLWE2YWMtMDBiYjY2OTU4ZWM0XkEyXkFqcGc@._V1_SX300.jpg"
+	},
+	{
 		"Title": "Ant-Man and the Wasp: Quantumania",
 		"Done Watching": "2023-10-17",
 		"Year Released": 2023,
@@ -168,6 +184,30 @@
 		"Poster": "https://m.media-amazon.com/images/M/MV5BZjdmMGNjMzAtNDUyMi00NTQyLTk4MjAtN2FmMzRlMDM1ZWMyXkEyXkFqcGc@._V1_SX300.jpg"
 	},
 	{
+		"Title": "Avengers: Age of Ultron",
+		"Done Watching": "idk",
+		"Year Released": 2015,
+		"Language": "English",
+		"Duration": "2h 21m",
+		"Poster": "https://m.media-amazon.com/images/M/MV5BODBhYTg1NGQtNGVmNS00ZTdiLThjYTYtZDFkNzRiNTZmNDZjXkEyXkFqcGc@._V1_SX300.jpg"
+	},
+	{
+		"Title": "Avengers: Endgame",
+		"Done Watching": "idk",
+		"Year Released": 2019,
+		"Language": "English",
+		"Duration": "3h 1m",
+		"Poster": "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg"
+	},
+	{
+		"Title": "Avengers: Infinity War",
+		"Done Watching": "idk",
+		"Year Released": 2018,
+		"Language": "English",
+		"Duration": "2h 29m",
+		"Poster": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_SX300.jpg"
+	},
+	{
 		"Title": "Bareilly Ki Barfi",
 		"Done Watching": "2023-11-19",
 		"Year Released": 2017,
@@ -184,12 +224,28 @@
 		"Poster": "https://m.media-amazon.com/images/M/MV5BYjQ3YzUyOGQtNjdlYS00YmRhLWIyOWYtMGQ3YjkwMjJiYzRjXkEyXkFqcGc@._V1_SX300.jpg"
 	},
 	{
+		"Title": "Black Panther",
+		"Done Watching": "idk",
+		"Year Released": 2018,
+		"Language": "English",
+		"Duration": "2h 14m",
+		"Poster": "https://m.media-amazon.com/images/M/MV5BMTg1MTY2MjYzNV5BMl5BanBnXkFtZTgwMTc4NTMwNDI@._V1_SX300.jpg"
+	},
+	{
 		"Title": "Black Panther: Wakanda Forever",
 		"Done Watching": "2023-10-16",
 		"Year Released": 2022,
 		"Language": "English",
 		"Duration": "2h 41m",
 		"Poster": "https://m.media-amazon.com/images/M/MV5BYWY5NDY1ZjItZDQxMy00MTAzLTgyOGQtNTQxYjFiMzZjMjUyXkEyXkFqcGc@._V1_SX300.jpg"
+	},
+	{
+		"Title": "Black Widow",
+		"Done Watching": "idk",
+		"Year Released": 2021,
+		"Language": "English",
+		"Duration": "2h 14m",
+		"Poster": "https://m.media-amazon.com/images/M/MV5BZTMyZTA0ZTItYjY3Yi00ODNjLWExYTgtYzgxZTk0NTg0Y2FlXkEyXkFqcGc@._V1_SX300.jpg"
 	},
 	{
 		"Title": "Borat",
@@ -206,6 +262,38 @@
 		"Language": "English",
 		"Duration": "1h 41m",
 		"Poster": "https://m.media-amazon.com/images/M/MV5BZWM2ZjA2OTctZmRhMy00ZDIzLTkwZGQtYTRlNmQwZWZmMDBlXkEyXkFqcGc@._V1_SX300.jpg"
+	},
+	{
+		"Title": "Captain America: Civil War",
+		"Done Watching": "idk",
+		"Year Released": 2016,
+		"Language": "English",
+		"Duration": "2h 27m",
+		"Poster": "https://m.media-amazon.com/images/M/MV5BMjQ0MTgyNjAxMV5BMl5BanBnXkFtZTgwNjUzMDkyODE@._V1_SX300.jpg"
+	},
+	{
+		"Title": "Captain America: The First Avenger",
+		"Done Watching": "idk",
+		"Year Released": 2011,
+		"Language": "English",
+		"Duration": "2h 4m",
+		"Poster": "https://m.media-amazon.com/images/M/MV5BNzUyM2YyY2MtNzNlMS00MWU5LTgxNjAtNzZlNmI2NjU2NDZlXkEyXkFqcGc@._V1_SX300.jpg"
+	},
+	{
+		"Title": "Captain America: The Winter Soldier",
+		"Done Watching": "idk",
+		"Year Released": 2014,
+		"Language": "English",
+		"Duration": "2h 16m",
+		"Poster": "https://m.media-amazon.com/images/M/MV5BNWY1NjFmNDItZDhmOC00NjI1LWE0ZDItMTM0MjBjZThiOTQ2XkEyXkFqcGc@._V1_SX300.jpg"
+	},
+	{
+		"Title": "Captain Marvel",
+		"Done Watching": "idk",
+		"Year Released": 2019,
+		"Language": "English",
+		"Duration": "2h 3m",
+		"Poster": "https://m.media-amazon.com/images/M/MV5BZDI1NGU2ODAtNzBiNy00MWY5LWIyMGEtZjUxZjUwZmZiNjBlXkEyXkFqcGc@._V1_SX300.jpg"
 	},
 	{
 		"Title": "Catch Me If You Can",
@@ -320,6 +408,14 @@
 		"Poster": "https://m.media-amazon.com/images/M/MV5BMDkyNGE1OWEtZDg0ZC00MThjLThlYmYtNDhiNGNjMzQ1ZTcyXkEyXkFqcGc@._V1_SX300.jpg"
 	},
 	{
+		"Title": "Doctor Strange",
+		"Done Watching": "idk",
+		"Year Released": 2016,
+		"Language": "English",
+		"Duration": "1h 55m",
+		"Poster": "https://m.media-amazon.com/images/M/MV5BNjgwNzAzNjk1Nl5BMl5BanBnXkFtZTgwMzQ2NjI1OTE@._V1_SX300.jpg"
+	},
+	{
 		"Title": "Doctor Strange in the Multiverse of Madness",
 		"Done Watching": "idk",
 		"Year Released": 2022,
@@ -342,6 +438,14 @@
 		"Language": "Telugu",
 		"Duration": "2h 20m",
 		"Poster": "https://m.media-amazon.com/images/M/MV5BMzE5ZTRhYjctZjMyMi00NzcwLWI2OWYtMGQxZjYyNmNkMmIyXkEyXkFqcGc@._V1_SX300.jpg"
+	},
+	{
+		"Title": "Eternals",
+		"Done Watching": "idk",
+		"Year Released": 2021,
+		"Language": "English",
+		"Duration": "2h 36m",
+		"Poster": "https://m.media-amazon.com/images/M/MV5BZTBiZjI2M2UtZTNiNy00NmU4LWJiMjYtZjk4MDIzMzhlMjFlXkEyXkFqcGc@._V1_SX300.jpg"
 	},
 	{
 		"Title": "Everything Everywhere All at Once",
@@ -432,12 +536,28 @@
 		"Poster": "https://m.media-amazon.com/images/M/MV5BMjIxMGQ2OWUtNTY1Yy00YjNhLWEwMTEtYzAyZTRjYTJiZjM4XkEyXkFqcGc@._V1_SX300.jpg"
 	},
 	{
+		"Title": "Guardians of the Galaxy",
+		"Done Watching": "idk",
+		"Year Released": 2014,
+		"Language": "English",
+		"Duration": "2h 1m",
+		"Poster": "https://m.media-amazon.com/images/M/MV5BM2ZmNjQ2MzAtNDlhNi00MmQyLWJhZDMtNmJiMjFlOWY4MzcxXkEyXkFqcGc@._V1_SX300.jpg"
+	},
+	{
 		"Title": "Guardians of the Galaxy Vol. 3",
 		"Done Watching": "2023-10-18",
 		"Year Released": 2023,
 		"Language": "English",
 		"Duration": "2h 29m",
 		"Poster": "https://m.media-amazon.com/images/M/MV5BOTJhOTMxMmItZmE0Ny00MDc3LWEzOGEtOGFkMzY4MWYyZDQ0XkEyXkFqcGc@._V1_SX300.jpg"
+	},
+	{
+		"Title": "Guardians of the Galaxy: Vol. 2",
+		"Done Watching": "idk",
+		"Year Released": 2017,
+		"Language": "English",
+		"Duration": "2h 16m",
+		"Poster": "https://m.media-amazon.com/images/M/MV5BNWE5MGI3MDctMmU5Ni00YzI2LWEzMTQtZGIyZDA5MzQzNDBhXkEyXkFqcGc@._V1_SX300.jpg"
 	},
 	{
 		"Title": "Happy Days",
@@ -502,6 +622,30 @@
 		"Language": "English",
 		"Duration": "1h 58m",
 		"Poster": "https://m.media-amazon.com/images/M/MV5BZjM3NTYzYWItMzY0YS00NjliLTg3MzktYzZkM2Q5YTA5MDExXkEyXkFqcGc@._V1_SX300.jpg"
+	},
+	{
+		"Title": "Iron Man",
+		"Done Watching": "idk",
+		"Year Released": 2008,
+		"Language": "English",
+		"Duration": "2h 6m",
+		"Poster": "https://m.media-amazon.com/images/M/MV5BMTczNTI2ODUwOF5BMl5BanBnXkFtZTcwMTU0NTIzMw@@._V1_SX300.jpg"
+	},
+	{
+		"Title": "Iron Man 2",
+		"Done Watching": "idk",
+		"Year Released": 2010,
+		"Language": "English",
+		"Duration": "2h 4m",
+		"Poster": "https://m.media-amazon.com/images/M/MV5BYWYyOGQzOGYtMGQ1My00ZWYxLTgzZjktZWYzN2IwYjkxYzM0XkEyXkFqcGc@._V1_SX300.jpg"
+	},
+	{
+		"Title": "Iron Man 3",
+		"Done Watching": "idk",
+		"Year Released": 2013,
+		"Language": "English",
+		"Duration": "2h 10m",
+		"Poster": "https://m.media-amazon.com/images/M/MV5BMjIzMzAzMjQyM15BMl5BanBnXkFtZTcwNzM2NjcyOQ@@._V1_SX300.jpg"
 	},
 	{
 		"Title": "Jab We Met",
@@ -904,6 +1048,14 @@
 		"Poster": "https://m.media-amazon.com/images/M/MV5BYjYyOTRkYTItNDNjMi00YmNiLTk4NzAtYTY1MGQ3N2M0NzYwXkEyXkFqcGc@._V1_SX300.jpg"
 	},
 	{
+		"Title": "Shang-Chi and the Legend of the Ten Rings",
+		"Done Watching": "idk",
+		"Year Released": 2021,
+		"Language": "English",
+		"Duration": "2h 12m",
+		"Poster": "https://m.media-amazon.com/images/M/MV5BZmY5MDcyNzAtYzg3MC00MGNlLTg3OGItNmRjYThkZGVlNzAyXkEyXkFqcGc@._V1_SX300.jpg"
+	},
+	{
 		"Title": "Shazam!",
 		"Done Watching": "idk",
 		"Year Released": 2019,
@@ -968,6 +1120,30 @@
 		"Poster": "https://m.media-amazon.com/images/M/MV5BOWNjYWM3NWItOGE0ZS00MWRjLThiZWEtYjc4ZmNmMmU5ZTVmXkEyXkFqcGc@._V1_SX300.jpg"
 	},
 	{
+		"Title": "Spider-Man: Far from Home",
+		"Done Watching": "idk",
+		"Year Released": 2019,
+		"Language": "English",
+		"Duration": "2h 9m",
+		"Poster": "https://m.media-amazon.com/images/M/MV5BMzNhNTE0NWQtN2E1Ny00NjcwLTg1YTctMGY1NmMwODJmY2NmXkEyXkFqcGc@._V1_SX300.jpg"
+	},
+	{
+		"Title": "Spider-Man: Homecoming",
+		"Done Watching": "idk",
+		"Year Released": 2017,
+		"Language": "English",
+		"Duration": "2h 13m",
+		"Poster": "https://m.media-amazon.com/images/M/MV5BODY2MTAzOTQ4M15BMl5BanBnXkFtZTgwNzg5MTE0MjI@._V1_SX300.jpg"
+	},
+	{
+		"Title": "Spider-Man: No Way Home",
+		"Done Watching": "idk",
+		"Year Released": 2021,
+		"Language": "English",
+		"Duration": "2h 28m",
+		"Poster": "https://m.media-amazon.com/images/M/MV5BMmFiZGZjMmEtMTA0Ni00MzA2LTljMTYtZGI2MGJmZWYzZTQ2XkEyXkFqcGc@._V1_SX300.jpg"
+	},
+	{
 		"Title": "Stay The Night",
 		"Done Watching": "idk",
 		"Year Released": 2022,
@@ -982,6 +1158,14 @@
 		"Language": "English",
 		"Duration": "1h 53m",
 		"Poster": "https://m.media-amazon.com/images/M/MV5BZDNhMGYwM2UtMTdlZS00MGQ1LWI2YzAtODY5YWI1MjYyNzRmXkEyXkFqcGc@._V1_SX300.jpg"
+	},
+	{
+		"Title": "The Avengers",
+		"Done Watching": "idk",
+		"Year Released": 2012,
+		"Language": "English",
+		"Duration": "2h 23m",
+		"Poster": "https://m.media-amazon.com/images/M/MV5BNGE0YTVjNzUtNzJjOS00NGNlLTgxMzctZTY4YTE1Y2Y1ZTU4XkEyXkFqcGc@._V1_SX300.jpg"
 	},
 	{
 		"Title": "The Blue Lagoon",
@@ -1152,12 +1336,36 @@
 		"Poster": "https://m.media-amazon.com/images/M/MV5BZjRiMDhiZjQtNjk5Yi00ZDcwLTkyYTEtMDc1NjdmNjFhNGIzXkEyXkFqcGc@._V1_SX300.jpg"
 	},
 	{
+		"Title": "Thor: Ragnarok",
+		"Done Watching": "idk",
+		"Year Released": 2017,
+		"Language": "English",
+		"Duration": "2h 10m",
+		"Poster": "https://m.media-amazon.com/images/M/MV5BMjMyNDkzMzI1OF5BMl5BanBnXkFtZTgwODcxODg5MjI@._V1_SX300.jpg"
+	},
+	{
 		"Title": "Varudu Kaavalenu",
 		"Done Watching": "idk",
 		"Year Released": 2021,
 		"Language": "Telugu",
 		"Duration": "2h 13m",
 		"Poster": "https://m.media-amazon.com/images/M/MV5BZTBiZjNlNzctMzlmNC00OGM2LWE1NTQtYTE2YTU5ODYyMjIzXkEyXkFqcGc@._V1_SX300.jpg"
+	},
+	{
+		"Title": "Venom",
+		"Done Watching": "idk",
+		"Year Released": 2018,
+		"Language": "English",
+		"Duration": "1h 52m",
+		"Poster": "https://m.media-amazon.com/images/M/MV5BNTYwMDg5MDItNjhmZi00NmVmLThjNWItMmNkMjVkMWRhNzI2XkEyXkFqcGc@._V1_SX300.jpg"
+	},
+	{
+		"Title": "Venom: Let There Be Carnage",
+		"Done Watching": "idk",
+		"Year Released": 2021,
+		"Language": "English",
+		"Duration": "1h 37m",
+		"Poster": "https://m.media-amazon.com/images/M/MV5BZGIxMTU1MjItM2FmMi00YmFiLTgwNDMtMTczYmVjYTBhNGZhXkEyXkFqcGc@._V1_SX300.jpg"
 	},
 	{
 		"Title": "Vikram",
