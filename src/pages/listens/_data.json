@@ -96,6 +96,14 @@
 		"explicit_image": ""
 	},
 	{
+		"title": "Always Forever",
+		"artist": "Cults",
+		"languages": ["English"],
+		"url": "https://music.youtube.com/watch?v=TlMgAsAmQKE",
+		"image": "https://img.youtube.com/vi_webp/TlMgAsAmQKE/hqdefault.webp",
+		"explicit_image": ""
+	},
+	{
 		"title": "Ambition of the Dictator",
 		"artist": "Tatsuya Kato, Shayne Holland & YUKI KANESAKA",
 		"languages": ["English"],
@@ -544,6 +552,14 @@
 		"explicit_image": ""
 	},
 	{
+		"title": "Inthandham",
+		"artist": "Vishal Chandrashekhar, S.P. Charan & Krishna Kanth",
+		"languages": ["Telugu"],
+		"url": "https://music.youtube.com/watch?v=bgBiIcGBgKs",
+		"image": "https://img.youtube.com/vi_webp/bgBiIcGBgKs/hqdefault.webp",
+		"explicit_image": ""
+	},
+	{
 		"title": "Intro (Long Version)",
 		"artist": "The xx",
 		"languages": ["Music"],
@@ -909,6 +925,14 @@
 		"languages": ["English"],
 		"url": "https://music.youtube.com/watch?v=3RMpVTq0BRU",
 		"image": "https://img.youtube.com/vi_webp/3RMpVTq0BRU/hqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Over the Rainbow",
+		"artist": "Israel Kamakawiwo'ole",
+		"languages": ["English"],
+		"url": "https://music.youtube.com/watch?v=QJAL6VpX4dY",
+		"image": "https://img.youtube.com/vi_webp/QJAL6VpX4dY/hqdefault.webp",
 		"explicit_image": ""
 	},
 	{
