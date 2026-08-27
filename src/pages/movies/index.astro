@@ -53,7 +53,8 @@ languages.unshift('All');
 				// movies with done date
 				...orderBy(
 					movies.filter((m) => m['Done Watching'] !== 'idk'),
-					['Done Watching', 'desc']
+					['Done Watching', 'desc'],
+					['Title', 'asc']
 				),
 				// movies without done date
 				...orderBy(
