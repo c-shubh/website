@@ -5,12 +5,48 @@ import { slashPagesMap } from '@/slashPages';
 import { orderBy } from '@/utils';
 import { Image } from 'astro:assets';
 import movies from './_data.json';
+
+const languageCounts = movies.reduce(
+	(counts, movie) => {
+		counts[movie.Language] = (counts[movie.Language] ?? 0) + 1;
+		return counts;
+	},
+	{} as { [key: string]: number }
+);
+
+const languages = Object.entries(languageCounts)
+	.sort((a, b) => b[1] - a[1])
+	.map(([language]) => language);
+
+languages.unshift('All');
 ---
 
 <Page title={slashPagesMap['Movies'].name}>
 	<p>
-		<strong>{movies.length}</strong> movies watched
+		<strong id="movies-count">{movies.length}</strong>
+		<span id="movies-label">{movies.length === 1 ? 'movie' : 'movies'}</span> watched
 	</p>
+
+	<noscript>
+		<style>
+			#movies-language-fieldset {
+				display: none;
+			}
+		</style>
+	</noscript>
+
+	<fieldset class="fieldset mb-6" id="movies-language-fieldset">
+		<legend class="fieldset-legend">Language</legend>
+		<select class="select" id="movies-language-filter">
+			{
+				languages.map((language) => (
+					<option value={language} selected={language === 'All'}>
+						{language}
+					</option>
+				))
+			}
+		</select>
+	</fieldset>
 	<ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-6 not-prose">
 		{
 			[
@@ -26,7 +62,7 @@ import movies from './_data.json';
 					['Title', 'asc']
 				),
 			].map((movie) => (
-				<li class="card card-sm shadow-sm">
+				<li class="card card-sm shadow-sm" data-movies-language={movie.Language}>
 					{movie.Poster ? (
 						<figure>
 							{/* images hotlinked from https://www.omdbapi.com/ or https://www.imdb.com/ */}
@@ -61,4 +97,28 @@ import movies from './_data.json';
 			))
 		}
 	</ul>
+	<script>
+		const filter = document.getElementById('movies-language-filter');
+		const count = document.getElementById('movies-count');
+		const label = document.getElementById('movies-label');
+
+		filter?.addEventListener('change', (event) => {
+			const input = event.target as HTMLSelectElement;
+			const language = input.value;
+			let visible = 0;
+
+			document.querySelectorAll('li[data-movies-language]').forEach((card) => {
+				const languages = card.getAttribute('data-movies-language') ?? '';
+
+				const matches = language === 'All' || languages === language;
+
+				(card as HTMLLIElement).hidden = !matches;
+
+				if (matches) visible++;
+			});
+
+			if (count) count.textContent = String(visible);
+			if (label) label.textContent = visible === 1 ? 'movie' : 'movies';
+		});
+	</script>
 </Page>
