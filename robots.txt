@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cshubh.com/sitemap-index.xml
