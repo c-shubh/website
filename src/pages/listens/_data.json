@@ -448,6 +448,14 @@
 		"explicit_image": ""
 	},
 	{
+		"title": "Good Looking",
+		"artist": "Suki Waterhouse",
+		"languages": ["English"],
+		"url": "https://music.youtube.com/watch?v=wV1pBef4k44",
+		"image": "https://img.youtube.com/vi_webp/wV1pBef4k44/hqdefault.webp",
+		"explicit_image": ""
+	},
+	{
 		"title": "Gundelonaa",
 		"artist": "Sowjanya",
 		"languages": ["Telugu"],
@@ -509,6 +517,14 @@
 		"languages": ["English"],
 		"url": "https://music.youtube.com/watch?v=HJstyRBLqBQ",
 		"image": "https://img.youtube.com/vi_webp/HJstyRBLqBQ/hqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "I Want It That Way",
+		"artist": "Backstreet Boys",
+		"languages": ["English"],
+		"url": "https://music.youtube.com/watch?v=LwkrXybZ1uo",
+		"image": "https://img.youtube.com/vi_webp/LwkrXybZ1uo/hqdefault.webp",
 		"explicit_image": ""
 	},
 	{
@@ -789,6 +805,14 @@
 		"languages": ["Hindi"],
 		"url": "https://music.youtube.com/watch?v=m8_wuycQRAE",
 		"image": "https://img.youtube.com/vi_webp/m8_wuycQRAE/hqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Messy",
+		"artist": "Lola Young",
+		"languages": ["English"],
+		"url": "https://music.youtube.com/watch?v=Y03n19YRXD4",
+		"image": "https://img.youtube.com/vi_webp/Y03n19YRXD4/hqdefault.webp",
 		"explicit_image": ""
 	},
 	{
@@ -1189,6 +1213,14 @@
 		"languages": ["English"],
 		"url": "https://music.youtube.com/watch?v=R-hYM3BqTbA",
 		"image": "https://img.youtube.com/vi_webp/R-hYM3BqTbA/hqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "Shape Of My Heart",
+		"artist": "Sting",
+		"languages": ["English"],
+		"url": "https://music.youtube.com/watch?v=RVfGFmBFgoc",
+		"image": "https://img.youtube.com/vi_webp/RVfGFmBFgoc/hqdefault.webp",
 		"explicit_image": ""
 	},
 	{
