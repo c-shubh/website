@@ -1,0 +1,18 @@
+---
+import Page from '@/layouts/Page.astro';
+import { slashPagesMap } from '@/slashPages';
+import { getGramImages } from '@/utils';
+import { Gram } from './_Gram';
+
+const images = getGramImages();
+---
+
+<!-- TODO: this page is under construction until i make it accessible without js -->
+<Page title={slashPagesMap['Gram'].name} underConstruction>
+	<p>
+		<strong>{images.length}</strong>
+		<span>{images.length === 1 ? 'image' : 'images'}</span>
+	</p>
+	<!-- TODO: no js -->
+	<Gram client:only="react" images={images} />
+</Page>

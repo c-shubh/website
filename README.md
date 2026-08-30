@@ -1,4 +1,4 @@
-# My corner of the interwebz ^_^ 
+# My corner of the interwebz ^_^
 
 Source code for https://cshubh.com
 
@@ -48,7 +48,7 @@ Source code for https://cshubh.com
 ## License
 
 - The source code in this repository is licensed under the [AGPLv3](./LICENSE-AGPL-3.0-only).
-- The text content, including documentation and blog posts, is licensed under the [CC BY-NC-SA 4.0](./LICENSE-CC-BY-NC-SA-4.0).
+- All other content in this repository is licensed under the [CC BY-NC-SA 4.0](./LICENSE-CC-BY-NC-SA-4.0).
 
 For more details, please refer to the respective license files.
 

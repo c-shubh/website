@@ -1,10 +1,11 @@
 export const slashPages = [
 	{ href: '/blog/', name: 'Blog', showInHeader: true },
 	{ href: '/tools/', name: 'Tools', showInHeader: true },
-	{ href: '/quotes/', name: 'Quotes', showInHeader: true },
+	{ href: '/quotes/', name: 'Quotes', showInHeader: false },
 	{ href: '/listens/', name: 'Listens' },
 	{ href: '/bookshelf/', name: 'Bookshelf' },
 	{ href: '/movies/', name: 'Movies' },
+	{ href: '/gram/', name: 'Gram', showInHeader: false },
 	{ href: '/blank/', name: 'Blank' },
 	{ href: '/contact/', name: 'Contact', showInHeader: true },
 ] as const;

@@ -1,0 +1,32 @@
+---
+import MarkdownView from '@/components/MarkdownView.astro';
+import Page from '@/layouts/Page.astro';
+import { getGramImages, type GramImage } from '@/utils';
+
+export async function getStaticPaths() {
+	const images = getGramImages();
+	return images.map((image) => ({
+		params: { id: image.id },
+		props: image,
+	}));
+}
+type Props = GramImage;
+
+const post = Astro.props;
+---
+
+<Page
+	title={post.id}
+	date={new Date(post.dateTaken)}
+	description={post.plaintextCaption}
+	layout="blog"
+>
+	<img
+		class="rounded-box"
+		src={post.imageSrc}
+		alt={post.plaintextCaption}
+		width={post.imageWidth}
+		height={post.imageHeight}
+	/>
+	<MarkdownView source={post.caption} />
+</Page>

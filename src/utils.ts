@@ -1,7 +1,112 @@
 import { BLOG_ATOM_FEED, COPYRIGHT, FULL_NAME, LANGUAGE, SITE, SITE_DESCRIPTION } from '@/consts';
+import data from '@/pages/gram/_data.json';
 import type { CollectionEntry } from 'astro:content';
 import { Feed, type FeedOptions, type Item } from 'feed';
+import path from 'node:path';
 import { SITE_TITLE } from './consts';
+
+export interface GramImage {
+	id: string;
+	imageSrc: string;
+	imageWidth: number;
+	imageHeight: number;
+	thumbnailSrc: string;
+	thumbnailWidth: number;
+	thumbnailHeight: number;
+	caption: string;
+	plaintextCaption: string;
+	dateTaken: string;
+}
+
+export function getGramImages() {
+	const imagesGlob = import.meta.glob('@/assets/images/gram/*', {
+		eager: true,
+		import: 'default',
+	}) as Record<string, { src: string; width: number; height: number }>;
+
+	interface DraftGramImage {
+		id: string;
+		imageSrc?: string;
+		imageWidth?: number;
+		imageHeight?: number;
+		thumbnailSrc?: string;
+		thumbnailWidth?: number;
+		thumbnailHeight?: number;
+	}
+
+	const draftImagesMap: {
+		[key: string]: DraftGramImage;
+	} = {};
+
+	for (const [imagePath, imageInfo] of Object.entries(imagesGlob)) {
+		const stem = path.basename(imagePath, path.extname(imagePath));
+		const imageType = stem.endsWith('_thumbnail')
+			? 'thumbnail'
+			: stem.endsWith('_compressed')
+				? 'compressed'
+				: null;
+		if (!imageType) {
+			throw new Error(`Unexpected image type: ${stem}\nExpected _thumbnail or _compressed suffix.`);
+		}
+
+		const ogBasename = path.basename(imagePath).replace(/_(thumbnail|compressed)/, '');
+		const ogStem = path.basename(ogBasename, path.extname(ogBasename));
+		if (draftImagesMap[ogStem] === undefined) {
+			draftImagesMap[ogStem] = { id: ogStem };
+		}
+		if (imageType === 'thumbnail') {
+			draftImagesMap[ogStem].thumbnailSrc = imageInfo.src;
+			draftImagesMap[ogStem].thumbnailWidth = imageInfo.width;
+			draftImagesMap[ogStem].thumbnailHeight = imageInfo.height;
+		} else if (imageType === 'compressed') {
+			draftImagesMap[ogStem].imageSrc = imageInfo.src;
+			draftImagesMap[ogStem].imageWidth = imageInfo.width;
+			draftImagesMap[ogStem].imageHeight = imageInfo.height;
+		}
+	}
+
+	const metadataIds = new Set(data.map((ele) => ele.id));
+	for (const id of Object.keys(draftImagesMap)) {
+		if (!metadataIds.has(id)) {
+			console.warn(`No metadata found for id: ${id}`);
+		}
+	}
+
+	const imagesMap: {
+		[key: string]: GramImage;
+	} = {};
+
+	for (const ele of data) {
+		if (draftImagesMap[ele.id] === undefined) {
+			console.warn(`No image found for id: ${ele.id}`);
+			continue;
+		}
+		const draftImage = draftImagesMap[ele.id];
+		if (draftImage.imageSrc === undefined) {
+			console.warn(`Compressed image not found for id: ${ele.id}`);
+			continue;
+		}
+		if (draftImage.thumbnailSrc === undefined) {
+			console.warn(`Thumbnail image not found for id: ${ele.id}`);
+			continue;
+		}
+		imagesMap[ele.id] = {
+			id: ele.id,
+			imageSrc: draftImage.imageSrc,
+			thumbnailSrc: draftImage.thumbnailSrc,
+			caption: ele.caption,
+			plaintextCaption: ele.plaintextCaption || ele.caption,
+			dateTaken: ele.dateTaken,
+			imageWidth: draftImage.imageWidth!,
+			imageHeight: draftImage.imageHeight!,
+			thumbnailWidth: draftImage.thumbnailWidth!,
+			thumbnailHeight: draftImage.thumbnailHeight!,
+		};
+	}
+
+	const images = orderBy(Object.values(imagesMap), ['dateTaken', 'desc'], ['id', 'asc']);
+	return images;
+}
 
 interface LinkAttributes {
 	href: string;

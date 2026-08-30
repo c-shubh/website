@@ -11,5 +11,5 @@ export const COPYRIGHT = {
 	symbol: '©',
 	year: new Date().getFullYear(),
 	holder: FULL_NAME,
-	string: 'This work is licensed under CC BY-NC-SA 4.0 License.',
+	string: 'Licensed under CC BY-NC-SA 4.0',
 };

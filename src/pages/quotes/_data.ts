@@ -6,8 +6,32 @@ export interface Quote {
 
 export const quotes: Quote[] = [
 	{
+		text: `Could you love me while I hate myself?  
+Could you love me, though I don't deserve it?
+
+Could you love me like there's no one else  
+Even though you know I can't return it?
+
+Could you love me when the water's rough?  
+Or when I leave you in a desert?
+
+Could you love me, though I speak with knives?  
+Knowing all too well that you'll get hurt
+
+If you can't answer, "Yes, " just go  
+I'm more trouble than I'm worth
+
+Could you love me while I hate myself?  
+Because I don't know how this works
+
+I never learned how this works`,
+		dateAdded: '2026-08-28',
+		attribution: 'Zeph, "could you love me while i hate myself"',
+	},
+	{
 		text: '80% of personal websites only have a single blog post from two years ago where the author mentions they want to write more.',
-		attribution: '[Arman Kumaraswamy](https://x.com/ksw_arman/status/2091201471773614095) ([via](https://news.ycombinator.com/item?id=49410109))',
+		attribution:
+			'[Arman Kumaraswamy](https://x.com/ksw_arman/status/2091201471773614095) ([via](https://news.ycombinator.com/item?id=49410109))',
 		dateAdded: '2026-08-24',
 	},
 	{

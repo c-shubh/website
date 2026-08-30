@@ -73,3 +73,15 @@ movies FILE_PATH:
     | to json
     | ^jq --tab .
     | save -f src/pages/movies/_data.json
+
+gram-import:
+    pnpm exec tsx gram-import.ts
+
+gram FILE_PATH:
+    #!/usr/bin/env nu
+    open '{{ FILE_PATH }}'
+    | select id dateTaken caption plaintextCaption
+    | sort-by dateTaken id
+    | to json
+    | ^jq --tab .
+    | save -f src/pages/gram/_data.json
