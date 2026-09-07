@@ -6,6 +6,42 @@ export interface Quote {
 
 export const quotes: Quote[] = [
 	{
+		text: `आसान है करना प्रधानमंत्री की आलोचना  
+मुख्यमंत्री की करना उससे थोड़ा मुश्किल  
+विधायक की आलोचना में ख़तरा ज़रूर है  
+लेकिन ग्राम प्रधान के मामले में तो पिटाई होना तय है।
+
+It is easy to criticize the Prime Minister,  
+A little harder to do it to the Chief Minister.  
+Criticizing the local MLA is definitely risky,  
+But with the village head, a beating is guaranteed.
+
+अमेज़न के वर्षा वनों की चिंता करना कूल है  
+हिमालय के ग्लेशियरों पर बहस खड़ी करना  
+थोड़ा मेहनत का काम  
+बड़े पावर प्लांट का विरोध करना  
+एक्टिविज्म तो है जिसमें पैसे भी बन सकते हैं  
+लेकिन पास की नदी से रेत-बजरी भरते हुए  
+ट्रैक्टर की शिकायत जानलेवा है।
+
+Worrying about the Amazon rainforest is cool,  
+Starting a debate on Himalayan glaciers  
+Takes a little bit of effort.  
+Protesting a big power plant  
+Is activism that can even make you money,  
+But reporting a tractor loading sand and gravel  
+From the nearby river can get you killed.
+
+स्थानीयता के सारे संघर्ष ख़तरनाक हैं  
+भले ही वे कविता में हों या जीवन में।
+
+All local struggles are dangerous,  
+Whether they are in poetry or in life.`,
+		dateAdded: '2026-09-07',
+		attribution:
+			'[प्रदीप सैनी — "स्थानीयता" (Pradeep Saini — "Sthaniyata")](https://sadaneera.com/hindi-poems-pradeep-saini/#:~:text=%E0%A4%B9%E0%A5%8B%E0%A5%A4-,%E0%A4%B8%E0%A5%8D%E0%A4%A5%E0%A4%BE%E0%A4%A8%E0%A5%80%E0%A4%AF%E0%A4%A4%E0%A4%BE) ([via](https://www.instagram.com/reels/Db-YRFepX8o/))',
+	},
+	{
 		text: `Could you love me while I hate myself?  
 Could you love me, though I don't deserve it?
 

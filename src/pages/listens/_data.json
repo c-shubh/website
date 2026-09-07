@@ -256,6 +256,14 @@
 		"explicit_image": ""
 	},
 	{
+		"title": "Cry",
+		"artist": "Cigarettes After Sex",
+		"languages": ["English"],
+		"url": "https://music.youtube.com/watch?v=ENZZOh12tZ8",
+		"image": "https://img.youtube.com/vi_webp/ENZZOh12tZ8/hqdefault.webp",
+		"explicit_image": ""
+	},
+	{
 		"title": "Daddy Issues",
 		"artist": "The Neighbourhood",
 		"languages": ["English"],
@@ -1312,6 +1320,14 @@
 		"explicit_image": ""
 	},
 	{
+		"title": "Sweet",
+		"artist": "Cigarettes After Sex",
+		"languages": ["English"],
+		"url": "https://music.youtube.com/watch?v=z1N52_9FSOs",
+		"image": "https://img.youtube.com/vi_webp/z1N52_9FSOs/hqdefault.webp",
+		"explicit_image": ""
+	},
+	{
 		"title": "Swing Lynn",
 		"artist": "Twin Cabins",
 		"languages": ["English"],
@@ -1413,6 +1429,14 @@
 		"languages": ["English"],
 		"url": "https://music.youtube.com/watch?v=YPeHGoGhHxg",
 		"image": "https://img.youtube.com/vi_webp/YPeHGoGhHxg/hqdefault.webp",
+		"explicit_image": ""
+	},
+	{
+		"title": "TiK ToK",
+		"artist": "Kesha",
+		"languages": ["English"],
+		"url": "https://music.youtube.com/watch?v=RxUZLmN5RsY",
+		"image": "https://img.youtube.com/vi_webp/RxUZLmN5RsY/hqdefault.webp",
 		"explicit_image": ""
 	},
 	{
