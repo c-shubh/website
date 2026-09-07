@@ -44,3 +44,42 @@ const links = slashPages.filter((page) => 'showInHeader' in page && page.showInH
 		</div>
 	</div>
 </nav>
+
+<script>
+	const themeToggleButtons = document.querySelectorAll('.nav-theme-toggle');
+	const htmlElement = document.documentElement;
+
+	const themes = ['system', 'light', 'dark'] as const;
+	type Theme = (typeof themes)[number];
+
+	function getStoredTheme(): Theme {
+		const stored = localStorage.getItem('theme');
+		if (stored === 'light' || stored === 'dark' || stored === 'system') {
+			return stored;
+		}
+		return 'system';
+	}
+
+	function setTheme(theme: Theme) {
+		const osThemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+		if (theme === 'system') {
+			htmlElement.setAttribute('data-theme', osThemeQuery.matches ? 'dark' : 'light');
+		} else {
+			htmlElement.setAttribute('data-theme', theme);
+		}
+		localStorage.setItem('theme', theme);
+		htmlElement.setAttribute('data-theme-preference', theme);
+	}
+
+	themeToggleButtons.forEach((button) => {
+		button.addEventListener('click', () => {
+			const currentTheme = getStoredTheme();
+			const currentIndex = themes.indexOf(currentTheme);
+			const nextTheme = themes[(currentIndex + 1) % themes.length];
+
+			setTheme(nextTheme);
+		});
+	});
+
+	setTheme(getStoredTheme());
+</script>

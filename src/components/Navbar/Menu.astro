@@ -1,6 +1,8 @@
 ---
 import rssIcon from '@/assets/images/Feed-icon.svg';
-
+import ComputerDesktop from '@/components/icons/ComputerDesktop.astro';
+import Moon from '@/components/icons/Moon.astro';
+import Sun from '@/components/icons/Sun.astro';
 import Link from '@/components/Link.astro';
 import { BLOG_RSS_FEED } from '@/consts';
 import type { SlashPage } from '@/slashPages';
@@ -24,4 +26,20 @@ const { links } = Astro.props;
 	<Link href={BLOG_RSS_FEED} title={'RSS Feed'}>
 		<Image src={rssIcon} alt="RSS Feed" width={20} />
 	</Link>
+</li>
+
+<noscript>
+	<style>
+		.nav-theme-toggle-wrapper {
+			display: none;
+		}
+	</style>
+</noscript>
+
+<li class="nav-theme-toggle-wrapper">
+	<button title="Toggle theme" type="button" class="nav-theme-toggle">
+		<Sun class="size-5 cursor-pointer nav-theme-toggle-light" />
+		<Moon class="size-5 cursor-pointer nav-theme-toggle-dark" />
+		<ComputerDesktop class="size-5 cursor-pointer nav-theme-toggle-system" />
+	</button>
 </li>

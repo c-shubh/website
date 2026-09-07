@@ -6,7 +6,9 @@ script {
 @import 'tailwindcss';
 
 @plugin "daisyui" {
-	themes: all;
+	themes:
+		light --default,
+		dark --prefersdark;
 }
 
 @utility prose {
@@ -45,6 +47,21 @@ script {
 }
 
 @plugin "@tailwindcss/typography";
+
+.nav-theme-toggle-light,
+.nav-theme-toggle-dark,
+.nav-theme-toggle-system {
+	display: none;
+}
+html[data-theme-preference='light'] .nav-theme-toggle-light {
+	display: block;
+}
+html[data-theme-preference='dark'] .nav-theme-toggle-dark {
+	display: block;
+}
+html[data-theme-preference='system'] .nav-theme-toggle-system {
+	display: block;
+}
 
 @keyframes poke-right {
 	0% {

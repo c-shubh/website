@@ -143,14 +143,17 @@ const props = getResolvedProps(rawProps);
 			const osThemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
 			const htmlElement = document.documentElement;
 
-			if (savedTheme) {
+			if (savedTheme && savedTheme !== 'system') {
 				htmlElement.setAttribute('data-theme', savedTheme);
 			} else {
 				htmlElement.setAttribute('data-theme', osThemeQuery.matches ? 'dark' : 'light');
 			}
+			htmlElement.setAttribute('data-theme-preference', savedTheme || 'system');
 
 			osThemeQuery.addEventListener('change', (e) => {
-				if (!localStorage.getItem('theme')) {
+				const savedTheme = localStorage.getItem('theme');
+				if (!savedTheme || savedTheme === 'system') {
+					htmlElement.setAttribute('data-theme-preference', 'system');
 					document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
 				}
 			});

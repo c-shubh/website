@@ -59,3 +59,8 @@ permalink: https://github.com/hfg-gmuend/openmoji/blob/f6c0046bb42195e025f4802e3
 
 favicon generated using https://realfavicongenerator.net/
  -->
+
+<!-- 
+daisy ui uses heroicons: https://heroicons.com/
+https://github.com/saadeghi/daisyui/discussions/1777
+ -->
