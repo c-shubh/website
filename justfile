@@ -59,6 +59,7 @@ bookshelf FILE_PATH:
     open '{{ FILE_PATH }}'
     | where draft == ""
     | reject draft
+    | select title subtitle author start end status current_page total_pages image
     | to json
     | ^jq --tab .
     | save -f src/pages/bookshelf/_data.json
