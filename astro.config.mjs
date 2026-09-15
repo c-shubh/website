@@ -15,7 +15,8 @@ export default defineConfig({
 		mdx(),
 		react(),
 		sitemap({
-			filter: (page) => page !== `${SITE}/library/` && page !== `${SITE}/projects/`,
+			filter: (page) =>
+				page !== `${SITE}/library/` && page !== `${SITE}/projects/` && page !== `${SITE}/listens/`,
 		}),
 		{
 			// Docusaurus generated sitemap at /sitemap.xml, but Astro generates it at

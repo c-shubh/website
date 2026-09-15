@@ -2,7 +2,6 @@ export const slashPages = [
 	{ href: '/blog/', name: 'Blog', showInHeader: true },
 	{ href: '/tools/', name: 'Tools', showInHeader: true },
 	{ href: '/quotes/', name: 'Quotes', showInHeader: false },
-	{ href: '/listens/', name: 'Listens' },
 	{ href: '/bookshelf/', name: 'Bookshelf' },
 	{ href: '/movies/', name: 'Movies' },
 	{ href: '/gram/', name: 'Gram', showInHeader: false },
@@ -20,5 +19,5 @@ export interface SlashPage {
 }
 
 export const slashPagesMap: Record<Name, SlashPage> = Object.fromEntries(
-	slashPages.map((page) => [page.name, page])
+	slashPages.map((page) => [page.name, page]),
 ) as Record<Name, SlashPage>;

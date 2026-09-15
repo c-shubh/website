@@ -1,4 +1,6 @@
 ---
+import FormattedDate from '@/components/FormattedDate.astro';
+import InformationCircle from '@/components/icons/InformationCircle.astro';
 import Link from '@/components/Link.astro';
 import { FIRST_NAME } from '@/consts';
 import Page from '@/layouts/Page.astro';
@@ -23,11 +25,24 @@ const languages = Object.entries(languageCounts)
 languages.unshift('All');
 ---
 
-<Page title={`${FIRST_NAME} Listens To Music`}>
+<Page title={`${FIRST_NAME} Listens To Music`} archived>
 	<p>
 		<strong id="listens-song-count">{songs.length}</strong>
 		<span id="listens-song-label">{songs.length === 1 ? 'song' : 'songs'}</span>
 	</p>
+
+	<div role="alert" class="alert alert-vertical sm:alert-horizontal mb-2">
+		<InformationCircle />
+		<div>
+			<h3 class="mt-0 mb-0">Archival Notice</h3>
+			<div class="text-sm">
+				This page has stopped getting updates. It was hard for me to keep track of links and update
+				here. Previous content is preserved below. Archived on <FormattedDate
+					date={new Date('2026-09-15')}
+				/>.
+			</div>
+		</div>
+	</div>
 
 	<noscript>
 		<style>
