@@ -350,5 +350,16 @@
 		"current_page": "",
 		"total_pages": "",
 		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1397777416i/20736545.jpg"
+	},
+	{
+		"title": "The Psychology of Money",
+		"subtitle": "Timeless Lessons on Wealth, Greed, and Happiness",
+		"author": "Morgan Housel",
+		"start": "2026-09-09",
+		"end": "2026-09-28",
+		"status": "read",
+		"current_page": "",
+		"total_pages": "",
+		"image": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1581527774i/41881472.jpg"
 	}
 ]
