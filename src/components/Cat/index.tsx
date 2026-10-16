@@ -1,5 +1,5 @@
-// From https://github.com/builder-group/focuscat/tree/476cf11fa98989a01da9955b22839aabefde5741/packages/ui/src/features/cat
-
+import { ArrowPath } from '@/components/icons/ArrowPath';
+import { ArrowsCrossing } from '@/components/icons/ArrowsCrossing';
 import { clsx } from '@/utils';
 import React from 'react';
 import useSound from 'use-sound';
@@ -12,30 +12,6 @@ type TCatHat = 'banana' | 'lil-duck' | 'propeller-hat' | 'heart' | 'timer' | 'cr
 type TCatFace = 'asia' | 'cute' | 'dead' | 'harry-potter' | 'nerd' | 'pilot' | 'pixel-cool';
 
 type TCatHand = 'down' | 'up';
-
-interface TCat {
-	fur: TCatFur;
-	hat?: TCatHat;
-	face: TCatFace;
-	leftHand: TCatHand;
-	rightHand: TCatHand;
-}
-
-function randomCat(): TRandomCat {
-	const faces = catConfig.parts.face.available;
-	const face = faces[Math.floor(Math.random() * faces.length)] as TCatFace;
-
-	const hats = catConfig.parts.hat.available;
-	const hat: TCatHat | undefined =
-		Math.random() < 0.5 ? (hats[Math.floor(Math.random() * hats.length)] as TCatHat) : undefined;
-
-	return { face, hat };
-}
-
-interface TRandomCat {
-	face: TCatFace;
-	hat: TCatHat | undefined;
-}
 
 const catConfig = {
 	// Base size of the cat asset (width and height, since it's square)
@@ -71,10 +47,50 @@ function getCatPath(category: string, name: string): string {
 	return `/images/cat/${category}/${category}_${name}.svg`;
 }
 
-export const Cat = React.forwardRef<TCatRef, TCatProps>((props, ref) => {
+// MARK: - localStorage persistence
+
+const STORAGE_KEY = 'cat-settings';
+
+interface TCatSettings {
+	face: TCatFace;
+	hat: TCatHat | null;
+}
+
+function loadCatSettings(): TCatSettings {
+	try {
+		const raw = localStorage.getItem(STORAGE_KEY);
+		if (raw) {
+			const parsed = JSON.parse(raw) as Partial<TCatSettings>;
+			const face =
+				parsed.face && (catConfig.parts.face.available as readonly string[]).includes(parsed.face)
+					? parsed.face
+					: 'cute';
+			const hat =
+				parsed.hat !== undefined &&
+				(parsed.hat === null ||
+					(catConfig.parts.hat.available as readonly string[]).includes(parsed.hat))
+					? parsed.hat
+					: null;
+			return { face, hat };
+		}
+	} catch {
+		// ignore
+	}
+	return { face: 'cute', hat: null };
+}
+
+function saveCatSettings(settings: TCatSettings): void {
+	try {
+		localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+	} catch {
+		// ignore
+	}
+}
+
+// MARK: - Component
+
+export function Cat() {
 	const fur: TCatFur = 'white';
-	const face: TCatFace = 'cute';
-	const hat: TCatHat | null = null;
 	const size = 150;
 	const position: 'edge' | 'centered' = 'edge';
 	const [leftHandPose, setLeftHandPose] = React.useState<TCatHand>('up');
@@ -82,9 +98,9 @@ export const Cat = React.forwardRef<TCatRef, TCatProps>((props, ref) => {
 	const lastTappedHandRef = React.useRef<'left' | 'right'>('right');
 	const cooldownUntilRef = React.useRef(0);
 	const [playMeow] = useSound(catMeow);
-	const onTap = () => {
-		playMeow();
-	};
+
+	const [catSettings, setCatSettings] = React.useState<TCatSettings>(() => loadCatSettings());
+	const { face, hat } = catSettings;
 
 	const bottomOffset =
 		position === 'edge' ? catConfig.baseBodyBottomOffset * (size / catConfig.baseSize) : 0;
@@ -118,12 +134,33 @@ export const Cat = React.forwardRef<TCatRef, TCatProps>((props, ref) => {
 	}, []);
 
 	const handleTap = React.useCallback(() => {
-		tap({ ...(onTap?.() ?? {}), cooldown: 0 });
-	}, [tap, onTap]);
+		playMeow();
+		tap({ cooldown: 0 });
+	}, [tap, playMeow]);
 
-	// MARK: - Effects
+	const handleShuffle = React.useCallback(() => {
+		const faces = catConfig.parts.face.available;
+		const hats: (TCatHat | null)[] = [...catConfig.parts.hat.available, null];
 
-	React.useImperativeHandle(ref, () => ({ tap }), [tap]);
+		let nextFace: TCatFace = face;
+		let nextHat: TCatHat | null = hat;
+		while (nextFace === face && nextHat === hat) {
+			nextFace = faces[Math.floor(Math.random() * faces.length)] as TCatFace;
+			nextHat = hats[Math.floor(Math.random() * hats.length)] ?? null;
+		}
+
+		const next: TCatSettings = { face: nextFace, hat: nextHat };
+		setCatSettings(next);
+		saveCatSettings(next);
+	}, [face, hat]);
+
+	const isDefault = face === 'cute' && hat === null;
+
+	const handleReset = React.useCallback(() => {
+		const defaults: TCatSettings = { face: 'cute', hat: null };
+		setCatSettings(defaults);
+		saveCatSettings(defaults);
+	}, []);
 
 	// MARK: - UI
 
@@ -132,6 +169,24 @@ export const Cat = React.forwardRef<TCatRef, TCatProps>((props, ref) => {
 			className="pointer-events-none relative mx-auto cursor-grab"
 			style={{ width: size, height: containerHeight }}
 		>
+			{/* Reset button */}
+			{!isDefault && (
+				<button
+					className="pointer-events-auto absolute top-1 left-1 z-40 text-neutral-700 hover:text-neutral-600 p-1"
+					onClick={handleReset}
+					type="button"
+				>
+					<ArrowPath />
+				</button>
+			)}
+			{/* Shuffle button */}
+			<button
+				className="pointer-events-auto absolute top-1 right-1 z-40 text-neutral-700 hover:text-neutral-600 p-1"
+				onClick={handleShuffle}
+				type="button"
+			>
+				<ArrowsCrossing />
+			</button>
 			{/* Tap target */}
 			<div className="pointer-events-auto absolute inset-0 select-none" onPointerDown={handleTap} />
 			{/* Cat layers */}
@@ -192,15 +247,6 @@ export const Cat = React.forwardRef<TCatRef, TCatProps>((props, ref) => {
 			</div>
 		</div>
 	);
-});
-Cat.displayName = 'Cat';
-
-interface TCatProps {
-	onTap?: (() => TTapOptions) | (() => void);
-}
-
-interface TCatRef {
-	tap: (options?: TTapOptions) => void;
 }
 
 type TCatTapMode = 'left' | 'right' | 'both';

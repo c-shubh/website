@@ -1,6 +1,5 @@
 ---
 import { Cat } from '@/components/Cat';
-import '@/components/Link.astro';
 import Link from '@/components/Link.astro';
 import { COPYRIGHT, EMAIL, FIRST_NAME, FULL_NAME } from '@/consts';
 import Badges from './Badges.astro';
@@ -8,6 +7,12 @@ import FooterNav from './FooterNav.astro';
 import Webrings from './Webrings.astro';
 ---
 
+<!--
+Credits:
+- Art courtesy of https://x.com/StrayRogue
+- Inspiration for the cat mechanic: https://bongo.cat/
+- https://github.com/builder-group/focuscat/tree/476cf11fa98989a01da9955b22839aabefde5741/packages/ui/src/features/cat
+-->
 <noscript>
 	<style>
 		#cat-placeholder {
@@ -16,7 +21,7 @@ import Webrings from './Webrings.astro';
 	</style>
 </noscript>
 <!-- Reserve the cat's rendered height (containerHeight ≈ 100px) before hydration to prevent layout shift -->
-<div id="cat-placeholder" style="width: 150px; height: 100px; margin-inline: auto;">
+<div id="cat-placeholder" class="relative w-[150px] h-[100px] mx-auto">
 	<Cat client:only="react" />
 </div>
 <footer class="bg-base-200">

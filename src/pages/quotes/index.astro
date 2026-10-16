@@ -16,7 +16,7 @@ const description = 'A collection of quotes and poems I like or relate to.';
 	</p>
 	<div>
 		{
-			quotes.map((result, index) => (
+			quotes.map((result) => (
 				<article>
 					<hr />
 					<FormattedDate date={new Date(result.dateAdded)} />
