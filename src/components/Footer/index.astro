@@ -8,7 +8,17 @@ import FooterNav from './FooterNav.astro';
 import Webrings from './Webrings.astro';
 ---
 
-<Cat client:only="react" />
+<noscript>
+	<style>
+		#cat-placeholder {
+			display: none;
+		}
+	</style>
+</noscript>
+<!-- Reserve the cat's rendered height (containerHeight ≈ 100px) before hydration to prevent layout shift -->
+<div id="cat-placeholder" style="width: 150px; height: 100px; margin-inline: auto;">
+	<Cat client:only="react" />
+</div>
 <footer class="bg-base-200">
 	<div
 		class="footer footer-horizontal footer-center max-w-5xl mx-auto text-base-content py-8 px-6 gap-10"

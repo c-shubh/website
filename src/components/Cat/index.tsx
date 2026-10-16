@@ -2,6 +2,8 @@
 
 import { clsx } from '@/utils';
 import React from 'react';
+import useSound from 'use-sound';
+import catMeow from './cat-meow.mp3';
 
 type TCatFur = 'white';
 
@@ -70,19 +72,19 @@ function getCatPath(category: string, name: string): string {
 }
 
 export const Cat = React.forwardRef<TCatRef, TCatProps>((props, ref) => {
-	const {
-		fur = 'white',
-		face = 'cute',
-		hat,
-		size = 150,
-		position = 'edge',
-		className,
-		onTap,
-	} = props;
+	const fur: TCatFur = 'white';
+	const face: TCatFace = 'cute';
+	const hat: TCatHat | null = null;
+	const size = 150;
+	const position: 'edge' | 'centered' = 'edge';
 	const [leftHandPose, setLeftHandPose] = React.useState<TCatHand>('up');
 	const [rightHandPose, setRightHandPose] = React.useState<TCatHand>('up');
 	const lastTappedHandRef = React.useRef<'left' | 'right'>('right');
 	const cooldownUntilRef = React.useRef(0);
+	const [playMeow] = useSound(catMeow);
+	const onTap = () => {
+		playMeow();
+	};
 
 	const bottomOffset =
 		position === 'edge' ? catConfig.baseBodyBottomOffset * (size / catConfig.baseSize) : 0;
@@ -127,11 +129,11 @@ export const Cat = React.forwardRef<TCatRef, TCatProps>((props, ref) => {
 
 	return (
 		<div
-			className={clsx('pointer-events-none relative', className)}
+			className="pointer-events-none relative mx-auto cursor-grab"
 			style={{ width: size, height: containerHeight }}
 		>
 			{/* Tap target */}
-			<div className="pointer-events-auto absolute inset-0" onPointerDown={handleTap} />
+			<div className="pointer-events-auto absolute inset-0 select-none" onPointerDown={handleTap} />
 			{/* Cat layers */}
 			<div
 				className="pointer-events-none absolute bottom-0 left-0"
@@ -145,7 +147,7 @@ export const Cat = React.forwardRef<TCatRef, TCatProps>((props, ref) => {
 					src={catConfig.parts.fur.path.base(fur)}
 					alt=""
 					draggable={false}
-					className="absolute inset-0 h-full w-full select-none"
+					className="absolute inset-0 h-full w-full select-none footer-bongo-cat"
 				/>
 				{/* Note: Keep both paw poses mounted to avoid image requests during taps */}
 				{catConfig.parts.hand.available.map((pose) => (
@@ -155,7 +157,7 @@ export const Cat = React.forwardRef<TCatRef, TCatProps>((props, ref) => {
 						alt=""
 						draggable={false}
 						className={clsx(
-							'absolute inset-0 h-full w-full select-none',
+							'absolute inset-0 h-full w-full select-none footer-bongo-cat',
 							pose !== leftHandPose && 'invisible',
 						)}
 					/>
@@ -164,14 +166,14 @@ export const Cat = React.forwardRef<TCatRef, TCatProps>((props, ref) => {
 					src={catConfig.parts.face.path(face)}
 					alt=""
 					draggable={false}
-					className="absolute inset-0 h-full w-full select-none"
+					className="absolute inset-0 h-full w-full select-none footer-bongo-cat"
 				/>
 				{hat != null && (
 					<img
 						src={catConfig.parts.hat.path(hat)}
 						alt=""
 						draggable={false}
-						className="absolute inset-0 h-full w-full select-none"
+						className="absolute inset-0 h-full w-full select-none footer-bongo-cat"
 					/>
 				)}
 				{/* Note: Keep both paw poses mounted to avoid image requests during taps */}
@@ -182,7 +184,7 @@ export const Cat = React.forwardRef<TCatRef, TCatProps>((props, ref) => {
 						alt=""
 						draggable={false}
 						className={clsx(
-							'absolute inset-0 h-full w-full select-none',
+							'absolute inset-0 h-full w-full select-none footer-bongo-cat',
 							pose !== rightHandPose && 'invisible',
 						)}
 					/>
@@ -194,12 +196,6 @@ export const Cat = React.forwardRef<TCatRef, TCatProps>((props, ref) => {
 Cat.displayName = 'Cat';
 
 interface TCatProps {
-	fur?: TCatFur;
-	face?: TCatFace;
-	hat?: TCatHat | null;
-	size?: number;
-	position?: 'edge' | 'centered';
-	className?: string;
 	onTap?: (() => TTapOptions) | (() => void);
 }
 
