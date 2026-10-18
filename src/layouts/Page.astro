@@ -126,6 +126,7 @@ const props = getResolvedProps(rawProps);
 		{props.description && <meta name="description" content={props.description} />}
 
 		<!-- Open Graph / Facebook -->
+		<meta property="og:site_title" content={SITE_TITLE} />
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content={Astro.url} />
 		<meta property="og:title" content={props.metaTitle} />
