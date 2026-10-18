@@ -135,7 +135,10 @@ export function clsx(...args: unknown[]): string {
 	}, '');
 }
 
-export function pageTitle(name: string): string {
+export function pageTitle(name: string, section?: string): string {
+	if (section) {
+		return `${name} | ${section} | ${SITE_TITLE}`;
+	}
 	return `${name} | ${SITE_TITLE}`;
 }
 

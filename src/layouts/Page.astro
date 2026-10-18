@@ -26,6 +26,7 @@ interface BlogPage {
 	title: string;
 	description?: string;
 	date: Date;
+	section?: string;
 }
 
 interface StandalonePage {
@@ -35,6 +36,7 @@ interface StandalonePage {
 	archived?: boolean;
 	is404?: boolean;
 	underConstruction?: boolean;
+	section?: string;
 }
 
 type Props = HomePage | BlogPage | StandalonePage;
@@ -49,7 +51,7 @@ function getResolvedProps(rawProps: Props) {
 	} else if (rawProps.layout === 'blog') {
 		return {
 			layout: 'blog' as const,
-			metaTitle: pageTitle(rawProps.title),
+			metaTitle: pageTitle(rawProps.title, rawProps.section),
 			description: rawProps.description,
 
 			h1: rawProps.title,
@@ -58,7 +60,7 @@ function getResolvedProps(rawProps: Props) {
 	} else {
 		return {
 			layout: 'page' as const,
-			metaTitle: pageTitle(rawProps.title),
+			metaTitle: pageTitle(rawProps.title, rawProps.section),
 			description: rawProps.description,
 
 			h1: rawProps.title,

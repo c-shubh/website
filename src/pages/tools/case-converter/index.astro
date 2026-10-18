@@ -2,12 +2,13 @@
 import ClientOnlyFallback from '@/components/ClientOnlyFallback.astro';
 import Page from '@/layouts/Page.astro';
 import { toolsMap } from '@/pages/tools/_data';
+import { slashPagesMap } from '@/slashPages';
 import { CaseConverter } from './_CaseConverter';
 
 const { name, description } = toolsMap['case-converter'];
 ---
 
-<Page title={name} description={description}>
+<Page title={name} description={description} section={slashPagesMap['Tools'].name}>
 	<p>Enter text below. Each line will be converted to the selected case style.</p>
 	<CaseConverter client:only="react">
 		<div slot="fallback">

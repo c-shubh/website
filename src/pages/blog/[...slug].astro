@@ -2,6 +2,7 @@
 import Link from '@/components/Link.astro';
 import Table from '@/components/Table.astro';
 import Page from '@/layouts/Page.astro';
+import { slashPagesMap } from '@/slashPages';
 import { type CollectionEntry, getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -22,6 +23,11 @@ const components = {
 };
 ---
 
-<Page title={post.data.title} date={post.data.date} layout="blog">
+<Page
+	title={post.data.title}
+	date={post.data.date}
+	layout="blog"
+	section={slashPagesMap['Blog'].name}
+>
 	<Content components={components} />
 </Page>

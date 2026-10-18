@@ -1,6 +1,7 @@
 ---
 import MarkdownView from '@/components/MarkdownView.astro';
 import Page from '@/layouts/Page.astro';
+import { slashPagesMap } from '@/slashPages';
 import { getGramImages, type GramImage } from '@/utils';
 
 export async function getStaticPaths() {
@@ -20,6 +21,7 @@ const post = Astro.props;
 	date={new Date(post.dateTaken)}
 	description={post.plaintextCaption}
 	layout="blog"
+	section={slashPagesMap['Gram'].name}
 >
 	<img
 		class="rounded-box"

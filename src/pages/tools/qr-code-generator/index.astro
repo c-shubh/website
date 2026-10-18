@@ -2,12 +2,13 @@
 import ClientOnlyFallback from '@/components/ClientOnlyFallback.astro';
 import Page from '@/layouts/Page.astro';
 import { toolsMap } from '@/pages/tools/_data';
+import { slashPagesMap } from '@/slashPages';
 import { PlainTextQrCodeGenerator } from './_PlainTextQrCodeGenerator';
 
 const { name, description } = toolsMap['qr-code-generator'];
 ---
 
-<Page title={name} description={description}>
+<Page title={name} description={description} section={slashPagesMap['Tools'].name}>
 	<p>Enter or paste text in the textbox below to generate QR code(s).</p>
 	<PlainTextQrCodeGenerator client:only="react">
 		<div slot="fallback">
