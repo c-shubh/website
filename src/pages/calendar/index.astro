@@ -1,9 +1,14 @@
 ---
+import ClientOnlyFallback from '@/components/ClientOnlyFallback.astro';
 import Page from '@/layouts/Page.astro';
 import { slashPagesMap } from '@/slashPages';
 import { Calendar } from './_Calendar';
 ---
 
 <Page title={slashPagesMap['Calendar'].name}>
-	<Calendar />
+	<Calendar client:only="react">
+		<div slot="fallback">
+			<ClientOnlyFallback />
+		</div>
+	</Calendar>
 </Page>

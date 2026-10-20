@@ -50,8 +50,6 @@ Source code for https://cshubh.com
 - The source code in this repository is licensed under the [AGPLv3](./LICENSE-AGPL-3.0-only).
 - All other content in this repository is licensed under the [CC BY-NC-SA 4.0](./LICENSE-CC-BY-NC-SA-4.0).
 
-For more details, please refer to the respective license files.
-
 <!--
 website logo source:
 evergreen tree: https://openmoji.org/library/emoji-1F332/
@@ -60,7 +58,7 @@ permalink: https://github.com/hfg-gmuend/openmoji/blob/f6c0046bb42195e025f4802e3
 favicon generated using https://realfavicongenerator.net/
  -->
 
-<!-- 
+<!--
 daisy ui uses heroicons: https://heroicons.com/
 https://github.com/saadeghi/daisyui/discussions/1777
  -->
