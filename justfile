@@ -16,7 +16,7 @@ deploy: build
     @echo 'Check https://github.com/c-shubh/website/actions'
 
 dev *ARGS:
-    pnpm run astro dev {{ ARGS }}
+    pnpm run astro dev --host {{ ARGS }}
 
 preview: build
     pnpm run astro preview

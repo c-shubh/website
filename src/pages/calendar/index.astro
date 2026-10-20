@@ -1,0 +1,9 @@
+---
+import Page from '@/layouts/Page.astro';
+import { slashPagesMap } from '@/slashPages';
+import { Calendar } from './_Calendar';
+---
+
+<Page title={slashPagesMap['Calendar'].name}>
+	<Calendar />
+</Page>
