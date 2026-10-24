@@ -6,6 +6,13 @@ export interface Quote {
 
 export const quotes: Quote[] = [
 	{
+		text: `
+હું હરિનો, હરિ છે મમ રક્ષક, એ નિશ્ચય બદલાય નહીં;  
+હરિ કરે તે મમ હિતનું, એ ભરોસો જાય નહીં.`,
+		attribution: '[Param Pujya Haridarshandasji Swami](https://www.youtube.com/@kathaganga_snvp)',
+		dateAdded: '2026-10-24',
+	},
+	{
 		text: `आसान है करना प्रधानमंत्री की आलोचना  
 मुख्यमंत्री की करना उससे थोड़ा मुश्किल  
 विधायक की आलोचना में ख़तरा ज़रूर है  
