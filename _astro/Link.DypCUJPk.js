@@ -1,0 +1,1 @@
+import{j as n}from"./jsx-runtime.u17CrQMm.js";import{g as m}from"./utils.DWawTwL-.js";import"./index.B5x5rD9K.js";function u({href:t,children:r,...e}){const{href:o,target:i,rel:s}=m(t);return n.jsx("a",{...e,href:o,target:i,rel:s,children:r})}export{u as L};
